@@ -1,0 +1,30 @@
+1.获取新闻目录
+功能：获取某一类型的新闻目录，ajax 异步请求
+URL：http://localhost:8080/MVCNews/front/NewsPlatServlet
+参数：status，值为list;plat，值为index;type，值为新闻类别编号
+输出：JSON格式的新闻目录
+例子：http://localhost:8080/MVCNews/front/NewsPlatServlet?status=list&plat=index&type=1
+
+2.获取新闻列表
+功能：获取某一类型的新闻列表，不包含新闻内容，可以指定结果集的页号和每页大小，用于翻页显示
+URL：http://localhost:8080/MVCNews/front/NewsPlatServlet
+参数：status，值为list;plat，值为front;type，值为新闻类别编号;cp，值为为当前所在的页，默认在第1页;ls，值为每次显示的记录数，默认为10;
+输出：属性newsInfos，表示新闻列表；属性recorders，表示所有该类型新闻的个数；属性url，表示查询所用的URL，为常量；属性page，表示当前所在的页；属性size，表示每次显示的记录数。
+例子：http://localhost:8080/MVCNews/front/NewsPlatServlet?status=list&plat=front&type=1（只返回类型号1的新闻的第一页数据，纪录数为10）
+程序最终跳转到newsfront_list.jsp，因此如何使用这个接口可以参考NewsPlatServlet和newsfrontnewsfront_list.jsp的内容。
+
+3.获取新闻详情
+功能：获取某一条新闻的详细内容
+URL：http://localhost:8080/MVCNews/front/NewsPlatServlet
+参数：status，值为show;pid，值为新闻编号
+输出：属性newsinfo，表示新闻信息详情；属性attachments，表示该新闻所带的所有附件列表
+例子：http://localhost:8080/MVCNews/front/NewsPlatServlet?status=show&pid=4
+程序最终跳转到newsfront_show.jsp，因此如何使用这个接口可以参考NewsPlatServlet和newsfront_show.jsp的内容。
+
+4.获取软件列表
+功能：获取所有软件列表，ajax 异步请求
+URL：http://localhost:8080/MVCNews/front/NewsPlatServlet
+参数：status，值为softwarelist
+输出：JSON格式的软件列表
+例子：http://localhost:8080/MVCNews/front/NewsPlatServlet?status=softwarelist
+	
