@@ -1,0 +1,13 @@
+#Thu Aug 21 22:25:15 CST 2014
+myeclipseTomcatServer.Stock.isUptoDate=true
+myeclipseTomcatServer.Stock.shouldOverwrite=false
+myeclipseTomcatServer.Stock.altContextRoot=/Stock
+myeclipseTomcatServer.Stock.shouldBackup=false
+myeclipseTomcatServer.Stock.deploymentPath=E\:\\file\\GitHub\\Test\\.metadata\\.me_tcat\\webapps\\Stock
+myeclipseTomcatServer.Stock.contextRoot=/Stock
+myeclipseTomcatServer.Stock.IEARProjectName=
+myeclipseTomcatServer.Stock.isDeployed=true
+myeclipseTomcatServer.Stock.deployIsOverProject=false
+myeclipseTomcatServer.Stock.type=WebDeployment
+eclipse.preferences.version=1
+myeclipseTomcatServer.Stock.isExploded=true

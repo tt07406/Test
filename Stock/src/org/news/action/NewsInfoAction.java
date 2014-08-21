@@ -56,7 +56,7 @@ public class NewsInfoAction extends ActionSupport {
 	String[] typeNames; //选中的种类
 	String kw; //查询关键字
 	List<NewsVO> newsInfos;//新闻简表
-	long allRecorders; //查询到的全部记录数
+	long recorders; //查询到的全部记录数
 	String url;
 	int page;
 	int size;
@@ -120,15 +120,15 @@ public class NewsInfoAction extends ActionSupport {
 	/**
 	 * @return the allRecorders
 	 */
-	public long getAllRecorders() {
-		return allRecorders;
+	public long getRecorders() {
+		return recorders;
 	}
 
 	/**
 	 * @param allRecorders the allRecorders to set
 	 */
-	public void setAllRecorders(long allRecorders) {
-		this.allRecorders = allRecorders;
+	public void setRecorders(long recorders) {
+		this.recorders = recorders;
 	}
 
 	/**
@@ -534,7 +534,7 @@ public class NewsInfoAction extends ActionSupport {
 			
 			allRecorders = service.getAllCount(keyWord) ;
 			setNewsInfos(allVO);
-			setAllRecorders(allRecorders);
+			setRecorders(allRecorders);
 			setUrl(URL);
 			setPage(currentPage);
 			setSize(lineSize);

@@ -26,13 +26,13 @@ public class NewsTypeAction extends ActionSupport {
 	private static final long serialVersionUID = 3250411979866462436L;
 	private NewsTypeService newstypeService = new NewsTypeService();
 	
-	List<NewsType> all;
-	String name;
-	String note;
-	String msg;
-	String url;
-	int typeid;
-	NewsType type;
+	List<NewsType> all;//所示新闻类别
+	String name;//类别名
+	String note;//类别描述
+	String msg;//提示信息
+	String url;//URL
+	int typeid;//类别ID
+	NewsType type;//具体类别
 
 	/**
 	 * @return the type

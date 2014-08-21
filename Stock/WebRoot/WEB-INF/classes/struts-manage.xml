@@ -126,6 +126,35 @@
 	</package>
 	<package name="users" namespace="/manage/admin/users"
 		extends="global">
+		<action name="Users_list" method="list" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_list.jsp
+			</result>
+		</action>
+		<action name="Users_show" method="show" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_show.jsp
+			</result>
+		</action>
+		<action name="Users_delete" method="delete" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_operate_do.jsp
+			</result>
+		</action>
+		<action name="Users_updatepre" method="updatepre" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_update.jsp
+			</result>
+		</action>
+		<action name="Users_update" method="update" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_operate_do.jsp
+			</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/admin/users/{1}.jsp</result>
+		</action>
 	</package>
 	<package name="manage" namespace="/manage"
 		extends="struts-default">
@@ -135,7 +164,7 @@
 		</action>
 		<action name="adminLogout" class="org.news.action.AdminLogout">
 			<result name="success">/WEB-INF/manage/login.jsp</result>
-		</action>
+		</action>	
 		<action name="*">
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->
 			<result>/WEB-INF/manage/{1}.jsp</result>
