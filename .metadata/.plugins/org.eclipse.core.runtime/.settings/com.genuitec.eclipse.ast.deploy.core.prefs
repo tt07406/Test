@@ -1,13 +1,24 @@
-#Thu Aug 21 22:25:15 CST 2014
-myeclipseTomcatServer.Stock.isUptoDate=true
-myeclipseTomcatServer.Stock.shouldOverwrite=false
-myeclipseTomcatServer.Stock.altContextRoot=/Stock
-myeclipseTomcatServer.Stock.shouldBackup=false
+#Sun Aug 24 21:12:21 CST 2014
 myeclipseTomcatServer.Stock.deploymentPath=E\:\\file\\GitHub\\Test\\.metadata\\.me_tcat\\webapps\\Stock
 myeclipseTomcatServer.Stock.contextRoot=/Stock
-myeclipseTomcatServer.Stock.IEARProjectName=
-myeclipseTomcatServer.Stock.isDeployed=true
-myeclipseTomcatServer.Stock.deployIsOverProject=false
 myeclipseTomcatServer.Stock.type=WebDeployment
+myeclipseTomcatServer.swfupload.isExploded=true
+myeclipseTomcatServer.swfupload.shouldBackup=false
+myeclipseTomcatServer.swfupload.type=WebDeployment
 eclipse.preferences.version=1
+myeclipseTomcatServer.Stock.shouldBackup=false
+myeclipseTomcatServer.Stock.isDeployed=true
+myeclipseTomcatServer.swfupload.deploymentPath=E\:\\file\\GitHub\\Test\\.metadata\\.me_tcat\\webapps\\swfupload
+myeclipseTomcatServer.swfupload.shouldOverwrite=false
+myeclipseTomcatServer.Stock.isUptoDate=true
+myeclipseTomcatServer.Stock.shouldOverwrite=false
+myeclipseTomcatServer.swfupload.IEARProjectName=
+myeclipseTomcatServer.Stock.IEARProjectName=
+myeclipseTomcatServer.Stock.altContextRoot=/Stock
 myeclipseTomcatServer.Stock.isExploded=true
+myeclipseTomcatServer.swfupload.deployIsOverProject=false
+myeclipseTomcatServer.swfupload.contextRoot=/swfupload
+myeclipseTomcatServer.Stock.deployIsOverProject=false
+myeclipseTomcatServer.swfupload.isDeployed=true
+myeclipseTomcatServer.swfupload.altContextRoot=/swfupload
+myeclipseTomcatServer.swfupload.isUptoDate=true

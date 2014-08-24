@@ -258,7 +258,7 @@ public final class left_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          </tr>\r\n");
       out.write("        </table>\r\n");
       out.write("        <ul class=\"MM\">\r\n");
-      out.write("\t\t  <li><a href=\"/Stock/manage/admin/software/Software_list.action\" target=\"main\">软件列表</a></li>\r\n");
+      out.write("\t\t  <li><a href=\"/Stock/manage/Software_list.action\" target=\"main\">软件列表</a></li>\r\n");
       out.write("\t\t  <li><a href=\"/Stock/manage/SoftwareUpload.action\" target=\"main\">增加软件</a></li>\r\n");
       out.write("        </ul>\r\n");
       out.write("      </div>\r\n");

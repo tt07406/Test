@@ -192,7 +192,7 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="/Stock/manage/admin/software/Software_list.action" target="main">软件列表</a></li>
+		  <li><a href="/Stock/manage/Software_list.action" target="main">软件列表</a></li>
 		  <li><a href="/Stock/manage/SoftwareUpload.action" target="main">增加软件</a></li>
         </ul>
       </div>

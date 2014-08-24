@@ -1,0 +1,29 @@
+package org.news.action;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.interceptor.ServletResponseAware;
+import org.news.service.AttachmentService;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SoftwareAction extends ActionSupport implements ServletResponseAware{
+
+	private static final long serialVersionUID = 4362240508650937317L;
+	private AttachmentService service = new AttachmentService();
+	private HttpServletResponse response;
+
+	/**
+	 * Ä¬ÈÏÉÏ´«
+	 * @return
+	 */
+	public String execute() {
+		
+		return SUCCESS;
+	}
+
+	@Override
+	public void setServletResponse(HttpServletResponse arg0) {
+		this.response = arg0;
+	}
+}

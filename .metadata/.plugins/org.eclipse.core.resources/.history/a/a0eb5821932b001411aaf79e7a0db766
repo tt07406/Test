@@ -1,0 +1,143 @@
+package com.action;
+
+
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import javax.servlet.ServletException;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
+
+
+import com.model.Picture;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PictureAction extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private File[] file;
+	private String[] fileFileName;
+	private String[] fileContentType;
+	
+//	private File file;
+//	
+//    private String fileFileName;
+//    
+//    private String fileContentType;
+//    
+//    
+//	
+//	public File getFile() {
+//		return file;
+//	}
+//
+//
+//
+//	public void setFile(File file) {
+//		this.file = file;
+//	}
+//
+//
+//
+//	public String getFileFileName() {
+//		return fileFileName;
+//	}
+//
+//
+//
+//	public void setFileFileName(String fileFileName) {
+//		this.fileFileName = fileFileName;
+//	}
+//
+//
+//
+//	public String getFileContentType() {
+//		return fileContentType;
+//	}
+//
+//
+//
+//	public void setFileContentType(String fileContentType) {
+//		this.fileContentType = fileContentType;
+//	}
+
+
+
+	/**
+	 * @return the file
+	 */
+	public File[] getFile() {
+		return file;
+	}
+
+	/**
+	 * @param file the file to set
+	 */
+	public void setFile(File[] file) {
+		this.file = file;
+	}
+
+	/**
+	 * @return the fileFileName
+	 */
+	public String[] getFileFileName() {
+		return fileFileName;
+	}
+
+	/**
+	 * @param fileFileName the fileFileName to set
+	 */
+	public void setFileFileName(String[] fileFileName) {
+		this.fileFileName = fileFileName;
+	}
+
+	/**
+	 * @return the fileContentType
+	 */
+	public String[] getFileContentType() {
+		return fileContentType;
+	}
+
+	/**
+	 * @param fileContentType the fileContentType to set
+	 */
+	public void setFileContentType(String[] fileContentType) {
+		this.fileContentType = fileContentType;
+	}
+
+	/**
+	 * 用于实现上传功能
+	 */
+	@Override
+	public String execute() throws Exception {
+		System.out.print(file.length);
+		// TODO Auto-generated method stub
+		//实现上传
+//		InputStream is = new FileInputStream(file);
+//		String root = ServletActionContext.getServletContext().getRealPath("/upload");
+//		System.out.println(this.getFileContentType() );
+//		File deskFile = new File(root,this.getFileFileName());
+//		System.out.println(this.getFileFileName() );
+//		OutputStream os = new FileOutputStream(deskFile);
+//		byte [] bytefer = new byte[400];
+//		int length = 0 ; 
+//		while((length = is.read(bytefer) )>0)
+//		{
+//			os.write(bytefer,0,length);
+//		}
+//		os.close();
+//		is.close();
+		return SUCCESS;
+	}
+
+}

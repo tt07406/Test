@@ -33,8 +33,8 @@
 	<c:forEach items="${softwares}" var="software">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE6">${software.attachmentId}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="<%=request.getContextPath()%>/servlet/DownloadAttachmentServlet?sid=${software.attachmentId}">${software.attachmentName}</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="SoftwareServlet?status=delete&softwareid=${software.attachmentId}&cp=${cp}&ls=${ls}&pg=${pg}">删除</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="Software_download.action?sid=${software.attachmentId}">${software.attachmentName}</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="Software_delete.action?softwareid=${software.attachmentId}&cp=${cp}&ls=${ls}&pg=${pg}">删除</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

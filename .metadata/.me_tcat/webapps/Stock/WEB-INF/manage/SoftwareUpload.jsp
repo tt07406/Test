@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     double perMaxSize = 1024;//单个文件允许的max大小
     String sizeUnit = "MB";//perMaxSize数据对应的单位
@@ -8,31 +9,32 @@
 	StringBuffer uploadUrl = new StringBuffer("http://");
 	uploadUrl.append(request.getHeader("Host"));
 	uploadUrl.append(request.getContextPath());
-	uploadUrl.append("/manage/SoftwareServlet");
+	uploadUrl.append("/manage/Software_upload.action");
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <title>批量相片上传</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<link href="css/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/swfupload.js"></script>
-<script type="text/javascript" src="js/swfupload.swfobject.js"></script>
-<script type="text/javascript" src="js/swfupload.queue.js"></script>
-<script type="text/javascript" src="js/fileprogress.js"></script>
-<script type="text/javascript" src="js/handlers.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="<%=request.getContextPath()%>/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/fileprogress.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/handlers.js"></script>
 
 <script type="text/javascript">
 var swfu;
 
 SWFUpload.onload = function () {
 	var settings = {
-		flash_url : "js/swfupload.swf",
+		flash_url : "<%=request.getContextPath()%>/js/swfupload.swf",
 		upload_url: "<%=uploadUrl.toString()%>",
 		post_params: {
 			"user_id" : "stehen830",
 			"pass_id" : "1231"
 		},
+		file_post_name : "file",
 		file_size_limit : "<%=perMaxSize%> <%=sizeUnit%>",
 		file_types : "<%=ext%>",
 		file_types_description : "<%=ext%>",
@@ -48,7 +50,7 @@ SWFUpload.onload = function () {
 		auto_upload:false,
 
 		// Button Settings
-		button_image_url : "images/XPButtonUploadText_61x22.png",	// Relative to the SWF file
+		button_image_url : "<%=request.getContextPath()%>/backImages/XPButtonUploadText_61x22.png",	// Relative to the SWF file
 		button_placeholder_id : "spanButtonPlaceholder",
 		button_width: 61,
 		button_height: 22,
@@ -88,13 +90,13 @@ SWFUpload.onload = function () {
 	</tr>
 	</table>
 <div id="content">
-	<form id="form1" action="SoftwareServlet" method="post" enctype="multipart/form-data">
+	<form id="form1" action="Software_upload" method="post" enctype="multipart/form-data">
 		<table width="90%" cellspacing="0" cellpadding="0" border="0"><tr><td>
 		<span id="spanButtonPlaceholder"></span>
 		<input id="btnUpload" type="button" value="上传软件" class="btn" />
 		<input id="btnCancel" type="button" value="取消全部上传" disabled="disabled" class="btn" /></td>
 		</tr></table>
-		<table id="idFileList" class="uploadFileList"><tr class="uploadTitle"><td><B>文件名</B></td><td><B>文件大小</B></td><td width=100px><B>状态</B></td><td width=35px>&nbsp;</td></tr></table>
+		<table id="idFileList" class="uploadFileList"><tr class="uploadTitle"><td><B>文件名</B></td><td><B>文件大小</B></td><td width=100px><B>状态</B></td><td width=35px>${msg}</td></tr></table>
 		等待上传 <span id="idFileListCount">0</span> 个 ，成功上传 <span id="idFileListSuccessUploadCount">0</span> 个
 		<div id="divSWFUploadUI" style="visibility: hidden;"></div>
 		<noscript style="display: block; margin: 10px 25px; padding: 10px 15px;">

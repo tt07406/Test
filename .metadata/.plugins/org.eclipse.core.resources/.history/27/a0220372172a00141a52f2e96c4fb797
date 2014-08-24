@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="global" extends="struts-default">
+		<global-results>
+			<result name="error">/WEB-INF/pages/errors.jsp</result>
+			<result name="forward">/WEB-INF/manage/forward.jsp</result>
+		</global-results>
+	</package>
+    <package name="admin" namespace="/manage/admin/admin" extends="global">
+	<action name="Admin_list" class="org.news.action.AdminAction" method="list">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_list.jsp
+		</result>
+	</action>
+	<action name="Admin_insert" class="org.news.action.AdminAction" method="insert">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_updatepre" class="org.news.action.AdminAction" method="updatepre">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_update.jsp
+		</result>
+	</action>
+	<action name="Admin_update" class="org.news.action.AdminAction" method="update">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_show" class="org.news.action.AdminAction" method="show">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_show.jsp
+		</result>
+	</action>
+	<action name="Admin_delete" class="org.news.action.AdminAction" method="delete">
+		<result name="success">
+			/WEB-INF/manage/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/admin/admin/{1}.jsp</result>
+		</action>
+	</package>	
+	<package name="newsinfo" namespace="/manage/admin/newsinfo"
+		extends="global">
+		<action name="NewsInfo_insertpre" method="insertpre"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp</result>
+		</action>
+		<action name="NewsInfo_insert"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_insert_do.jsp</result>
+		</action>
+		<action name="NewsInfo_update"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_operate_do.jsp</result>
+		</action>
+		<action name="NewsInfo_show" method="show"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp</result>
+		</action>
+		<action name="NewsInfo_updatepre" method="updatepre"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp</result>
+		</action>
+		<action name="NewsInfo_delete" method="delete"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_operate_do.jsp</result>
+		</action>
+		<action name="NewsInfo_list" method="list"
+			class="org.news.action.NewsInfoAction">
+			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/admin/newsinfo/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="newstype" namespace="/manage/admin/newstype"
+		extends="global">
+		<action name="NewsType_list" method="list"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_list.jsp
+			</result>
+		</action>
+		<action name="NewsType_insert" method="insert"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_update"  method="update"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_updatepre" method="updatepre"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_update.jsp
+			</result>
+		</action>
+		<action name="NewsType_delete" method="delete"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_operate_do.jsp
+			</result>
+		</action>
+		<action name="NewsType_show" method="show"
+			class="org.news.action.NewsTypeAction">
+			<result name="success">
+				/WEB-INF/manage/admin/newstype/newstype_show.jsp
+			</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/admin/newstype/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="users" namespace="/manage/admin/users"
+		extends="global">
+		<action name="Users_list" method="list" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_list.jsp
+			</result>
+		</action>
+		<action name="Users_show" method="show" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_show.jsp
+			</result>
+		</action>
+		<action name="Users_delete" method="delete" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_operate_do.jsp
+			</result>
+		</action>
+		<action name="Users_updatepre" method="updatepre" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_update.jsp
+			</result>
+		</action>
+		<action name="Users_update" method="update" class="org.news.action.UsersAction">
+			<result name="success">
+				/WEB-INF/manage/admin/users/users_operate_do.jsp
+			</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/admin/users/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="manage" namespace="/manage"
+		extends="global">
+		<action name="adminLogin" class="org.news.action.AdminLogin">
+			<result name="success">/WEB-INF/manage/index.htm</result>
+			<result name="error">/WEB-INF/manage/login.jsp</result>
+		</action>
+		<action name="adminLogout" class="org.news.action.AdminLogout">
+			<result name="success">/WEB-INF/manage/login.jsp</result>
+		</action>	
+		<action name="Software_list" method="list"
+			class="org.news.action.SoftwareAction">
+			<result name="success">
+				/WEB-INF/manage/SoftwareList.jsp
+			</result>
+		</action>
+		<action name="Software_delete" method="delete"
+			class="org.news.action.SoftwareAction">
+			<result name="success">
+				/WEB-INF/manage/softwares_operate_do.jsp
+			</result>
+		</action>
+		<action name="Software_upload"
+			class="org.news.action.SoftwareAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+			</interceptor-ref>
+			<result name="success">
+				/WEB-INF/manage/SoftwareUpload.jsp
+			</result>
+			<result name="input">
+				/WEB-INF/manage/SoftwareUpload.jsp
+			</result>
+		</action>
+		<action name="Software_download"
+			class="org.news.action.SoftwareAction">
+			<result name="success" type="stream">
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">filename="${filename}"</param>
+			</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/manage/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

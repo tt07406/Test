@@ -23,10 +23,15 @@
 			<result name="success">/WEB-INF/pages/welcome.jsp</result>
 			<result name="login">/WEB-INF/pages/login.jsp</result>
 		</action>
-	</package>
+		<action name="uploadAction"
+			class="org.news.action.UploadAction">
+			<result name="success">/index.jsp</result>
+		</action></package>
 	<!-- 全局国际化 -->
+	<constant name="struts.multipart.maxSize" value="90000000"/>
 	<constant name="struts.custom.i18n.resources" value="Message"></constant>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
 	<include file="struts-manage.xml" />
 </struts>    

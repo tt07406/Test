@@ -177,10 +177,6 @@ public class SoftwareServlet extends HttpServlet {
             if(maxFileSize<fileSize) throw new Exception("单个上传相片的容量不能超过["+maxFileSize+"KB]");
 			
             String fileName = f.getFileName();
-            //因为SWF的内置码为UTF8,必须转码
-			//String fileName=new String(f.getFileName().getBytes("GBK"),"UTF-8");
-//			Logger.log(fileName, Logger.DEBUG);
-//			Logger.log("size"+f.getSize(), Logger.DEBUG);	
 			
 			//存入本地
 			try{
@@ -189,7 +185,6 @@ public class SoftwareServlet extends HttpServlet {
 				NewsAttachment newsAttachment=new NewsAttachment();
 				newsAttachment.setNewsId((long)0);
 				newsAttachment.setAttachmentName(fileName);
-				//newsAttachment.setAttachmentContent(f.getFileBinaryData());
 				if (!service.addNewsAttachment(newsAttachment)){
 					return false;
 				}
