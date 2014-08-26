@@ -7,6 +7,9 @@
  */
 package org.news.service;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,10 +20,6 @@ import org.news.model.NewsAttachment;
 import org.news.model.NewsIndex;
 import org.news.model.NewsInfo;
 import org.news.model.NewsVO;
-import org.news.utils.Logger;
-
-import com.jspsmart.upload.File;
-import com.jspsmart.upload.SmartUpload;
 
 /**
  * 文章信息服务类
@@ -37,20 +36,19 @@ public class NewsInfoService {
 	 * 添加新闻服务
 	 * @param newsInfo
 	 * @return 操作是否成功
+	 * @throws IOException 
 	 */
-	public boolean addNewsInfo(NewsInfo newsInfo,SmartUpload upload){
+	public boolean addNewsInfo(NewsInfo newsInfo,
+			List<java.io.File> attachment, List<String> attachmentFileName) throws IOException{
 		Long currentID = (long)newsInfo.getNewsInfoId();
     	
 		//先上传附件
-		for(int i=0;i<upload.getFiles().getCount();i++){
-			File f = upload.getFiles().getFile(i);
-			if(f.isMissing())continue;
-			
-			Logger.log("size"+f.getSize(), Logger.DEBUG);
+		for(int i=0;i<attachment.size();i++){
+
 			NewsAttachment newsAttachment=new NewsAttachment();
 			newsAttachment.setNewsId(currentID);
-			newsAttachment.setAttachmentName(f.getFileName());
-			newsAttachment.setAttachmentContent(f.getFileBinaryData());
+			newsAttachment.setAttachmentName(attachmentFileName.get(i));
+			newsAttachment.setAttachmentContent(readFile(attachment.get(i)));
 			if (!attachmentDAO.addNewsAttachment(newsAttachment)){
 				return false;
 			}			
@@ -87,21 +85,20 @@ public class NewsInfoService {
 	 * 修改文章信息服务
 	 * @param newsInfo
 	 * @return
+	 * @throws IOException 
 	 */
-	public boolean updateNewsInformation(NewsInfo newsInfo, SmartUpload upload) {
+	public boolean updateNewsInformation(NewsInfo newsInfo, 
+			List<java.io.File> attachment, List<String> attachmentFileName) throws IOException {
 		if (newsInfoDAO.updateNewsInformation(newsInfo) == null){
 			return false;
 	    }else{
 	    	Long currentID = (long)newsInfo.getNewsInfoId();
-	    	//attachmentDAO.deleteNewsAttachmentByNewsId(currentID);
-			for(int i=0;i<upload.getFiles().getCount();i++){
-				File f = upload.getFiles().getFile(i);
-				if(f.isMissing())continue;
-				
+			for(int i=0;i<attachment.size();i++){
+
 				NewsAttachment newsAttachment=new NewsAttachment();
 				newsAttachment.setNewsId(currentID);
-				newsAttachment.setAttachmentName(f.getFileName());
-				newsAttachment.setAttachmentContent(f.getFileBinaryData());
+				newsAttachment.setAttachmentName(attachmentFileName.get(i));
+				newsAttachment.setAttachmentContent(readFile(attachment.get(i)));
 				if (!attachmentDAO.addNewsAttachment(newsAttachment)){
 					return false;
 				}
@@ -221,5 +218,24 @@ public class NewsInfoService {
     		   newsVO.setNewsInfoTitle(newsInfo.getNewsInfoTitle());
     	   }
     	   return newsVO;    	   
+       }
+
+       /**
+        * 文件转化为字节流
+        * @param file
+        * @return
+        * @throws IOException
+        */
+       public  byte[] readFile(java.io.File file) throws IOException {  
+			long len = file.length();
+			byte[] bytes = new byte[(int) len];
+	
+			BufferedInputStream bufferedInputStream = new BufferedInputStream(
+					new FileInputStream(file));
+			int r = bufferedInputStream.read(bytes);
+			if (r != len)
+				throw new IOException("读取文件不正确");
+			bufferedInputStream.close();
+			return bytes;
        }
 }

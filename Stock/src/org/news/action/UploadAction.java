@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UploadAction extends ActionSupport {
 
-private File file;
+	private File file;
 	
     private String fileFileName;
     

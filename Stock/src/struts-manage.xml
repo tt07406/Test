@@ -50,12 +50,21 @@
 			class="org.news.action.NewsInfoAction">
 			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp</result>
 		</action>
-		<action name="NewsInfo_insert"
+		<action name="NewsInfo_insert" method="insert"
 			class="org.news.action.NewsInfoAction">
+			<!-- 不超过20M -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">20971520</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
 			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_insert_do.jsp</result>
 		</action>
-		<action name="NewsInfo_update"
+		<action name="NewsInfo_update" method="update"
 			class="org.news.action.NewsInfoAction">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">20971520</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
 			<result name="success">/WEB-INF/manage/admin/newsinfo/newsinfo_operate_do.jsp</result>
 		</action>
 		<action name="NewsInfo_show" method="show"
@@ -177,6 +186,7 @@
 		</action>
 		<action name="Software_upload" method="upload"
 			class="org.news.action.SoftwareAction">
+			<!-- 不超过1G -->
 			<interceptor-ref name="fileUpload">
 				<param name="maximumSize">1073741824</param>
 			</interceptor-ref>
@@ -186,8 +196,10 @@
 		<action name="Software_download"
 			class="org.news.action.SoftwareAction">
 			<result name="success" type="stream">
+				<param name="contentType">text/plain;charset=utf-8</param>
 				<param name="inputName">targetFile</param>
-				<param name="contentDisposition">filename="${filename}"</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
 			</result>
 		</action>
 		<action name="*">

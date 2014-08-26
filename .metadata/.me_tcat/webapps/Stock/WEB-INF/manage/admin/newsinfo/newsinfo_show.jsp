@@ -36,7 +36,7 @@
 	</tr>	
 	<c:forEach items="${attachments}" var="attachment">
 		<tr>
-	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/servlet/DownloadAttachmentServlet?id=${attachment.attachmentId}">附件:${attachment.attachmentName}</a></font></td>
+	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/downloadAttachmentAction.action?id=${attachment.attachmentId}">附件:${attachment.attachmentName}</a></font></td>
 	 	</tr>
 	 </c:forEach>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

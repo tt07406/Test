@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -89,7 +90,15 @@ public class SoftwareAction extends ActionSupport{
 	 * @return the filename
 	 */
 	public String getFilename() {
-		return filename;
+		String downFileName = "";
+		try {
+			downFileName = java.net.URLEncoder.encode(filename, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+	    return downFileName;
+		//return filename;
 	}
 	/**
 	 * @param filename the filename to set
@@ -223,55 +232,7 @@ public class SoftwareAction extends ActionSupport{
 	public void setSoftwareid(int softwareid) {
 		this.softwareid = softwareid;
 	}
-
-//	/**
-//	 * 默认上传
-//	 * @return
-//	 */
-//	public String execute() {
-//		InputStream is;
-//
-//		String pageErrorInfo = null;
-//		try {
-//			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
-//			is = new FileInputStream(file);
-//			String root = ServletActionContext.getServletContext().getRealPath("/softwares");//保存软件的目录
-//			File deskFile = new File(root,this.getFileFileName());
-//
-//			//输出到外存中
-//			OutputStream os = new FileOutputStream(deskFile);
-//			byte [] bytefer = new byte[400];
-//			int length = 0 ; 
-//			while((length = is.read(bytefer) )>0)
-//			{
-//				os.write(bytefer,0,length);
-//			}
-//			os.close();
-//			is.close();
-//			
-//			//软件在附件中newsid为0,且只保存名称
-//			NewsAttachment newsAttachment=new NewsAttachment();
-//			newsAttachment.setNewsId((long)0);
-//			newsAttachment.setAttachmentName(filename);
-//			if (!service.addNewsAttachment(newsAttachment)){
-//				service.deleteFile(root+File.separator+filename);//插入失败，删除文件
-//				msg = "failed"+pageErrorInfo;
-//				return ERROR;
-//			}
-//			msg = "successed";
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//			pageErrorInfo = e.getMessage();
-//			msg = "failed"+pageErrorInfo;
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//			msg = "failed"+pageErrorInfo;
-//		}
-//
-//		return SUCCESS;
-//	}
 	
-
 	/**
 	 * 默认上传
 	 * @return
@@ -379,10 +340,10 @@ public class SoftwareAction extends ActionSupport{
 	 */
 	public InputStream getTargetFile(){
 		NewsAttachment attachment = service.findNewsAttachmentById(sid);
-		String filepath = ServletActionContext.getServletContext().getRealPath("/")+"softwares"+File.separator; //文件保存路径
+		//String filepath = ServletActionContext.getServletContext().getRealPath("/")+"softwares"+File.separator; //文件保存路径
 	    filename = attachment.getAttachmentName();
 
-		return ServletActionContext.getServletContext().getResourceAsStream(filepath+filename);
+		return ServletActionContext.getServletContext().getResourceAsStream("softwares/"+filename);
 	}
 
 }

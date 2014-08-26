@@ -38,14 +38,14 @@
 	<c:forEach items="${newsInfos}" var="newsvo">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsInfoId}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('<%=request.getContextPath()%>/manage/admin/newsinfo/NewsInfoServlet?status=show&pid=${newsvo.newsInfoId}')">${newsvo.newsInfoTitle}</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('NewsInfo_show.action?pid=${newsvo.newsInfoId}')">${newsvo.newsInfoTitle}</a></span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsInfoDescribe}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsInfoTime}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsAuthor}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsType}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.adminName}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfoServlet?status=updatepre&pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}">修改</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfoServlet?status=delete&pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}">删除</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfo_updatepre?pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}">修改</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfo_delete?pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}">删除</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

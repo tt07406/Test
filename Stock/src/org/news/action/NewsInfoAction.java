@@ -7,15 +7,11 @@
  */
 package org.news.action;
 
-import java.io.IOException;
+import java.io.File;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletException;
-
-import org.apache.struts2.ServletActionContext;
 import org.news.model.Admin;
 import org.news.model.NewsAttachment;
 import org.news.model.NewsInfo;
@@ -27,8 +23,6 @@ import org.news.service.NewsTypeService;
 import org.news.utils.Logger;
 import org.news.utils.MessageUtil;
 
-import com.jspsmart.upload.SmartUpload;
-import com.jspsmart.upload.SmartUploadException;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -61,6 +55,131 @@ public class NewsInfoAction extends ActionSupport {
 	int page;
 	int size;
 	
+	String name;
+	String describe;
+	String author;
+	String content;
+	String [] typeid;
+	
+	 // 上传多个文件的集合文本
+    private List<File> attachment;
+    // /多个上传文件的类型集合
+    private List<String> attachmentContextType;
+   // 多个上传文件的文件名集合
+    private List<String> attachmentFileName;
+	
+	/**
+	 * @return the attachment
+	 */
+	public List<File> getAttachment() {
+		return attachment;
+	}
+
+	/**
+	 * @param attachment the attachment to set
+	 */
+	public void setAttachment(List<File> attachment) {
+		this.attachment = attachment;
+	}
+
+	/**
+	 * @return the attachmentContextType
+	 */
+	public List<String> getAttachmentContextType() {
+		return attachmentContextType;
+	}
+
+	/**
+	 * @param attachmentContextType the attachmentContextType to set
+	 */
+	public void setAttachmentContextType(List<String> attachmentContextType) {
+		this.attachmentContextType = attachmentContextType;
+	}
+
+	/**
+	 * @return the attachmentFileName
+	 */
+	public List<String> getAttachmentFileName() {
+		return attachmentFileName;
+	}
+
+	/**
+	 * @param attachmentFileName the attachmentFileName to set
+	 */
+	public void setAttachmentFileName(List<String> attachmentFileName) {
+		this.attachmentFileName = attachmentFileName;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the describe
+	 */
+	public String getDescribe() {
+		return describe;
+	}
+
+	/**
+	 * @param describe the describe to set
+	 */
+	public void setDescribe(String describe) {
+		this.describe = describe;
+	}
+
+	/**
+	 * @return the author
+	 */
+	public String getAuthor() {
+		return author;
+	}
+
+	/**
+	 * @param author the author to set
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	/**
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	/**
+	 * @param content the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	/**
+	 * @return the typeid
+	 */
+	public String[] getTypeid() {
+		return typeid;
+	}
+
+	/**
+	 * @param typeid the typeid to set
+	 */
+	public void setTypeid(String[] typeid) {
+		this.typeid = typeid;
+	}
+
 	/**
 	 * @return the uRL
 	 */
@@ -284,56 +403,16 @@ public class NewsInfoAction extends ActionSupport {
 	public void setTypes(List<NewsType> types) {
 		this.types = types;
 	}
-
-	/**
-	 * 在更新和添加新闻前，上传附件
-	 * @return
-	 */
-	public String execute() {
-		//使用SmartUpload上传
-		SmartUpload smart = new SmartUpload() ;
-
-		//这里添加和删除都要从smartupload中获得参数
-		try {
-			
-			smart.initialize(ServletActionContext.getPageContext());
-			smart.setMaxFileSize(1024*1024*20);//附件最大20M
-			smart.setCharset("utf-8");
-			smart.setDeniedFilesList("exe,bat");
-			smart.upload() ;
-		} catch (SmartUploadException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		if ("insert".equals(status)) {
-			return this.insert(smart);
-		}else if ("update".equals(status)) {
-			return this.update(smart);
-		}else{				
-		    return ERROR;
-		}
-	}
 	
 	/**
 	 * 更新新闻
 	 * @param smart
 	 * @return
 	 */
-	public String update(SmartUpload smart) {
-		//用上个页面获取一系列属性
-		String name = smart.getRequest().getParameter("name") ;
-		String describe = smart.getRequest().getParameter("describe") ;
-		String author = smart.getRequest().getParameter("author") ;
-		String content = smart.getRequest().getParameter("content") ;
-		
+	public String update() {				
 		ActionContext ctx = ActionContext.getContext();
 		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-		String[] newsType = smart.getRequest().getParameterValues("typeid");//一个新闻可能属于多个频道
+		String[] newsType = this.typeid;//一个新闻可能属于多个频道
 		int newsInfoId = 0;//新闻ID
 		
 		setMsg("无法获取类别");
@@ -348,18 +427,14 @@ public class NewsInfoAction extends ActionSupport {
 				type.append(newsType[i]+",");
 			}
 			setMsg("新闻增加失败！");
-			newsInfoId = Integer.parseInt(smart.getRequest().getParameter("pid")) ;
+			newsInfoId = pid ;
 			news = new NewsInfo(newsInfoId,name,describe,content,
 					service.searchNewsInfo(newsInfoId).getNewsInfoTime(),author,admin.getAdminId(),type.toString(),1);//创建时间不变
 			try {//更新数据库
-				if(service.updateNewsInformation(news,smart)){
+				if(service.updateNewsInformation(news,attachment,attachmentFileName)){
 					setMsg("新闻增加成功！");
 				}
 
-				//获取页面的参数向下传递
-				setPg(smart.getRequest().getParameter("pg"));
-				setCp(smart.getRequest().getParameter("cp"));
-				setLs(smart.getRequest().getParameter("ls"));
 				return SUCCESS;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -373,17 +448,12 @@ public class NewsInfoAction extends ActionSupport {
 	 * @param smart
 	 * @return
 	 */
-	public String insert(SmartUpload smart){
-		//用上个页面获取一系列属性
-		String name = smart.getRequest().getParameter("name") ;
-		String describe = smart.getRequest().getParameter("describe") ;
-		String author = smart.getRequest().getParameter("author") ;
-		String content = smart.getRequest().getParameter("content") ;
-		
+	public String insert(){
 		ActionContext ctx = ActionContext.getContext();
 		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-		String[] newsType = smart.getRequest().getParameterValues("typeid");//一个新闻可能属于多个频道
+		String[] newsType = this.typeid;//一个新闻可能属于多个频道
 		int newsInfoId = 0;//新闻ID
+		
 		setMsg("无法获取类别");
 		
 		if (admin == null){
@@ -401,7 +471,7 @@ public class NewsInfoAction extends ActionSupport {
 			news = new NewsInfo(newsInfoId,name,describe,content,
 					new Date(new java.util.Date().getTime()),author,admin.getAdminId(),type.toString(),0);//创建时间为当前时间
 			try {//更新数据库
-				if(service.addNewsInfo(news,smart)){
+				if(service.addNewsInfo(news,attachment,attachmentFileName)){
 					setMsg("新闻增加成功！");
 				}
 				return SUCCESS;

@@ -26,9 +26,12 @@
 		<action name="uploadAction"
 			class="org.news.action.UploadAction">
 			<result name="success">/index.jsp</result>
+		</action>
+		<action name="downloadAttachmentAction" method="download"
+			class="org.news.action.DownloadAttachmentAction">
 		</action></package>
 	<!-- 全局国际化 -->
-	<constant name="struts.multipart.maxSize" value="90000000"/>
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
 	<constant name="struts.custom.i18n.resources" value="Message"></constant>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<constant name="struts.devMode" value="true"></constant>

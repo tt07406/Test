@@ -112,7 +112,6 @@
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="4">
-		    <input type="hidden" name="status" value="insert">
 		    <input type="hidden" name="cp" value="<%=request.getParameter("cp")%>">
 			<input type="hidden" name="ls" value="<%=request.getParameter("ls")%>">
 			<input type="hidden" name="pg" value="<%=request.getParameter("pg")%>">
