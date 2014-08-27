@@ -110,6 +110,7 @@ window.attachEvent("onload", correctPNG);
 							   </s:iterator>
 							</td>
 						  </tr>
+						  <tr><td>${requestScope.tip}</td></tr>
                         </table>
                         <br>
                     </form></td>

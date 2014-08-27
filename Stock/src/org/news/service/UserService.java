@@ -120,4 +120,16 @@ public class UserService {
     	return userDAO.getAllUsers(keyword, currentPage, linesize);
     }
 
+    /**
+     * 查询用户名是否存在
+     * @param name
+     * @return
+     */
+    public boolean findUserName(String name){
+    	if (null == userDAO.findUsersByName(name)){
+    		return false;
+    	}else{
+    		return true;
+    	}
+    }
 }

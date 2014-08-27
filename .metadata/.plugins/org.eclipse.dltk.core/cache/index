@@ -139,7 +139,6 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/image.html" timestamp="1277375877406" lastAccessTime="1408973047697"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_update.jsp" timestamp="1408549643272" lastAccessTime="1408887613080"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_operate_do.jsp" timestamp="1408549144029" lastAccessTime="1408887613343"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1408375323814" lastAccessTime="1408973047806"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/split_page_plugin.jsp" timestamp="1405170260314" lastAccessTime="1408973047894"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_operate_do.jsp" timestamp="1408461542107" lastAccessTime="1408973048057"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/flash.html" timestamp="1277375877406" lastAccessTime="1408973048079"/>
@@ -168,7 +167,8 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/swfupload.queue.js" timestamp="1408898918220" lastAccessTime="1408898919340"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/swfupload.swfobject.js" timestamp="1408898917894" lastAccessTime="1408898919448"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp" timestamp="1409063642656" lastAccessTime="1409063643735"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" timestamp="1409063691805" lastAccessTime="1409063692587"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" timestamp="1409063691805" lastAccessTime="1409145961827"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp" timestamp="1409064588359" lastAccessTime="1409064588953"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp" timestamp="1409065645293" lastAccessTime="1409065646133"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp" timestamp="1409065645293" lastAccessTime="1409145962935"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1409152179269" lastAccessTime="1409152180125"/>
 </cache:CacheIndex>

@@ -1,0 +1,26 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：ValidateNameAction
+ * 
+ * 创建日期：2014-08-27
+ */
+package org.news.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+ * 验证重复性输入的Action
+ * 
+ * @author tt
+ * @version 14.8.18
+ */
+public class ValidateNameAction extends ActionSupport {
+
+	private static final long serialVersionUID = 7238313406542433777L;
+
+	public String execute() {
+		// TODO Auto-generated method stub
+		return SUCCESS;
+	}
+}
