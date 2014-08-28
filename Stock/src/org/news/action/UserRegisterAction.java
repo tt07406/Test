@@ -35,9 +35,25 @@ public class UserRegisterAction extends ActionSupport {
 	String phone;//电话号码
 	String idNum;//身份证号
 	
+	String conf;//验证密码
+	
 	int result;//结果	
 	String user;//用户账号
 	
+	/**
+	 * @return the conf
+	 */
+	public String getConf() {
+		return conf;
+	}
+
+	/**
+	 * @param conf the conf to set
+	 */
+	public void setConf(String conf) {
+		this.conf = conf;
+	}
+
 	/**
 	 * @return the result
 	 */

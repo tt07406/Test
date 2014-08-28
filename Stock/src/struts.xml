@@ -17,6 +17,7 @@
 			<result name="error">
 				/WEB-INF/pages/regist_do.jsp
 			</result>
+			<result name="input">/WEB-INF/pages/regist.jsp</result>
 		</action>
 		<action name="userLogin"
 			class="org.news.action.UserLoginAction">
@@ -32,7 +33,7 @@
 		</action></package>
 	<!-- 全局国际化 -->
 	<constant name="struts.multipart.maxSize" value="1073741824"/>
-	<constant name="struts.custom.i18n.resources" value="Message"></constant>
+	<constant name="struts.custom.i18n.resources" value="mess"></constant>
 	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<constant name="struts.devMode" value="true"></constant>
 	<constant name="struts.multipart.saveDir" value="/tmp"></constant>

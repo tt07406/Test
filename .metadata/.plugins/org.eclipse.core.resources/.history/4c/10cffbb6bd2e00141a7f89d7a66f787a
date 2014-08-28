@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+  <field name="mid">
+      <field-validator type="required">
+          <message>必须输入登录名</message>
+      </field-validator>
+      <field-validator type="regex">
+          <param name="expression"><![CDATA[(/^[a-zA-Z]\w{5,17}$/)]]></param>
+          <message>以字母开头，长度在6-18之间！</message>
+      </field-validator>
+  </field>
+  <field name="realName">
+      <field-validator type="required">
+          <message>必须输入真实姓名</message>
+      </field-validator>
+  </field>
+  <field name="password">
+  	  <field-validator type="required">
+          <message>必须输入密码</message>
+      </field-validator>	
+      <field-validator type="stringlength">
+          <param name="minlength">5</param>
+         <param name="maxlength">15</param>
+         <message>密码必须是5~15位！</message>
+      </field-validator>
+  </field>
+  <field name="conf">
+  	  <field-validator type="required">
+          <message>必须输入验证密码</message>
+      </field-validator>		
+      <field-validator type="fieldexpression">
+        <!--指定逻辑表达式 -->
+             <param name="expression"><![CDATA[#password==#conf]]></param>
+             <message>密码必须和确认密码相等</message>
+       </field-validator>
+  </field>
+  <field name="email">
+  	  <field-validator type="required">
+          <message>必须输入电子邮件</message>
+      </field-validator>		
+      <field-validator type="email">
+          <message>Email地址格式错误！</message>
+      </field-validator>
+  </field>
+  <field name="phone">
+  	  <field-validator type="required">
+          <message>必须输入电话</message>
+      </field-validator>		
+      <field-validator type="regex">
+          <param name="expression"><![CDATA[(/^((\d{3,4})|\d{3,4}-)?\d{7,8}$/)]]></param>
+          <message>联系电话格式错误！</message>
+     </field-validator>
+  </field>
+  <field name="idNum">
+  	  <field-validator type="required">
+          <message>必须输入身份证号</message>
+      </field-validator>		
+      <field-validator type="regex">
+          <param name="expression"><![CDATA[(/^\d{15}$)|(^\d{17}([0-9]|X)$/)]]></param>
+          <message>输入的身份证号长度不对，或者号码不符合规定！</message>
+     </field-validator>
+  </field>
+</validators>

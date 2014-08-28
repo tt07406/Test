@@ -54,6 +54,18 @@ public final class admin_005finsert_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head><title>增加管理员界面</title>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(request.getContextPath());
+      out.write("/js/jquery-1.11.1.min.js\">\r\n");
+      out.write("</script>\r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("\tfunction validateAccount(value){\r\n");
+      out.write("\t\tvalidateAdminName(value);\r\n");
+      out.write("\t\t$(\"#result\").load(\"");
+      out.print(request.getContextPath());
+      out.write("/manage/validateName.action\",{userName:value,type:1});\r\n");
+      out.write("\t}\r\n");
+      out.write("</script>\r\n");
       out.write("<style type=\"text/css\">\r\n");
       out.write("<!--\r\n");
       out.write(".STYLE6 {font-size: 12px}\r\n");
@@ -88,7 +100,7 @@ public final class admin_005finsert_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t</tr>\r\n");
       out.write("\t<tr onMouseOver=\"changeColor(this,'white')\" onMouseOut=\"changeColor(this,'F2F2F2')\">\r\n");
       out.write("\t\t<td><font size=\"2\">名称：</font></td>\r\n");
-      out.write("\t\t<td><input type=\"text\" name=\"adminName\" onBlur=\"validateAdminName(this.value)\"></td>\r\n");
+      out.write("\t\t<td><input type=\"text\" name=\"adminName\" onBlur=\"validateAccount(this.value)\"><div id=\"result\"></div></td>\r\n");
       out.write("\t\t<td><span id=\"adminid_msg\"><font color=\"RED\">*</font></span></td>\r\n");
       out.write("\t</tr>\r\n");
       out.write("\t<tr onMouseOver=\"changeColor(this,'white')\" onMouseOut=\"changeColor(this,'F2F2F2')\">\r\n");

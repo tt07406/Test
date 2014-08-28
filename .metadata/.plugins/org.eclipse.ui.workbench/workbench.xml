@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="79" version="2.0">
+<workbench progressCount="24" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="75" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -21,20 +21,22 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="175" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="147" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="115" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.imageeditor.editor.ImageEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.struts2.editor" itemType="typeToolBarContribution" x="342" y="22"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -49,23 +51,30 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
+<part id="5"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SoftwareAction.java" partName="SoftwareAction.java" path="E:/file/GitHub/Test/Stock/src/org/news/action/SoftwareAction.java" title="SoftwareAction.java" tooltip="Stock/src/org/news/action/SoftwareAction.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/action/SoftwareAction.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="67" selectionOffset="657" selectionTopPixel="0"/>
-</editor>
 <editor id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" partName="struts-manage.xml" path="E:/file/GitHub/Test/Stock/src/struts-manage.xml" title="struts-manage.xml" tooltip="Stock/src/struts-manage.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts-manage.xml"/>
 </editor>
 <editor id="com.genuitec.eclipse.struts2.editor" name="struts.xml" partName="struts.xml" path="E:/file/GitHub/Test/Stock/src/struts.xml" title="struts.xml" tooltip="Stock/src/struts.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ValidateNameAction.java" partName="ValidateNameAction.java" path="E:/file/GitHub/Test/Stock/src/org/news/action/ValidateNameAction.java" title="ValidateNameAction.java" tooltip="Stock/src/org/news/action/ValidateNameAction.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/action/ValidateNameAction.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="959" selectionTopPixel="569"/>
+<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="member_validate.js" partName="member_validate.js" path="E:/file/GitHub/Test/Stock/WebRoot/js/member_validate.js" title="member_validate.js" tooltip="Stock/WebRoot/js/member_validate.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/WebRoot/js/member_validate.js"/>
+<editorState selectionHorizontalPixel="510" selectionLength="22" selectionOffset="3171" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_en_US.properties" partName="mess_en_US.properties" path="E:/file/GitHub/Test/Stock/src/mess_en_US.properties" title="mess_en_US.properties" tooltip="E:/file/GitHub/Test/Stock/src/mess_en_US.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/mess_en_US.properties"/>
+</editor>
+<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="UserRegisterAction-validation.xml" partName="UserRegisterAction-validation.xml" path="E:/file/GitHub/Test/Stock/src/org/news/action/UserRegisterAction-validation.xml" title="UserRegisterAction-validation.xml" tooltip="Stock/src/org/news/action/UserRegisterAction-validation.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
+</editor>
+<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_zh_CN.properties" partName="mess_zh_CN.properties" path="E:/file/GitHub/Test/Stock/src/mess_zh_CN.properties" title="mess_zh_CN.properties" tooltip="E:/file/GitHub/Test/Stock/src/mess_zh_CN.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/mess_zh_CN.properties"/>
 </editor>
 </editors>
 <views>
@@ -134,7 +143,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
+<perspectives activePart="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
@@ -324,154 +333,69 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/SoftwareAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/mess_zh_CN.properties"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/mess_en_US.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Stock/WebRoot/js/member_validate.js"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts-manage.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/AuthorityInterceptor.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin_top.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.core.runtime.xml.source" path="/Stock/src/struts-manage.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/login.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/ValidateNameAction.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/UserRegisterAction.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/service/UserService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/dao/UsersDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
 </editors>
-<item historyLabel="struts-manage.xml" index="2">
-<position/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1">
+<position info="not_deleted" x="796" y="141"/>
 </item>
-<item historyLabel="struts-manage.xml" index="5">
-<position info="not_deleted" x="886" y="0"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
+<item historyLabel="member_validate.js" index="3">
+<position info="not_deleted" x="3171" y="22"/>
 </item>
-<item historyLabel="struts-manage.xml" index="5">
-<position info="not_deleted" x="193" y="0"/>
+<item historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="member_validate.js" index="3">
+<position info="not_deleted" x="3171" y="22"/>
 </item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="546" y="0"/>
-</item>
-<item historyLabel="struts-manage.xml" index="2"/>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="546" y="0"/>
-</item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1268" y="0"/>
-</item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1402" y="0"/>
-</item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1328" y="0"/>
-</item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="108" y="0"/>
-</item>
-<item historyLabel="struts.xml" index="1"/>
-<item historyLabel="struts-manage.xml" index="2"/>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="108" y="0"/>
-</item>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1350" y="0"/>
-</item>
-<item historyLabel="admin_top.jsp" index="4"/>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1350" y="0"/>
-</item>
-<item historyLabel="login.jsp" index="6"/>
-<item historyLabel="AuthorityInterceptor.java" index="3">
-<position info="not_deleted" x="1350" y="0"/>
-</item>
-<item historyLabel="struts-manage.xml" index="2"/>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="423" y="0"/>
-</item>
-<item historyLabel="SoftwareAction.java" index="0">
-<position info="not_deleted" x="0" y="75"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="364" y="0"/>
-</item>
-<item historyLabel="SoftwareAction.java" index="0">
-<position info="not_deleted" x="657" y="67"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="615" y="0"/>
-</item>
-<item historyLabel="UserRegisterAction.java" index="8">
-<position info="not_deleted" x="485" y="52"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="511" y="0"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="261" y="11"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="1585" y="0"/>
-</item>
-<item historyLabel="UsersDAO.java" index="10">
-<position/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="1585" y="0"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="2318" y="0"/>
-</item>
-<item historyLabel="UserRegisterAction.java" index="8">
-<position info="not_deleted" x="485" y="52"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="2447" y="0"/>
-</item>
-<item historyLabel="UsersDAO.java" index="10">
-<position info="not_deleted" x="7128" y="15"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="2447" y="0"/>
-</item>
-<item historyLabel="UserRegisterAction.java" index="8">
-<position info="not_deleted" x="485" y="52"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="511" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="959" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="951" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="895" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="1028" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="1186" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="203" y="0"/>
-</item>
-<item historyLabel="UserService.java" index="9">
-<position info="not_deleted" x="2447" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="203" y="0"/>
-</item>
-<item historyLabel="struts-manage.xml" index="2">
-<position info="not_deleted" x="8554" y="0"/>
-</item>
-<item historyLabel="struts-manage.xml" index="5">
-<position info="not_deleted" x="8427" y="0"/>
-</item>
-<item historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="203" y="0"/>
-</item>
-<item historyLabel="struts-manage.xml" index="2"/>
-<item active="true" historyLabel="ValidateNameAction.java" index="7">
-<position info="not_deleted" x="203" y="0"/>
-</item>
+<item historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="struts.xml" index="4"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="5"/>
+<item historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item historyLabel="UserRegisterAction-validation.xml" index="5"/>
+<item historyLabel="mess_zh_CN.properties" index="1"/>
+<item active="true" historyLabel="mess_en_US.properties" index="2"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -498,35 +422,47 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_zh_CN.properties" tooltip="Stock/src/mess_zh_CN.properties">
+<persistable path="/Stock/src/mess_zh_CN.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="UserRegisterAction-validation.xml" tooltip="Stock/src/org/news/action/UserRegisterAction-validation.xml">
+<persistable path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_en_US.properties" tooltip="Stock/src/mess_en_US.properties">
+<persistable path="/Stock/src/mess_en_US.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="Message_en_US.properties" tooltip="Stock/src/Message_en_US.properties">
+<persistable path="/Stock/src/Message_en_US.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="Message_zh_CN.properties" tooltip="Stock/src/Message_zh_CN.properties">
+<persistable path="/Stock/src/Message_zh_CN.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_insert.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminService.java" tooltip="Stock/src/org/news/service/AdminService.java">
+<persistable path="/Stock/src/org/news/service/AdminService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ValidateNameAction.java" tooltip="Stock/src/org/news/action/ValidateNameAction.java">
+<persistable path="/Stock/src/org/news/action/ValidateNameAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserRegisterAction.java" tooltip="Stock/src/org/news/action/UserRegisterAction.java">
+<persistable path="/Stock/src/org/news/action/UserRegisterAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="login.jsp" tooltip="Stock/WebRoot/WEB-INF/pages/login.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/pages/login.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="regist.jsp" tooltip="Stock/WebRoot/WEB-INF/pages/regist.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/pages/regist.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="member_validate.js" tooltip="Stock/WebRoot/js/member_validate.js">
+<persistable path="/Stock/WebRoot/js/member_validate.js"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersDAO.java" tooltip="Stock/src/org/news/dao/UsersDAO.java">
 <persistable path="/Stock/src/org/news/dao/UsersDAO.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserService.java" tooltip="Stock/src/org/news/service/UserService.java">
 <persistable path="/Stock/src/org/news/service/UserService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserRegisterAction.java" tooltip="Stock/src/org/news/action/UserRegisterAction.java">
-<persistable path="/Stock/src/org/news/action/UserRegisterAction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ValidateNameAction.java" tooltip="Stock/src/org/news/action/ValidateNameAction.java">
-<persistable path="/Stock/src/org/news/action/ValidateNameAction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="login.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/login.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/login.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_top.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin_top.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin_top.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminLogout.java" tooltip="Stock/src/org/news/action/AdminLogout.java">
-<persistable path="/Stock/src/org/news/action/AdminLogout.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UploadAction.java" tooltip="Stock/src/org/news/action/UploadAction.java">
-<persistable path="/Stock/src/org/news/action/UploadAction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AuthorityInterceptor.java" tooltip="Stock/src/org/news/utils/AuthorityInterceptor.java">
-<persistable path="/Stock/src/org/news/utils/AuthorityInterceptor.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DownloadAttachmentServlet.java" tooltip="MVCNews/src/org/news/servlet/DownloadAttachmentServlet.java">
-<persistable path="/MVCNews/src/org/news/servlet/DownloadAttachmentServlet.java"/>
 </file>
 </mruList>
 </workbench>

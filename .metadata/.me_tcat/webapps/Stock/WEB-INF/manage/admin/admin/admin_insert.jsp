@@ -2,6 +2,14 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head><title>增加管理员界面</title>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js">
+</script>
+<script type="text/javascript">
+	function validateAccount(value){
+		validateAdminName(value);
+		$("#result").load("<%=request.getContextPath()%>/manage/validateName.action",{userName:value,type:1});
+	}
+</script>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -32,7 +40,7 @@
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">名称：</font></td>
-		<td><input type="text" name="adminName" onBlur="validateAdminName(this.value)"></td>
+		<td><input type="text" name="adminName" onBlur="validateAccount(this.value)"><div id="result"></div></td>
 		<td><span id="adminid_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

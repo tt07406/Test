@@ -144,13 +144,11 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/flash.html" timestamp="1277375877406" lastAccessTime="1408973048079"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_insert.jsp" timestamp="1408549569812" lastAccessTime="1408973048131"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/remote_image.html" timestamp="1277375877406" lastAccessTime="1408887613702"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp" timestamp="1408549610371" lastAccessTime="1408973048315"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_operate_do.jsp" timestamp="1408542580304" lastAccessTime="1408887614054"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/users/users_list.jsp" timestamp="1408630837082" lastAccessTime="1408973047239"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/users/users_update.jsp" timestamp="1408630946394" lastAccessTime="1408887613945"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/users/users_operate_do.jsp" timestamp="1408630969814" lastAccessTime="1408887613598"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/users/users_show.jsp" timestamp="1408630999067" lastAccessTime="1408887613365"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/regist.jsp" timestamp="1408634263215" lastAccessTime="1408887613992"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/regist_do.jsp" timestamp="1408634432674" lastAccessTime="1408887613964"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/welcome.jsp" timestamp="1408635429081" lastAccessTime="1408973037151"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/logout.jsp" timestamp="1408635450340" lastAccessTime="1408973047595"/>
@@ -158,7 +156,6 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/SoftwareList.jsp" timestamp="1408715782916" lastAccessTime="1408973048263"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/softwares_operate_do.jsp" timestamp="1408716322726" lastAccessTime="1408973047476"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/left.jsp" timestamp="1408717473530" lastAccessTime="1408887613625"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/member_validate.js" timestamp="1404806038542" lastAccessTime="1408887613615"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/SoftwareUpload.jsp" timestamp="1408893797334" lastAccessTime="1408973046202"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/index.jsp" timestamp="1408896152549" lastAccessTime="1408973045660"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/fileprogress.js" timestamp="1408898917977" lastAccessTime="1408898918860"/>
@@ -166,9 +163,12 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/swfupload.js" timestamp="1408898918170" lastAccessTime="1408898919197"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/swfupload.queue.js" timestamp="1408898918220" lastAccessTime="1408898919340"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/swfupload.swfobject.js" timestamp="1408898917894" lastAccessTime="1408898919448"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp" timestamp="1409063642656" lastAccessTime="1409063643735"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp" timestamp="1409063642656" lastAccessTime="1409228155887"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" timestamp="1409063691805" lastAccessTime="1409145961827"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp" timestamp="1409064588359" lastAccessTime="1409064588953"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp" timestamp="1409065645293" lastAccessTime="1409145962935"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1409152179269" lastAccessTime="1409152180125"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp" timestamp="1409064588359" lastAccessTime="1409228155625"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp" timestamp="1409065645293" lastAccessTime="1409228148881"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1409152179269" lastAccessTime="1409228155703"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/jquery-1.11.1.min.js" timestamp="1409228777698" lastAccessTime="1409228778505"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/regist.jsp" timestamp="1409232903159" lastAccessTime="1409232904114"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp" timestamp="1409236340744" lastAccessTime="1409236342127"/>
 </cache:CacheIndex>

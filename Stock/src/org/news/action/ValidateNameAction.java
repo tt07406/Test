@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.news.service.AdminService;
 import org.news.service.UserService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -25,9 +26,25 @@ public class ValidateNameAction extends ActionSupport {
 
 	private static final long serialVersionUID = 7238313406542433777L;
 	private UserService userService = new UserService();
+	private AdminService adminService = new AdminService();
 	
 	private String userName;//注册的用户账号
 	private String tip;//返回的提示
+	private int type = 0;//0为会员，1为管理员
+
+	/**
+	 * @return the type
+	 */
+	public int getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(int type) {
+		this.type = type;
+	}
 
 	/**
 	 * @return the userName
@@ -47,11 +64,21 @@ public class ValidateNameAction extends ActionSupport {
 		return new ByteArrayInputStream(tip.getBytes("utf-8"));
 	}
 	public String execute() {
-		if (userService.findUserName(userName)){
-			tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+
+		if (type == 0){
+			if (userService.findUserName(userName)){
+				tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+			}else{
+				tip = "";
+			}
 		}else{
-			tip = "<span style='color:red'>" + userName + "未注册，您可以使用</span>";
+			if (adminService.findAdminName(userName)){
+				tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+			}else{
+				tip = "";
+			}
 		}
+		
 		return SUCCESS;
 	}
 }

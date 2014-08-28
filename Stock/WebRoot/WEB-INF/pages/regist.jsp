@@ -1,4 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%> 
 	<script language="javascript">
 		function changeColor(obj,color){
 			obj.bgColor = color ;
@@ -10,7 +11,8 @@
 	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/member_validate.js">
 	</script>
 <center> 
-<form action="userRegister" method="post" onSubmit="return validate(this)">
+<s:fielderror/>
+<form action="userRegister" method="post" >
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">

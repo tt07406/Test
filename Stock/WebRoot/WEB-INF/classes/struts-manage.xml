@@ -218,7 +218,7 @@
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->
 			<result>/WEB-INF/manage/{1}.jsp</result>
 		</action>
-		<action name="validateNameAction"
+		<action name="validateName"
 			class="org.news.action.ValidateNameAction">
 			<result name="success" type="stream">
 				<param name="contentType">text/html</param>
