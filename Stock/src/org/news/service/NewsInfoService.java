@@ -41,7 +41,9 @@ public class NewsInfoService {
 	public boolean addNewsInfo(NewsInfo newsInfo,
 			List<java.io.File> attachment, List<String> attachmentFileName) throws IOException{
 		Long currentID = (long)newsInfo.getNewsInfoId();
-    	
+    	if (attachment == null){
+    		return newsInfoDAO.addNewsInfo(newsInfo);
+    	}
 		//先上传附件
 		for(int i=0;i<attachment.size();i++){
 
@@ -92,6 +94,9 @@ public class NewsInfoService {
 		if (newsInfoDAO.updateNewsInformation(newsInfo) == null){
 			return false;
 	    }else{
+	    	if (attachment == null){
+	    		return true;
+	    	}
 	    	Long currentID = (long)newsInfo.getNewsInfoId();
 			for(int i=0;i<attachment.size();i++){
 

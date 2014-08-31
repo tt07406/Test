@@ -36,6 +36,9 @@ public class UserService {
 	 * @return 操作是否成功
 	 */
 	public boolean addUsers(Users user){
+		if (findUserName(user.getUsersName())){//重复性验证
+			return false;
+		}
 		if (userDAO.findUsersById(user.getUsersId()) == null){//不存在则插入
 			return userDAO.addUser(user);
 		}else{

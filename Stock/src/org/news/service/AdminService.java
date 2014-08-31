@@ -36,6 +36,9 @@ public class AdminService {
 	 * @return 操作是否成功
 	 */
 	public boolean addAdmin(Admin user){
+		if (findAdminName(user.getAdminName())){//重复性验证
+			return false;
+		}
 		if (adminDAO.findAdminById(user.getAdminId()) == null){//不存在则插入
 			return adminDAO.addAdmin(user);
 		}else{

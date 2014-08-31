@@ -9,6 +9,8 @@
 -->
 </style></head>
 <body>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js">
+</script>
 	<script language="javascript">
 		function changeColor(obj,color){
 			obj.bgColor = color ;
@@ -22,7 +24,12 @@
 	</script>
 	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/newstype_validate.js">
 	</script>
-
+<script type="text/javascript">
+	function validateAccount(value){
+		validateName(value);
+		$("#result").load("<%=request.getContextPath()%>/manage/validateName.action",{userName:value,type:2});
+	}
+</script>
 <center> 
 <form action="NewsType_insert" method="post" onSubmit="return validate(this)">
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
@@ -32,7 +39,7 @@
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">名称：</font></td>
-		<td><input type="text" name="name" onBlur="validateName(this.value)"></td>
+		<td><input type="text" name="name" onBlur="validateAccount(this.value)"><div id="result"></div></td>
 		<td><span id="name_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

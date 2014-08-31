@@ -185,4 +185,33 @@ public class NewsTypeDAO {
 		
 		 return type;    	 
      }
+     
+     /**
+      * 可通过名称来查找频道的信息
+      * @param typename
+      * @return
+      */
+     public NewsType findNewsTypeByName(String typename){
+    	 NewsType type = null;//保存结果
+    	 sql = "select * from newstype where newsTypeName = ?";
+    	 
+ 		con = DB_UTILS.getConnection();//获取连接
+		try {
+			pstmt = con.prepareStatement(sql);							//实例化操作
+			pstmt.setString(1, typename);
+			
+			rs = pstmt.executeQuery();//取得查询结果
+			if (rs.next()) {
+				int newsTypeId = rs.getInt("newsTypeId");
+ 				String newsTypeDescribe = rs.getString("newsTypeDescripe");
+ 				type = new NewsType(newsTypeId, typename ,newsTypeDescribe);			
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DB_UTILS.close(con, pstmt, rs);
+		}
+		
+		 return type;    	 
+     }
 }

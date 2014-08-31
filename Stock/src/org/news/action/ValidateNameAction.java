@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.news.service.AdminService;
+import org.news.service.NewsTypeService;
 import org.news.service.UserService;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.news.utils.Constant.Type;
 
 /**
  * 验证重复性输入的Action
@@ -27,10 +29,11 @@ public class ValidateNameAction extends ActionSupport {
 	private static final long serialVersionUID = 7238313406542433777L;
 	private UserService userService = new UserService();
 	private AdminService adminService = new AdminService();
+	private NewsTypeService newstypeService =  new NewsTypeService();
 	
 	private String userName;//注册的用户账号
 	private String tip;//返回的提示
-	private int type = 0;//0为会员，1为管理员
+	private int type = 0;//0为会员，1为管理员，3为新闻类别，4为新闻标题
 
 	/**
 	 * @return the type
@@ -64,20 +67,34 @@ public class ValidateNameAction extends ActionSupport {
 		return new ByteArrayInputStream(tip.getBytes("utf-8"));
 	}
 	public String execute() {
-
-		if (type == 0){
-			if (userService.findUserName(userName)){
-				tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
-			}else{
-				tip = "";
-			}
-		}else{
-			if (adminService.findAdminName(userName)){
-				tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
-			}else{
-				tip = "";
-			}
+		Type style = Type.values()[this.type];
+		
+		switch (style){
+			case MEMBER:
+				if (userService.findUserName(userName)){
+					tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+				}else{
+					tip = "";
+				}
+				break;
+			case ADMIN:
+				if (adminService.findAdminName(userName)){
+					tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+				}else{
+					tip = "";
+				}
+				break;
+			case NEWSTYPE:
+				if (newstypeService.findNewsTypeName(userName)){
+					tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+				}else{
+					tip = "";
+				}
+				break;
+			default:
+				break;
 		}
+	
 		
 		return SUCCESS;
 	}
