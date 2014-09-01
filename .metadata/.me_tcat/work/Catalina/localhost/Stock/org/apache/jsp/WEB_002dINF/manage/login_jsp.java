@@ -119,7 +119,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      </tr>\r\n");
       out.write("    </table></td>\r\n");
       out.write("  </tr>\r\n");
-      out.write("  <tr>\r\n");
+      out.write("  <tr valign=\"middle\">\r\n");
       out.write("    <td valign=\"top\"><table width=\"100%\" height=\"532\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"login_bg\">\r\n");
       out.write("      <tr>\r\n");
       out.write("        <td width=\"49%\" align=\"right\"><table width=\"91%\" height=\"532\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"login_bg2\">\r\n");

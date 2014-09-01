@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="24" version="2.0">
+<workbench progressCount="27" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="75" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -21,12 +21,13 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="175" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="147" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="115" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -36,7 +37,7 @@
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.struts2.editor" itemType="typeToolBarContribution" x="342" y="22"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -57,24 +58,26 @@
 </folder>
 </info>
 </editorArea>
-<editor id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" partName="struts-manage.xml" path="E:/file/GitHub/Test/Stock/src/struts-manage.xml" title="struts-manage.xml" tooltip="Stock/src/struts-manage.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts-manage.xml"/>
-</editor>
 <editor id="com.genuitec.eclipse.struts2.editor" name="struts.xml" partName="struts.xml" path="E:/file/GitHub/Test/Stock/src/struts.xml" title="struts.xml" tooltip="Stock/src/struts.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts.xml"/>
 </editor>
-<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="member_validate.js" partName="member_validate.js" path="E:/file/GitHub/Test/Stock/WebRoot/js/member_validate.js" title="member_validate.js" tooltip="Stock/WebRoot/js/member_validate.js" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/WebRoot/js/member_validate.js"/>
-<editorState selectionHorizontalPixel="510" selectionLength="22" selectionOffset="3171" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" partName="NewsInfoService.java" path="E:/file/GitHub/Test/Stock/src/org/news/service/NewsInfoService.java" title="NewsInfoService.java" tooltip="Stock/src/org/news/service/NewsInfoService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/service/NewsInfoService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1131" selectionTopPixel="629"/>
 </editor>
-<editor activePart="true" focus="true" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_en_US.properties" partName="mess_en_US.properties" path="E:/file/GitHub/Test/Stock/src/mess_en_US.properties" title="mess_en_US.properties" tooltip="E:/file/GitHub/Test/Stock/src/mess_en_US.properties" workbook="DefaultEditorWorkbook">
-<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/mess_en_US.properties"/>
+<editor id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" partName="struts-manage.xml" path="E:/file/GitHub/Test/Stock/src/struts-manage.xml" title="struts-manage.xml" tooltip="Stock/src/struts-manage.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts-manage.xml"/>
 </editor>
-<editor id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="UserRegisterAction-validation.xml" partName="UserRegisterAction-validation.xml" path="E:/file/GitHub/Test/Stock/src/org/news/action/UserRegisterAction-validation.xml" title="UserRegisterAction-validation.xml" tooltip="Stock/src/org/news/action/UserRegisterAction-validation.xml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoDAO.java" partName="NewsInfoDAO.java" path="E:/file/GitHub/Test/Stock/src/org/news/dao/NewsInfoDAO.java" title="NewsInfoDAO.java" tooltip="Stock/src/org/news/dao/NewsInfoDAO.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9704" selectionTopPixel="5229"/>
 </editor>
-<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_zh_CN.properties" partName="mess_zh_CN.properties" path="E:/file/GitHub/Test/Stock/src/mess_zh_CN.properties" title="mess_zh_CN.properties" tooltip="E:/file/GitHub/Test/Stock/src/mess_zh_CN.properties" workbook="DefaultEditorWorkbook">
-<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/mess_zh_CN.properties"/>
+<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" partName="database.properties" path="E:/file/GitHub/Test/Stock/src/database.properties" title="database.properties" tooltip="E:/file/GitHub/Test/Stock/src/database.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/database.properties"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pools.java" partName="Pools.java" path="E:/file/GitHub/Test/Stock/src/org/news/utils/Pools.java" title="Pools.java" tooltip="Stock/src/org/news/utils/Pools.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/utils/Pools.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1560" selectionTopPixel="1334"/>
 </editor>
 </editors>
 <views>
@@ -94,8 +97,7 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -143,7 +145,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
@@ -335,44 +337,21 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
 <editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/mess_zh_CN.properties"/>
-<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/mess_en_US.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/mess_en_US.properties"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/Stock/WebRoot/js/member_validate.js"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts-manage.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/MVCNews/src/org/news/service/NewsInfoService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/service/NewsInfoService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/log4j.properties"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/database.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/ConnListener.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/Pools.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" path="/Stock/src/makeTables.sql"/>
 </editors>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1">
-<position info="not_deleted" x="796" y="141"/>
-</item>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
-<item historyLabel="mess_zh_CN.properties" index="1"/>
-<item historyLabel="UserRegisterAction-validation.xml" index="0"/>
 <item historyLabel="mess_zh_CN.properties" index="1"/>
 <item historyLabel="UserRegisterAction-validation.xml" index="0"/>
 <item historyLabel="mess_zh_CN.properties" index="1"/>
@@ -395,7 +374,71 @@
 <item historyLabel="mess_zh_CN.properties" index="1"/>
 <item historyLabel="UserRegisterAction-validation.xml" index="5"/>
 <item historyLabel="mess_zh_CN.properties" index="1"/>
-<item active="true" historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="mess_en_US.properties" index="2"/>
+<item historyLabel="struts-manage.xml" index="6"/>
+<item historyLabel="struts.xml" index="7"/>
+<item historyLabel="NewsInfoService.java" index="8">
+<position info="not_deleted" x="1046" y="41"/>
+</item>
+<item historyLabel="struts.xml" index="7"/>
+<item historyLabel="NewsInfoService.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NewsInfoService.java" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NewsInfoService.java" index="9">
+<position info="not_deleted" x="1141" y="6"/>
+</item>
+<item historyLabel="NewsInfoService.java" index="9">
+<position info="not_deleted" x="1131" y="0"/>
+</item>
+<item historyLabel="struts-manage.xml" index="6"/>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="9497" y="0"/>
+</item>
+<item historyLabel="log4j.properties" index="11"/>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="9497" y="0"/>
+</item>
+<item historyLabel="struts-manage.xml" index="6"/>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="9497" y="0"/>
+</item>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="9502" y="11"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="11024" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="ConnListener.java" index="13">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="Pools.java" index="14">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="Pools.java" index="14">
+<position info="not_deleted" x="1560" y="0"/>
+</item>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="11024" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="makeTables.sql" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="10082" y="0"/>
+</item>
+<item historyLabel="database.properties" index="12"/>
+<item active="true" historyLabel="NewsInfoDAO.java" index="10">
+<position info="not_deleted" x="10082" y="0"/>
+</item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -422,47 +465,38 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" name="makeTables.sql" tooltip="Stock/src/makeTables.sql">
+<persistable path="/Stock/src/makeTables.sql"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pools.java" tooltip="Stock/src/org/news/utils/Pools.java">
+<persistable path="/Stock/src/org/news/utils/Pools.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnListener.java" tooltip="Stock/src/org/news/utils/ConnListener.java">
+<persistable path="/Stock/src/org/news/utils/ConnListener.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" tooltip="Stock/src/database.properties">
+<persistable path="/Stock/src/database.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="log4j.properties" tooltip="Stock/src/log4j.properties">
+<persistable path="/Stock/src/log4j.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoDAO.java" tooltip="Stock/src/org/news/dao/NewsInfoDAO.java">
+<persistable path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" tooltip="Stock/src/struts-manage.xml">
+<persistable path="/Stock/src/struts-manage.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" tooltip="Stock/src/org/news/service/NewsInfoService.java">
+<persistable path="/Stock/src/org/news/service/NewsInfoService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" tooltip="MVCNews/src/org/news/service/NewsInfoService.java">
+<persistable path="/MVCNews/src/org/news/service/NewsInfoService.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_zh_CN.properties" tooltip="Stock/src/mess_zh_CN.properties">
 <persistable path="/Stock/src/mess_zh_CN.properties"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="UserRegisterAction-validation.xml" tooltip="Stock/src/org/news/action/UserRegisterAction-validation.xml">
 <persistable path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_en_US.properties" tooltip="Stock/src/mess_en_US.properties">
-<persistable path="/Stock/src/mess_en_US.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="Message_en_US.properties" tooltip="Stock/src/Message_en_US.properties">
-<persistable path="/Stock/src/Message_en_US.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="Message_zh_CN.properties" tooltip="Stock/src/Message_zh_CN.properties">
-<persistable path="/Stock/src/Message_zh_CN.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_insert.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminService.java" tooltip="Stock/src/org/news/service/AdminService.java">
-<persistable path="/Stock/src/org/news/service/AdminService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ValidateNameAction.java" tooltip="Stock/src/org/news/action/ValidateNameAction.java">
-<persistable path="/Stock/src/org/news/action/ValidateNameAction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserRegisterAction.java" tooltip="Stock/src/org/news/action/UserRegisterAction.java">
-<persistable path="/Stock/src/org/news/action/UserRegisterAction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="login.jsp" tooltip="Stock/WebRoot/WEB-INF/pages/login.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/pages/login.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="regist.jsp" tooltip="Stock/WebRoot/WEB-INF/pages/regist.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/pages/regist.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="member_validate.js" tooltip="Stock/WebRoot/js/member_validate.js">
-<persistable path="/Stock/WebRoot/js/member_validate.js"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersDAO.java" tooltip="Stock/src/org/news/dao/UsersDAO.java">
-<persistable path="/Stock/src/org/news/dao/UsersDAO.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UserService.java" tooltip="Stock/src/org/news/service/UserService.java">
-<persistable path="/Stock/src/org/news/service/UserService.java"/>
 </file>
 </mruList>
 </workbench>

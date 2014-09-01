@@ -61,6 +61,10 @@ public final class newstype_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.write("-->\r\n");
       out.write("</style></head>\r\n");
       out.write("<body>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(request.getContextPath());
+      out.write("/js/jquery-1.11.1.min.js\">\r\n");
+      out.write("</script>\r\n");
       out.write("\t<script language=\"javascript\">\r\n");
       out.write("\t\tfunction changeColor(obj,color){\r\n");
       out.write("\t\t\tobj.bgColor = color ;\r\n");
@@ -78,7 +82,14 @@ public final class newstype_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.print(request.getContextPath());
       out.write("/js/newstype_validate.js\">\r\n");
       out.write("\t</script>\r\n");
-      out.write("\r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("\tfunction validateAccount(value){\r\n");
+      out.write("\t\tvalidateName(value);\r\n");
+      out.write("\t\t$(\"#result\").load(\"");
+      out.print(request.getContextPath());
+      out.write("/manage/validateName.action\",{userName:value,type:2});\r\n");
+      out.write("\t}\r\n");
+      out.write("</script>\r\n");
       out.write("<center> \r\n");
       out.write("<form action=\"NewsType_insert\" method=\"post\" onSubmit=\"return validate(this)\">\r\n");
       out.write("<table border=\"1\" width=\"100%\" cellpadding=\"5\" cellspacing=\"0\" bgcolor=\"F2F2F2\">\r\n");
@@ -88,7 +99,7 @@ public final class newstype_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.write("\t</tr>\r\n");
       out.write("\t<tr onMouseOver=\"changeColor(this,'white')\" onMouseOut=\"changeColor(this,'F2F2F2')\">\r\n");
       out.write("\t\t<td><font size=\"2\">名称：</font></td>\r\n");
-      out.write("\t\t<td><input type=\"text\" name=\"name\" onBlur=\"validateName(this.value)\"></td>\r\n");
+      out.write("\t\t<td><input type=\"text\" name=\"name\" onBlur=\"validateAccount(this.value)\"><div id=\"result\"></div></td>\r\n");
       out.write("\t\t<td><span id=\"name_msg\"><font color=\"RED\">*</font></span></td>\r\n");
       out.write("\t</tr>\r\n");
       out.write("\t<tr onMouseOver=\"changeColor(this,'white')\" onMouseOut=\"changeColor(this,'F2F2F2')\">\r\n");

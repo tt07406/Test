@@ -297,6 +297,7 @@ public class NewsInfoDAO {
     	 
     	 try {
     		 Logger.log(keyword, Logger.DEBUG);
+    		
  			 pstmt = con.prepareStatement(sql);		//实例化查询对象
  			 pstmt.setString(1, "%"+keyword+"%");   //设置查询关键字
  			 pstmt.setString(2, "%"+keyword+"%");   //设置查询关键字
@@ -308,7 +309,7 @@ public class NewsInfoDAO {
  			 pstmt.setInt(8, currentPage * lineSize);//上限
 
  			 rs = pstmt.executeQuery();				//取得查询结果	
- 			 
+ 
  			 NewsInfo newsInfo = null;
  		     while(rs.next()) {//当结果不为空，则取得新闻信息的各个元素
  		    	 	int newsInfoId = rs.getInt("newsInfoId");

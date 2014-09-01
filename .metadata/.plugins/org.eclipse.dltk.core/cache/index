@@ -62,7 +62,6 @@
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/SoftwareUpload.jsp" timestamp="1407766105745" lastAccessTime="1409064169626"/>
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/admin_top.jsp" timestamp="1407766106716" lastAccessTime="1409064168821"/>
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/forward.jsp" timestamp="1407766106738" lastAccessTime="1409064164630"/>
-  <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/index.htm" timestamp="1407766107342" lastAccessTime="1409064168623"/>
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/left.html" timestamp="1407766107544" lastAccessTime="1409064169202"/>
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/login.jsp" timestamp="1407766107561" lastAccessTime="1409064169593"/>
   <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/right.html" timestamp="1407766107571" lastAccessTime="1409064162896"/>
@@ -142,7 +141,6 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/split_page_plugin.jsp" timestamp="1405170260314" lastAccessTime="1408973047894"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_operate_do.jsp" timestamp="1408461542107" lastAccessTime="1408973048057"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/flash.html" timestamp="1277375877406" lastAccessTime="1408973048079"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_insert.jsp" timestamp="1408549569812" lastAccessTime="1408973048131"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/edit/plugins/remote_image.html" timestamp="1277375877406" lastAccessTime="1408887613702"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_operate_do.jsp" timestamp="1408542580304" lastAccessTime="1408887614054"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/users/users_list.jsp" timestamp="1408630837082" lastAccessTime="1408973047239"/>
@@ -167,8 +165,10 @@
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" timestamp="1409063691805" lastAccessTime="1409145961827"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp" timestamp="1409064588359" lastAccessTime="1409228155625"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_show.jsp" timestamp="1409065645293" lastAccessTime="1409228148881"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1409152179269" lastAccessTime="1409228155703"/>
   <entries path="E:/file/GitHub/Test/Stock/WebRoot/js/jquery-1.11.1.min.js" timestamp="1409228777698" lastAccessTime="1409228778505"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/regist.jsp" timestamp="1409232903159" lastAccessTime="1409232904114"/>
-  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp" timestamp="1409236340744" lastAccessTime="1409236342127"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/pages/regist.jsp" timestamp="1409232903159" lastAccessTime="1409579017615"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp" timestamp="1409236340744" lastAccessTime="1409579022950"/>
+  <entries path="E:/file/GitHub/Test/MVCNews/WebRoot/manage/index.htm" timestamp="1409490957344" lastAccessTime="1409579016741"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_insert.jsp" timestamp="1409490957546" lastAccessTime="1409585426763"/>
+  <entries path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/login.jsp" timestamp="1409490957565" lastAccessTime="1409585427610"/>
 </cache:CacheIndex>

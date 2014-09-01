@@ -58,7 +58,7 @@ window.attachEvent("onload", correctPNG);
       </tr>
     </table></td>
   </tr>
-  <tr>
+  <tr valign="middle">
     <td valign="top"><table width="100%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg">
       <tr>
         <td width="49%" align="right"><table width="91%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg2">
