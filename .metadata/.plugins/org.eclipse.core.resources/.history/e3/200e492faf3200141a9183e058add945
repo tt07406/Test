@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package org.news.utils;
+
+import javax.servlet.http.HttpServletRequestWrapper;
+
+/**
+ * @author tt
+ *
+ */
+public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
+
+}

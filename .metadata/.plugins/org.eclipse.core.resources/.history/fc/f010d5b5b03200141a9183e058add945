@@ -1,0 +1,7 @@
+package org.news.utils;
+
+import javax.servlet.Filter;
+
+public class XssFilter extends Filter {
+
+}

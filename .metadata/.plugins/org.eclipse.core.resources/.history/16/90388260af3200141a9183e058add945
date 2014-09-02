@@ -1,0 +1,25 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：NewsInfoService
+ * 
+ * 创建日期：2014-09-02
+ */
+package org.news.utils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
+
+/**
+ * 对每个post请求的参数过滤一些关键字，替换成安全的，例如：< > ' " \ /  # & 
+ * @author tt
+ * @version 14.8.18
+ */
+public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
+
+	public XssHttpServletRequestWrapper(HttpServletRequest request) {
+		super(request);
+		// TODO Auto-generated constructor stub
+	}
+
+}
