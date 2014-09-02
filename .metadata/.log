@@ -1946,3 +1946,130 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 !SUBENTRY 1 org.eclipse.core.resources 4 274 2014-09-01 21:44:05.810
 !MESSAGE Resource is out of sync with the file system: '/Stock/src/struts-manage.xml'.
+!SESSION 2014-09-02 22:31:53.593 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2014-09-02 22:32:28.232
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-02 22:32:28.232
+!MESSAGE A conflict occurred for SHIFT+DEL:
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeAllInstances,Remove All Visible Results,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.cut,Cut,
+		Cut the selection to the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.handlers.WidgetMethodHandler@72d5c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.topcased.modeler.deleteModelObject,Delete From Model,
+		Allows the user to delete the selected graph element and its associated model element in a Topcased editor.,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-02 22:32:35.111
+!MESSAGE NLS unused message: prompt.optclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-02 22:32:35.146
+!MESSAGE NLS unused message: prompt.preclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-02 22:32:35.161
+!MESSAGE NLS unused message: prompt.optlibrarypath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.maven.ide.eclipse 4 0 2014-09-02 22:32:48.250
+!MESSAGE Unable to update index for central|http://repo1.maven.org/maven2
+!STACK 0
+java.io.IOException: Authorization exception retrieving nexus-maven-repository-index.properties
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$WagonFetcher.retrieve(DefaultIndexUpdater.java:681)
+	at org.sonatype.nexus.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:22)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:493)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:74)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:780)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:954)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:138)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1060)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateIndex(NexusIndexManager.java:1013)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager$1.run(NexusIndexManager.java:624)
+	at org.maven.ide.eclipse.internal.index.IndexUpdaterJob.run(IndexUpdaterJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.dltk.core 4 0 2014-09-02 22:33:05.915
+!MESSAGE error saving index
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.dltk.internal.core.util.Util.writeUTF(Util.java:1430)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategoryTable(DiskIndex.java:1177)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeCategory(DiskIndex.java:662)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeCategories(DiskIndex.java:605)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeWith(DiskIndex.java:726)
+	at org.eclipse.dltk.core.search.index.Index.save(Index.java:243)
+	at org.eclipse.dltk.core.search.indexing.core.SourceModulesRequest.run(SourceModulesRequest.java:85)
+	at org.eclipse.dltk.core.search.indexing.AbstractJob.execute(AbstractJob.java:77)
+	at org.eclipse.dltk.internal.core.search.processing.JobManager.run(JobManager.java:452)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-02 23:00:28.439
+!MESSAGE NLS missing message: BrowseToTLDAttributeNameDeclaration in: org.jboss.tools.common.text.ext.hyperlink.xpl.Messages
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2014-09-02 23:09:28.977
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2014-09-02 23:09:29.012
+!MESSAGE Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2014-09-02 23:21:52.333
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2014-09-02 23:21:52.334
+!MESSAGE Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2014-09-02 23:28:18.931
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:86)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:996)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:462)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:555)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:512)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:495)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:82)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2014-09-02 23:28:18.932
+!MESSAGE Unknown javadoc format for HttpServletRequest {key=Ljavax/servlet/http/HttpServletRequest;} [in HttpServletRequest.class [in javax.servlet.http [in D:\MyEclipseCommon\plugins\com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\data\libraryset\EE_5\javaee.jar]]]
