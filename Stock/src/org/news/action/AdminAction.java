@@ -25,8 +25,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AdminAction extends ActionSupport {
 
 	private static final long serialVersionUID = -7878912791202566739L;
-	private AdminService adminService = new AdminService();
+	private AdminService adminService;
 	
+	/**
+	 * @param adminService the adminService to set
+	 */
+	public void setAdminService(AdminService adminService) {
+		this.adminService = adminService;
+	}
+
 	List<Admin> all;//管理员列表
 	String adminName;//管理员名称
 	String note;//管理员信息

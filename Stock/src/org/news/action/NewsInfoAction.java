@@ -35,8 +35,30 @@ import com.opensymphony.xwork2.ActionSupport;
 public class NewsInfoAction extends ActionSupport {
 
 	private static final long serialVersionUID = -8036252934049848022L;
-	private NewsInfoService service = new NewsInfoService();
-	private NewsTypeService typeService = new NewsTypeService();
+	private NewsInfoService service;
+	private NewsTypeService typeService;
+	private AttachmentService attiService;
+
+	/**
+	 * @param attiService the attiService to set
+	 */
+	public void setAttiService(AttachmentService attiService) {
+		this.attiService = attiService;
+	}
+
+	/**
+	 * @param service the service to set
+	 */
+	public void setService(NewsInfoService service) {
+		this.service = service;
+	}
+
+	/**
+	 * @param typeService the typeService to set
+	 */
+	public void setTypeService(NewsTypeService typeService) {
+		this.typeService = typeService;
+	}
 
 	List<NewsType> types;//所有种类
 	String status;//动作状态
@@ -501,7 +523,7 @@ public class NewsInfoAction extends ActionSupport {
 			NewsInfo pro = service.searchNewsInfo(pid);
 			if(pro != null) {
 				setNewsinfo(pro);
-				AttachmentService attiService = new AttachmentService();
+
 				setAttachments(attiService.findNewsAttachmentByNewsId((long)pid));
 			}
 			return SUCCESS;
@@ -524,7 +546,7 @@ public class NewsInfoAction extends ActionSupport {
 				setNewsinfo(pro);
 				typeNames = pro.getNewsType().split(",");
 				setTypeNames(typeNames);//被选的种类
-				AttachmentService attiService = new AttachmentService();
+
 				setAttachments(attiService.findNewsAttachmentByNewsId((long)pid));
 			}
 			return SUCCESS;

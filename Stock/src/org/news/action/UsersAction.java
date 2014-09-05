@@ -25,8 +25,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UsersAction extends ActionSupport {
 
 	private static final long serialVersionUID = -7456160560536320060L;
-	private UserService userService =new UserService();
+	private UserService userService;
 	
+	/**
+	 * @param userService the userService to set
+	 */
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
 	String kw;//查询关键字
 	String pg;  //URL
 	String cp; //为当前所在的页

@@ -27,7 +27,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AdminLogin extends ActionSupport {
 
 	private static final long serialVersionUID = 2124111050903078657L;
+	AdminService adminService;
 	
+	/**
+	 * @param adminService the adminService to set
+	 */
+	public void setAdminService(AdminService adminService) {
+		this.adminService = adminService;
+	}
+
 	private String adminName;
 	private String code;
 	private String password;
@@ -100,7 +108,7 @@ public class AdminLogin extends ActionSupport {
 		
 		if(errors.size()==0){	// 现在没有任何的错误信息
 			Admin admin = new Admin(0,adminName,new MD5Code().getMD5ofStr(password),"Super Admin") ;
-			AdminService adminService = new AdminService(); //调用下一层的服务进行登录
+
 			try {
 				if(adminService.findLogin(admin)){//登录成功
 					admin = adminService.findAdminById(adminName);//从数据库获取对象

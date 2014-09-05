@@ -24,8 +24,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class NewsTypeAction extends ActionSupport {
 
 	private static final long serialVersionUID = 3250411979866462436L;
-	private NewsTypeService newstypeService = new NewsTypeService();
+	private NewsTypeService newstypeService;
 	
+	/**
+	 * @param newstypeService the newstypeService to set
+	 */
+	public void setNewstypeService(NewsTypeService newstypeService) {
+		this.newstypeService = newstypeService;
+	}
+
 	List<NewsType> all;//所示新闻类别
 	String name;//类别名
 	String note;//类别描述

@@ -27,10 +27,30 @@ import org.news.utils.Constant.Type;
 public class ValidateNameAction extends ActionSupport {
 
 	private static final long serialVersionUID = 7238313406542433777L;
-	private UserService userService = new UserService();
-	private AdminService adminService = new AdminService();
-	private NewsTypeService newstypeService =  new NewsTypeService();
+	private UserService userService;
+	private AdminService adminService;
+	private NewsTypeService newstypeService;
 	
+	/**
+	 * @param userService the userService to set
+	 */
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
+	/**
+	 * @param adminService the adminService to set
+	 */
+	public void setAdminService(AdminService adminService) {
+		this.adminService = adminService;
+	}
+
+	/**
+	 * @param newstypeService the newstypeService to set
+	 */
+	public void setNewstypeService(NewsTypeService newstypeService) {
+		this.newstypeService = newstypeService;
+	}
 	private String userName;//注册的用户账号
 	private String tip;//返回的提示
 	private int type = 0;//0为会员，1为管理员，3为新闻类别，4为新闻标题

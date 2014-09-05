@@ -24,7 +24,14 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserRegisterAction extends ActionSupport {
 
 	private static final long serialVersionUID = -4247316758713012823L;
-	private UserService userService = new UserService();
+	private UserService userService;
+
+	/**
+	 * @param userService the userService to set
+	 */
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 
 	String mid;//’À∫≈
 	String password;//√‹¬Î

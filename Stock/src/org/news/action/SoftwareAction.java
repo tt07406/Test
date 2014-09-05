@@ -36,8 +36,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class SoftwareAction extends ActionSupport{
 
 	private static final long serialVersionUID = 4362240508650937317L;
-	private AttachmentService service = new AttachmentService();
+	private AttachmentService service;
 	
+	/**
+	 * @param service the service to set
+	 */
+	public void setService(AttachmentService service) {
+		this.service = service;
+	}
+
 	String msg = null ;//提示信息
 	String kw; //查询关键字
 	String cp; //当前页

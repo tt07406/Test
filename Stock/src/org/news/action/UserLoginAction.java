@@ -23,8 +23,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UserLoginAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1557983232383880770L;
-	private UserService userService = new UserService();
+	private UserService userService;
 	
+	/**
+	 * @param userService the userService to set
+	 */
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+
 	String code;//验证码
 	String info;//提示信息
 	String mid;//会员账号

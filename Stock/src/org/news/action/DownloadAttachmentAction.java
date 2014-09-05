@@ -28,8 +28,16 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DownloadAttachmentAction extends ActionSupport {
 
 	private static final long serialVersionUID = -2785222973669170301L;
-	private AttachmentService service = new AttachmentService();
+	private AttachmentService service;
 	
+	/**
+	 * @param service the service to set
+	 */
+	public void setService(AttachmentService service) {
+		this.service = service;
+	}
+
+
 	Long id;//¸½¼þID
 
 	/**

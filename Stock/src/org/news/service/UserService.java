@@ -9,108 +9,75 @@ package org.news.service;
 
 import java.util.List;
 
-import org.news.dao.UsersDAO;
 import org.news.model.Users;
 
 /**
- * 会员服务类
+ * 会员服务类接口
  * @author tt
  * @version 14.6.18
  */
-public class UserService {
-	
-	private UsersDAO userDAO = new UsersDAO();
-	
+public interface UserService {
+
 	/**
 	 * 用户登录验证
 	 * @param user
 	 * @return 验证的操作结果
 	 */
-	public boolean findLogin(Users user){
-		return userDAO.findLogin(user);
-	}
+	public boolean findLogin(Users user);
 	
 	/**
 	 * 添加会员
 	 * @param user 传入VO对象
 	 * @return 操作是否成功
 	 */
-	public boolean addUsers(Users user){
-		if (findUserName(user.getUsersName())){//重复性验证
-			return false;
-		}
-		if (userDAO.findUsersById(user.getUsersId()) == null){//不存在则插入
-			return userDAO.addUser(user);
-		}else{
-			return false;
-		}
-		  
-	}
+	public boolean addUsers(Users user);
 	
 	/**
 	 * 批量删除会员
 	 * @param usersIds
 	 * @return 是否成功
 	 */
-	public boolean deleteUserss(int[] usersIds) {
-		return userDAO.deleteUsers(usersIds);
-	}
+	public boolean deleteUserss(int[] usersIds);
 	
 	/**
 	 * 修改会员信息
 	 * @param users
 	 * @return 是否成功
 	 */
-	public boolean updateUsers(Users users) {
-		if (userDAO.updateUsers(users) == null){
-			return false;
-		}else{
-			return true;
-		}
-	}
+	public boolean updateUsers(Users users);
 	
 	/**
 	 * 查询所有的会员信息
 	 * @return 会员集合
 	 */
-     public List<Users> getAllUsers(){
-    	 return userDAO.getAllUsers();
-     }
+     public List<Users> getAllUsers();
      
      /**
       * 可通过Id来查找会员的信息
       * @param usersId
       * @return
       */
-     public Users findUsersById(int usersId){
-    	 return userDAO.findUsersById(usersId);
-     }
+     public Users findUsersById(int usersId);
      
      /**
       * 可通过名称来查找会员的信息
       * @param usersName
       * @return
       */
-     public Users findUsersById(String usersName){
-    	 return userDAO.findUsersByName(usersName);
-     }
+     public Users findUsersById(String usersName);
      
      /**
   	 * 模糊查询会员
   	 * @return 会员集合
   	 */
-       public List<Users> getUsersByKey(String keyword){
-    	   return userDAO.getUsersByKey(keyword);
-       }
+       public List<Users> getUsersByKey(String keyword);
        
        /**
         * 查询含有关键字的会员数量
         * @param keyword
         * @return 会员数量
         */
-       public long getCount(String keyword){
-    	   return userDAO.getCount(keyword);
-       }
+       public long getCount(String keyword);
     
     /**
      * 模糊查询会员
@@ -119,20 +86,12 @@ public class UserService {
      * @param linesize 每页大小
      * @return 会员集合
      */
-    public List<Users> getAllUsers(String keyword, int currentPage, int linesize){
-    	return userDAO.getAllUsers(keyword, currentPage, linesize);
-    }
+    public List<Users> getAllUsers(String keyword, int currentPage, int linesize);
 
     /**
      * 查询用户名是否存在
      * @param name
      * @return
      */
-    public boolean findUserName(String name){
-    	if (null == userDAO.findUsersByName(name)){
-    		return false;
-    	}else{
-    		return true;
-    	}
-    }
+    public boolean findUserName(String name);
 }

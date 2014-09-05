@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	
+    <package name="default" namespace="/" extends="struts-default">
+		<!-- 通用的Action，*表示可以处理任意的请求 -->
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/pages/{1}.jsp</result>
+		</action>
+		<action name="userRegister"
+			class="org.news.action.UserRegisterAction">
+			<result name="success">
+				<param name="location">/WEB-INF/pages/regist_do.jsp</param>
+				<param name="refresh">2;URL=/WEB-INF/pages/login.jsp</param>
+			</result>
+			<result name="error">
+				/WEB-INF/pages/regist_do.jsp
+			</result>
+			<result name="input">/WEB-INF/pages/regist.jsp</result>
+		</action>
+		<action name="userLogin"
+			class="org.news.action.UserLoginAction">
+			<result name="success">/WEB-INF/pages/welcome.jsp</result>
+			<result name="login">/WEB-INF/pages/login.jsp</result>
+		</action>
+	    <action name="uploadAction"
+			class="org.news.action.UploadAction" method="upload">
+		</action>
+		<action name="downloadAttachmentAction" method="download"
+			class="org.news.action.DownloadAttachmentAction">
+		</action></package>
+	<!-- 全局国际化 -->
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
+	<constant name="struts.custom.i18n.resources" value="mess"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<include file="struts-manage.xml" />
+</struts>    
