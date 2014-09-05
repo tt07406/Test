@@ -24,9 +24,8 @@
 			<result name="success">/WEB-INF/pages/welcome.jsp</result>
 			<result name="login">/WEB-INF/pages/login.jsp</result>
 		</action>
-		<action name="uploadAction"
-			class="org.news.action.UploadAction">
-			<result name="success">/index.jsp</result>
+	    <action name="uploadAction"
+			class="org.news.action.UploadAction" method="upload">
 		</action>
 		<action name="downloadAttachmentAction" method="download"
 			class="org.news.action.DownloadAttachmentAction">

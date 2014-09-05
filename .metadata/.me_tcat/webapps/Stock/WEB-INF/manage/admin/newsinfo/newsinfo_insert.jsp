@@ -3,6 +3,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head><title>增加新闻</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/edit/themes/default/default.css">
 <style type="text/css" rel="stylesheet">
     .source {
     width: 700px;
@@ -49,14 +50,30 @@
 	</script>
 	
 	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/lang/zh_CN.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/kindeditor-core.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/plugin-all.js"></script>
-	<script type="text/javascript">
-		KE.show({
-			id : 'note',
-			cssPath : '<%=request.getContextPath()%>/edit/index.css'
+	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js"></script>
+	<script>
+	var editor;
+	$(document).ready(function (){
+		//渲染编辑器
+		KindEditor.ready(function(K) {
+			editor = K.create('#note',{
+				items:[
+					'preview','fontname','fontsize','forecolor','hilitecolor','bold','italic','underline','strikethrough','justifyleft','justifycenter','justifyright','hr','image','emoticons','fullscreen'
+				],
+				uploadJson : '<%=request.getContextPath()%>/uploadAction.action',
+				filterMode: true,
+				afterBlur: function(){this.sync();},
+				afterChange : function() {
+					$('#alreadyInput').html(this.count());
+					$('#stillInput').html(2000-this.count());
+				}
+			});
 		});
-	</script>
+
+	});
+	
+</script>
 <center> 
 <form action="NewsInfo_insert" method="post" onSubmit="return validate(this)" enctype="multipart/form-data">
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2" id="myTB">
@@ -106,7 +123,7 @@
 		<td colspan="4">
 			<div class="editor">
 				<textarea id="note" name="content" style="width:650px;height:200px;visibility:hidden;">
-				</textarea>
+				</textarea>你已输入<span id="alreadyInput"></span>字，还能输入<span id="stillInput"></span>字<br/>
 			</div>
 		</td>
 	</tr>

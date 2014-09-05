@@ -426,13 +426,13 @@ public class NewsInfoAction extends ActionSupport {
 			for (int i = 0; i<newsType.length; i++){
 				type.append(newsType[i]+",");
 			}
-			setMsg("新闻增加失败！");
+			setMsg("新闻修改失败！");
 			newsInfoId = pid ;
 			news = new NewsInfo(newsInfoId,name,describe,content,
 					service.searchNewsInfo(newsInfoId).getNewsInfoTime(),author,admin.getAdminId(),type.toString(),1);//创建时间不变
 			try {//更新数据库
 				if(service.updateNewsInformation(news,attachment,attachmentFileName)){
-					setMsg("新闻增加成功！");
+					setMsg("新闻修改成功！");
 				}
 
 				return SUCCESS;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="26" version="2.0">
+<workbench progressCount="51" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="75" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -35,8 +35,8 @@
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.imageeditor.editor.ImageEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.struts2.editor" itemType="typeToolBarContribution" x="342" y="22"/>
@@ -55,9 +55,6 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
-<part id="7"/>
-<part id="8"/>
 </presentation>
 </folder>
 </info>
@@ -65,34 +62,21 @@
 <editor id="com.genuitec.eclipse.struts2.editor" name="struts.xml" partName="struts.xml" path="E:/file/GitHub/Test/Stock/src/struts.xml" title="struts.xml" tooltip="Stock/src/struts.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts.xml"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" partName="NewsInfoService.java" path="E:/file/GitHub/Test/Stock/src/org/news/service/NewsInfoService.java" title="NewsInfoService.java" tooltip="Stock/src/org/news/service/NewsInfoService.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/service/NewsInfoService.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="540" selectionTopPixel="0"/>
-</editor>
 <editor id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" partName="struts-manage.xml" path="E:/file/GitHub/Test/Stock/src/struts-manage.xml" title="struts-manage.xml" tooltip="Stock/src/struts-manage.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/struts-manage.xml"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoDAO.java" partName="NewsInfoDAO.java" path="E:/file/GitHub/Test/Stock/src/org/news/dao/NewsInfoDAO.java" title="NewsInfoDAO.java" tooltip="Stock/src/org/news/dao/NewsInfoDAO.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9704" selectionTopPixel="5622"/>
-</editor>
-<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" partName="database.properties" path="E:/file/GitHub/Test/Stock/src/database.properties" title="database.properties" tooltip="E:/file/GitHub/Test/Stock/src/database.properties" workbook="DefaultEditorWorkbook">
-<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/database.properties"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pools.java" partName="Pools.java" path="E:/file/GitHub/Test/Stock/src/org/news/utils/Pools.java" title="Pools.java" tooltip="Stock/src/org/news/utils/Pools.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/utils/Pools.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1560" selectionTopPixel="1334"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XssFilter.java" partName="XssFilter.java" path="E:/file/GitHub/Test/Stock/src/org/news/utils/XssFilter.java" title="XssFilter.java" tooltip="Stock/src/org/news/utils/XssFilter.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/utils/XssFilter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="768" selectionTopPixel="382"/>
 </editor>
 <editor id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" name="web.xml" partName="web.xml" path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/web.xml" title="web.xml" tooltip="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/web.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/WebRoot/WEB-INF/web.xml"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XssHttpServletRequestWrapper.java" partName="XssHttpServletRequestWrapper.java" path="E:/file/GitHub/Test/Stock/src/org/news/utils/XssHttpServletRequestWrapper.java" title="XssHttpServletRequestWrapper.java" tooltip="Stock/src/org/news/utils/XssHttpServletRequestWrapper.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/utils/XssHttpServletRequestWrapper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="194" selectionTopPixel="306"/>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newsinfo_insert.jsp" partName="newsinfo_insert.jsp" path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" title="newsinfo_insert.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp"/>
+</editor>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newsinfo_update.jsp" partName="newsinfo_update.jsp" path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp" title="newsinfo_update.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoAction.java" partName="NewsInfoAction.java" path="E:/file/GitHub/Test/Stock/src/org/news/action/NewsInfoAction.java" title="NewsInfoAction.java" tooltip="Stock/src/org/news/action/NewsInfoAction.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/action/NewsInfoAction.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6817" selectionTopPixel="6145"/>
 </editor>
 </editors>
 <views>
@@ -161,7 +145,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
@@ -351,145 +335,114 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
-<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/database.properties"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/Pools.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" path="/Stock/src/makeTables.sql"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/XssHttpServletRequestWrapper.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/service/NewsInfoService.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/XssFilter.java"/>
-<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" path="/Stock/WebRoot/WEB-INF/web.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts-manage.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/kindeditor/WebRoot/index.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/UploadAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/kindeditor/src/com/lun/action/BaseAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/kindeditor/src/com/lun/action/UploadAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/BaseAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/kindeditor/src/struts.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" path="/kindeditor/WebRoot/WEB-INF/web.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.core.runtime.xml.source" path="/Stock/src/struts.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/action/NewsInfoAction.java"/>
 </editors>
-<item historyLabel="database.properties" index="1"/>
-<item historyLabel="Pools.java" index="2">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="database.properties" index="1"/>
-<item historyLabel="Pools.java" index="2">
-<position info="not_deleted" x="1560" y="0"/>
-</item>
-<item historyLabel="NewsInfoDAO.java" index="0">
-<position info="not_deleted" x="11024" y="0"/>
-</item>
-<item historyLabel="database.properties" index="1"/>
-<item historyLabel="makeTables.sql" index="3">
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="index.jsp" index="2"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="struts.xml" index="1"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="index.jsp" index="2"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="UploadAction.java" index="4">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="database.properties" index="1"/>
-<item historyLabel="NewsInfoDAO.java" index="0">
-<position info="not_deleted" x="10082" y="0"/>
+<item historyLabel="BaseAction.java" index="5">
+<position info="not_deleted" x="584" y="10"/>
 </item>
-<item historyLabel="database.properties" index="1"/>
-<item historyLabel="NewsInfoDAO.java" index="0">
-<position info="not_deleted" x="10082" y="0"/>
+<item historyLabel="UploadAction.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="317" y="0"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="NewsInfoDAO.java" index="0">
-<position info="not_deleted" x="9704" y="0"/>
+<item historyLabel="BaseAction.java" index="5">
+<position info="not_deleted" x="496" y="2034"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="0" y="76"/>
+<item historyLabel="UploadAction.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="84" y="0"/>
+<item historyLabel="BaseAction.java" index="5">
+<position info="not_deleted" x="496" y="2034"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="505" y="56"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="500" y="0"/>
 </item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="59" y="0"/>
+<item historyLabel="UploadAction.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="520" y="0"/>
+<item historyLabel="UploadAction.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="72" y="0"/>
+<item historyLabel="BaseAction.java" index="5">
+<position info="not_deleted" x="496" y="2034"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="0" y="76"/>
+<item historyLabel="UploadAction.java" index="6">
+<position info="not_deleted" x="383" y="1112"/>
 </item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="411" y="0"/>
+<item historyLabel="UploadAction.java" index="4">
+<position info="not_deleted" x="228" y="0"/>
 </item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="540" y="16"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="1129" y="0"/>
 </item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="622" y="0"/>
+<item historyLabel="struts.xml" index="8"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="1129" y="0"/>
 </item>
-<item historyLabel="web.xml" index="7">
+<item historyLabel="index.jsp" index="2"/>
+<item historyLabel="BaseAction.java" index="7">
+<position info="not_deleted" x="1129" y="0"/>
+</item>
+<item historyLabel="UploadAction.java" index="4">
+<position info="not_deleted" x="228" y="0"/>
+</item>
+<item historyLabel="BaseAction.java" index="5">
+<position info="not_deleted" x="753" y="0"/>
+</item>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="struts-manage.xml" index="0"/>
+<item historyLabel="struts.xml" index="1"/>
+<item historyLabel="web.xml" index="9">
 <position info="not_deleted" x="40" y="236"/>
 </item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="80" y="14"/>
+<item historyLabel="struts.xml" index="1"/>
+<item historyLabel="struts.xml" index="8"/>
+<item historyLabel="struts.xml" index="1">
+<position info="not_deleted" x="1105" y="0"/>
 </item>
-<item historyLabel="web.xml" index="7"/>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="80" y="14"/>
+<item historyLabel="struts.xml" index="10">
+<position info="not_deleted" x="1020" y="0"/>
 </item>
-<item historyLabel="web.xml" index="7"/>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="820" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2434" y="0"/>
-</item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="820" y="0"/>
-</item>
-<item historyLabel="web.xml" index="7"/>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="818" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2434" y="0"/>
-</item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="818" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2136" y="0"/>
-</item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="818" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2136" y="0"/>
-</item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="768" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2834" y="0"/>
-</item>
-<item historyLabel="XssFilter.java" index="6">
-<position info="not_deleted" x="768" y="0"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="1951" y="2"/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position/>
-</item>
-<item historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position/>
-</item>
-<item historyLabel="NewsInfoService.java" index="5">
-<position info="not_deleted" x="540" y="16"/>
-</item>
-<item active="true" historyLabel="XssHttpServletRequestWrapper.java" index="4">
-<position info="not_deleted" x="2794" y="40"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item historyLabel="newsinfo_insert.jsp" index="3"/>
+<item historyLabel="newsinfo_update.jsp" index="11"/>
+<item active="true" historyLabel="NewsInfoAction.java" index="12">
+<position info="not_deleted" x="6817" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -502,9 +455,9 @@
 <trimItem IMemento.internal.id="bottomleft"/>
 </trimArea>
 <trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@c449c6"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@c77e26"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -513,51 +466,49 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XssHttpServletRequestWrapper.java" tooltip="Stock/src/org/news/utils/XssHttpServletRequestWrapper.java">
-<persistable path="/Stock/src/org/news/utils/XssHttpServletRequestWrapper.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoAction.java" tooltip="Stock/src/org/news/action/NewsInfoAction.java">
+<persistable path="/Stock/src/org/news/action/NewsInfoAction.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" name="web.xml" tooltip="Stock/WebRoot/WEB-INF/web.xml">
-<persistable path="/Stock/WebRoot/WEB-INF/web.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newsinfo_update.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" name="struts.xml" tooltip="kindeditor/src/struts.xml">
+<persistable path="/kindeditor/src/struts.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" name="web.xml" tooltip="kindeditor/WebRoot/WEB-INF/web.xml">
+<persistable path="/kindeditor/WebRoot/WEB-INF/web.xml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseAction.java" tooltip="Stock/src/org/news/action/BaseAction.java">
+<persistable path="/Stock/src/org/news/action/BaseAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UploadAction.java" tooltip="kindeditor/src/com/lun/action/UploadAction.java">
+<persistable path="/kindeditor/src/com/lun/action/UploadAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BaseAction.java" tooltip="kindeditor/src/com/lun/action/BaseAction.java">
+<persistable path="/kindeditor/src/com/lun/action/BaseAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UploadAction.java" tooltip="Stock/src/org/news/action/UploadAction.java">
+<persistable path="/Stock/src/org/news/action/UploadAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newsinfo_insert.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_insert.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp">
+<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_insert.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="index.jsp" tooltip="kindeditor/WebRoot/index.jsp">
+<persistable path="/kindeditor/WebRoot/index.jsp"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="StrutsRequestWrapper.class" tooltip="org.apache.struts2.dispatcher.StrutsRequestWrapper">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Stock/D:\/program\/MyEclipse\/configuration\/org.eclipse.osgi\/bundles\/109\/1\/.cp\/data\/2.1\/core\/struts2-core-2.1.8.1.jar&lt;org.apache.struts2.dispatcher(StrutsRequestWrapper.class"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XssFilter.java" tooltip="Stock/src/org/news/utils/XssFilter.java">
 <persistable path="/Stock/src/org/news/utils/XssFilter.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" name="makeTables.sql" tooltip="Stock/src/makeTables.sql">
-<persistable path="/Stock/src/makeTables.sql"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pools.java" tooltip="Stock/src/org/news/utils/Pools.java">
-<persistable path="/Stock/src/org/news/utils/Pools.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnListener.java" tooltip="Stock/src/org/news/utils/ConnListener.java">
-<persistable path="/Stock/src/org/news/utils/ConnListener.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" tooltip="Stock/src/database.properties">
-<persistable path="/Stock/src/database.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="log4j.properties" tooltip="Stock/src/log4j.properties">
-<persistable path="/Stock/src/log4j.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoDAO.java" tooltip="Stock/src/org/news/dao/NewsInfoDAO.java">
-<persistable path="/Stock/src/org/news/dao/NewsInfoDAO.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" name="struts-manage.xml" tooltip="Stock/src/struts-manage.xml">
-<persistable path="/Stock/src/struts-manage.xml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" tooltip="Stock/src/org/news/service/NewsInfoService.java">
-<persistable path="/Stock/src/org/news/service/NewsInfoService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsInfoService.java" tooltip="MVCNews/src/org/news/service/NewsInfoService.java">
-<persistable path="/MVCNews/src/org/news/service/NewsInfoService.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="mess_zh_CN.properties" tooltip="Stock/src/mess_zh_CN.properties">
-<persistable path="/Stock/src/mess_zh_CN.properties"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="UserRegisterAction-validation.xml" tooltip="Stock/src/org/news/action/UserRegisterAction-validation.xml">
-<persistable path="/Stock/src/org/news/action/UserRegisterAction-validation.xml"/>
 </file>
 </mruList>
 </workbench>

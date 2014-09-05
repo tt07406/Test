@@ -61,6 +61,9 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head><title>修改新闻</title>\r\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
+      out.print(request.getContextPath());
+      out.write("/edit/themes/default/default.css\">\r\n");
       out.write("<style type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("    .source {\r\n");
       out.write("    width: 700px;\r\n");
@@ -115,18 +118,33 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
       out.write("/edit/lang/zh_CN.js\"></script>\r\n");
       out.write("\t<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
       out.print(request.getContextPath());
-      out.write("/edit/kindeditor-core.js\"></script>\r\n");
+      out.write("/edit/kindeditor.js\"></script>\r\n");
       out.write("\t<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
       out.print(request.getContextPath());
-      out.write("/edit/plugin-all.js\"></script>\r\n");
-      out.write("\t<script type=\"text/javascript\">\r\n");
-      out.write("\t\tKE.show({\r\n");
-      out.write("\t\t\tid : 'note',\r\n");
-      out.write("\t\t\tcssPath : '");
+      out.write("/js/jquery-1.11.1.min.js\"></script>\r\n");
+      out.write("\t<script>\r\n");
+      out.write("\tvar editor;\r\n");
+      out.write("\t$(document).ready(function (){\r\n");
+      out.write("\t\t//渲染编辑器\r\n");
+      out.write("\t\tKindEditor.ready(function(K) {\r\n");
+      out.write("\t\t\teditor = K.create('#note',{\r\n");
+      out.write("\t\t\t\titems:[\r\n");
+      out.write("\t\t\t\t\t'preview','fontname','fontsize','forecolor','hilitecolor','bold','italic','underline','strikethrough','justifyleft','justifycenter','justifyright','hr','image','emoticons','fullscreen'\r\n");
+      out.write("\t\t\t\t],\r\n");
+      out.write("\t\t\t\tuploadJson : '");
       out.print(request.getContextPath());
-      out.write("/edit/index.css'\r\n");
+      out.write("/uploadAction.action',\r\n");
+      out.write("\t\t\t\tfilterMode: true,\r\n");
+      out.write("\t\t\t\tafterBlur: function(){this.sync();},\r\n");
+      out.write("\t\t\t\tafterChange : function() {\r\n");
+      out.write("\t\t\t\t\t$('#alreadyInput').html(this.count());\r\n");
+      out.write("\t\t\t\t\t$('#stillInput').html(2000-this.count());\r\n");
+      out.write("\t\t\t\t}\r\n");
+      out.write("\t\t\t});\r\n");
       out.write("\t\t});\r\n");
-      out.write("\t</script>\r\n");
+      out.write("\r\n");
+      out.write("\t});\r\n");
+      out.write("</script>\r\n");
       out.write("<center> \r\n");
       out.write("<form action=\"NewsInfo_update\" method=\"post\" onSubmit=\"return validate(this)\" enctype=\"multipart/form-data\">\r\n");
       out.write("<table border=\"1\" width=\"100%\" cellpadding=\"5\" cellspacing=\"0\" bgcolor=\"F2F2F2\" id=\"myTB\">\r\n");
@@ -178,9 +196,9 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
       org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f2 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
       _jspx_th_c_005fforEach_005f2.setPageContext(_jspx_page_context);
       _jspx_th_c_005fforEach_005f2.setParent(null);
-      // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-      _jspx_th_c_005fforEach_005f2.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,1) '${attachments}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${attachments}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-      // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(122,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+      _jspx_th_c_005fforEach_005f2.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(122,1) '${attachments}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${attachments}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+      // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(122,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f2.setVar("attachment");
       int[] _jspx_push_body_count_c_005fforEach_005f2 = new int[] { 0 };
       try {
@@ -226,7 +244,7 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
       out.write("\t\t\t\t\t");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${newsinfo.newsInfoContent}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\r\n");
-      out.write("\t\t\t\t</textarea>\r\n");
+      out.write("\t\t\t\t</textarea>你已输入<span id=\"alreadyInput\"></span>字，还能输入<span id=\"stillInput\"></span>字<br/>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</td>\r\n");
       out.write("\t</tr>\r\n");
@@ -272,9 +290,9 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(87,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(87,3) '${types}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${types}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(87,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(103,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(103,3) '${types}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${types}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(103,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("newstype");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -323,9 +341,9 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f0);
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(90,4) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(90,4) '${typeNames}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${typeNames}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(90,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,4) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,4) '${typeNames}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${typeNames}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(106,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("typename");
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
     try {
@@ -365,7 +383,7 @@ public final class newsinfo_005fupdate_jsp extends org.apache.jasper.runtime.Htt
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_005fif_005f0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _005fjspx_005ftagPool_005fc_005fif_005ftest.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_005fif_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fif_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_005fforEach_005f1);
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(91,5) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp(107,5) name = test type = boolean reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fif_005f0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${newstype.newsTypeName==typename}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null, false)).booleanValue());
     int _jspx_eval_c_005fif_005f0 = _jspx_th_c_005fif_005f0.doStartTag();
     if (_jspx_eval_c_005fif_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {

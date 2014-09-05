@@ -1,80 +1,52 @@
 package org.news.action;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
-import com.opensymphony.xwork2.ActionSupport;
-
-public class UploadAction extends ActionSupport {
-
-	private static final long serialVersionUID = -1137662085372562694L;
-
-	private File file;
-	
-    private String fileFileName;
-    
-    private String fileContentType;
-    
-    
-	
-	public File getFile() {
-		return file;
-	}
-
-
-
-	public void setFile(File file) {
-		this.file = file;
-	}
-
-
-
-	public String getFileFileName() {
-		return fileFileName;
-	}
-
-
-
-	public void setFileFileName(String fileFileName) {
-		this.fileFileName = fileFileName;
-	}
-
-
-
-	public String getFileContentType() {
-		return fileContentType;
-	}
-	
-
-	public void setFileContentType(String fileContentType) {
-		this.fileContentType = fileContentType;
-	}
-
-	
+/**
+ * @author 张轮
+ * 后台处理上传图片
+ *
+ */
+public class UploadAction extends BaseAction{
 	/**
-	 * @return
+	 * 
 	 */
-	public String execute() throws Exception{
-
-		InputStream is = new FileInputStream(file);
-		String root = ServletActionContext.getServletContext().getRealPath("/softwares");
-		System.out.println(this.getFileContentType() );
-		File deskFile = new File(root,this.getFileFileName());
-		System.out.println(this.getFileFileName() );
-		OutputStream os = new FileOutputStream(deskFile);
-		byte [] bytefer = new byte[400];
-		int length = 0 ; 
-		while((length = is.read(bytefer) )>0)
-		{
-			os.write(bytefer,0,length);
+	private static final long serialVersionUID = -2619997997729594861L;
+	private File imgFile;
+	
+	public void upload(){
+		try {
+			
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd_HHmmss");
+			Random r=new Random();
+			String path=ServletActionContext.getServletContext().getRealPath("/");
+			String imgName=sdf.format(new Date())+r.nextInt(100)+".jpg";
+		
+			FileUtils.copyFile(imgFile,new File(path+"upload/"+imgName));
+			
+			//向kindeditor返回json格式图片路径
+			String outPath=ServletActionContext.getRequest().getScheme()+"://"+ServletActionContext.getRequest().getServerName()+":"+ServletActionContext.getRequest().getServerPort()+ServletActionContext.getRequest().getContextPath()+"/";
+			
+			String outImageName=outPath+"upload/"+imgName;
+			String returnUrl="{\"error\":0,\"url\":\""+outImageName+"\"}";
+			ServletActionContext.getResponse().getWriter().print(returnUrl);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		os.close();
-		is.close();
-		return SUCCESS;
 	}
+	
+	public File getImgFile() {
+		return imgFile;
+	}
+	public void setImgFile(File imgFile) {
+		this.imgFile = imgFile;
+	}
+	
 }

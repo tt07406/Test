@@ -59,6 +59,9 @@ public final class newsinfo_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.write("\r\n");
       out.write("<html>\r\n");
       out.write("<head><title>增加新闻</title>\r\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
+      out.print(request.getContextPath());
+      out.write("/edit/themes/default/default.css\">\r\n");
       out.write("<style type=\"text/css\" rel=\"stylesheet\">\r\n");
       out.write("    .source {\r\n");
       out.write("    width: 700px;\r\n");
@@ -113,18 +116,34 @@ public final class newsinfo_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.write("/edit/lang/zh_CN.js\"></script>\r\n");
       out.write("\t<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
       out.print(request.getContextPath());
-      out.write("/edit/kindeditor-core.js\"></script>\r\n");
+      out.write("/edit/kindeditor.js\"></script>\r\n");
       out.write("\t<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
       out.print(request.getContextPath());
-      out.write("/edit/plugin-all.js\"></script>\r\n");
-      out.write("\t<script type=\"text/javascript\">\r\n");
-      out.write("\t\tKE.show({\r\n");
-      out.write("\t\t\tid : 'note',\r\n");
-      out.write("\t\t\tcssPath : '");
+      out.write("/js/jquery-1.11.1.min.js\"></script>\r\n");
+      out.write("\t<script>\r\n");
+      out.write("\tvar editor;\r\n");
+      out.write("\t$(document).ready(function (){\r\n");
+      out.write("\t\t//渲染编辑器\r\n");
+      out.write("\t\tKindEditor.ready(function(K) {\r\n");
+      out.write("\t\t\teditor = K.create('#note',{\r\n");
+      out.write("\t\t\t\titems:[\r\n");
+      out.write("\t\t\t\t\t'preview','fontname','fontsize','forecolor','hilitecolor','bold','italic','underline','strikethrough','justifyleft','justifycenter','justifyright','hr','image','emoticons','fullscreen'\r\n");
+      out.write("\t\t\t\t],\r\n");
+      out.write("\t\t\t\tuploadJson : '");
       out.print(request.getContextPath());
-      out.write("/edit/index.css'\r\n");
+      out.write("/uploadAction.action',\r\n");
+      out.write("\t\t\t\tfilterMode: true,\r\n");
+      out.write("\t\t\t\tafterBlur: function(){this.sync();},\r\n");
+      out.write("\t\t\t\tafterChange : function() {\r\n");
+      out.write("\t\t\t\t\t$('#alreadyInput').html(this.count());\r\n");
+      out.write("\t\t\t\t\t$('#stillInput').html(2000-this.count());\r\n");
+      out.write("\t\t\t\t}\r\n");
+      out.write("\t\t\t});\r\n");
       out.write("\t\t});\r\n");
-      out.write("\t</script>\r\n");
+      out.write("\r\n");
+      out.write("\t});\r\n");
+      out.write("\t\r\n");
+      out.write("</script>\r\n");
       out.write("<center> \r\n");
       out.write("<form action=\"NewsInfo_insert\" method=\"post\" onSubmit=\"return validate(this)\" enctype=\"multipart/form-data\">\r\n");
       out.write("<table border=\"1\" width=\"100%\" cellpadding=\"5\" cellspacing=\"0\" bgcolor=\"F2F2F2\" id=\"myTB\">\r\n");
@@ -173,7 +192,7 @@ public final class newsinfo_005finsert_jsp extends org.apache.jasper.runtime.Htt
       out.write("\t\t<td colspan=\"4\">\r\n");
       out.write("\t\t\t<div class=\"editor\">\r\n");
       out.write("\t\t\t\t<textarea id=\"note\" name=\"content\" style=\"width:650px;height:200px;visibility:hidden;\">\r\n");
-      out.write("\t\t\t\t</textarea>\r\n");
+      out.write("\t\t\t\t</textarea>你已输入<span id=\"alreadyInput\"></span>字，还能输入<span id=\"stillInput\"></span>字<br/>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</td>\r\n");
       out.write("\t</tr>\r\n");
@@ -216,9 +235,9 @@ public final class newsinfo_005finsert_jsp extends org.apache.jasper.runtime.Htt
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(88,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(88,3) '${types}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${types}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(88,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(105,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(105,3) '${types}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${types}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/manage/admin/newsinfo/newsinfo_insert.jsp(105,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("newstype");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
