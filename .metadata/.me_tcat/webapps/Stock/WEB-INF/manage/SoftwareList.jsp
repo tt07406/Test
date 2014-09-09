@@ -13,6 +13,13 @@
 		function changeColor(obj,color){
 			obj.bgColor = color ;
 		}
+		function doDelete(){
+			if(window.confirm("确认删除？")){
+				return true ;
+			} else {
+				return false ;
+			}
+		}
 		function show(thisurl){
 			window.open(thisurl,"新闻发布系统","widht=500,height=370,scrollbars=yes,resizeable=no") ;
 		}
@@ -34,7 +41,7 @@
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE6">${software.attachmentId}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6"><a href="Software_download.action?sid=${software.attachmentId}">${software.attachmentName}</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="Software_delete.action?softwareid=${software.attachmentId}&cp=${cp}&ls=${ls}&pg=${pg}">删除</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="Software_delete.action?softwareid=${software.attachmentId}&cp=${cp}&ls=${ls}&pg=${pg}" onclick="return doDelete()">删除</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

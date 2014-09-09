@@ -2656,3 +2656,163 @@ java.nio.channels.ClosedChannelException
 
 !ENTRY org.eclipse.osgi 2 1 2014-09-06 00:30:08.658
 !MESSAGE NLS missing message: BrowseToTLDAttributeNameDeclaration in: org.jboss.tools.common.text.ext.hyperlink.xpl.Messages
+!SESSION 2014-09-09 22:13:59.405 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 4 274 2014-09-09 22:14:56.913
+!MESSAGE Resource is out of sync with the file system: '/MVCNews/WebRoot/manage/index.htm'.
+
+!ENTRY org.eclipse.dltk.core 4 0 2014-09-09 22:15:05.631
+!MESSAGE error saving index
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.dltk.internal.core.util.Util.writeUTF(Util.java:1430)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategoryTable(DiskIndex.java:1177)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategories(DiskIndex.java:1133)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeWith(DiskIndex.java:724)
+	at org.eclipse.dltk.core.search.index.Index.save(Index.java:243)
+	at org.eclipse.dltk.core.search.indexing.core.SourceModulesRequest.run(SourceModulesRequest.java:85)
+	at org.eclipse.dltk.core.search.indexing.AbstractJob.execute(AbstractJob.java:77)
+	at org.eclipse.dltk.internal.core.search.processing.JobManager.run(JobManager.java:452)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY org.eclipse.dltk.core 4 0 2014-09-09 22:15:15.344
+!MESSAGE error saving index
+!STACK 0
+java.io.UTFDataFormatException
+	at org.eclipse.dltk.internal.core.util.Util.writeUTF(Util.java:1430)
+	at org.eclipse.dltk.core.search.index.DiskIndex.writeCategoryTable(DiskIndex.java:1177)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeCategory(DiskIndex.java:662)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeCategories(DiskIndex.java:605)
+	at org.eclipse.dltk.core.search.index.DiskIndex.mergeWith(DiskIndex.java:726)
+	at org.eclipse.dltk.core.search.index.Index.save(Index.java:243)
+	at org.eclipse.dltk.core.search.indexing.core.SourceModulesRequest.run(SourceModulesRequest.java:85)
+	at org.eclipse.dltk.core.search.indexing.AbstractJob.execute(AbstractJob.java:77)
+	at org.eclipse.dltk.internal.core.search.processing.JobManager.run(JobManager.java:452)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY org.eclipse.jface 2 0 2014-09-09 22:15:18.637
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-09-09 22:15:18.637
+!MESSAGE A conflict occurred for SHIFT+DEL:
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeAllInstances,Remove All Visible Results,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.cut,Cut,
+		Cut the selection to the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.handlers.WidgetMethodHandler@16927e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.topcased.modeler.deleteModelObject,Delete From Model,
+		Allows the user to delete the selected graph element and its associated model element in a Topcased editor.,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:15:32.659
+!MESSAGE NLS unused message: prompt.optclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:15:32.669
+!MESSAGE NLS unused message: prompt.preclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:15:32.696
+!MESSAGE NLS unused message: prompt.optlibrarypath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.maven.ide.eclipse 4 0 2014-09-09 22:15:34.199
+!MESSAGE Unable to update index for central|http://repo1.maven.org/maven2
+!STACK 0
+java.io.IOException: Authorization exception retrieving nexus-maven-repository-index.properties
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$WagonFetcher.retrieve(DefaultIndexUpdater.java:681)
+	at org.sonatype.nexus.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:22)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:493)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:74)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:780)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:954)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:138)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1060)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateIndex(NexusIndexManager.java:1013)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager$1.run(NexusIndexManager.java:624)
+	at org.maven.ide.eclipse.internal.index.IndexUpdaterJob.run(IndexUpdaterJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:16:57.534
+!MESSAGE NLS unused message: WizardNewFileCreationPage_title in: com.genuitec.eclipse.springframework.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:16:57.540
+!MESSAGE NLS unused message: WizardNewFileCreationPage_errorTitle in: com.genuitec.eclipse.springframework.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:16:57.546
+!MESSAGE NLS unused message: WizardNewFileCreationPage_internalErrorTitle in: com.genuitec.eclipse.springframework.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-09-09 22:16:57.552
+!MESSAGE NLS unused message: WizardNewFileCreationPage_internalErrorMessage in: com.genuitec.eclipse.springframework.messages
+
+!ENTRY com.genuitec.eclipse.sqlexplorer 4 4 2014-09-09 23:21:58.463
+!MESSAGE Error while performing database login with the mysqlDriver driver
+!STACK 0
+java.sql.SQLException: Illegal connection port value '3306>]'
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:910)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:2763)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:1555)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:285)
+	at net.sourceforge.squirrel_sql.fw.sql.SQLDriverManager.getConnection(SQLDriverManager.java:99)
+	at com.genuitec.eclipse.sqlexplorer.actions.LoginProgress$Login.run(LoginProgress.java:48)
+	at java.lang.Thread.run(Thread.java:619)
+
+!ENTRY org.eclipse.ui 4 0 2014-09-09 23:24:41.625
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.genuitec.eclipse.sqlexplorer.wizards.ConnectionProfileWizardSchemaPage$5.widgetSelected(ConnectionProfileWizardSchemaPage.java:202)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:228)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.genuitec.eclipse.sqlexplorer.actions.NewConnectionProfileAction.basicRun(NewConnectionProfileAction.java:61)
+	at com.genuitec.eclipse.core.ui.action.LicenseValidatingAction.run(Unknown Source)
+	at com.genuitec.eclipse.core.ui.action.LicenseValidatingAction.runWithEvent(Unknown Source)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3910)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3503)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2405)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2369)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2221)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:500)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:493)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:194)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:368)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)

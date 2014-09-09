@@ -14,6 +14,13 @@
 		function changeColor(obj,color){
 			obj.bgColor = color ;
 		}
+		function doDelete(){
+			if(window.confirm("确认删除？")){
+				return true ;
+			} else {
+				return false ;
+			}
+		}
 		function show(thisurl){
 			window.open(thisurl,"新闻发布系统","widht=500,height=370,scrollbars=yes,resizeable=no") ;
 		}
@@ -46,7 +53,7 @@
 		<td align="center" valign="middle"><span class="STYLE6">${user.userPhone}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${user.userIdNum}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6"><a href="Users_updatepre.action?pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">修改</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="Users_delete.action?pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}">删除</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="Users_delete.action?pid=${user.usersId}&cp=${page}&ls=${size}&pg=${url}" onclick="return doDelete()">删除</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

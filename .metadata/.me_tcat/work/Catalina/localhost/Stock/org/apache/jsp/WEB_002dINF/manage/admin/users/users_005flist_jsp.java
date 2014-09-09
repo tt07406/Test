@@ -70,6 +70,13 @@ public final class users_005flist_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\tfunction changeColor(obj,color){\r\n");
       out.write("\t\t\tobj.bgColor = color ;\r\n");
       out.write("\t\t}\r\n");
+      out.write("\t\tfunction doDelete(){\r\n");
+      out.write("\t\t\tif(window.confirm(\"确认删除？\")){\r\n");
+      out.write("\t\t\t\treturn true ;\r\n");
+      out.write("\t\t\t} else {\r\n");
+      out.write("\t\t\t\treturn false ;\r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t}\r\n");
       out.write("\t\tfunction show(thisurl){\r\n");
       out.write("\t\t\twindow.open(thisurl,\"新闻发布系统\",\"widht=500,height=370,scrollbars=yes,resizeable=no\") ;\r\n");
       out.write("\t\t}\r\n");
@@ -118,9 +125,9 @@ public final class users_005flist_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/manage/admin/users/users_list.jsp(39,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/manage/admin/users/users_list.jsp(39,1) '${users}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${users}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/manage/admin/users/users_list.jsp(39,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/manage/admin/users/users_list.jsp(46,1) name = items type = java.lang.Object reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${users}", java.lang.Object.class, (PageContext)_jspx_page_context, null, false));
+    // /WEB-INF/manage/admin/users/users_list.jsp(46,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("user");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -169,7 +176,7 @@ public final class users_005flist_jsp extends org.apache.jasper.runtime.HttpJspB
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${size}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("&pg=");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${url}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\">删除</a></span></td>\r\n");
+          out.write("\" onclick=\"return doDelete()\">删除</a></span></td>\r\n");
           out.write("\t</TR>\r\n");
           out.write("\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
