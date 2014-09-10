@@ -28,4 +28,10 @@
 <fullyQualifiedTypeName name="org.news.service.NewsInfoService"/>
 <fullyQualifiedTypeName name="org.news.service.AttachmentService"/>
 <fullyQualifiedTypeName name="org.news.service.AdminService"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Admin"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.NewsAttachment"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Newstype"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Users"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Leavemessage"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Replys"/>
 </qualifiedTypeNameHistroy>

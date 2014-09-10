@@ -1,0 +1,48 @@
+package org.news.hibernate.domain;
+
+
+
+/**
+ * NewsAttachment entity. @author MyEclipse Persistence Tools
+ */
+
+public class NewsAttachment  implements java.io.Serializable {
+
+
+    // Fields    
+
+     private NewsAttachmentId id;
+
+
+    // Constructors
+
+    /** default constructor */
+    public NewsAttachment() {
+    }
+
+    
+    /** full constructor */
+    public NewsAttachment(NewsAttachmentId id) {
+        this.id = id;
+    }
+
+   
+    // Property accessors
+
+    public NewsAttachmentId getId() {
+        return this.id;
+    }
+    
+    public void setId(NewsAttachmentId id) {
+        this.id = id;
+    }
+   
+
+
+
+
+
+
+
+
+}

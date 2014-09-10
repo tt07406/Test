@@ -75,7 +75,7 @@ CREATE TABLE `news_attachment` (
   `news_id` int(10) default NULL,
   `attachment_name` varchar(50) default NULL,
   `attachment_content` longblob,
-  UNIQUE KEY `attachment_id` (`attachment_id`),
+  PRIMARY KEY `attachment_id` (`attachment_id`),
   KEY `Relationship_1_FK` (`news_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 

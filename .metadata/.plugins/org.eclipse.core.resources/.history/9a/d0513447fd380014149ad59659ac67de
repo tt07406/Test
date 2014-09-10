@@ -1,0 +1,103 @@
+package org.news.hibernate.domain;
+
+
+
+/**
+ * NewsAttachmentId entity. @author MyEclipse Persistence Tools
+ */
+
+public class NewsAttachmentId  implements java.io.Serializable {
+
+
+    // Fields    
+
+     private Integer attachmentId;
+     private Integer newsId;
+     private String attachmentName;
+     private String attachmentContent;
+
+
+    // Constructors
+
+    /** default constructor */
+    public NewsAttachmentId() {
+    }
+
+	/** minimal constructor */
+    public NewsAttachmentId(Integer attachmentId) {
+        this.attachmentId = attachmentId;
+    }
+    
+    /** full constructor */
+    public NewsAttachmentId(Integer attachmentId, Integer newsId, String attachmentName, String attachmentContent) {
+        this.attachmentId = attachmentId;
+        this.newsId = newsId;
+        this.attachmentName = attachmentName;
+        this.attachmentContent = attachmentContent;
+    }
+
+   
+    // Property accessors
+
+    public Integer getAttachmentId() {
+        return this.attachmentId;
+    }
+    
+    public void setAttachmentId(Integer attachmentId) {
+        this.attachmentId = attachmentId;
+    }
+
+    public Integer getNewsId() {
+        return this.newsId;
+    }
+    
+    public void setNewsId(Integer newsId) {
+        this.newsId = newsId;
+    }
+
+    public String getAttachmentName() {
+        return this.attachmentName;
+    }
+    
+    public void setAttachmentName(String attachmentName) {
+        this.attachmentName = attachmentName;
+    }
+
+    public String getAttachmentContent() {
+        return this.attachmentContent;
+    }
+    
+    public void setAttachmentContent(String attachmentContent) {
+        this.attachmentContent = attachmentContent;
+    }
+   
+
+
+
+   public boolean equals(Object other) {
+         if ( (this == other ) ) return true;
+		 if ( (other == null ) ) return false;
+		 if ( !(other instanceof NewsAttachmentId) ) return false;
+		 NewsAttachmentId castOther = ( NewsAttachmentId ) other; 
+         
+		 return ( (this.getAttachmentId()==castOther.getAttachmentId()) || ( this.getAttachmentId()!=null && castOther.getAttachmentId()!=null && this.getAttachmentId().equals(castOther.getAttachmentId()) ) )
+ && ( (this.getNewsId()==castOther.getNewsId()) || ( this.getNewsId()!=null && castOther.getNewsId()!=null && this.getNewsId().equals(castOther.getNewsId()) ) )
+ && ( (this.getAttachmentName()==castOther.getAttachmentName()) || ( this.getAttachmentName()!=null && castOther.getAttachmentName()!=null && this.getAttachmentName().equals(castOther.getAttachmentName()) ) )
+ && ( (this.getAttachmentContent()==castOther.getAttachmentContent()) || ( this.getAttachmentContent()!=null && castOther.getAttachmentContent()!=null && this.getAttachmentContent().equals(castOther.getAttachmentContent()) ) );
+   }
+   
+   public int hashCode() {
+         int result = 17;
+         
+         result = 37 * result + ( getAttachmentId() == null ? 0 : this.getAttachmentId().hashCode() );
+         result = 37 * result + ( getNewsId() == null ? 0 : this.getNewsId().hashCode() );
+         result = 37 * result + ( getAttachmentName() == null ? 0 : this.getAttachmentName().hashCode() );
+         result = 37 * result + ( getAttachmentContent() == null ? 0 : this.getAttachmentContent().hashCode() );
+         return result;
+   }   
+
+
+
+
+
+}

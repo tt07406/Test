@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="93" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
 <window height="728" maximized="true" width="1024" x="75" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -23,16 +23,17 @@
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="147" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="115" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" itemType="typePlaceholder" x="38" y="22"/>
 <coolItem id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.j2eedt.core.editor.tld" itemType="typePlaceholder" x="38" y="22"/>
 <coolItem id="com.genuitec.eclipse.springframework.springconfigeditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typePlaceholder" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -41,7 +42,7 @@
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.struts2.editor" itemType="typeToolBarContribution" x="342" y="22"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -54,8 +55,6 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -63,15 +62,8 @@
 <editor id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" name="web.xml" partName="web.xml" path="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/web.xml" title="web.xml" tooltip="E:/file/GitHub/Test/Stock/WebRoot/WEB-INF/web.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/WebRoot/WEB-INF/web.xml"/>
 </editor>
-<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" partName="database.properties" path="E:/file/GitHub/Test/Stock/src/database.properties" title="database.properties" tooltip="E:/file/GitHub/Test/Stock/src/database.properties" workbook="DefaultEditorWorkbook">
-<input factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" path="/Stock/src/database.properties"/>
-</editor>
-<editor id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" name="hibernate.cfg.xml" partName="hibernate.cfg.xml" path="E:/file/GitHub/Test/Stock/src/hibernate.cfg.xml" title="hibernate.cfg.xml" tooltip="Stock/src/hibernate.cfg.xml" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" name="hibernate.cfg.xml" partName="hibernate.cfg.xml" path="E:/file/GitHub/Test/Stock/src/hibernate.cfg.xml" title="hibernate.cfg.xml" tooltip="Stock/src/hibernate.cfg.xml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/hibernate.cfg.xml"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HibernateSessionFactory.java" partName="HibernateSessionFactory.java" path="E:/file/GitHub/Test/Stock/src/org/news/hibernate/HibernateSessionFactory.java" title="HibernateSessionFactory.java" tooltip="Stock/src/org/news/hibernate/HibernateSessionFactory.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Stock/src/org/news/hibernate/HibernateSessionFactory.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1572"/>
 </editor>
 </editors>
 <views>
@@ -92,7 +84,9 @@
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
-<view id="com.genuitec.eclipse.sqlexplorer.views.ConnectionInfo" partName="DB Connection Info"/>
+<view id="com.genuitec.eclipse.sqlexplorer.views.ConnectionInfo" partName="DB Connection Info">
+<viewState/>
+</view>
 <view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
 <view id="com.genuitec.eclipse.ast.deploy.core.serverview" partName="Servers">
 <viewState/>
@@ -423,12 +417,13 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.2496318" ratioLeft="339" ratioRight="1019" relationship="2" relative="cvslocation"/>
-<info folder="true" part="bottom" ratio="0.49916804" ratioLeft="300" ratioRight="301" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.76898223" ratioLeft="476" ratioRight="143" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.genuitec.eclipse.sqlexplorer.views.SQLResultsView" appearance="2" expanded="2">
 <page content="com.genuitec.eclipse.sqlexplorer.views.SQLResultsView" label="SQL Results"/>
 <page content="com.genuitec.eclipse.sqlexplorer.views.SQLHistoryView" label="SQL History"/>
 <page content="com.genuitec.eclipse.sqlexplorer.views.ConnectionInfo" label="DB Connection Info"/>
 <page content="com.genuitec.eclipse.sqlexplorer.views.TableInfoView" label="Table/Object Info"/>
+<page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`news_all`.`news_attachment`" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -452,83 +447,142 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.model.ui.editor.EditorPartWrapper" path="/Stock/WebRoot/WEB-INF/web.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" path="/Stock/WebRoot/WEB-INF/applicationContext.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" path="/Stock/src/struts-manage.xml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_update.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" path="/Stock/WebRoot/WEB-INF/applicationContext.xml"/>
-<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" path="/Stock/src/database.properties"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/ConnListener.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/utils/Pools.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_list.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_list.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/admin/users/users_list.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/Stock/WebRoot/WEB-INF/manage/SoftwareList.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" path="/Stock/src/hibernate.cfg.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Admin.hbm.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/NewsAttachment.hbm.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/dao/NewsAttachmentDAO.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Newsinfo.hbm.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/domain/Newsinfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/domain/Admin.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Newstype.hbm.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="" path="/Stock/src/org/news/hibernate/Newstype.hbm.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/dao/NewstypeDAO.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/dao/UsersDAO.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Users.hbm.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/dao/LeavemessageDAO.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Leavemessage.hbm.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="" path="/Stock/src/org/news/hibernate/Leavemessage.hbm.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/dao/ReplysDAO.java"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Replys.hbm.xml"/>
+<editor factoryID="org.jboss.tools.common.core.resources.XModelObjectEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" path="/Stock/src/org/news/hibernate/Leavemessage.hbm.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Stock/src/org/news/hibernate/HibernateSessionFactory.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" path="/Stock/src/hibernate.cfg.xml"/>
 </editors>
-<item historyLabel="struts-manage.xml" index="3"/>
-<item historyLabel="applicationContext.xml" index="2"/>
-<item historyLabel="struts-manage.xml" index="3"/>
-<item historyLabel="applicationContext.xml" index="2"/>
-<item historyLabel="struts.xml" index="0"/>
-<item historyLabel="applicationContext.xml" index="2"/>
-<item historyLabel="struts.xml" index="0"/>
-<item historyLabel="struts-manage.xml" index="3"/>
-<item historyLabel="applicationContext.xml" index="2"/>
-<item historyLabel="struts.xml" index="0"/>
-<item historyLabel="struts-manage.xml" index="3"/>
-<item historyLabel="applicationContext.xml" index="2"/>
-<item historyLabel="struts-manage.xml" index="3"/>
-<item historyLabel="struts.xml" index="0"/>
-<item historyLabel="web.xml" index="1"/>
-<item historyLabel="newsinfo_update.jsp" index="4"/>
-<item historyLabel="web.xml" index="1"/>
-<item historyLabel="applicationContext.xml" index="5"/>
-<item historyLabel="database.properties" index="6"/>
-<item historyLabel="applicationContext.xml" index="5"/>
-<item historyLabel="ConnListener.java" index="7">
-<position info="not_deleted" x="4" y="0"/>
+<item historyLabel="Newstype.hbm.xml" index="7">
+<position info="not_deleted" x="314" y="85"/>
 </item>
-<item historyLabel="applicationContext.xml" index="5"/>
-<item historyLabel="Pools.java" index="8">
-<position info="not_deleted" x="4" y="0"/>
-</item>
-<item historyLabel="applicationContext.xml" index="5"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="newsinfo_list.jsp" index="10"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="newsinfo_list.jsp" index="10"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="newstype_list.jsp" index="11"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="users_list.jsp" index="12"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="newsinfo_list.jsp" index="10"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="newsinfo_list.jsp" index="10">
-<position info="not_deleted" x="2822" y="0"/>
-</item>
-<item historyLabel="newsinfo_list.jsp" index="10">
-<position info="not_deleted" x="2822" y="0"/>
-</item>
-<item historyLabel="users_list.jsp" index="12"/>
-<item historyLabel="newsinfo_list.jsp" index="10"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="SoftwareList.jsp" index="13"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="SoftwareList.jsp" index="13"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="SoftwareList.jsp" index="13"/>
-<item historyLabel="admin_list.jsp" index="9"/>
-<item historyLabel="applicationContext.xml" index="5"/>
-<item historyLabel="database.properties" index="6"/>
-<item historyLabel="hibernate.cfg.xml" index="14"/>
-<item active="true" historyLabel="HibernateSessionFactory.java" index="15">
+<item historyLabel="NewstypeDAO.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
+<item historyLabel="Newstype.hbm.xml" index="6"/>
+<item historyLabel="UsersDAO.java" index="9">
+<position info="not_deleted" x="1367" y="0"/>
+</item>
+<item historyLabel="Users.hbm.xml" index="10">
+<position/>
+</item>
+<item historyLabel="UsersDAO.java" index="9">
+<position info="not_deleted" x="1367" y="0"/>
+</item>
+<item historyLabel="Newstype.hbm.xml" index="6"/>
+<item historyLabel="LeavemessageDAO.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Leavemessage.hbm.xml" index="12">
+<position info="not_deleted" x="314" y="93"/>
+</item>
+<item historyLabel="Leavemessage.hbm.xml" index="13">
+<position info="not_deleted" x="543" y="81"/>
+</item>
+<item historyLabel="LeavemessageDAO.java" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Newstype.hbm.xml" index="6"/>
+<item historyLabel="Newsinfo.hbm.xml" index="3"/>
+<item historyLabel="Admin.java" index="5">
+<position info="not_deleted" x="211" y="0"/>
+</item>
+<item historyLabel="Newsinfo.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NewsAttachmentDAO.java" index="2">
+<position info="not_deleted" x="1170" y="0"/>
+</item>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Replys.hbm.xml" index="15">
+<position/>
+</item>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Users.hbm.xml" index="10">
+<position/>
+</item>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Replys.hbm.xml" index="15"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Newstype.hbm.xml" index="6"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Newsinfo.hbm.xml" index="3"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NewsAttachment.hbm.xml" index="1"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Leavemessage.hbm.xml" index="16"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Admin.hbm.xml" index="0"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Leavemessage.hbm.xml" index="16"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="NewsAttachment.hbm.xml" index="1"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Newsinfo.hbm.xml" index="3"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Newstype.hbm.xml" index="6"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Replys.hbm.xml" index="15">
+<position info="not_deleted" x="294" y="19"/>
+</item>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Users.hbm.xml" index="10"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="HibernateSessionFactory.java" index="17">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="hibernate.cfg.xml" index="18"/>
+<item historyLabel="ReplysDAO.java" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="hibernate.cfg.xml" index="18"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -536,13 +590,7 @@
 <actionBarAdvisor/>
 <trimLayout>
 <trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topleft"/>
-<trimItem IMemento.internal.id="bottomleft"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@c449c6"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@c77e26"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="topLeft"/>
 </trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
@@ -559,47 +607,47 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HibernateSessionFactory.java" tooltip="Stock/src/org/news/hibernate/HibernateSessionFactory.java">
 <persistable path="/Stock/src/org/news/hibernate/HibernateSessionFactory.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" name="hibernate.cfg.xml" tooltip="Stock/src/hibernate.cfg.xml">
-<persistable path="/Stock/src/hibernate.cfg.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Users.hbm.xml" tooltip="Stock/src/org/news/hibernate/Users.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Users.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" name="database.properties" tooltip="Stock/src/database.properties">
-<persistable path="/Stock/src/database.properties"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Replys.hbm.xml" tooltip="Stock/src/org/news/hibernate/Replys.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Replys.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="SoftwareList.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/SoftwareList.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/SoftwareList.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Newstype.hbm.xml" tooltip="Stock/src/org/news/hibernate/Newstype.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Newstype.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="users_list.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/users/users_list.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/users/users_list.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Newsinfo.hbm.xml" tooltip="Stock/src/org/news/hibernate/Newsinfo.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Newsinfo.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newstype_list.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_list.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/newstype/newstype_list.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="NewsAttachment.hbm.xml" tooltip="Stock/src/org/news/hibernate/NewsAttachment.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/NewsAttachment.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="newsinfo_list.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/newsinfo/newsinfo_list.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Leavemessage.hbm.xml" tooltip="Stock/src/org/news/hibernate/Leavemessage.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Leavemessage.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_list.jsp" tooltip="Stock/WebRoot/WEB-INF/manage/admin/admin/admin_list.jsp">
-<persistable path="/Stock/WebRoot/WEB-INF/manage/admin/admin/admin_list.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.hibernate.editor.multipage.hibernatemappingeditor" name="Admin.hbm.xml" tooltip="Stock/src/org/news/hibernate/Admin.hbm.xml">
+<persistable path="/Stock/src/org/news/hibernate/Admin.hbm.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Pools.java" tooltip="Stock/src/org/news/utils/Pools.java">
-<persistable path="/Stock/src/org/news/utils/Pools.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ReplysDAO.java" tooltip="Stock/src/org/news/hibernate/dao/ReplysDAO.java">
+<persistable path="/Stock/src/org/news/hibernate/dao/ReplysDAO.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConnListener.java" tooltip="Stock/src/org/news/utils/ConnListener.java">
-<persistable path="/Stock/src/org/news/utils/ConnListener.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LeavemessageDAO.java" tooltip="Stock/src/org/news/hibernate/dao/LeavemessageDAO.java">
+<persistable path="/Stock/src/org/news/hibernate/dao/LeavemessageDAO.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.j2eedt.core.editor.tld" name="spring.tld" tooltip="Stock/WebRoot/WEB-INF/spring.tld">
-<persistable path="/Stock/WebRoot/WEB-INF/spring.tld"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersDAO.java" tooltip="Stock/src/org/news/hibernate/dao/UsersDAO.java">
+<persistable path="/Stock/src/org/news/hibernate/dao/UsersDAO.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" name="applicationContext.xml" tooltip="Stock/WebRoot/WEB-INF/applicationContext.xml">
-<persistable path="/Stock/WebRoot/WEB-INF/applicationContext.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewstypeDAO.java" tooltip="Stock/src/org/news/hibernate/dao/NewstypeDAO.java">
+<persistable path="/Stock/src/org/news/hibernate/dao/NewstypeDAO.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AdminLogin.java" tooltip="Stock/src/org/news/action/AdminLogin.java">
-<persistable path="/Stock/src/org/news/action/AdminLogin.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Admin.java" tooltip="Stock/src/org/news/hibernate/domain/Admin.java">
+<persistable path="/Stock/src/org/news/hibernate/domain/Admin.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UsersAction.java" tooltip="Stock/src/org/news/action/UsersAction.java">
-<persistable path="/Stock/src/org/news/action/UsersAction.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Newsinfo.java" tooltip="Stock/src/org/news/hibernate/domain/Newsinfo.java">
+<persistable path="/Stock/src/org/news/hibernate/domain/Newsinfo.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DownloadAttachmentAction.java" tooltip="Stock/src/org/news/action/DownloadAttachmentAction.java">
-<persistable path="/Stock/src/org/news/action/DownloadAttachmentAction.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="NewsAttachmentDAO.java" tooltip="Stock/src/org/news/hibernate/dao/NewsAttachmentDAO.java">
+<persistable path="/Stock/src/org/news/hibernate/dao/NewsAttachmentDAO.java"/>
 </file>
 </mruList>
 </workbench>

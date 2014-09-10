@@ -1,0 +1,2 @@
+2014-09-10 23:15:19,657 0      [      Worker-21] WARN  ibernate.cfg.reveng.JDBCReader  - The JDBC driver didn't report any primary key columns in news_attachment. Asking rev.eng. strategy
+2014-09-10 23:15:19,764 107    [      Worker-21] WARN  ibernate.cfg.reveng.JDBCReader  - Rev.eng. strategy did not report any primary key columns for news_attachment

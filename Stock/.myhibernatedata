@@ -1,7 +1,7 @@
 #MyEclipse Hibernate Properties
-#Tue Sep 09 23:27:46 CST 2014
-sessionFactoryName=org.news.hibernate.HibernateSessionFactory
-genBasicCompId=false
+#Wed Sep 10 23:43:53 CST 2014
+sessionFactoryName=org.news.hibernate.dao.HibernateSessionFactory
+genBasicCompId=true
 profile=
 daoSFId=
 version=3.3
@@ -11,7 +11,7 @@ reStrategyClass=
 detectO2O=false
 springDaoFile=
 useJavaTypes=true
-keyGenerator=
+keyGenerator=native
 libInstallFolder=WebRoot/WEB-INF/lib
 addLibs2Project=true
 genVersionTag=false
@@ -22,4 +22,4 @@ reSettingsFile=
 configFile=/Stock/src/hibernate.cfg.xml
 createConfigFile=false
 addLibs2Classpath=true
-baseDaoClass=
+baseDaoClass=org.news.hibernate.dao.BaseHibernateDAO

@@ -1,3 +1,9 @@
-#Thu Aug 21 21:30:22 CST 2014
+#Wed Sep 10 23:51:15 CST 2014
+com.genuitec.eclipse.hibernate.JAVA_PACKAGE=org.news.hibernate.dao
+com.genuitec.eclipse.hibernate.GEN_POJO=false
 me.pref.version=4.1
 eclipse.preferences.version=1
+com.genuitec.eclipse.hibernate.GEN_DAO=true
+com.genuitec.eclipse.hibernate.GEN_MAPPING=false
+com.genuitec.eclipse.hibernate.GEN_ABSTRACT=false
+com.genuitec.eclipse.hibernate.JAVA_FOLDER=/Stock/src
