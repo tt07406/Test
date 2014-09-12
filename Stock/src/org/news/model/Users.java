@@ -7,25 +7,41 @@
  */
 package org.news.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * 会员信息PO类
  * @author tt
  * @version 14.6.18
  */
+@Entity(name="users")
 public class Users {
 
-	private int usersId;		//会员Id
+	@Id
+	@GeneratedValue
+	private int usersId;		//会员Id	
 	private String usersName;	//会员用户
 	private String usersPass;	//会员密码
 	private String usersInfo;	//其它信息	
 	private String realName;	//真实姓名
 	private String userSex;		//性别
 	private String usersEmail;	//E-mail
+	
+	@Column(name="phone")
 	private String userPhone;	//电话号码
+	
+	@Column(name="idNumber")
 	private String userIdNum;	//身份证号
 	
 	
 	
+	protected Users() {
+	}
+
 	/**
 	 * 初始化函数
 	 * @param usersId

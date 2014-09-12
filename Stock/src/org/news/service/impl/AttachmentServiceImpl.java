@@ -10,7 +10,7 @@ package org.news.service.impl;
 import java.io.File;
 import java.util.List;
 
-import org.news.dao.NewsAttachmentDAO;
+import org.news.dao.NewsAttachmentHibernateDAO;
 import org.news.model.NewsAttachment;
 import org.news.service.AttachmentService;
 
@@ -21,12 +21,12 @@ import org.news.service.AttachmentService;
  */
 public class AttachmentServiceImpl implements AttachmentService{
 
-	private NewsAttachmentDAO attachmentDAO;
+	private NewsAttachmentHibernateDAO attachmentDAO;
 	
 	/**
 	 * @param attachmentDAO the attachmentDAO to set
 	 */
-	public void setAttachmentDAO(NewsAttachmentDAO attachmentDAO) {
+	public void setAttachmentDAO(NewsAttachmentHibernateDAO attachmentDAO) {
 		this.attachmentDAO = attachmentDAO;
 	}
 

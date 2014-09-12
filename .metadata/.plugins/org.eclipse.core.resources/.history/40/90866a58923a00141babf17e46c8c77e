@@ -1,0 +1,40 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：NewsTypeHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import org.news.model.NewsType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 文章类型信息DAO
+ * @author tt
+ * @version 14.8.18
+ */
+public class NewsTypeHibernateDAO extends HibernateDaoSupport {
+
+	private static final Logger log = LoggerFactory.getLogger(NewsTypeHibernateDAO.class);
+	
+	/**
+	 * 添加频道
+	 * @param newsType
+	 * @return 操作是否成功
+	 */
+	public boolean addNewsType(NewsType newsType){
+		try {
+			getHibernateTemplate().save(newsType);
+			log.debug("save successful");
+			return true;
+		} catch (Exception e) {
+			log.error("save failed", e);
+			e.printStackTrace();
+		}
+		return false;
+	}
+}

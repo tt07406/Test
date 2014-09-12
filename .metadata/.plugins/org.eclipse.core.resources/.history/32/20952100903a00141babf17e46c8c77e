@@ -1,0 +1,165 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：NewsInfoHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.news.model.NewsAttachment;
+import org.news.model.NewsInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 文章信息DAO
+ * @author tt
+ * @version 14.8.18
+ */
+public class NewsInfoHibernateDAO extends HibernateDaoSupport {
+
+	private static final Logger log = LoggerFactory.getLogger(NewsAttachmentHibernateDAO.class);
+	
+	/**
+	 * 添加新闻
+	 * @param newsInfo
+	 * @return 操作是否成功
+	 */
+	public boolean addNewsInfo(NewsInfo newsInfo){
+		try {
+			getHibernateTemplate().save(newsInfo);
+			log.debug("save successful");
+			return true;
+		} catch (Exception e) {
+			log.error("save failed", e);
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	/**
+	 * 批量删除
+	 * @param newsInfoIds
+	 * @return 是否成功
+	 */
+	public boolean deleteNewsInfo(int[] newsInfoIds) {
+		for (int i = 0; i < newsInfoIds.length; i++) {
+			try {
+				getHibernateTemplate().delete(searchNewsInfo(newsInfoIds[i]));
+				log.debug("delete successful");
+			} catch (RuntimeException re) {
+				log.error("delete failed", re);
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * 通过新闻Id查询文章内容
+	 * @param newsInfoId
+	 * @return 文章内容
+	 */
+	public NewsInfo searchNewsInfo(int newsInfoId) {
+		return (NewsInfo)getHibernateTemplate().get(NewsInfo.class, newsInfoId); 
+	}
+	
+	/**
+	 * 修改文章信息
+	 * @param newsInfo
+	 * @return 文章内容
+	 */
+	public NewsInfo updateNewsInformation(NewsInfo newsInfo) {
+		try{
+			getHibernateTemplate().update(newsInfo);
+			log.debug("update successful");
+			return newsInfo;
+		}catch (Exception e) {
+			log.error("update failed", e);
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * 查询所有的新闻信息
+	 * @return 新闻集合
+	 */
+     @SuppressWarnings("unchecked")
+	public List<NewsInfo> getAllNewsInfo(){
+    	 try {
+   			String queryString = "from newsInfo order by newsInfoId desc";
+   			return (List<NewsInfo>)getHibernateTemplate().find(queryString);
+   		} catch (RuntimeException re) {
+   			log.error("find all failed", re);
+   			throw re;
+   		}
+     }
+     
+     /**
+      * 模糊查询新闻，只要文章标题、描述、内容、时间和作者有一个匹配上即可
+      * @param keyword
+      * @return 新闻集合
+      */
+     @SuppressWarnings("unchecked")
+	public List<NewsInfo> getAllNewsInfo(String keyword){
+    	 try {
+			String queryString = "from newsInfo where newsInfoTitle like binary ?"
+					+ " or newsInfoDescribe like binary ? "
+					+ " or newsInfoContent like binary ?"
+					+ " or newsInfoTime like binary ?"
+					+ " or newsType like binary ?"
+					+ " or newsAuthor like binary ? order by newsInfoId desc"; // 模糊匹配
+   			return (List<NewsInfo>)getHibernateTemplate().find(queryString, keyword, keyword, keyword, 
+   					keyword, keyword, keyword);
+   		} catch (RuntimeException re) {
+   			log.error("getAllNewsInfo failed", re);
+   			throw re;
+   		}
+     }
+     
+     /**
+      * 模糊查询新闻，只要文章标题、描述、内容、时间和作者有一个匹配上即可
+      * @param keyword 关键字
+      * @param currentPage 当前页
+      * @param lineSize 每页大小
+      * @return 新闻集合
+      */
+     @SuppressWarnings("unchecked")
+	public List<NewsInfo> getAllNewsInfo(final String keyword, final int currentPage, final int lineSize){
+		final String hql = "select * from newsinfo where newsInfoTitle like binary ?"
+				+ " or newsInfoDescribe like binary ? "
+				+ " or newsInfoContent like binary ?"
+				+ " or newsInfoTime like binary ?"
+				+ " or newsType like binary ?"
+				+ " or newsAuthor like binary ?  order by newsInfoId desc"; // 模糊匹配
+		List<NewsInfo> list = getHibernateTemplate().executeFind(
+				new HibernateCallback() {
+					// 实现HibernateCallback接口必须实现的方法
+					public Object doInHibernate(Session session)
+							throws HibernateException, SQLException {
+						// 执行Hibernate分页查询
+						List<NewsInfo> result = session.createQuery(hql)
+								// 为hql语句传入参数
+								.setParameter(0, keyword)
+								.setParameter(1, keyword)
+								.setParameter(2, keyword)
+								.setParameter(3, keyword)
+								.setParameter(4, keyword)
+								.setParameter(5, keyword)
+								.setFirstResult((currentPage - 1) * lineSize)
+								.setMaxResults(lineSize).list();
+						return result;
+					}
+				});
+		return list;
+     }
+}

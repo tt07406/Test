@@ -54,7 +54,7 @@ public class NewsAttachmentDAO extends BaseHibernateDAO {
 		log.debug("getting NewsAttachment instance with id: " + id);
 		try {
 			NewsAttachment instance = (NewsAttachment) getSession().get(
-					"org.news.hibernate.dao.NewsAttachment", id);
+					"org.news.hibernate.domain.NewsAttachment", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -66,7 +66,7 @@ public class NewsAttachmentDAO extends BaseHibernateDAO {
 		log.debug("finding NewsAttachment instance by example");
 		try {
 			List results = getSession().createCriteria(
-					"org.news.hibernate.dao.NewsAttachment").add(
+					"org.news.hibernate.domain.NewsAttachment").add(
 					Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());

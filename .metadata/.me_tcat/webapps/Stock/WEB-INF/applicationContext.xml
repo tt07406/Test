@@ -3,12 +3,43 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="adminDAO" class="org.news.dao.AdminDAO"></bean>
-	<bean id="attachmentDAO" class="org.news.dao.NewsAttachmentDAO"></bean>
-	<bean id="newsInfoDAO" class="org.news.dao.NewsInfoDAO"></bean>
-	<bean id="newsTypeDAO" class="org.news.dao.NewsTypeDAO"></bean>
-	<bean id="usersDAO" class="org.news.dao.UsersDAO"></bean>
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	
+	<!-- 配置sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+	</bean>
+	
+	<!-- 定义DAO Bean-->
+	<bean id="adminDAO" class="org.news.dao.AdminHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="attachmentDAO" class="org.news.dao.NewsAttachmentHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="newsInfoDAO" class="org.news.dao.NewsInfoHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="newsTypeDAO" class="org.news.dao.NewsTypeHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="usersDAO" class="org.news.dao.UsersHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
 	<bean id="adminService" class="org.news.service.impl.AdminServiceImpl">
 		<property name="adminDAO" ref="adminDAO"></property></bean>
 	<bean id="attachmentService" class="org.news.service.impl.AttachmentServiceImpl">

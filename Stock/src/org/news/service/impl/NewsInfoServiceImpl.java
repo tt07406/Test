@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.news.dao.AdminDAO;
-import org.news.dao.NewsAttachmentDAO;
-import org.news.dao.NewsInfoDAO;
+import org.news.dao.AdminHibernateDAO;
+import org.news.dao.NewsAttachmentHibernateDAO;
+import org.news.dao.NewsInfoHibernateDAO;
 import org.news.model.NewsAttachment;
 import org.news.model.NewsIndex;
 import org.news.model.NewsInfo;
@@ -28,28 +28,28 @@ import org.news.service.NewsInfoService;
  * @version 14.6.18
  */
 public class NewsInfoServiceImpl implements NewsInfoService{
-	private NewsInfoDAO newsInfoDAO; //引入新闻消息DAO
-	private AdminDAO adminDAO;
-	private NewsAttachmentDAO attachmentDAO;
+	private NewsInfoHibernateDAO newsInfoDAO; //引入新闻消息DAO
+	private AdminHibernateDAO adminDAO;
+	private NewsAttachmentHibernateDAO attachmentDAO;
 	
 	/**
 	 * @param newsInfoDAO the newsInfoDAO to set
 	 */
-	public void setNewsInfoDAO(NewsInfoDAO newsInfoDAO) {
+	public void setNewsInfoDAO(NewsInfoHibernateDAO newsInfoDAO) {
 		this.newsInfoDAO = newsInfoDAO;
 	}
 
 	/**
 	 * @param adminDAO the adminDAO to set
 	 */
-	public void setAdminDAO(AdminDAO adminDAO) {
+	public void setAdminDAO(AdminHibernateDAO adminDAO) {
 		this.adminDAO = adminDAO;
 	}
 
 	/**
 	 * @param attachmentDAO the attachmentDAO to set
 	 */
-	public void setAttachmentDAO(NewsAttachmentDAO attachmentDAO) {
+	public void setAttachmentDAO(NewsAttachmentHibernateDAO attachmentDAO) {
 		this.attachmentDAO = attachmentDAO;
 	}
 

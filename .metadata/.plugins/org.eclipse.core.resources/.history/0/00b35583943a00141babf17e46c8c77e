@@ -1,0 +1,138 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：UsersHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import java.util.List;
+
+import org.news.model.Admin;
+import org.news.model.Users;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 用户信息DAO
+ * @author tt
+ * @version 14.8.18
+ */
+public class UsersHibernateDAO extends HibernateDaoSupport {
+
+	private static final Logger log = LoggerFactory.getLogger(UsersHibernateDAO.class);
+	
+	/**
+	 * 用户登录验证
+	 * @param user
+	 * @return 验证的操作结果
+	 */
+	public boolean findLogin(Users user){
+		String userName = user.getUsersName();
+		String userPass = user.getUsersPass();
+		
+		//取得ID数，且大于零
+		int result = (Integer)getHibernateTemplate().find("select count(usersId) from users where usersName = ? and usersPass = ?", userName,userPass).get(0);
+		
+		if (result > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * 添加会员
+	 * @param user 传入VO对象
+	 * @return 操作是否成功
+	 */
+	public boolean addUser(Users user){
+		try {
+			getHibernateTemplate().save(user);
+			log.debug("save successful");
+			return true;
+		} catch (Exception e) {
+			log.error("save failed", e);
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	/**
+     * 可通过Id来查找会员的信息
+     * @param usersId
+     * @return
+     */
+    public Users findUsersById(int usersId){
+    	return (Users)getHibernateTemplate().get(Users.class, usersId); 
+    }
+    
+	/**
+	 * 批量删除会员
+	 * @param userIds
+	 * @return 是否成功
+	 */
+	public boolean deleteUsers(int[] userIds) {
+		for (int i = 0; i < userIds.length; i++) {
+			try {
+				getHibernateTemplate().delete(findUsersById(userIds[i]));
+				log.debug("delete successful");
+			} catch (RuntimeException re) {
+				log.error("delete failed", re);
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * 修改会员信息
+	 * @param users
+	 * @return 管理员
+	 */
+	public Users updateUsers(Users user) {
+		try{
+			getHibernateTemplate().update(user);
+			log.debug("update successful");
+			return user;
+		}catch (Exception e) {
+			log.error("update failed", e);
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * 查询所有的会员信息
+	 * @return 会员集合
+	 */
+     @SuppressWarnings("unchecked")
+	public List<Users> getAllUsers(){
+    	 try {
+  			String queryString = "from users order by usersId";
+  			return (List<Users>)getHibernateTemplate().find(queryString);
+  		} catch (RuntimeException re) {
+  			log.error("find all failed", re);
+  			throw re;
+  		}
+     }
+     
+     /**
+      * 可通过名称来查找管理员的信息
+      * @param usersName
+      * @return
+      */
+     @SuppressWarnings("unchecked")
+	public Users findUsersByName(String usersName){
+    	 try {
+   			String queryString = "from users where usersName = ?";
+   			List<Users> result = (List<Users>)getHibernateTemplate().find(queryString,usersName);
+   			return result.get(0);
+   		} catch (RuntimeException re) {
+   			log.error("find name failed", re);
+   			throw re;
+   		}
+     }
+}

@@ -9,7 +9,7 @@ package org.news.service.impl;
 
 import java.util.List;
 
-import org.news.dao.UsersDAO;
+import org.news.dao.UsersHibernateDAO;
 import org.news.model.Users;
 import org.news.service.UserService;
 
@@ -20,12 +20,12 @@ import org.news.service.UserService;
  */
 public class UserServiceImpl implements UserService{
 
-	private UsersDAO userDAO;
+	private UsersHibernateDAO userDAO;
 	
 	/**
 	 * @param userDAO the userDAO to set
 	 */
-	public void setUserDAO(UsersDAO userDAO) {
+	public void setUserDAO(UsersHibernateDAO userDAO) {
 		this.userDAO = userDAO;
 	}
 

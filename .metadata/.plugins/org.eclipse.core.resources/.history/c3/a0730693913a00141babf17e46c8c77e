@@ -1,0 +1,19 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：NewsTypeHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 文章类型信息DAO
+ * @author tt
+ * @version 14.8.18
+ */
+public class NewsTypeHibernateDAO extends HibernateDaoSupport {
+
+}

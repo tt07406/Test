@@ -9,7 +9,7 @@ package org.news.service.impl;
 
 import java.util.List;
 
-import org.news.dao.AdminDAO;
+import org.news.dao.AdminHibernateDAO;
 import org.news.model.Admin;
 import org.news.service.AdminService;
 
@@ -20,12 +20,12 @@ import org.news.service.AdminService;
  */
 public class AdminServiceImpl implements AdminService{
 
-	private AdminDAO adminDAO;
+	private AdminHibernateDAO adminDAO;
 	
 	/**
 	 * @param adminDAO the adminDAO to set
 	 */
-	public void setAdminDAO(AdminDAO adminDAO) {
+	public void setAdminDAO(AdminHibernateDAO adminDAO) {
 		this.adminDAO = adminDAO;
 	}
 

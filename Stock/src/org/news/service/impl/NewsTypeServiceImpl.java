@@ -10,7 +10,7 @@ package org.news.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.news.dao.NewsTypeDAO;
+import org.news.dao.NewsTypeHibernateDAO;
 import org.news.model.NewsInfo;
 import org.news.model.NewsType;
 import org.news.service.NewsInfoService;
@@ -22,14 +22,14 @@ import org.news.service.NewsTypeService;
  * @version 14.6.18
  */
 public class NewsTypeServiceImpl implements NewsTypeService {
-	private NewsTypeDAO newsTypeDAO; //引入新闻消息DAO
+	private NewsTypeHibernateDAO newsTypeDAO; //引入新闻消息DAO
 	private NewsInfoService infoService;
 	
 	
 	/**
 	 * @param newsTypeDAO the newsTypeDAO to set
 	 */
-	public void setNewsTypeDAO(NewsTypeDAO newsTypeDAO) {
+	public void setNewsTypeDAO(NewsTypeHibernateDAO newsTypeDAO) {
 		this.newsTypeDAO = newsTypeDAO;
 	}
 

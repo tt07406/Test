@@ -1,0 +1,22 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：UsersHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 用户信息DAO
+ * @author tt
+ * @version 14.8.18
+ */
+public class UsersHibernateDAO extends HibernateDaoSupport {
+
+	private static final Logger log = LoggerFactory.getLogger(UsersHibernateDAO.class);
+}

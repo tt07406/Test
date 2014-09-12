@@ -1,0 +1,51 @@
+package org.news.hibernate.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+
+/**
+ * Data access object (DAO) for domain model
+ * @author MyEclipse Persistence Tools
+ */
+public class BaseHibernateDAO implements IBaseHibernateDAO {
+	
+	private  final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
+	
+//	public Session getSession() {
+//		return HibernateSessionFactory.getSession();
+//	}
+	
+	private SessionFactory sessionFactory;
+
+	/**
+	 * @return the sessionFactory
+	 */
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	/**
+	 * @param sessionFactory the sessionFactory to set
+	 */
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	public Session getSession() throws HibernateException {
+        Session session = (Session) threadLocal.get();
+
+		if (session == null || !session.isOpen()) {
+			if (sessionFactory == null) {
+				System.err
+				.println("%%%% Error Creating SessionFactory %%%%");
+			}
+			session = (sessionFactory != null) ? sessionFactory.openSession()
+					: null;
+			threadLocal.set(session);
+		}
+
+        return session;
+    }
+}

@@ -7,13 +7,21 @@
  */
 package org.news.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * 管理员信息PO
  * @author tt
  * @version 14.6.18
  */
+@Entity(name="Admin")
 public class Admin {
 	
+	@Id
+	@GeneratedValue
 	private int adminId;		//管理员Id
 	private String adminName;	//管理员用户
 	private String adminPass;	//管理员密码

@@ -30,8 +30,22 @@
 <fullyQualifiedTypeName name="org.news.service.AdminService"/>
 <fullyQualifiedTypeName name="org.news.hibernate.domain.Admin"/>
 <fullyQualifiedTypeName name="org.news.hibernate.domain.NewsAttachment"/>
-<fullyQualifiedTypeName name="org.news.hibernate.domain.Newstype"/>
 <fullyQualifiedTypeName name="org.news.hibernate.domain.Users"/>
 <fullyQualifiedTypeName name="org.news.hibernate.domain.Leavemessage"/>
 <fullyQualifiedTypeName name="org.news.hibernate.domain.Replys"/>
+<fullyQualifiedTypeName name="org.news.hibernate.dao.NewstypeDAO"/>
+<fullyQualifiedTypeName name="org.news.hibernate.domain.Newstype"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateCallback"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="org.news.dao.NewsInfoHibernateDAO"/>
+<fullyQualifiedTypeName name="org.news.dao.AdminHibernateDAO"/>
+<fullyQualifiedTypeName name="org.news.dao.NewsAttachmentHibernateDAO"/>
+<fullyQualifiedTypeName name="org.news.dao.NewsTypeHibernateDAO"/>
+<fullyQualifiedTypeName name="org.news.dao.UsersHibernateDAO"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
 </qualifiedTypeNameHistroy>

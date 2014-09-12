@@ -34,13 +34,19 @@
 		<property name="hibernate.c3p0.validate">true</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
-		<mapping resource="org/news/hibernate/Admin.hbm.xml" />
+		<mapping class="org.news.model.Admin" />
+		<mapping class="org.news.model.NewsAttachment" />
+		<mapping class="org.news.model.NewsInfo" />
+		<mapping class="org.news.model.NewsType" />
+		<mapping class="org.news.model.LeaveMessage" />
+		<mapping class="org.news.model.Users" />
+		<!--<mapping resource="org/news/hibernate/Admin.hbm.xml" />
 		<mapping resource="org/news/hibernate/NewsAttachment.hbm.xml" />
 		<mapping resource="org/news/hibernate/Newsinfo.hbm.xml" />
 		<mapping resource="org/news/hibernate/Newstype.hbm.xml" />
 		<mapping resource="org/news/hibernate/Users.hbm.xml" />
 		<mapping resource="org/news/hibernate/Leavemessage.hbm.xml" />
 		<mapping resource="org/news/hibernate/Replys.hbm.xml" />
-	</session-factory>
+	--></session-factory>
 
 </hibernate-configuration>

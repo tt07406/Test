@@ -7,13 +7,20 @@
  */
 package org.news.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * »áÔ±ÁôÑÔPO
  * @author tt
  * @version 14.6.18
  */
+@Entity
 public class LeaveMessage {
 	
+	@Id
+	@GeneratedValue
 	private int leaveMessageId;				//ÁôÑÔId
 	private String leaveMessageContent;		//ÁôÑÔÄÚÈİ
 	private String leaveMessageTime;		//ÁôÑÔÊ±¼ä

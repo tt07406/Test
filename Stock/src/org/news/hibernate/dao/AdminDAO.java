@@ -54,7 +54,7 @@ public class AdminDAO extends BaseHibernateDAO {
 		log.debug("getting Admin instance with id: " + id);
 		try {
 			Admin instance = (Admin) getSession().get(
-					"org.news.hibernate.dao.Admin", id);
+					"org.news.hibernate.domain.Admin", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -66,7 +66,7 @@ public class AdminDAO extends BaseHibernateDAO {
 		log.debug("finding Admin instance by example");
 		try {
 			List results = getSession().createCriteria(
-					"org.news.hibernate.dao.Admin").add(
+					"org.news.hibernate.domain.Admin").add(
 					Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());

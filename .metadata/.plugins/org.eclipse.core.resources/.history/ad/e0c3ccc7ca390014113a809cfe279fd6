@@ -1,0 +1,39 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：AdminDAOHibernate
+ * 
+ * 创建日期：2014-09-11
+ */
+package org.news.dao;
+
+import org.news.model.Admin;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 管理员信息的DAO
+ * 
+ * @author tt
+ * @version 14.6.18
+ */
+public class AdminDAOHibernate extends HibernateDaoSupport {
+
+	/**
+	 * 用户登录验证
+	 * @param user
+	 * @return 验证的操作结果
+	 */
+	public boolean findLogin(Admin user){
+		String adminName = user.getAdminName();
+		String adminPass = user.getAdminPass();
+		
+		//取得ID数，且大于零
+		int result = (Integer)getHibernateTemplate().find("select count(adminId) from admin where adminName = ? and adminPass = ?", adminName,adminPass).get(0);
+		
+		if (result > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}

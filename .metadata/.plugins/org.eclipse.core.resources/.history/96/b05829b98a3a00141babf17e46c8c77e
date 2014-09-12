@@ -1,0 +1,58 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：NewsAttachmentHibernateDAO
+ * 
+ * 创建日期：2014-09-12
+ */
+package org.news.dao;
+
+import org.news.model.NewsAttachment;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 新闻附件的DAO
+ * 
+ * @author tt
+ * @version 14.8.18
+ */
+public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
+	
+	private static final Logger log = LoggerFactory.getLogger(NewsAttachmentHibernateDAO.class);
+
+	/**
+	 * 添加附件
+	 * @param newsAttachment
+	 * @return 操作是否成功
+	 */
+	public boolean addNewsAttachment(NewsAttachment newsAttachment){
+		try {
+			getHibernateTemplate().save(newsAttachment);
+			log.debug("save successful");
+			return true;
+		} catch (Exception e) {
+			log.error("save failed", e);
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	/**
+	 * 删除附件
+	 * @param newsAttachment
+	 * @return 是否成功
+	 */
+	public boolean deleteNewsAttachment(NewsAttachment newsAttachment) {
+		try {
+			getHibernateTemplate().delete(newsAttachment);
+			log.debug("delete successful");
+			return true;
+		} catch (RuntimeException re) {
+			log.error("delete failed", re);
+			re.printStackTrace();
+		}
+		return false;
+	}
+}

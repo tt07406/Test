@@ -21,11 +21,11 @@
      <url-pattern>/manage/Software_list.action</url-pattern>
      <url-pattern>/manage/admin/users/*</url-pattern>
      <dispatcher>REQUEST</dispatcher>
-  </filter-mapping>
+  </filter-mapping><!--
     <listener>
   	<listener-class>org.news.utils.ConnListener</listener-class>
   </listener>
-  <listener>
+  --><listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
     <context-param>

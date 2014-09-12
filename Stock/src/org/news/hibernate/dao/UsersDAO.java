@@ -59,7 +59,7 @@ public class UsersDAO extends BaseHibernateDAO {
 		log.debug("getting Users instance with id: " + id);
 		try {
 			Users instance = (Users) getSession().get(
-					"org.news.hibernate.dao.Users", id);
+					"org.news.hibernate.domain.Users", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -71,7 +71,7 @@ public class UsersDAO extends BaseHibernateDAO {
 		log.debug("finding Users instance by example");
 		try {
 			List results = getSession().createCriteria(
-					"org.news.hibernate.dao.Users").add(
+					"org.news.hibernate.domain.Users").add(
 					Example.create(instance)).list();
 			log.debug("find by example successful, result size: "
 					+ results.size());
