@@ -40,7 +40,7 @@
 		<td align="center" valign="middle"><span class="STYLE10">描述</span></td>
 		<td align="center" valign="middle" colspan="2"><span class="STYLE10">操作</span></td>
 	</TR>
-<s:iterator value="all" id="type">
+<s:iterator value="#request.all" var="type">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE6">${type.newsTypeId}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('NewsType_show.action?typeid=${type.newsTypeId}')">${type.newsTypeName}</a></span></td>

@@ -131,8 +131,9 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
   			return result.get(0);
   		} catch (RuntimeException re) {
   			log.error("find name failed", re);
-  			throw re;
+  			re.printStackTrace();
   		}
+  		return null;
      }
      
      /**
@@ -143,7 +144,7 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 	 public List<Admin> getAdminByInfo(String keyword){
     	   try {
     			String queryString = "from Admin a where a.adminInfo like ?";
-    			return (List<Admin>)getHibernateTemplate().find(queryString,keyword);
+    			return (List<Admin>)getHibernateTemplate().find(queryString,'%' + keyword + '%');
     		} catch (RuntimeException re) {
     			log.error("find AdminByInfo failed", re);
     			throw re;
@@ -157,6 +158,6 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
        */
       public long getCount(String keyword){
     	  return (Long)getHibernateTemplate().find("select count(a.adminId) " +
-    	  		"from Admin a where a.adminInfo like ?",keyword).get(0);
+    	  		"from Admin a where a.adminInfo like ?",'%' + keyword + '%').get(0);
       }
 }

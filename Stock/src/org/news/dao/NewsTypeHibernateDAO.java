@@ -110,7 +110,7 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
    			return (NewsType)getHibernateTemplate().find(queryString, typename).get(0);
    		} catch (RuntimeException re) {
    			log.error("find all failed", re);
-   			throw re;
+   			return null;
    		}
      }
 }

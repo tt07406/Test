@@ -9,7 +9,10 @@ package org.news.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * 文章频道PO类
@@ -19,8 +22,10 @@ import javax.persistence.Id;
 @Entity(name="newstype")
 public class NewsType {
 	
+	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "generator", strategy = "increment")
 	private int newsTypeId;				//频道Id
 	private String newsTypeName;		//频道名，是不同种类的组合
 	private String newsTypeDescripe;	//频道描述

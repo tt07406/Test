@@ -135,8 +135,9 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
    			return result.get(0);
    		} catch (RuntimeException re) {
    			log.error("find name failed", re);
-   			throw re;
+   			re.printStackTrace();
    		}
+   		return null;
      }
      
      /**
@@ -147,14 +148,14 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
        @SuppressWarnings("unchecked")
 	public List<Users> getUsersByKey(String keyword) {
 		try {
-			String queryString = "from users where usersInfo like binary ?"
-					+ " or usersName like binary ?"
-					+ " or realName like binary ?"
-					+ " or usersEmail like binary ?"
-					+ " or phone like binary ?" 
-					+ " or idNumber like binary ?";
+			String queryString = "from users where usersInfo like  ?"
+					+ " or usersName like  ?"
+					+ " or realName like  ?"
+					+ " or usersEmail like  ?"
+					+ " or phone like  ?" 
+					+ " or idNumber like  ?";
 			return (List<Users>) getHibernateTemplate().find(queryString,
-					keyword, keyword, keyword, keyword, keyword, keyword);
+					'%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%');
 		} catch (RuntimeException re) {
 			log.error("getUsersByKey failed", re);
 			throw re;
@@ -170,13 +171,13 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 	public long getCount(String keyword) {
 		return (Long) getHibernateTemplate().find(
 				"select count(usersId) from users"
-						+ " where usersInfo like binary ?"
-						+ " or usersName like binary ?"
-						+ " or realName like binary ?"
-						+ " or usersEmail like binary ?"
-						+ " or phone like binary ?"
-						+ " or idNumber like binary ?", keyword, keyword,
-				keyword, keyword, keyword, keyword).get(0);
+						+ " where usersInfo like  ?"
+						+ " or usersName like  ?"
+						+ " or realName like  ?"
+						+ " or usersEmail like  ?"
+						+ " or phone like  ?"
+						+ " or idNumber like  ?", '%' + keyword + '%', '%' + keyword + '%',
+						'%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%').get(0);
 	}
        
        /**
@@ -188,12 +189,12 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
         */
         @SuppressWarnings("unchecked")
 		public List<Users> getAllUsers(final String keyword, final int currentPage, final int lineSize){
-        	final String hql = "from users where usersInfo like binary ?"
-				+ " or usersName like binary ?"
-				+ " or realName like binary ?"
-				+ " or usersEmail like binary ?"
-				+ " or phone like binary ?" 
-				+ " or idNumber like binary ? order by usersId desc"; // 模糊匹配
+        	final String hql = "from users where usersInfo like  ?"
+				+ " or usersName like  ?"
+				+ " or realName like  ?"
+				+ " or usersEmail like  ?"
+				+ " or phone like  ?" 
+				+ " or idNumber like  ? order by usersId desc"; // 模糊匹配
 			List<Users> list = getHibernateTemplate().executeFind(
 					new HibernateCallback() {
 						// 实现HibernateCallback接口必须实现的方法
@@ -202,12 +203,12 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 							// 执行Hibernate分页查询
 							List<Users> result = session.createQuery(hql)
 									// 为hql语句传入参数
-									.setParameter(0, keyword)
-									.setParameter(1, keyword)
-									.setParameter(2, keyword)
-									.setParameter(3, keyword)
-									.setParameter(4, keyword)
-									.setParameter(5, keyword)
+									.setParameter(0, '%' + keyword + '%')
+									.setParameter(1, '%' + keyword + '%')
+									.setParameter(2, '%' + keyword + '%')
+									.setParameter(3, '%' + keyword + '%')
+									.setParameter(4, '%' + keyword + '%')
+									.setParameter(5, '%' + keyword + '%')
 									.setFirstResult((currentPage - 1) * lineSize)
 									.setMaxResults(lineSize).list();
 							return result;

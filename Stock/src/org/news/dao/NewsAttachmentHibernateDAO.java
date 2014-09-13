@@ -36,6 +36,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	 */
 	public boolean addNewsAttachment(NewsAttachment newsAttachment){
 		try {
+	
 			getHibernateTemplate().save(newsAttachment);
 			log.debug("save successful");
 			return true;
@@ -70,18 +71,19 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	 */
 	@SuppressWarnings("unchecked")
 	public boolean deleteNewsAttachmentByNewsId(final long newsId) {
-		getHibernateTemplate().execute(new HibernateCallback() {
+		boolean result = false;
+		result = getHibernateTemplate().execute(new HibernateCallback() {
 		      public Object doInHibernate(Session session) throws SQLException,
 		          HibernateException {
 		
 		        Query query = session.createQuery(
 		            "delete from  News_Attachment where news_id = ? ");
-		        query.setLong(0, newsId);
+		        query.setInteger(0, (int)newsId);
 		        query.executeUpdate();
 		        return true;
 		      }
 		    });
-		return false;
+		return result;
 	}
 	
 	/**
@@ -126,7 +128,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
     @SuppressWarnings("unchecked")
 	public List<NewsAttachment> getAllSoftwares(final String keyword, final int currentPage, final int lineSize){
     	//通过一个HibernateCallback对象来执行查询
-    	final String hql = "from News_Attachment where news_id=0 and attachment_name like binary ? " +
+    	final String hql = "from News_Attachment where news_id=0 and attachment_name like ? " +
     			"order by Attachment_id";
     	  List<NewsAttachment> list = getHibernateTemplate()
   			.executeFind(new HibernateCallback()
@@ -138,7 +140,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
   				//执行Hibernate分页查询
   				List<NewsAttachment> result = session.createQuery(hql)
   					//为hql语句传入参数
-  					.setParameter(0, keyword) 
+  					.setParameter(0, '%' + keyword + '%') 
   					.setFirstResult((currentPage - 1) * lineSize)
   					.setMaxResults(lineSize)
   					.list();
@@ -155,7 +157,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
      */
     public long getCount(String keyword){
     	return (Long)getHibernateTemplate().find("select count(Attachment_id) " +
-    	  		"from News_Attachment where news_id=0 and attachment_name like ?",keyword).get(0);
+    	  		"from News_Attachment where news_id=0 and attachment_name like ?",'%' + keyword + '%').get(0);
     }
     
     /**
@@ -176,7 +178,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	public List<NewsAttachment> findNewsAttachmentByNewsId(long newsId){
     	
     	try {
-  			String queryString = "from news_attachment where news_id = ?";
+  			String queryString = "from News_Attachment where news_id = ?";
   			return (List<NewsAttachment>)getHibernateTemplate().find(queryString, newsId);
   		} catch (RuntimeException re) {
   			log.error("find all failed", re);

@@ -13,6 +13,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * 会员信息PO类
  * @author tt
@@ -22,7 +24,8 @@ import javax.persistence.Table;
 public class Users {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "generator", strategy = "increment")
 	private int usersId;		//会员Id	
 	private String usersName;	//会员用户
 	private String usersPass;	//会员密码

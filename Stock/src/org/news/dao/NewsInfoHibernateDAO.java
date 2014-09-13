@@ -13,6 +13,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.news.model.NewsInfo;
+import org.news.utils.Common;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate3.HibernateCallback;
@@ -33,6 +34,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 * @return 操作是否成功
 	 */
 	public boolean addNewsInfo(NewsInfo newsInfo){
+
 		try {
 			getHibernateTemplate().save(newsInfo);
 			log.debug("save successful");
@@ -111,14 +113,14 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfo(String keyword){
     	 try {
-			String queryString = "from newsInfo where newsInfoTitle like binary ?"
-					+ " or newsInfoDescribe like binary ? "
-					+ " or newsInfoContent like binary ?"
-					+ " or newsInfoTime like binary ?"
-					+ " or newsType like binary ?"
-					+ " or newsAuthor like binary ? order by newsInfoId desc"; // 模糊匹配
-   			return (List<NewsInfo>)getHibernateTemplate().find(queryString, keyword, keyword, 
-   					keyword, keyword, keyword, keyword);
+			String queryString = "from newsInfo where newsInfoTitle like  ?"
+					+ " or newsInfoDescribe like  ? "
+					+ " or newsInfoContent like  ?"
+					+ " or newsInfoTime like  ?"
+					+ " or newsType like  ?"
+					+ " or newsAuthor like  ? order by newsInfoId desc"; // 模糊匹配
+   			return (List<NewsInfo>)getHibernateTemplate().find(queryString, '%' + keyword + '%', '%' + keyword + '%', 
+   					'%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%');
    		} catch (RuntimeException re) {
    			log.error("getAllNewsInfo failed", re);
    			throw re;
@@ -151,7 +153,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 								.setParameter(0, '%' + keyword + '%')
 								.setParameter(1, '%' + keyword + '%')
 								.setParameter(2, '%' + keyword + '%')
-								.setParameter(3, '%' + keyword + '%')
+								.setDate(3, Common.getSwitchDate(keyword))
 								.setParameter(4, '%' + keyword + '%')
 								.setParameter(5, '%' + keyword + '%')
 								.setFirstResult((currentPage - 1) * lineSize)
@@ -184,12 +186,14 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
         */
        public long getAllCount(String keyword){
     	   return (Long)getHibernateTemplate().find("select count(newsInfoId) from newsInfo" +
-    	   		 " where newsInfoTitle like binary ?" +
-	 		     " or newsInfoDescribe like binary ? " +
-	 		     " or newsInfoContent like binary ?" +
-	 		     " or newsInfoTime like binary ?" +
-	 		     " or newsType like binary ?" +
-	 		     " or newsAuthor like binary ? order by newsInfoId desc",keyword, 
-	 		     keyword, keyword, keyword, keyword, keyword).get(0);
+    	   		 " where newsInfoTitle like ?" +
+	 		     " or newsInfoDescribe like ? " +
+	 		     " or newsInfoContent like ?" +
+	 		     " or newsInfoTime like ?" +
+	 		     " or newsType like ?" +
+	 		     " or newsAuthor like ? order by newsInfoId desc",'%' + keyword + '%', 
+	 		    '%' + keyword + '%', '%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%').get(0);
        }
+       
+       
 }

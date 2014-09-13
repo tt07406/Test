@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * 文章信息的PO类
  * 
@@ -22,7 +24,8 @@ import javax.persistence.Id;
 public class NewsInfo {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "generator", strategy = "increment")
 	private int newsInfoId;				//文章Id
 	private String newsInfoTitle;		//文章标题
 	private String newsInfoDescribe;	//文章描述

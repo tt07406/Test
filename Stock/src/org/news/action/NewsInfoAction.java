@@ -455,6 +455,9 @@ public class NewsInfoAction extends ActionSupport {
 			try {//更新数据库
 				if(service.updateNewsInformation(news,attachment,attachmentFileName)){
 					setMsg("新闻修改成功！");
+					if (attachment!= null){
+						attachment.clear();
+					}
 				}
 
 				return SUCCESS;
@@ -495,6 +498,9 @@ public class NewsInfoAction extends ActionSupport {
 			try {//更新数据库
 				if(service.addNewsInfo(news,attachment,attachmentFileName)){
 					setMsg("新闻增加成功！");
+					if (attachment!= null){
+						attachment.clear();
+					}					
 				}
 				return SUCCESS;
 			} catch (Exception e) {

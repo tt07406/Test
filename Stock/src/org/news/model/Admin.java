@@ -12,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * 管理员信息PO
  * @author tt
@@ -21,7 +23,8 @@ import javax.persistence.Table;
 public class Admin {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "generator", strategy = "increment")
 	private int adminId;		//管理员Id
 	private String adminName;	//管理员用户
 	private String adminPass;	//管理员密码

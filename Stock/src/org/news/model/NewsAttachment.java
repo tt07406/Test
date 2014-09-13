@@ -7,9 +7,12 @@
  */
 package org.news.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * 与新闻相关的附件
@@ -20,10 +23,15 @@ import javax.persistence.Id;
 public class NewsAttachment {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "generator")
+	@GenericGenerator(name = "generator", strategy = "increment")
+	@Column(name="Attachment_id")
 	private Long attachmentId;//附件ID
+	@Column(name="news_id")
 	private Long newsId;//相关的新闻ID
+	@Column(name="attachment_name")
 	private String attachmentName;//附件名
+	@Column(name="attachment_content")
 	private byte[] attachmentContent;//附件内容
 	
 	
