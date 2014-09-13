@@ -39,16 +39,16 @@
 		<td align="center" valign="middle"><span class="STYLE10">信息</span></td>
 		<td align="center" valign="middle" colspan="2"><span class="STYLE10">操作</span></td>
 	</TR>
-<s:iterator value="all" id="admin">
+<s:iterator value="all" var="item">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('Admin_show.action?adminid=${admin.adminId}')">${admin.adminId}</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6">${admin.adminName}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6">${admin.adminInfo}</span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('Admin_show.action?adminid=${item.adminId}')">${item.adminId}</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6">${item.adminName}</span></td>
+		<td align="center" valign="middle"><span class="STYLE6">${item.adminInfo}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">
-			<a href="Admin_updatepre.action?adminid=${admin.adminId}">修改</a>
+			<a href="Admin_updatepre.action?adminid=${item.adminId}">修改</a>
 		</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">
-			<a href="Admin_delete?adminid=${admin.adminId}" onclick="return doDelete()">删除</a>
+			<a href="Admin_delete?adminid=${item.adminId}" onclick="return doDelete()">删除</a>
 		</span></td>
 	</TR>
 </s:iterator>

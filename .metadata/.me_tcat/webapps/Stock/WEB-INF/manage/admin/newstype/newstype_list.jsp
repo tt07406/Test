@@ -40,16 +40,16 @@
 		<td align="center" valign="middle"><span class="STYLE10">描述</span></td>
 		<td align="center" valign="middle" colspan="2"><span class="STYLE10">操作</span></td>
 	</TR>
-<s:iterator value="all" id="type">
+<s:iterator value="all" var="item">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td align="center" valign="middle"><span class="STYLE6">${type.newsTypeId}</span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('NewsType_show.action?typeid=${type.newsTypeId}')">${type.newsTypeName}</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6">${type.newsTypeDescripe}</span></td>
+		<td align="center" valign="middle"><span class="STYLE6">${item.newsTypeId}</span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="#" onclick="show('NewsType_show.action?typeid=${item.newsTypeId}')">${item.newsTypeName}</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6">${item.newsTypeDescripe}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">
-			<a href="NewsType_updatepre.action?typeid=${type.newsTypeId}">修改</a>
+			<a href="NewsType_updatepre.action?typeid=${item.newsTypeId}">修改</a>
 		</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">
-			<a href="NewsType_delete.action?typeid=${type.newsTypeId}" onclick="return doDelete()">删除</a>
+			<a href="NewsType_delete.action?typeid=${item.newsTypeId}" onclick="return doDelete()">删除</a>
 		</span></td>
 	</TR>
 </s:iterator>

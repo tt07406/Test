@@ -11,7 +11,7 @@ public final class newstype_005flist_jsp extends org.apache.jasper.runtime.HttpJ
 
   private static java.util.List _jspx_dependants;
 
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -21,13 +21,13 @@ public final class newstype_005flist_jsp extends org.apache.jasper.runtime.HttpJ
   }
 
   public void _jspInit() {
-    _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
-    _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid.release();
+    _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -124,13 +124,13 @@ public final class newstype_005flist_jsp extends org.apache.jasper.runtime.HttpJ
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  s:iterator
-    org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid.get(org.apache.struts2.views.jsp.IteratorTag.class);
+    org.apache.struts2.views.jsp.IteratorTag _jspx_th_s_005fiterator_005f0 = (org.apache.struts2.views.jsp.IteratorTag) _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue.get(org.apache.struts2.views.jsp.IteratorTag.class);
     _jspx_th_s_005fiterator_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fiterator_005f0.setParent(null);
     // /WEB-INF/manage/admin/newstype/newstype_list.jsp(43,0) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fiterator_005f0.setValue("all");
-    // /WEB-INF/manage/admin/newstype/newstype_list.jsp(43,0) name = id type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fiterator_005f0.setId("type");
+    // /WEB-INF/manage/admin/newstype/newstype_list.jsp(43,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fiterator_005f0.setVar("item");
     int _jspx_eval_s_005fiterator_005f0 = _jspx_th_s_005fiterator_005f0.doStartTag();
     if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_s_005fiterator_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -142,24 +142,24 @@ public final class newstype_005flist_jsp extends org.apache.jasper.runtime.HttpJ
         out.write("\r\n");
         out.write("\t<TR onMouseOver=\"changeColor(this,'white')\" onMouseOut=\"changeColor(this,'F2F2F2')\">\r\n");
         out.write("\t\t<td align=\"center\" valign=\"middle\"><span class=\"STYLE6\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("</span></td>\r\n");
         out.write("\t\t<td align=\"center\" valign=\"middle\"><span class=\"STYLE6\"><a href=\"#\" onclick=\"show('NewsType_show.action?typeid=");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("')\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeName}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("</a></span></td>\r\n");
         out.write("\t\t<td align=\"center\" valign=\"middle\"><span class=\"STYLE6\">");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeDescripe}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeDescripe}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("</span></td>\r\n");
         out.write("\t\t<td align=\"center\" valign=\"middle\"><span class=\"STYLE6\">\r\n");
         out.write("\t\t\t<a href=\"NewsType_updatepre.action?typeid=");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("\">修改</a>\r\n");
         out.write("\t\t</span></td>\r\n");
         out.write("\t\t<td align=\"center\" valign=\"middle\"><span class=\"STYLE6\">\r\n");
         out.write("\t\t\t<a href=\"NewsType_delete.action?typeid=");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${type.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${item.newsTypeId}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
         out.write("\" onclick=\"return doDelete()\">删除</a>\r\n");
         out.write("\t\t</span></td>\r\n");
         out.write("\t</TR>\r\n");
@@ -172,10 +172,10 @@ public final class newstype_005flist_jsp extends org.apache.jasper.runtime.HttpJ
       }
     }
     if (_jspx_th_s_005fiterator_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid.reuse(_jspx_th_s_005fiterator_005f0);
+      _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue.reuse(_jspx_th_s_005fiterator_005f0);
       return true;
     }
-    _005fjspx_005ftagPool_005fs_005fiterator_005fvalue_005fid.reuse(_jspx_th_s_005fiterator_005f0);
+    _005fjspx_005ftagPool_005fs_005fiterator_005fvar_005fvalue.reuse(_jspx_th_s_005fiterator_005f0);
     return false;
   }
 }

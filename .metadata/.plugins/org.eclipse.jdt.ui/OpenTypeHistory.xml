@@ -2,12 +2,5 @@
 <typeInfoHistroy>
 <typeInfo handle="=Stock/D:\/program\/MyEclipse\/configuration\/org.eclipse.osgi\/bundles\/109\/1\/.cp\/data\/2.1\/core\/xwork-core-2.1.6.jar&lt;com.opensymphony.xwork2.interceptor(AbstractInterceptor.class[AbstractInterceptor" modifiers="1057" timestamp="1403014718692"/>
 <typeInfo handle="=Stock/D:\/MyEclipseCommon\/plugins\/com.genuitec.eclipse.j2eedt.core_8.6.1.me201010211225\/data\/libraryset\/EE_5\/javaee.jar&lt;javax.servlet.http(HttpServletRequestWrapper.class[HttpServletRequestWrapper" modifiers="33" timestamp="1289421408000"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{NewsAttachment.java[NewsAttachment" modifiers="1" timestamp="1410362678550"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Newsinfo.java[Newsinfo" modifiers="1" timestamp="1410362853516"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Admin.java[Admin" modifiers="1" timestamp="1410361215916"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Newstype.java[Newstype" modifiers="1" timestamp="1410363347486"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Users.java[Users" modifiers="1" timestamp="1410363482835"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Leavemessage.java[Leavemessage" modifiers="1" timestamp="1410363642134"/>
-<typeInfo handle="=Stock/src&lt;org.news.hibernate.domain{Replys.java[Replys" modifiers="1" timestamp="1410363772249"/>
 <typeInfo handle="=Stock/D:\/program\/MyEclipse\/configuration\/org.eclipse.osgi\/bundles\/91\/1\/.cp\/data\/3.0\/lib\/persistCore\/org.springframework.orm-3.0.1.RELEASE-A.jar&lt;org.springframework.orm.hibernate3.support(HibernateDaoSupport.class[HibernateDaoSupport" modifiers="1057" timestamp="1409925379009"/>
 </typeInfoHistroy>
