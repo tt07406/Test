@@ -613,7 +613,7 @@ public class NewsInfoAction extends ActionSupport {
 			long allRecorders = 0 ;	// 表示全部的记录数
 			String keyWord = getKw();	// 接收查询关键字
 			
-			Logger.log(keyWord, Logger.DEBUG);
+			Logger.log(keyWord, Logger.INFO);
 			try{
 				currentPage = Integer.parseInt(cp) ;
 			} catch(Exception e) {}

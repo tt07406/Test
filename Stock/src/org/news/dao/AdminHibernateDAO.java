@@ -33,7 +33,7 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 		String adminPass = user.getAdminPass();
 		
 		//取得ID数，且大于零
-		long result = (Long)getHibernateTemplate().find("select count(a.adminId) from Admin a where a.adminName = ? and a.adminPass = ?", adminName,adminPass).get(0);
+		long result = (Long)getHibernateTemplate().find("select count(a.adminId) from admin a where a.adminName = ? and a.adminPass = ?", adminName,adminPass).get(0);
 		
 		if (result > 0){
 			return true;
@@ -47,16 +47,19 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 	 * @param user 传入VO对象
 	 * @return 操作是否成功
 	 */
+	@SuppressWarnings("finally")
 	public boolean addAdmin(Admin user){
+		boolean result = false;
 		try {
 			getHibernateTemplate().save(user);
 			log.debug("save successful");
-			return true;
-		} catch (Exception e) {
+			result = true;
+		} catch (RuntimeException e) {
 			log.error("save failed", e);
-			e.printStackTrace();
+			throw e;
+		}finally{
+			return result;
 		}
-		return false;
 	}
 	
 	/**
@@ -74,16 +77,18 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 	 * @return 是否成功
 	 */
 	public boolean deleteAdmins(int[] adminIds) {
+		boolean result = true;
 		for (int i = 0; i < adminIds.length; i++) {
 			try {
 				getHibernateTemplate().delete(findAdminById(adminIds[i]));
 				log.debug("delete successful");
 			} catch (RuntimeException re) {
 				log.error("delete failed", re);
-				return false;
+				result = false;
+				throw re;
 			}
 		}
-		return true;
+		return result;
 	}
 	
 	/**
@@ -91,16 +96,18 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
 	 * @param admin
 	 * @return 管理员
 	 */
+	@SuppressWarnings("finally")
 	public Admin updateAdmin(Admin admin) {
 		try{
 			getHibernateTemplate().update(admin);
 			log.debug("update successful");
-			return admin;
-		}catch (Exception e) {
+		}catch (RuntimeException e) {
 			log.error("update failed", e);
-			e.printStackTrace();
+			admin = null;
+			throw e;
+		}finally{
+			return admin;
 		}
-		return null;
 	}
 	
 	/**
@@ -110,7 +117,7 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<Admin> getAllAdmin(){
     	 try {
- 			String queryString = "from Admin";
+ 			String queryString = "from admin";
  			return (List<Admin>)getHibernateTemplate().find(queryString);
  		} catch (RuntimeException re) {
  			log.error("find all failed", re);
@@ -126,9 +133,14 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public Admin findAdminByName(String adminName){
     	 try {
-  			String queryString = "from Admin a where a.adminName = ?";
+  			String queryString = "from admin a where a.adminName = ?";
   			List<Admin> result = (List<Admin>)getHibernateTemplate().find(queryString,adminName);
-  			return result.get(0);
+  			if (result.size()>0){
+  				return result.get(0);
+  			}else{
+  				return null;
+  			}
+  			
   		} catch (RuntimeException re) {
   			log.error("find name failed", re);
   			re.printStackTrace();
@@ -143,7 +155,7 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
       @SuppressWarnings("unchecked")
 	 public List<Admin> getAdminByInfo(String keyword){
     	   try {
-    			String queryString = "from Admin a where a.adminInfo like ?";
+    			String queryString = "from admin a where a.adminInfo like ?";
     			return (List<Admin>)getHibernateTemplate().find(queryString,'%' + keyword + '%');
     		} catch (RuntimeException re) {
     			log.error("find AdminByInfo failed", re);
@@ -158,6 +170,6 @@ public class AdminHibernateDAO extends HibernateDaoSupport {
        */
       public long getCount(String keyword){
     	  return (Long)getHibernateTemplate().find("select count(a.adminId) " +
-    	  		"from Admin a where a.adminInfo like ?",'%' + keyword + '%').get(0);
+    	  		"from admin a where a.adminInfo like ?",'%' + keyword + '%').get(0);
       }
 }

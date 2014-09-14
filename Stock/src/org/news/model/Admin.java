@@ -19,7 +19,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author tt
  * @version 14.6.18
  */
-@Entity(name="Admin")
+@Entity(name="admin")
 public class Admin {
 	
 	@Id

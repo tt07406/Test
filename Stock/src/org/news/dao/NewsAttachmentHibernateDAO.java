@@ -34,17 +34,19 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	 * @param newsAttachment
 	 * @return 操作是否成功
 	 */
+	@SuppressWarnings("finally")
 	public boolean addNewsAttachment(NewsAttachment newsAttachment){
-		try {
-	
+		boolean result = false;
+		try {	
 			getHibernateTemplate().save(newsAttachment);
 			log.debug("save successful");
-			return true;
-		} catch (Exception e) {
+			result = true;
+		} catch (RuntimeException e) {
 			log.error("save failed", e);
-			e.printStackTrace();
+			throw e;
+		}finally{
+			return result;
 		}
-		return false;
 	}
 	
 	/**
@@ -52,16 +54,19 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	 * @param newsAttachment
 	 * @return 是否成功
 	 */
+	@SuppressWarnings("finally")
 	public boolean deleteNewsAttachment(NewsAttachment newsAttachment) {
+		boolean result = false;
 		try {
 			getHibernateTemplate().delete(newsAttachment);
 			log.debug("delete successful");
-			return true;
+			result = true;
 		} catch (RuntimeException re) {
 			log.error("delete failed", re);
-			re.printStackTrace();
+			throw re;
+		}finally{
+			return result;
 		}
-		return false;
 	}
 	
 	/**
@@ -73,15 +78,22 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	public boolean deleteNewsAttachmentByNewsId(final long newsId) {
 		boolean result = false;
 		result = getHibernateTemplate().execute(new HibernateCallback() {
-		      public Object doInHibernate(Session session) throws SQLException,
+		      @SuppressWarnings("finally")
+			public Object doInHibernate(Session session) throws SQLException,
 		          HibernateException {
-		
+		    	boolean result = false;  
 		        Query query = session.createQuery(
-		            "delete from  News_Attachment where news_id = ? ");
+		            "delete from  news_attachment where news_id = ? ");
 		        query.setInteger(0, (int)newsId);
-		        query.executeUpdate();
-		        return true;
-		      }
+		        try{
+		        	query.executeUpdate();
+		        	result = true;
+		        }catch(Exception e){
+		        	throw new RuntimeException();
+		        }finally{
+		        	return result;
+		        }		        
+		       }
 		    });
 		return result;
 	}
@@ -91,16 +103,18 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	 * @param newsAttachment
 	 * @return 频道
 	 */
+	@SuppressWarnings("finally")
 	public NewsAttachment updateNewsAttachment(NewsAttachment newsAttachment) {
 		try{
 			getHibernateTemplate().update(newsAttachment);
 			log.debug("update successful");
-			return newsAttachment;
-		}catch (Exception e) {
+		}catch (RuntimeException e) {
 			log.error("update failed", e);
-			e.printStackTrace();
+			newsAttachment = null;
+			throw e;
+		}finally{
+			return newsAttachment;
 		}
-		return null;
 	}
 	
 	/**
@@ -110,7 +124,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<NewsAttachment> getAllNewsAttachment(){
     	 try {
-  			String queryString = "from News_Attachment order by Attachment_id";
+  			String queryString = "from news_attachment order by attachment_id";
   			return (List<NewsAttachment>)getHibernateTemplate().find(queryString);
   		} catch (RuntimeException re) {
   			log.error("find all failed", re);
@@ -128,8 +142,8 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
     @SuppressWarnings("unchecked")
 	public List<NewsAttachment> getAllSoftwares(final String keyword, final int currentPage, final int lineSize){
     	//通过一个HibernateCallback对象来执行查询
-    	final String hql = "from News_Attachment where news_id=0 and attachment_name like ? " +
-    			"order by Attachment_id";
+    	final String hql = "from news_attachment where news_id=0 and attachment_name like ? " +
+    			"order by attachment_id";
     	  List<NewsAttachment> list = getHibernateTemplate()
   			.executeFind(new HibernateCallback()
   		{
@@ -157,7 +171,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
      */
     public long getCount(String keyword){
     	return (Long)getHibernateTemplate().find("select count(Attachment_id) " +
-    	  		"from News_Attachment where news_id=0 and attachment_name like ?",'%' + keyword + '%').get(0);
+    	  		"from news_attachment where news_id=0 and attachment_name like ?",'%' + keyword + '%').get(0);
     }
     
     /**
@@ -178,7 +192,7 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	public List<NewsAttachment> findNewsAttachmentByNewsId(long newsId){
     	
     	try {
-  			String queryString = "from News_Attachment where news_id = ?";
+  			String queryString = "from news_attachment where news_id = ?";
   			return (List<NewsAttachment>)getHibernateTemplate().find(queryString, newsId);
   		} catch (RuntimeException re) {
   			log.error("find all failed", re);

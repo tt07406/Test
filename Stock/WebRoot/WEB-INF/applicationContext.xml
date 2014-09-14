@@ -31,9 +31,10 @@
 			<tx:method name="add*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
-			<tx:method name="*" read-only="true" />
+			<tx:method name="*" read-only="true" timeout="60"/>
 		</tx:attributes>
 	</tx:advice>
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 
 	<!-- 那些类的哪些方法参与事务 -->
 	<aop:config>

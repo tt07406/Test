@@ -18,7 +18,7 @@
 		com.mysql.jdbc.Driver
 	</property>
 	<property name="myeclipse.connection.profile">MySQLdriver</property>
-	<property name="connection.password"></property>
+	<property name="connection.password">qxw</property>
 	<!-- 指定连接池里最大连接数 -->
 	<property name="hibernate.c3p0.max_size">20</property>
 	<!-- 指定连接池里最小连接数 -->
@@ -33,7 +33,7 @@
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
 	
-	<property name="connection.autocommit">true</property>
+	
 	<mapping class="org.news.model.Admin" />
 	<mapping class="org.news.model.NewsAttachment" />
 	<mapping class="org.news.model.NewsInfo" />

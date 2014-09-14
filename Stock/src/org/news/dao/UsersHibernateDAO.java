@@ -51,16 +51,19 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 	 * @param user 传入VO对象
 	 * @return 操作是否成功
 	 */
+	@SuppressWarnings("finally")
 	public boolean addUser(Users user){
+		boolean result = false;
 		try {
 			getHibernateTemplate().save(user);
 			log.debug("save successful");
-			return true;
-		} catch (Exception e) {
+			result = true;
+		} catch (RuntimeException e) {
 			log.error("save failed", e);
-			e.printStackTrace();
+			throw e;
+		}finally{
+			return result;
 		}
-		return false;
 	}
 	
 	/**
@@ -78,16 +81,18 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 	 * @return 是否成功
 	 */
 	public boolean deleteUsers(int[] userIds) {
+		boolean result = true;
 		for (int i = 0; i < userIds.length; i++) {
 			try {
 				getHibernateTemplate().delete(findUsersById(userIds[i]));
 				log.debug("delete successful");
 			} catch (RuntimeException re) {
 				log.error("delete failed", re);
-				return false;
+				result = false;
+				throw re;
 			}
 		}
-		return true;
+		return result;
 	}
 	
 	/**
@@ -95,16 +100,18 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 	 * @param users
 	 * @return 管理员
 	 */
+	@SuppressWarnings("finally")
 	public Users updateUsers(Users user) {
 		try{
 			getHibernateTemplate().update(user);
 			log.debug("update successful");
-			return user;
-		}catch (Exception e) {
+		}catch (RuntimeException e) {
 			log.error("update failed", e);
-			e.printStackTrace();
+			user = null;
+			throw e;
+		}finally{
+			return user;
 		}
-		return null;
 	}
 	
 	/**
@@ -132,7 +139,11 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
     	 try {
    			String queryString = "from users where usersName = ?";
    			List<Users> result = (List<Users>)getHibernateTemplate().find(queryString,usersName);
-   			return result.get(0);
+   			if (result.size()>0){
+   				return result.get(0);
+   			}else{
+   				return null;
+   			}
    		} catch (RuntimeException re) {
    			log.error("find name failed", re);
    			re.printStackTrace();

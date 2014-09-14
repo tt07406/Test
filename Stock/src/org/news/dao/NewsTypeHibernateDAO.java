@@ -29,33 +29,39 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
 	 * @param newsType
 	 * @return 操作是否成功
 	 */
+	@SuppressWarnings("finally")
 	public boolean addNewsType(NewsType newsType){
+		boolean result = false;
 		try {
 			getHibernateTemplate().save(newsType);
 			log.debug("save successful");
-			return true;
-		} catch (Exception e) {
+			result = true;
+		} catch (RuntimeException e) {
 			log.error("save failed", e);
-			e.printStackTrace();
+			throw e;
+		}finally{
+			return result;
 		}
-		return false;
 	}
+	
 	/**
 	 * 批量删除
 	 * @param newsTypeIds
 	 * @return 是否成功
 	 */
 	public boolean deleteNewsType(ArrayList<Integer> newsTypeIds) {
+		boolean result = true;
 		for (int i = 0; i < newsTypeIds.size(); i++) {
 			try {
 				getHibernateTemplate().delete(findNewsTypeById(newsTypeIds.get(i).intValue()));
 				log.debug("delete successful");
 			} catch (RuntimeException re) {
 				log.error("delete failed", re);
-				return false;
+				result = false;
+				throw re;
 			}
 		}
-		return true;
+		return result;
 	}
 	
 	/**
@@ -72,16 +78,18 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
 	 * @param NewsType
 	 * @return 频道
 	 */
+	@SuppressWarnings("finally")
 	public NewsType updateNewsType(NewsType newsType) {
 		try{
 			getHibernateTemplate().update(newsType);
 			log.debug("update successful");
-			return newsType;
-		}catch (Exception e) {
+		}catch (RuntimeException e) {
 			log.error("update failed", e);
-			e.printStackTrace();
+			newsType =  null;
+			throw e;
+		}finally{
+			return newsType;
 		}
-		return null;
 	}
 	
 	/**
@@ -104,10 +112,16 @@ public class NewsTypeHibernateDAO extends HibernateDaoSupport {
       * @param typename
       * @return
       */
-     public NewsType findNewsTypeByName(String typename){
+     @SuppressWarnings("unchecked")
+	public NewsType findNewsTypeByName(String typename){
     	 try {
    			String queryString = "from newstype where newsTypeName = ?";
-   			return (NewsType)getHibernateTemplate().find(queryString, typename).get(0);
+   			List<NewsType> result = getHibernateTemplate().find(queryString, typename);
+   			if (result.size()>0){
+   				return result.get(0);
+   			}else{
+   				return null;
+   			}
    		} catch (RuntimeException re) {
    			log.error("find all failed", re);
    			return null;

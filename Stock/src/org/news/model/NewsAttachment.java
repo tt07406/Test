@@ -19,13 +19,13 @@ import org.hibernate.annotations.GenericGenerator;
  * @author tt
  * @version 14.6.18
  */
-@Entity(name="News_Attachment")
+@Entity(name="news_attachment")
 public class NewsAttachment {
 	
 	@Id
 	@GeneratedValue(generator = "generator")
 	@GenericGenerator(name = "generator", strategy = "increment")
-	@Column(name="Attachment_id")
+	@Column(name="attachment_id")
 	private Long attachmentId;//附件ID
 	@Column(name="news_id")
 	private Long newsId;//相关的新闻ID

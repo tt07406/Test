@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 import org.news.model.NewsAttachment;
 import org.news.service.AttachmentService;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -245,6 +247,7 @@ public class SoftwareAction extends ActionSupport{
 	 * @return
 	 * @throws IOException 
 	 */
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void upload() throws IOException {
 		InputStream is;
 
@@ -298,6 +301,7 @@ public class SoftwareAction extends ActionSupport{
 	 * 软件列表
 	 * @return
 	 */
+	@Transactional(readOnly=true)
 	public String list(){
 		int currentPage = 1 ;	// 为当前所在的页，默认在第1页
 		int lineSize = 20;		// 每次显示的记录数
@@ -329,6 +333,7 @@ public class SoftwareAction extends ActionSupport{
 	 * 删除软件
 	 * @return
 	 */
+	@Transactional(propagation=Propagation.REQUIRED)
 	public String delete(){		
 		String filepath = ServletActionContext.getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //文件保存路径
 		String name = service.findNewsAttachmentById(softwareid).getAttachmentName();

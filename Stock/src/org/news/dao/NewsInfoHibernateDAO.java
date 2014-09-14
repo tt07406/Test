@@ -33,17 +33,20 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 * @param newsInfo
 	 * @return 操作是否成功
 	 */
-	public boolean addNewsInfo(NewsInfo newsInfo){
-
+	@SuppressWarnings("finally")
+	public long addNewsInfo(NewsInfo newsInfo){
+		long result = -1;
 		try {
-			getHibernateTemplate().save(newsInfo);
+			Integer id = (Integer)getHibernateTemplate().save(newsInfo);//返回新闻ID
 			log.debug("save successful");
-			return true;
-		} catch (Exception e) {
+			log.info(id.toString());
+			result = (long)id.intValue();
+		} catch (RuntimeException e) {
 			log.error("save failed", e);
-			e.printStackTrace();
+			throw e;
+		}finally{
+			return result;
 		}
-		return false;
 	}
 	
 	/**
@@ -52,16 +55,18 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 * @return 是否成功
 	 */
 	public boolean deleteNewsInfo(int[] newsInfoIds) {
+		boolean result = true;
 		for (int i = 0; i < newsInfoIds.length; i++) {
 			try {
 				getHibernateTemplate().delete(searchNewsInfo(newsInfoIds[i]));
 				log.debug("delete successful");
 			} catch (RuntimeException re) {
 				log.error("delete failed", re);
-				return false;
+				result = false;
+				throw re;
 			}
 		}
-		return true;
+		return result;
 	}
 	
 	/**
@@ -78,16 +83,18 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 * @param newsInfo
 	 * @return 文章内容
 	 */
+	@SuppressWarnings("finally")
 	public NewsInfo updateNewsInformation(NewsInfo newsInfo) {
 		try{
 			getHibernateTemplate().update(newsInfo);
 			log.debug("update successful");
-			return newsInfo;
-		}catch (Exception e) {
+		}catch (RuntimeException e) {
 			log.error("update failed", e);
-			e.printStackTrace();
+			newsInfo = null;
+			throw e;
+		}finally{
+			return newsInfo;
 		}
-		return null;
 	}
 	
 	/**
@@ -97,7 +104,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfo(){
     	 try {
-   			String queryString = "from newsInfo order by newsInfoId desc";
+   			String queryString = "from newsinfo order by newsInfoId desc";
    			return (List<NewsInfo>)getHibernateTemplate().find(queryString);
    		} catch (RuntimeException re) {
    			log.error("find all failed", re);
@@ -113,7 +120,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfo(String keyword){
     	 try {
-			String queryString = "from newsInfo where newsInfoTitle like  ?"
+			String queryString = "from newsinfo where newsInfoTitle like  ?"
 					+ " or newsInfoDescribe like  ? "
 					+ " or newsInfoContent like  ?"
 					+ " or newsInfoTime like  ?"
@@ -136,7 +143,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
       */
      @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfo(final String keyword, final int currentPage, final int lineSize){
-		final String hql = "from newsInfo where newsInfoTitle like ?"
+		final String hql = "from newsinfo where newsInfoTitle like ?"
 					+ " or newsInfoDescribe like ? "
 					+ " or newsInfoContent like ?"
 					+ " or newsInfoTime like ?"
@@ -171,7 +178,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
        @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfoByType(String newsType){
     	   try {
-     			String queryString = "from newsInfo where newsType=? order by newsInfoId desc";
+     			String queryString = "from newsinfo where newsType=? order by newsInfoId desc";
      			return (List<NewsInfo>)getHibernateTemplate().find(queryString, newsType);
      		} catch (RuntimeException re) {
      			log.error("find all failed", re);
@@ -185,7 +192,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
         * @return
         */
        public long getAllCount(String keyword){
-    	   return (Long)getHibernateTemplate().find("select count(newsInfoId) from newsInfo" +
+    	   return (Long)getHibernateTemplate().find("select count(newsInfoId) from newsinfo" +
     	   		 " where newsInfoTitle like ?" +
 	 		     " or newsInfoDescribe like ? " +
 	 		     " or newsInfoContent like ?" +

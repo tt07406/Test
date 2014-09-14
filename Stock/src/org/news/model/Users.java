@@ -31,6 +31,8 @@ public class Users {
 	private String usersPass;	//会员密码
 	private String usersInfo;	//其它信息	
 	private String realName;	//真实姓名
+	
+	@Column(name="sex")
 	private String userSex;		//性别
 	private String usersEmail;	//E-mail
 	

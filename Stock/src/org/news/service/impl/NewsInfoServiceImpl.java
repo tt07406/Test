@@ -61,11 +61,14 @@ public class NewsInfoServiceImpl implements NewsInfoService{
 	 */
 	public boolean addNewsInfo(NewsInfo newsInfo,
 			List<java.io.File> attachment, List<String> attachmentFileName) throws IOException{
-		Long currentID = (long)newsInfo.getNewsInfoId();
+		Long currentID = newsInfoDAO.addNewsInfo(newsInfo);
+		if (currentID < 0){
+			return false;
+		}
     	if (attachment == null){
-    		return newsInfoDAO.addNewsInfo(newsInfo);
+    		return true;
     	}
-		//先上传附件
+		//上传附件
 		for(int i=0;i<attachment.size();i++){
 
 			NewsAttachment newsAttachment=new NewsAttachment();
@@ -76,7 +79,7 @@ public class NewsInfoServiceImpl implements NewsInfoService{
 				return false;
 			}			
 		}
-		return newsInfoDAO.addNewsInfo(newsInfo);
+		return true;
 	}
 	
 	/**
