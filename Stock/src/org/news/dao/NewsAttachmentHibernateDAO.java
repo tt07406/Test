@@ -58,7 +58,8 @@ public class NewsAttachmentHibernateDAO extends HibernateDaoSupport {
 	public boolean deleteNewsAttachment(NewsAttachment newsAttachment) {
 		boolean result = false;
 		try {
-			getHibernateTemplate().delete(newsAttachment);
+			NewsAttachment attachment = getHibernateTemplate().merge(newsAttachment);
+			getHibernateTemplate().delete(attachment);
 			log.debug("delete successful");
 			result = true;
 		} catch (RuntimeException re) {
