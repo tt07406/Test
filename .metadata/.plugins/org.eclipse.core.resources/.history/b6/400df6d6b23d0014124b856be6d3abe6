@@ -1,0 +1,5 @@
+package org.mystock.utils;
+
+public class FileUtils {
+
+}
