@@ -16,19 +16,19 @@
 <head>
 <title>批量相片上传</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="<%=request.getContextPath()%>/css/default.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.swfobject.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/swfupload.queue.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/fileprogress.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/handlers.js"></script>
+<link href="<%=request.getContextPath()%>/back/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/swfupload.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/swfupload.swfobject.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/fileprogress.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/handlers.js"></script>
 
 <script type="text/javascript">
 var swfu;
 
 SWFUpload.onload = function () {
 	var settings = {
-		flash_url : "<%=request.getContextPath()%>/js/swfupload.swf",
+		flash_url : "<%=request.getContextPath()%>/back/js/swfupload.swf",
 		upload_url: "<%=uploadUrl.toString()%>",
 		post_params: {
 			"user_id" : "stehen830",
@@ -50,7 +50,7 @@ SWFUpload.onload = function () {
 		auto_upload:false,
 
 		// Button Settings
-		button_image_url : "<%=request.getContextPath()%>/backImages/XPButtonUploadText_61x22.png",	// Relative to the SWF file
+		button_image_url : "<%=request.getContextPath()%>/back/backImages/XPButtonUploadText_61x22.png",	// Relative to the SWF file
 		button_placeholder_id : "spanButtonPlaceholder",
 		button_width: 61,
 		button_height: 22,

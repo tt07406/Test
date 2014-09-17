@@ -6,9 +6,9 @@
 		}
 	</script>
 	<script language="javascript">
-		var url = "<%=request.getContextPath()%>" ;
+		var url = "<%=request.getContextPath()%>/back" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/member_validate.js">
+	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/back/js/member_validate.js">
 	</script>
 <center> 
 <s:fielderror/>

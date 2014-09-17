@@ -2,7 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head><title>增加管理员界面</title>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js">
+<script type="text/javascript" src="<%=request.getContextPath()%>/back/js/jquery-1.11.1.min.js">
 </script>
 <script type="text/javascript">
 	function validateAccount(value){
@@ -26,9 +26,9 @@
 		}
 	</script>
 	<script language="javascript">
-		var url = "<%=request.getContextPath()%>" ;
+		var url = "<%=request.getContextPath()%>/back" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/admin_validate.js">
+	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/back/js/admin_validate.js">
 	</script>
 
 <center> 

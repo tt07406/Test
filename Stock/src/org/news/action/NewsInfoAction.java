@@ -516,7 +516,7 @@ public class NewsInfoAction extends ActionSupport {
 	 * @return
 	 */
 	public String insertpre(){
-		setTypes(typeService.getAllNewsType());		
+		setTypes(typeService.getAllNewsType());	
 		return SUCCESS;
 	}
 	

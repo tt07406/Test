@@ -22,11 +22,6 @@
      <url-pattern>/manage/admin/users/*</url-pattern>
      <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
-  <!--
-    <listener>
-  	<listener-class>org.news.utils.ConnListener</listener-class>
-  </listener>
-  -->
    <context-param>
   		<param-name>webAppRootKey</param-name>  
 		<param-value>webapp.root</param-value>  

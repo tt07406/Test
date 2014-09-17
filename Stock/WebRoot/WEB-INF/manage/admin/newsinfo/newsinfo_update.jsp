@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head><title>修改新闻</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/edit/themes/default/default.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/back/edit/themes/default/default.css">
 <style type="text/css" rel="stylesheet">
     .source {
     width: 700px;
@@ -43,14 +43,14 @@
 		}
 	</script>
 	<script language="javascript">
-		var url = "<%=request.getContextPath()%>" ;
+		var url = "<%=request.getContextPath()%>/back" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/newsinfo_validate.js">
+	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/back/js/newsinfo_validate.js">
 	</script>
 	
-	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/lang/zh_CN.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/edit/kindeditor.js"></script>
-	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/back/edit/lang/zh_CN.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/back/edit/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath()%>/back/js/jquery-1.11.1.min.js"></script>
 	<script>
 	var editor;
 	$(document).ready(function (){
@@ -121,7 +121,7 @@
 	</tr>
 	<c:forEach items="${attachments}" var="attachment">
 		<tr>
-	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/servlet/DownloadAttachmentServlet?id=${attachment.attachmentId}">附件:${attachment.attachmentName}</a></font></td>
+	    <td colspan="2" align="left"><font size="2"><a href="<%=request.getContextPath()%>/downloadAttachmentAction.action?id=${attachment.attachmentId}">附件:${attachment.attachmentName}</a></font></td>
 	 	</tr>
 	 </c:forEach>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

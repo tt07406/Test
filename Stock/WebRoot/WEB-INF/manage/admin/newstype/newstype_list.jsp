@@ -27,7 +27,7 @@
 	<script language="javascript">
 		var url = "<%=request.getContextPath()%>" ;
 	</script>
-	<script language="javascript" src="<%=request.getContextPath()%>/js/newstype_validate.js">
+	<script language="javascript" src="<%=request.getContextPath()%>/back/js/newstype_validate.js">
 	</script>
 <body>
 

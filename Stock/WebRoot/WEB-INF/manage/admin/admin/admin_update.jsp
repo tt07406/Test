@@ -18,9 +18,9 @@
 		}
 	</script>
 	<script language="javascript">
-		var url = "<%=request.getContextPath()%>" ;
+		var url = "<%=request.getContextPath()%>/back" ;
 	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/js/admin_validate.js">
+	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/back/js/admin_validate.js">
 	</script>
 
 <center> 

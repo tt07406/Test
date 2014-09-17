@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>管理页面</title>
 
-<script src="<%=request.getContextPath()%>/js/prototype.lite.js" type="text/javascript"></script>
-<script src="<%=request.getContextPath()%>/js/moo.fx.js" type="text/javascript"></script>
-<script src="<%=request.getContextPath()%>/js/moo.fx.pack.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/back/js/prototype.lite.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/back/js/moo.fx.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/back/js/moo.fx.pack.js" type="text/javascript"></script>
 <style>
 body {
 	font:12px Arial, Helvetica, sans-serif;
@@ -34,7 +34,7 @@ H1 a {
 	height: 30px;
 	text-decoration: none;
 	moz-outline-style: none;
-	background-image: url(images/menu_bgS.gif);
+	background-image: url(back/images/menu_bgS.gif);
 	background-repeat: no-repeat;
 	line-height: 30px;
 	text-align: center;
@@ -81,7 +81,7 @@ H1 a {
 	font-size: 12px;
 	line-height: 26px;
 	color: #333333;
-	background-image: url(images/menu_bg1.gif);
+	background-image: url(back/images/menu_bg1.gif);
 	background-repeat: no-repeat;
 	height: 26px;
 	width: 182px;
@@ -97,7 +97,7 @@ H1 a {
 	font-size: 12px;
 	line-height: 26px;
 	color: #333333;
-	background-image: url(images/menu_bg1.gif);
+	background-image: url(back/images/menu_bg1.gif);
 	background-repeat: no-repeat;
 	display: block;
 	text-align: center;
@@ -112,7 +112,7 @@ H1 a {
 	font-size: 12px;
 	line-height: 26px;
 	color: #333333;
-	background-image: url(images/menu_bg1.gif);
+	background-image: url(back/images/menu_bg1.gif);
 	background-repeat: no-repeat;
 	height: 26px;
 	width: 182px;
@@ -129,7 +129,7 @@ H1 a {
 	line-height: 26px;
 	font-weight: bold;
 	color: #006600;
-	background-image: url(images/menu_bg2.gif);
+	background-image: url(back/images/menu_bg2.gif);
 	background-repeat: no-repeat;
 	text-align: center;
 	display: block;
@@ -150,7 +150,7 @@ H1 a {
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><img src="<%=request.getContextPath()%>/backImages/menu_topline.gif" width="182" height="5" /></td>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
           </tr>
         </table>
         <ul class="MM">
@@ -164,7 +164,7 @@ H1 a {
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><img src="<%=request.getContextPath()%>/backImages/menu_topline.gif" width="182" height="5" /></td>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
           </tr>
         </table>
         <ul class="MM">
@@ -176,7 +176,7 @@ H1 a {
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><img src="<%=request.getContextPath()%>/backImages/menu_topline.gif" width="182" height="5" /></td>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
           </tr>
         </table>
         <ul class="MM">
@@ -188,7 +188,7 @@ H1 a {
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td><img src="<%=request.getContextPath()%>/backImages/menu_topline.gif" width="182" height="5" /></td>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
           </tr>
         </table>
         <ul class="MM">

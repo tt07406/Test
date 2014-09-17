@@ -46,7 +46,7 @@ window.attachEvent("onload", correctPNG);
 </script>
 
 
-<link href="<%=request.getContextPath()%>/backImages/skin.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/back/backImages/skin.css" rel="stylesheet" type="text/css">
 <body>
 <table width="100%" height="166" border="0" cellpadding="0" cellspacing="0">
   <tr>
@@ -63,7 +63,7 @@ window.attachEvent("onload", correctPNG);
       <tr>
         <td width="49%" align="right"><table width="91%" height="532" border="0" cellpadding="0" cellspacing="0" class="login_bg2">
             <tr>
-              <td height="138" valign="middle" align="right"><img src="<%=request.getContextPath()%>/backImages/logo.png" width="279" height="68"></td>
+              <td height="138" valign="middle" align="right"><img src="<%=request.getContextPath()%>/back/backImages/logo.png" width="279" height="68"></td>
             </tr>
             
         </table></td>
@@ -89,7 +89,7 @@ window.attachEvent("onload", correctPNG);
                             <td width="13%" height="35" class="top_hui_text"><span class="login_txt"> 密 码： &nbsp;&nbsp; </span></td>
                             <td height="35" colspan="2" class="top_hui_text">
                             	<input class="editbox4" type="password" size="20" name="password">
-                              <img src="<%=request.getContextPath()%>/backImages/luck.gif" width="19" height="18"> </td>
+                              <img src="<%=request.getContextPath()%>/back/backImages/luck.gif" width="19" height="18"> </td>
                           </tr>
                           <tr>
                             <td width="13%" height="35" ><span class="login_txt">验证码：</span></td>
@@ -116,7 +116,7 @@ window.attachEvent("onload", correctPNG);
                     </form></td>
                   </tr>
                   <tr>
-                    <td width="433" height="164" align="right" valign="bottom"><img src="<%=request.getContextPath()%>/backImages/login-wel.gif" width="242" height="138"></td>
+                    <td width="433" height="164" align="right" valign="bottom"><img src="<%=request.getContextPath()%>/back/backImages/login-wel.gif" width="242" height="138"></td>
                     <td width="57" align="right" valign="bottom">&nbsp;</td>
                   </tr>
               </table></td>
