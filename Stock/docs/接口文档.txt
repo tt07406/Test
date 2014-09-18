@@ -1,0 +1,29 @@
+1.获取新闻目录
+功能：获取某一类型的新闻目录，ajax 异步请求
+URL：<%=request.getContextPath()%>/interface/acquireMenu.action或http://localhost:8080/Stock/interface/acquireMenu.action
+参数：type，值为新闻类别编号
+输出：JSON格式的新闻目录
+例子：http://localhost:8080/Stock/interface/acquireMenu.action?type=1
+
+2.获取新闻列表
+功能：获取某一类型的新闻列表，不包含新闻内容，可以指定结果集的页号和每页大小，用于翻页显示
+URL：<%=request.getContextPath()%>/interface/acquireNewsList.action或http://localhost:8080/Stock/interface/acquireNewsList.action
+参数：type，值为新闻类别编号;cp，值为为当前所在的页，默认在第1页;ls，值为每次显示的记录数，默认为10;
+输出：属性newsInfos，表示新闻列表；属性recorders，表示所有该类型新闻的个数；属性url，表示查询所用的URL，为常量；属性page，表示当前所在的页；属性size，表示每次显示的记录数。
+例子：http://localhost:8080/Stock/interface/acquireNewsList.action?type=1（只返回类型号1的新闻的第一页数据，纪录数为10）
+
+3.获取新闻详情
+功能：获取某一条新闻的详细内容
+URL：<%=request.getContextPath()%>/interface/acquireNewsInfo.action或http://localhost:8080/Stock/interface/acquireNewsInfo.action
+参数：status，值为show;pid，值为新闻编号
+输出：属性newsinfo，表示新闻信息详情；属性attachments，表示该新闻所带的所有附件列表
+例子：http://localhost:8080/Stock/interface/acquireNewsInfo.action?pid=4
+
+4.获取软件列表
+功能：获取所有软件列表，ajax 异步请求
+URL：<%=request.getContextPat()%>/interface/acquireSoftwarelist.action或
+http://localhost:8080/Stock/interface/acquireSoftwarelist.action
+参数：无
+输出：JSON格式的软件列表
+例子：http://localhost:8080/Stock/interface/acquireSoftwarelist.action
+	

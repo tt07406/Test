@@ -102,6 +102,10 @@
 		<property name="userService" ref="userService"></property>
 		<property name="adminService" ref="adminService"></property>
 		<property name="newstypeService" ref="newsTypeService"></property></bean>
-
+	<bean id="newsInterfaceAction" class="org.news.action.NewsInterfaceAction">
+		<property name="service" ref="newsInfoService"></property>
+		<property name="typeService" ref="newsTypeService"></property>
+		<property name="attiService" ref="attachmentService"></property>
+	</bean>
 
 </beans>
