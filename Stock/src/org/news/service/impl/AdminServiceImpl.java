@@ -96,12 +96,13 @@ public class AdminServiceImpl implements AdminService{
      
      /**
       * 可通过名称来查找管理员的信息
-      * @param adminName
+      * @param adminId
       * @return
       */
-     public Admin findAdminById(String adminName){
-    	 return adminDAO.findAdminByName(adminName);
+     public Admin findAdminById(String adminId){
+    	 return adminDAO.findAdminByName(adminId);
      }
+     
      
      /**
   	 * 模糊查询管理员
@@ -126,7 +127,7 @@ public class AdminServiceImpl implements AdminService{
      * @return
      */
 	public boolean findAdminName(String userName) {
-		if (findAdminById(userName) != null){
+		if (adminDAO.findAdminByName(userName) != null){
 			return true;
 		}
 		return false;

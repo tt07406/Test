@@ -61,10 +61,10 @@ public interface AdminService {
      
      /**
       * 可通过名称来查找管理员的信息
-      * @param adminName
+      * @param adminId
       * @return
       */
-     public Admin findAdminById(String adminName);
+     public Admin findAdminById(String adminId);
      
      /**
   	 * 模糊查询管理员

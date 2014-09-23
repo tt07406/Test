@@ -32,14 +32,15 @@
 	<property name="hibernate.c3p0.validate">true</property>
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
-	
-	
+
+
 	<mapping class="org.news.model.Admin" />
 	<mapping class="org.news.model.NewsAttachment" />
 	<mapping class="org.news.model.NewsInfo" />
 	<mapping class="org.news.model.NewsType" />
 	<mapping class="org.news.model.LeaveMessage" />
 	<mapping class="org.news.model.Users" />
+	<mapping class="org.news.model.Permission" />
 
 </session-factory>
 

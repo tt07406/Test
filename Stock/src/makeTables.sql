@@ -82,8 +82,8 @@ CREATE TABLE `news_attachment` (
 CREATE TABLE permission
 (
 permissionId int NOT NULL,
-idNumber varchar(30) NOT NULL,
-authenticationId varchar(50) NOT NULL,
+idNumber varchar(30) NOT NULL unique,
+authenticationId varchar(50) NOT NULL unique,
 permissionLevel int NOT NULL,
 cmt text,
 primary key(permissionId)

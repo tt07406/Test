@@ -31,7 +31,7 @@
 			<tx:method name="add*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
-			<tx:method name="*" read-only="true" timeout="60"/>
+			<tx:method name="*" read-only="true" timeout="5"/>
 		</tx:attributes>
 	</tx:advice>
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
@@ -64,6 +64,10 @@
 		<!-- 注入持久化操作所需的SessionFactory -->
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="permissionDAO" class="org.news.dao.PermissionHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	
 	<bean id="adminService" class="org.news.service.impl.AdminServiceImpl">
 		<property name="adminDAO" ref="adminDAO"></property></bean>
@@ -78,6 +82,9 @@
 		<property name="infoService" ref="newsInfoService"></property></bean>
 	<bean id="userService" class="org.news.service.impl.UserServiceImpl">
 		<property name="userDAO" ref="usersDAO"></property></bean>
+	<bean id="permissionService" class="org.news.service.impl.PermissionServiceImpl">
+		<property name="permissionDao" ref="permissionDAO"></property></bean>
+		
 	<bean id="adminAction" class="org.news.action.AdminAction">
 		<property name="adminService" ref="adminService"></property></bean>
 	<bean id="adminLogin" class="org.news.action.AdminLogin">

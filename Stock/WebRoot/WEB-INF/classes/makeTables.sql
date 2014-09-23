@@ -79,4 +79,14 @@ CREATE TABLE `news_attachment` (
   KEY `Relationship_1_FK` (`news_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+CREATE TABLE permission
+(
+permissionId int NOT NULL,
+idNumber varchar(30) NOT NULL unique,
+authenticationId varchar(50) NOT NULL unique,
+permissionLevel int NOT NULL,
+cmt text,
+primary key(permissionId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 insert into admin(adminId,adminName,adminPass,adminInfo) values(1,"admin","21232F297A57A5A743894A0E4A801FC3","init");
