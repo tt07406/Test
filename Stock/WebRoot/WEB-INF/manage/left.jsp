@@ -181,7 +181,8 @@ H1 a {
         </table>
         <ul class="MM">
           <li><a href="/Stock/manage/admin/users/Users_list.action" target="main">会员管理</a></li>
-          <li><a href="#" target="main">留言管理</a></li>
+          <li><a href="/Stock/manage/admin/permission/Permission_list.action" target="main">权限列表</a></li>
+          <li><a href="/Stock/manage/admin/permission/permission_insert.action" target="main">增加权限</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">软件管理</a></h1>

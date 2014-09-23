@@ -1,0 +1,1264 @@
+2014-09-19 01:38:46 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:38:51 [ main:5285 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:38:51 CST 2014]; root of context hierarchy
+2014-09-19 01:38:52 [ main:6568 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:39:01 [ main:14856 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18105e8: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:39:05 [ main:19245 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:39:05 [ main:19808 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:39:06 [ main:19817 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:39:06 [ main:19850 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:39:06 [ main:20320 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:39:08 [ main:22017 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:39:08 [ main:22344 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:39:10 [ main:23844 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:39:10 [ main:24618 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:39:11 [ main:24992 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:39:11 [ main:25619 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:39:11 [ main:25621 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:39:11 [ main:25633 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:39:11 [ main:25633 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:39:11 [ main:25640 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:39:11 [ main:25641 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:39:11 [ main:25647 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:39:11 [ main:25648 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:39:11 [ main:25651 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:39:11 [ main:25652 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:39:11 [ main:25785 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:39:12 [ main:25817 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:39:12 [ main:25913 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:39:13 [ main:26905 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:39:13 [ main:26909 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:39:13 [ main:26909 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:39:13 [ main:27188 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:39:13 [ main:27190 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:39:17 [ main:31353 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:39:18 [ main:31952 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:39:20 [ main:34066 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:39:20 [ main:34079 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:39:20 [ main:34085 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:39:20 [ main:34085 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:39:20 [ main:34086 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:39:20 [ main:34087 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:39:20 [ main:34087 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:39:20 [ main:34092 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:39:20 [ main:34093 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:39:20 [ main:34093 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:39:20 [ main:34152 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:39:20 [ main:34153 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:39:20 [ main:34154 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:39:20 [ main:34155 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:39:20 [ main:34156 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:39:20 [ main:34157 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:39:20 [ main:34385 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:39:20 [ main:34386 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:39:20 [ main:34387 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:39:20 [ main:34387 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:39:20 [ main:34388 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:39:20 [ main:34389 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:39:20 [ main:34389 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:39:20 [ main:34390 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:39:20 [ main:34492 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:39:20 [ main:34545 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:39:20 [ main:34546 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:39:20 [ main:34547 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:39:20 [ main:34548 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:39:22 [ main:36323 ] - [ INFO ] building session factory
+2014-09-19 01:39:26 [ main:40582 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:39:31 [ main:45559 ] - [ INFO ] Root WebApplicationContext: initialization completed in 45493 ms
+2014-09-19 01:39:34 [ main:48516 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:39:38 [ main:52475 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:39:40 [ main:54184 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:39:40 [ main:54192 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:39:40 [ main:54192 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:39:40 [ main:54193 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:39:40 [ main:54193 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:39:40 [ main:54193 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:39:40 [ main:54194 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:39:40 [ main:54194 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:39:40 [ main:54195 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:39:40 [ main:54200 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:39:40 [ main:54200 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:39:40 [ main:54201 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:39:40 [ main:54201 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:39:40 [ main:54202 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:39:40 [ main:54202 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:39:40 [ main:54202 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:39:40 [ main:54203 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:39:40 [ main:54203 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:39:40 [ main:54203 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:39:40 [ main:54250 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:39:41 [ main:55616 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:39:42 [ main:55897 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:39:42 [ main:55898 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:40:14 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:40:14 [ main:185 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:40:14 CST 2014]; root of context hierarchy
+2014-09-19 01:40:14 [ main:412 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:40:16 [ main:2204 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@c8570c: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:40:17 [ main:3261 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:40:17 [ main:3360 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:40:17 [ main:3365 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:40:17 [ main:3396 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:40:18 [ main:3465 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:40:18 [ main:3860 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:40:18 [ main:3909 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:40:19 [ main:4577 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:40:19 [ main:4958 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:40:19 [ main:5106 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:40:19 [ main:5283 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:40:19 [ main:5284 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:40:19 [ main:5294 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:40:19 [ main:5295 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:40:19 [ main:5301 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:40:19 [ main:5302 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:40:19 [ main:5308 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:40:19 [ main:5309 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:40:19 [ main:5313 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:40:19 [ main:5314 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:40:19 [ main:5339 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:40:19 [ main:5374 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:40:19 [ main:5386 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:40:20 [ main:5909 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:40:20 [ main:5912 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:40:20 [ main:5913 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:40:20 [ main:5992 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:40:20 [ main:5993 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:40:21 [ main:6672 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:40:21 [ main:6675 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:40:21 [ main:6764 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:40:21 [ main:6776 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:40:21 [ main:6782 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:40:21 [ main:6783 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:40:21 [ main:6783 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:40:21 [ main:6784 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:40:21 [ main:6784 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:40:21 [ main:6787 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:40:21 [ main:6790 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:40:21 [ main:6790 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:40:21 [ main:6793 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:40:21 [ main:6794 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:40:21 [ main:6794 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:40:21 [ main:6795 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:40:21 [ main:6795 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:40:21 [ main:6796 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:40:21 [ main:6806 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:40:21 [ main:6807 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:40:21 [ main:6808 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:40:21 [ main:6808 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:40:21 [ main:6809 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:40:21 [ main:6809 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:40:21 [ main:6810 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:40:21 [ main:6810 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:40:21 [ main:6833 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:40:21 [ main:6835 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:40:21 [ main:6836 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:40:21 [ main:6837 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:40:21 [ main:6837 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:40:21 [ main:6988 ] - [ INFO ] building session factory
+2014-09-19 01:40:22 [ main:7685 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:40:23 [ main:8934 ] - [ INFO ] Root WebApplicationContext: initialization completed in 8906 ms
+2014-09-19 01:40:23 [ main:9172 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:40:24 [ main:10151 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:40:24 [ main:10255 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:40:24 [ main:10262 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:40:24 [ main:10263 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:40:24 [ main:10263 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:40:24 [ main:10264 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:40:24 [ main:10264 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:40:24 [ main:10268 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:40:24 [ main:10269 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:40:24 [ main:10269 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:40:24 [ main:10271 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:40:24 [ main:10272 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:40:24 [ main:10272 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:40:24 [ main:10272 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:40:24 [ main:10273 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:40:24 [ main:10273 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:40:24 [ main:10274 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:40:24 [ main:10274 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:40:24 [ main:10274 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:40:24 [ main:10276 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:40:24 [ main:10284 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:40:25 [ main:10512 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:40:25 [ main:10523 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:40:25 [ main:10524 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:40:48 [ http-8080-1:33802 ] - [ INFO ] v
+2014-09-19 01:40:48 [ http-8080-1:33861 ] - [ INFO ] menu
+2014-09-19 01:42:09 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:42:09 [ main:152 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:42:09 CST 2014]; root of context hierarchy
+2014-09-19 01:42:09 [ main:371 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:42:10 [ main:1281 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2b349d: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:42:11 [ main:2189 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:42:11 [ main:2228 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:42:11 [ main:2234 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:42:11 [ main:2243 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:42:11 [ main:2261 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:42:11 [ main:2545 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:42:11 [ main:2569 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:42:12 [ main:2788 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:42:12 [ main:2971 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:42:12 [ main:3094 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:42:12 [ main:3272 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:42:12 [ main:3273 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:42:12 [ main:3283 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:42:12 [ main:3284 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:42:12 [ main:3290 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:42:12 [ main:3291 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:42:12 [ main:3297 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:42:12 [ main:3298 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:42:12 [ main:3301 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:42:12 [ main:3302 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:42:12 [ main:3328 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:42:12 [ main:3357 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:42:12 [ main:3368 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:42:12 [ main:3551 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:42:12 [ main:3552 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:42:12 [ main:3555 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:42:12 [ main:3566 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:42:12 [ main:3567 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:42:13 [ main:3993 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:42:13 [ main:3996 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:42:13 [ main:4077 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:42:13 [ main:4088 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:42:13 [ main:4093 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:42:13 [ main:4094 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:42:13 [ main:4095 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:42:13 [ main:4095 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:42:13 [ main:4096 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:42:13 [ main:4098 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:42:13 [ main:4101 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:42:13 [ main:4101 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:42:13 [ main:4104 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:42:13 [ main:4105 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:42:13 [ main:4105 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:42:13 [ main:4106 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:42:13 [ main:4106 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:42:13 [ main:4107 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:42:13 [ main:4116 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:42:13 [ main:4117 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:42:13 [ main:4117 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:42:13 [ main:4118 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:42:13 [ main:4118 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:42:13 [ main:4119 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:42:13 [ main:4119 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:42:13 [ main:4120 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:42:13 [ main:4140 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:42:13 [ main:4143 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:42:13 [ main:4144 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:42:13 [ main:4144 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:42:13 [ main:4145 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:42:13 [ main:4294 ] - [ INFO ] building session factory
+2014-09-19 01:42:14 [ main:4873 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:42:15 [ main:6107 ] - [ INFO ] Root WebApplicationContext: initialization completed in 6101 ms
+2014-09-19 01:42:15 [ main:6382 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:42:16 [ main:7336 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:42:16 [ main:7555 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:42:16 [ main:7562 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:42:16 [ main:7563 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:42:16 [ main:7563 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:42:16 [ main:7563 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:42:16 [ main:7564 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:42:16 [ main:7565 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:42:16 [ main:7569 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:42:16 [ main:7569 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:42:16 [ main:7573 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:42:16 [ main:7574 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:42:16 [ main:7574 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:42:16 [ main:7574 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:42:16 [ main:7575 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:42:16 [ main:7575 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:42:16 [ main:7576 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:42:16 [ main:7576 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:42:16 [ main:7577 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:42:16 [ main:7578 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:42:16 [ main:7587 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:42:17 [ main:7808 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:42:17 [ main:7818 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:42:17 [ main:7819 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:43:12 [ http-8080-1:63368 ] - [ INFO ] v
+2014-09-19 01:43:12 [ http-8080-1:63400 ] - [ INFO ] menu
+2014-09-19 01:44:36 [ main:147058 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 01:44:36 [ main:147089 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:44:36 [ main:147724 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:44:36 [ main:147747 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:44:36 [ main:147749 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:44:36 [ main:147749 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:44:36 [ main:147750 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:44:36 [ main:147750 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:44:36 [ main:147750 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:44:36 [ main:147751 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:44:36 [ main:147751 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:44:36 [ main:147751 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:44:36 [ main:147754 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:44:36 [ main:147755 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:44:36 [ main:147757 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:44:36 [ main:147758 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:44:36 [ main:147758 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:44:36 [ main:147758 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:44:36 [ main:147759 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:44:36 [ main:147759 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:44:36 [ main:147759 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:44:36 [ main:147759 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:44:36 [ main:147760 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:44:36 [ main:147768 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:44:36 [ main:147769 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:44:36 [ main:147769 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:44:37 [ main:148269 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Fri Sep 19 01:42:09 CST 2014]; root of context hierarchy
+2014-09-19 01:44:37 [ main:148273 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2b349d: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:44:37 [ main:148286 ] - [ INFO ] Closing Hibernate SessionFactory
+2014-09-19 01:44:37 [ main:148286 ] - [ INFO ] closing
+2014-09-19 01:44:37 [ main:148287 ] - [ INFO ] cleaning up connection pool: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:44:41 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:44:41 [ main:170 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:44:41 CST 2014]; root of context hierarchy
+2014-09-19 01:44:41 [ main:380 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:44:42 [ main:1385 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b675e: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:44:43 [ main:2358 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:44:43 [ main:2397 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:44:43 [ main:2402 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:44:44 [ main:2409 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:44:44 [ main:2427 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:44:44 [ main:2711 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:44:44 [ main:2730 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:44:44 [ main:2952 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:44:44 [ main:3146 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:44:44 [ main:3285 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:44:45 [ main:3463 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:44:45 [ main:3465 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:44:45 [ main:3474 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:44:45 [ main:3475 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:44:45 [ main:3482 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:44:45 [ main:3483 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:44:45 [ main:3489 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:44:45 [ main:3490 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:44:45 [ main:3494 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:44:45 [ main:3495 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:44:45 [ main:3522 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:44:45 [ main:3554 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:44:45 [ main:3564 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:44:45 [ main:3767 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:44:45 [ main:3771 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:44:45 [ main:3772 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:44:45 [ main:3784 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:44:45 [ main:3785 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:44:45 [ main:4167 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:44:45 [ main:4170 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:44:45 [ main:4258 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:44:45 [ main:4269 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:44:45 [ main:4274 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:44:45 [ main:4275 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:44:45 [ main:4275 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:44:45 [ main:4276 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:44:45 [ main:4276 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:44:45 [ main:4279 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:44:45 [ main:4281 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:44:45 [ main:4281 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:44:45 [ main:4285 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:44:45 [ main:4285 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:44:45 [ main:4286 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:44:45 [ main:4287 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:44:45 [ main:4287 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:44:45 [ main:4287 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:44:45 [ main:4298 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:44:45 [ main:4298 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:44:45 [ main:4299 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:44:45 [ main:4299 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:44:45 [ main:4299 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:44:45 [ main:4300 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:44:45 [ main:4300 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:44:45 [ main:4301 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:44:45 [ main:4320 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:44:45 [ main:4323 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:44:45 [ main:4324 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:44:45 [ main:4324 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:44:45 [ main:4325 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:44:46 [ main:4445 ] - [ INFO ] building session factory
+2014-09-19 01:44:46 [ main:5070 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:44:47 [ main:6384 ] - [ INFO ] Root WebApplicationContext: initialization completed in 6379 ms
+2014-09-19 01:44:48 [ main:6642 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:44:49 [ main:7716 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:44:49 [ main:7823 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:44:49 [ main:7829 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:44:49 [ main:7830 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:44:49 [ main:7830 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:44:49 [ main:7831 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:44:49 [ main:7831 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:44:49 [ main:7833 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:44:49 [ main:7837 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:44:49 [ main:7837 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:44:49 [ main:7841 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:44:49 [ main:7842 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:44:49 [ main:7842 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:44:49 [ main:7843 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:44:49 [ main:7843 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:44:49 [ main:7844 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:44:49 [ main:7844 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:44:49 [ main:7845 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:44:49 [ main:7845 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:44:49 [ main:7846 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:44:49 [ main:7855 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:44:49 [ main:8093 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:44:49 [ main:8103 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:44:49 [ main:8104 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:45:31 [ http-8080-1:49632 ] - [ INFO ] v
+2014-09-19 01:45:31 [ http-8080-1:49664 ] - [ INFO ] menu
+2014-09-19 01:46:30 [ main:109198 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 01:46:30 [ main:109237 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:46:31 [ main:109874 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:46:31 [ main:109897 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:46:31 [ main:109898 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:46:31 [ main:109898 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:46:31 [ main:109899 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:46:31 [ main:109899 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:46:31 [ main:109899 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:46:31 [ main:109900 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:46:31 [ main:109901 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:46:31 [ main:109901 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:46:31 [ main:109903 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:46:31 [ main:109906 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:46:31 [ main:109907 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:46:31 [ main:109907 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:46:31 [ main:109907 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:46:31 [ main:109908 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:46:31 [ main:109909 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:46:31 [ main:109909 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:46:31 [ main:109911 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:46:31 [ main:109911 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:46:31 [ main:109912 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:46:31 [ main:109921 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:46:31 [ main:109922 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:46:31 [ main:109922 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:46:31 [ main:110329 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Fri Sep 19 01:44:41 CST 2014]; root of context hierarchy
+2014-09-19 01:46:31 [ main:110330 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b675e: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:46:31 [ main:110332 ] - [ INFO ] Closing Hibernate SessionFactory
+2014-09-19 01:46:31 [ main:110332 ] - [ INFO ] closing
+2014-09-19 01:46:31 [ main:110333 ] - [ INFO ] cleaning up connection pool: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:46:35 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:46:35 [ main:142 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:46:35 CST 2014]; root of context hierarchy
+2014-09-19 01:46:35 [ main:342 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:46:36 [ main:1240 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5c7734: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:46:37 [ main:2161 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:46:37 [ main:2195 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:46:37 [ main:2200 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:46:37 [ main:2207 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:46:37 [ main:2224 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:46:37 [ main:2493 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:46:37 [ main:2511 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:46:38 [ main:2721 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:46:38 [ main:2907 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:46:38 [ main:3040 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:46:38 [ main:3218 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:46:38 [ main:3219 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:46:38 [ main:3229 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:46:38 [ main:3230 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:46:38 [ main:3236 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:46:38 [ main:3238 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:46:38 [ main:3244 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:46:38 [ main:3245 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:46:38 [ main:3248 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:46:38 [ main:3250 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:46:38 [ main:3277 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:46:38 [ main:3305 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:46:38 [ main:3315 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:46:38 [ main:3493 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:46:38 [ main:3496 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:46:38 [ main:3496 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:46:38 [ main:3509 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:46:38 [ main:3509 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:46:39 [ main:3864 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:46:39 [ main:3867 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:46:39 [ main:3949 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:46:39 [ main:3959 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:46:39 [ main:3964 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:46:39 [ main:3964 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:46:39 [ main:3965 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:46:39 [ main:3966 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:46:39 [ main:3966 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:46:39 [ main:3969 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:46:39 [ main:3971 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:46:39 [ main:3972 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:46:39 [ main:3975 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:46:39 [ main:3976 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:46:39 [ main:3976 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:46:39 [ main:3977 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:46:39 [ main:3977 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:46:39 [ main:3978 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:46:39 [ main:3987 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:46:39 [ main:3988 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:46:39 [ main:3988 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:46:39 [ main:3988 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:46:39 [ main:3989 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:46:39 [ main:3989 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:46:39 [ main:3990 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:46:39 [ main:3990 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:46:39 [ main:4007 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:46:39 [ main:4010 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:46:39 [ main:4011 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:46:39 [ main:4011 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:46:39 [ main:4012 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:46:39 [ main:4124 ] - [ INFO ] building session factory
+2014-09-19 01:46:40 [ main:4693 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:46:41 [ main:5866 ] - [ INFO ] Root WebApplicationContext: initialization completed in 5860 ms
+2014-09-19 01:46:41 [ main:6105 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:46:42 [ main:7163 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:46:42 [ main:7256 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:46:42 [ main:7263 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:46:42 [ main:7264 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:46:42 [ main:7264 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:46:42 [ main:7265 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:46:42 [ main:7265 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:46:42 [ main:7266 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:46:42 [ main:7266 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:46:42 [ main:7267 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:46:42 [ main:7269 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:46:42 [ main:7271 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:46:42 [ main:7271 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:46:42 [ main:7272 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:46:42 [ main:7272 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:46:42 [ main:7273 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:46:42 [ main:7274 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:46:42 [ main:7274 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:46:42 [ main:7274 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:46:42 [ main:7275 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:46:42 [ main:7282 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:46:42 [ main:7500 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:46:42 [ main:7512 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:46:42 [ main:7513 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:47:00 [ http-8080-1:24695 ] - [ INFO ] v
+2014-09-19 01:54:22 [ main:467244 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 01:54:24 [ main:469038 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:54:25 [ main:469647 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:54:25 [ main:469755 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:54:25 [ main:469757 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:54:25 [ main:469758 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:54:25 [ main:469759 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:54:25 [ main:469760 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:54:25 [ main:469760 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:54:25 [ main:469761 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:54:25 [ main:469761 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:54:25 [ main:469762 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:54:25 [ main:469765 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:54:25 [ main:469766 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:54:25 [ main:469767 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:54:25 [ main:469767 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:54:25 [ main:469768 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:54:25 [ main:469769 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:54:25 [ main:469770 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:54:25 [ main:469770 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:54:25 [ main:469773 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:54:25 [ main:469774 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:54:25 [ main:469774 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:54:25 [ main:469782 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:54:25 [ main:469783 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:54:25 [ main:469784 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:54:26 [ main:471016 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Fri Sep 19 01:46:35 CST 2014]; root of context hierarchy
+2014-09-19 01:54:26 [ main:471018 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5c7734: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:54:26 [ main:471049 ] - [ INFO ] Closing Hibernate SessionFactory
+2014-09-19 01:54:26 [ main:471050 ] - [ INFO ] closing
+2014-09-19 01:54:26 [ main:471050 ] - [ INFO ] cleaning up connection pool: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:54:35 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 01:54:35 [ main:215 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 01:54:35 CST 2014]; root of context hierarchy
+2014-09-19 01:54:36 [ main:581 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 01:54:37 [ main:2097 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3a835d: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 01:54:39 [ main:3601 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 01:54:39 [ main:3672 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 01:54:39 [ main:3677 ] - [ INFO ] hibernate.properties not found
+2014-09-19 01:54:39 [ main:3717 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 01:54:39 [ main:3734 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 01:54:39 [ main:4292 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 01:54:39 [ main:4317 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 01:54:40 [ main:4616 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 01:54:40 [ main:4793 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 01:54:40 [ main:4919 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 01:54:40 [ main:5092 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 01:54:40 [ main:5094 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 01:54:40 [ main:5105 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 01:54:40 [ main:5106 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 01:54:40 [ main:5112 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 01:54:40 [ main:5116 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 01:54:40 [ main:5119 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 01:54:40 [ main:5120 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 01:54:40 [ main:5123 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 01:54:40 [ main:5124 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 01:54:40 [ main:5152 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 01:54:40 [ main:5178 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 01:54:40 [ main:5189 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 01:54:41 [ main:5472 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 01:54:41 [ main:5475 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 01:54:41 [ main:5476 ] - [ INFO ] autocommit mode: false
+2014-09-19 01:54:41 [ main:5532 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 01:54:41 [ main:5533 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 01:54:41 [ main:6192 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 01:54:41 [ main:6192 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 01:54:41 [ main:6343 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 01:54:41 [ main:6361 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 01:54:41 [ main:6367 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 01:54:41 [ main:6367 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 01:54:41 [ main:6368 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 01:54:41 [ main:6368 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 01:54:41 [ main:6370 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 01:54:41 [ main:6373 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 01:54:41 [ main:6374 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 01:54:41 [ main:6374 ] - [ INFO ] Connection release mode: auto
+2014-09-19 01:54:41 [ main:6377 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 01:54:41 [ main:6377 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 01:54:41 [ main:6378 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 01:54:41 [ main:6378 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 01:54:41 [ main:6379 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 01:54:41 [ main:6381 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 01:54:41 [ main:6396 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 01:54:41 [ main:6397 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 01:54:41 [ main:6398 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 01:54:41 [ main:6398 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 01:54:41 [ main:6399 ] - [ INFO ] Query cache: disabled
+2014-09-19 01:54:41 [ main:6399 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 01:54:41 [ main:6400 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 01:54:41 [ main:6400 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 01:54:41 [ main:6419 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 01:54:42 [ main:6422 ] - [ INFO ] Statistics: disabled
+2014-09-19 01:54:42 [ main:6423 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 01:54:42 [ main:6423 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 01:54:42 [ main:6424 ] - [ INFO ] Named query checking : enabled
+2014-09-19 01:54:42 [ main:6669 ] - [ INFO ] building session factory
+2014-09-19 01:54:43 [ main:7501 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 01:54:44 [ main:8963 ] - [ INFO ] Root WebApplicationContext: initialization completed in 8958 ms
+2014-09-19 01:54:44 [ main:9253 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 01:54:45 [ main:10356 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 01:54:46 [ main:10453 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 01:54:46 [ main:10460 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 01:54:46 [ main:10461 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 01:54:46 [ main:10461 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 01:54:46 [ main:10462 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 01:54:46 [ main:10465 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 01:54:46 [ main:10466 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 01:54:46 [ main:10466 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 01:54:46 [ main:10466 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 01:54:46 [ main:10468 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 01:54:46 [ main:10469 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 01:54:46 [ main:10469 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 01:54:46 [ main:10470 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 01:54:46 [ main:10470 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 01:54:46 [ main:10470 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 01:54:46 [ main:10471 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 01:54:46 [ main:10471 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 01:54:46 [ main:10474 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 01:54:46 [ main:10475 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 01:54:46 [ main:10483 ] - [ INFO ] Loading global messages from mess
+2014-09-19 01:54:46 [ main:10700 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 01:54:46 [ main:10807 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 01:54:46 [ main:10814 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 01:55:05 [ http-8080-1:30146 ] - [ ERROR ] Could not find action or result
+There is no Action mapped for namespace /interface and action name getSoftwarelist. - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:478)
+	at org.apache.struts2.dispatcher.ng.ExecuteOperations.executeAction(ExecuteOperations.java:77)
+	at org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter.doFilter(StrutsPrepareAndExecuteFilter.java:91)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:230)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:175)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:104)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:261)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:844)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:581)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447)
+	at java.lang.Thread.run(Thread.java:619)
+2014-09-19 02:05:33 [ main:658095 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:05:33 [ main:658155 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:05:34 [ main:658794 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:05:34 [ main:658904 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:05:34 [ main:658906 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:05:34 [ main:658910 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:05:34 [ main:658911 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:05:34 [ main:658912 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:05:34 [ main:658912 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:05:34 [ main:658913 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:05:34 [ main:658913 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:05:34 [ main:658914 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:05:34 [ main:658916 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:05:34 [ main:658917 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:05:34 [ main:658917 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:05:34 [ main:658918 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:05:34 [ main:658918 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:05:34 [ main:658918 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:05:34 [ main:658919 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:05:34 [ main:658919 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:05:34 [ main:658919 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:05:34 [ main:658920 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:05:34 [ main:658920 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:05:34 [ main:658931 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:05:34 [ main:658932 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:05:34 [ main:658933 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:05:35 [ main:660096 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Fri Sep 19 01:54:35 CST 2014]; root of context hierarchy
+2014-09-19 02:05:35 [ main:660099 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3a835d: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:05:35 [ main:660126 ] - [ INFO ] Closing Hibernate SessionFactory
+2014-09-19 02:05:35 [ main:660132 ] - [ INFO ] closing
+2014-09-19 02:05:35 [ main:660133 ] - [ INFO ] cleaning up connection pool: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:05:43 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 02:05:43 [ main:262 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 02:05:43 CST 2014]; root of context hierarchy
+2014-09-19 02:05:44 [ main:649 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 02:05:46 [ main:2432 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@56b93a: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:05:47 [ main:4000 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 02:05:47 [ main:4045 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 02:05:47 [ main:4051 ] - [ INFO ] hibernate.properties not found
+2014-09-19 02:05:47 [ main:4082 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 02:05:47 [ main:4098 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 02:05:48 [ main:4483 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 02:05:48 [ main:4507 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 02:05:48 [ main:4823 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 02:05:48 [ main:5015 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 02:05:48 [ main:5138 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 02:05:48 [ main:5335 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 02:05:48 [ main:5336 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 02:05:48 [ main:5347 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 02:05:48 [ main:5348 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 02:05:48 [ main:5355 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 02:05:48 [ main:5358 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 02:05:48 [ main:5361 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 02:05:48 [ main:5362 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 02:05:48 [ main:5366 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 02:05:48 [ main:5367 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 02:05:49 [ main:5415 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 02:05:49 [ main:5442 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 02:05:49 [ main:5454 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 02:05:49 [ main:5731 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 02:05:49 [ main:5732 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 02:05:49 [ main:5733 ] - [ INFO ] autocommit mode: false
+2014-09-19 02:05:49 [ main:5811 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:05:49 [ main:5812 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 02:05:50 [ main:6674 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 02:05:50 [ main:6675 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 02:05:50 [ main:6829 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 02:05:50 [ main:6851 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 02:05:50 [ main:6856 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 02:05:50 [ main:6857 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 02:05:50 [ main:6857 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 02:05:50 [ main:6858 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 02:05:50 [ main:6860 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 02:05:50 [ main:6863 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 02:05:50 [ main:6863 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 02:05:50 [ main:6864 ] - [ INFO ] Connection release mode: auto
+2014-09-19 02:05:50 [ main:6867 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 02:05:50 [ main:6867 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 02:05:50 [ main:6868 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 02:05:50 [ main:6868 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 02:05:50 [ main:6868 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 02:05:50 [ main:6869 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 02:05:50 [ main:6887 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 02:05:50 [ main:6887 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 02:05:50 [ main:6888 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 02:05:50 [ main:6888 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 02:05:50 [ main:6889 ] - [ INFO ] Query cache: disabled
+2014-09-19 02:05:50 [ main:6889 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 02:05:50 [ main:6890 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 02:05:50 [ main:6890 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 02:05:50 [ main:6908 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 02:05:50 [ main:6911 ] - [ INFO ] Statistics: disabled
+2014-09-19 02:05:50 [ main:6912 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 02:05:50 [ main:6912 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 02:05:50 [ main:6912 ] - [ INFO ] Named query checking : enabled
+2014-09-19 02:05:50 [ main:7186 ] - [ INFO ] building session factory
+2014-09-19 02:05:51 [ main:8024 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 02:05:53 [ main:9508 ] - [ INFO ] Root WebApplicationContext: initialization completed in 9502 ms
+2014-09-19 02:05:53 [ main:9841 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:05:54 [ main:10986 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:05:54 [ main:11090 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:05:54 [ main:11097 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:05:54 [ main:11100 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:05:54 [ main:11101 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:05:54 [ main:11102 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:05:54 [ main:11102 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:05:54 [ main:11103 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:05:54 [ main:11103 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:05:54 [ main:11104 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:05:54 [ main:11105 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:05:54 [ main:11106 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:05:54 [ main:11106 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:05:54 [ main:11107 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:05:54 [ main:11107 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:05:54 [ main:11107 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:05:54 [ main:11111 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:05:54 [ main:11111 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:05:54 [ main:11112 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:05:54 [ main:11112 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:05:54 [ main:11122 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:05:55 [ main:11447 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:05:55 [ main:11481 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:05:55 [ main:11482 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:06:57 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 02:06:57 [ main:140 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 02:06:57 CST 2014]; root of context hierarchy
+2014-09-19 02:06:57 [ main:337 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 02:06:58 [ main:1205 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@867fc9: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:06:59 [ main:2107 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 02:06:59 [ main:2143 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 02:06:59 [ main:2147 ] - [ INFO ] hibernate.properties not found
+2014-09-19 02:06:59 [ main:2155 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 02:06:59 [ main:2171 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 02:06:59 [ main:2432 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 02:06:59 [ main:2451 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 02:06:59 [ main:2664 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 02:07:00 [ main:2843 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 02:07:00 [ main:2966 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 02:07:00 [ main:3136 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 02:07:00 [ main:3137 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 02:07:00 [ main:3147 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 02:07:00 [ main:3148 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 02:07:00 [ main:3154 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 02:07:00 [ main:3155 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 02:07:00 [ main:3161 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 02:07:00 [ main:3162 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 02:07:00 [ main:3165 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 02:07:00 [ main:3166 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 02:07:00 [ main:3194 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 02:07:00 [ main:3223 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 02:07:00 [ main:3233 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 02:07:00 [ main:3412 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 02:07:00 [ main:3415 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 02:07:00 [ main:3416 ] - [ INFO ] autocommit mode: false
+2014-09-19 02:07:00 [ main:3427 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:07:00 [ main:3427 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 02:07:01 [ main:3777 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 02:07:01 [ main:3780 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 02:07:01 [ main:3863 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 02:07:01 [ main:3874 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 02:07:01 [ main:3880 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 02:07:01 [ main:3881 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 02:07:01 [ main:3882 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 02:07:01 [ main:3882 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 02:07:01 [ main:3883 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 02:07:01 [ main:3886 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 02:07:01 [ main:3888 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 02:07:01 [ main:3889 ] - [ INFO ] Connection release mode: auto
+2014-09-19 02:07:01 [ main:3891 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 02:07:01 [ main:3892 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 02:07:01 [ main:3893 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 02:07:01 [ main:3893 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 02:07:01 [ main:3896 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 02:07:01 [ main:3896 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 02:07:01 [ main:3906 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 02:07:01 [ main:3907 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 02:07:01 [ main:3908 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 02:07:01 [ main:3908 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 02:07:01 [ main:3909 ] - [ INFO ] Query cache: disabled
+2014-09-19 02:07:01 [ main:3909 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 02:07:01 [ main:3910 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 02:07:01 [ main:3910 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 02:07:01 [ main:3928 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 02:07:01 [ main:3931 ] - [ INFO ] Statistics: disabled
+2014-09-19 02:07:01 [ main:3931 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 02:07:01 [ main:3932 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 02:07:01 [ main:3932 ] - [ INFO ] Named query checking : enabled
+2014-09-19 02:07:01 [ main:4055 ] - [ INFO ] building session factory
+2014-09-19 02:07:01 [ main:4663 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 02:07:03 [ main:6113 ] - [ INFO ] Root WebApplicationContext: initialization completed in 6108 ms
+2014-09-19 02:07:03 [ main:6353 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:07:04 [ main:7335 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:07:04 [ main:7443 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:07:04 [ main:7450 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:07:04 [ main:7451 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:07:04 [ main:7451 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:07:04 [ main:7451 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:07:04 [ main:7452 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:07:04 [ main:7452 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:07:04 [ main:7453 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:07:04 [ main:7453 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:07:04 [ main:7455 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:07:04 [ main:7459 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:07:04 [ main:7459 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:07:04 [ main:7460 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:07:04 [ main:7460 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:07:04 [ main:7461 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:07:04 [ main:7461 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:07:04 [ main:7461 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:07:04 [ main:7462 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:07:04 [ main:7462 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:07:04 [ main:7469 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:07:04 [ main:7687 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:07:04 [ main:7701 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:07:04 [ main:7702 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:11:27 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 02:11:27 [ main:142 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 02:11:27 CST 2014]; root of context hierarchy
+2014-09-19 02:11:27 [ main:340 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 02:11:28 [ main:1217 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@867fc9: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:11:29 [ main:2111 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 02:11:29 [ main:2155 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 02:11:29 [ main:2160 ] - [ INFO ] hibernate.properties not found
+2014-09-19 02:11:29 [ main:2168 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 02:11:29 [ main:2184 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 02:11:29 [ main:2447 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 02:11:29 [ main:2468 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 02:11:30 [ main:2691 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 02:11:30 [ main:2873 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 02:11:30 [ main:3002 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 02:11:30 [ main:3171 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 02:11:30 [ main:3172 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 02:11:30 [ main:3183 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 02:11:30 [ main:3184 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 02:11:30 [ main:3191 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 02:11:30 [ main:3193 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 02:11:30 [ main:3198 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 02:11:30 [ main:3199 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 02:11:30 [ main:3203 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 02:11:30 [ main:3204 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 02:11:30 [ main:3231 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 02:11:30 [ main:3259 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 02:11:30 [ main:3271 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 02:11:30 [ main:3452 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 02:11:30 [ main:3454 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 02:11:30 [ main:3456 ] - [ INFO ] autocommit mode: false
+2014-09-19 02:11:30 [ main:3467 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:11:30 [ main:3468 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 02:11:31 [ main:3828 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 02:11:31 [ main:3832 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 02:11:31 [ main:3911 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 02:11:31 [ main:3921 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 02:11:31 [ main:3926 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 02:11:31 [ main:3927 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 02:11:31 [ main:3927 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 02:11:31 [ main:3928 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 02:11:31 [ main:3928 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 02:11:31 [ main:3931 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 02:11:31 [ main:3933 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 02:11:31 [ main:3933 ] - [ INFO ] Connection release mode: auto
+2014-09-19 02:11:31 [ main:3936 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 02:11:31 [ main:3937 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 02:11:31 [ main:3937 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 02:11:31 [ main:3938 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 02:11:31 [ main:3938 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 02:11:31 [ main:3939 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 02:11:31 [ main:3949 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 02:11:31 [ main:3950 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 02:11:31 [ main:3950 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 02:11:31 [ main:3951 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 02:11:31 [ main:3951 ] - [ INFO ] Query cache: disabled
+2014-09-19 02:11:31 [ main:3952 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 02:11:31 [ main:3952 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 02:11:31 [ main:3952 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 02:11:31 [ main:3970 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 02:11:31 [ main:3973 ] - [ INFO ] Statistics: disabled
+2014-09-19 02:11:31 [ main:3974 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 02:11:31 [ main:3974 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 02:11:31 [ main:3975 ] - [ INFO ] Named query checking : enabled
+2014-09-19 02:11:31 [ main:4195 ] - [ INFO ] building session factory
+2014-09-19 02:11:32 [ main:4791 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 02:11:33 [ main:6123 ] - [ INFO ] Root WebApplicationContext: initialization completed in 6118 ms
+2014-09-19 02:11:33 [ main:6359 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:11:34 [ main:7317 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:11:34 [ main:7415 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:11:34 [ main:7424 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:11:34 [ main:7425 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:11:34 [ main:7426 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:11:34 [ main:7426 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:11:34 [ main:7427 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:11:34 [ main:7427 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:11:34 [ main:7427 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:11:34 [ main:7428 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:11:34 [ main:7430 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:11:34 [ main:7431 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:11:34 [ main:7433 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:11:34 [ main:7434 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:11:34 [ main:7434 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:11:34 [ main:7435 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:11:34 [ main:7436 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:11:34 [ main:7436 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:11:34 [ main:7437 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:11:34 [ main:7437 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:11:34 [ main:7444 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:11:35 [ main:7662 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:11:35 [ main:7678 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:11:35 [ main:7679 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:12:40 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 02:12:41 [ main:151 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 02:12:41 CST 2014]; root of context hierarchy
+2014-09-19 02:12:41 [ main:362 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 02:12:42 [ main:1258 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2f8116: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:12:43 [ main:2153 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 02:12:43 [ main:2189 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 02:12:43 [ main:2194 ] - [ INFO ] hibernate.properties not found
+2014-09-19 02:12:43 [ main:2202 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 02:12:43 [ main:2218 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 02:12:43 [ main:2476 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 02:12:43 [ main:2501 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 02:12:43 [ main:2725 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 02:12:43 [ main:2903 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 02:12:43 [ main:3029 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 02:12:44 [ main:3207 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 02:12:44 [ main:3209 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 02:12:44 [ main:3219 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 02:12:44 [ main:3220 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 02:12:44 [ main:3226 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 02:12:44 [ main:3227 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 02:12:44 [ main:3233 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 02:12:44 [ main:3234 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 02:12:44 [ main:3238 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 02:12:44 [ main:3239 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 02:12:44 [ main:3266 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 02:12:44 [ main:3293 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 02:12:44 [ main:3305 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 02:12:44 [ main:3485 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 02:12:44 [ main:3488 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 02:12:44 [ main:3491 ] - [ INFO ] autocommit mode: false
+2014-09-19 02:12:44 [ main:3504 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:12:44 [ main:3505 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 02:12:44 [ main:3866 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 02:12:44 [ main:3869 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 02:12:44 [ main:3951 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 02:12:44 [ main:3961 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 02:12:44 [ main:3966 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 02:12:44 [ main:3967 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 02:12:44 [ main:3967 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 02:12:44 [ main:3968 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 02:12:44 [ main:3969 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 02:12:44 [ main:3971 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 02:12:44 [ main:3973 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 02:12:44 [ main:3974 ] - [ INFO ] Connection release mode: auto
+2014-09-19 02:12:44 [ main:3977 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 02:12:44 [ main:3977 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 02:12:44 [ main:3978 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 02:12:44 [ main:3978 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 02:12:44 [ main:3979 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 02:12:44 [ main:3979 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 02:12:44 [ main:3989 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 02:12:44 [ main:3990 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 02:12:44 [ main:3990 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 02:12:44 [ main:3991 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 02:12:44 [ main:3991 ] - [ INFO ] Query cache: disabled
+2014-09-19 02:12:44 [ main:3992 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 02:12:44 [ main:3992 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 02:12:44 [ main:3993 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 02:12:44 [ main:4011 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 02:12:44 [ main:4014 ] - [ INFO ] Statistics: disabled
+2014-09-19 02:12:44 [ main:4014 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 02:12:44 [ main:4015 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 02:12:44 [ main:4016 ] - [ INFO ] Named query checking : enabled
+2014-09-19 02:12:45 [ main:4138 ] - [ INFO ] building session factory
+2014-09-19 02:12:45 [ main:4711 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 02:12:46 [ main:6045 ] - [ INFO ] Root WebApplicationContext: initialization completed in 6039 ms
+2014-09-19 02:12:47 [ main:6292 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:12:48 [ main:7245 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:12:48 [ main:7348 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:12:48 [ main:7357 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:12:48 [ main:7357 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:12:48 [ main:7358 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:12:48 [ main:7358 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:12:48 [ main:7359 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:12:48 [ main:7359 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:12:48 [ main:7360 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:12:48 [ main:7363 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:12:48 [ main:7365 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:12:48 [ main:7365 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:12:48 [ main:7366 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:12:48 [ main:7366 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:12:48 [ main:7367 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:12:48 [ main:7368 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:12:48 [ main:7369 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:12:48 [ main:7369 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:12:48 [ main:7369 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:12:48 [ main:7370 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:12:48 [ main:7377 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:12:48 [ main:7597 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:12:48 [ main:7608 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:12:48 [ main:7609 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:16:34 [ http-8080-1:233782 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:16:34 [ http-8080-1:233819 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:16:35 [ http-8080-1:234506 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:16:35 [ http-8080-1:234529 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:16:35 [ http-8080-1:234531 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:16:35 [ http-8080-1:234531 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:16:35 [ http-8080-1:234531 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:16:35 [ http-8080-1:234532 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:16:35 [ http-8080-1:234532 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:16:35 [ http-8080-1:234532 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:16:35 [ http-8080-1:234533 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:16:35 [ http-8080-1:234533 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:16:35 [ http-8080-1:234534 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:16:35 [ http-8080-1:234535 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:16:35 [ http-8080-1:234535 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:16:35 [ http-8080-1:234535 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:16:35 [ http-8080-1:234535 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:16:35 [ http-8080-1:234536 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:16:35 [ http-8080-1:234536 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:16:35 [ http-8080-1:234536 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:16:35 [ http-8080-1:234536 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:16:35 [ http-8080-1:234537 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:16:35 [ http-8080-1:234537 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:16:35 [ http-8080-1:234547 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:16:35 [ http-8080-1:234548 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:16:35 [ http-8080-1:234548 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:17:07 [ http-8080-1:266283 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:17:07 [ http-8080-1:266284 ] - [ INFO ] Detected package provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:17:07 [ http-8080-1:266305 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:17:07 [ http-8080-1:266951 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:17:07 [ http-8080-1:266975 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:17:07 [ http-8080-1:266976 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:17:07 [ http-8080-1:266976 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:17:07 [ http-8080-1:266977 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:17:07 [ http-8080-1:266977 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:17:07 [ http-8080-1:266977 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:17:07 [ http-8080-1:266977 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:17:07 [ http-8080-1:266978 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:17:07 [ http-8080-1:266978 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:17:07 [ http-8080-1:266979 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:17:07 [ http-8080-1:266980 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:17:07 [ http-8080-1:266980 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:17:07 [ http-8080-1:266981 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:17:07 [ http-8080-1:266981 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:17:07 [ http-8080-1:266981 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:17:07 [ http-8080-1:266983 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:17:07 [ http-8080-1:266983 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:17:07 [ http-8080-1:266984 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:17:07 [ http-8080-1:266984 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:17:07 [ http-8080-1:266984 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:17:07 [ http-8080-1:266992 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:17:07 [ http-8080-1:266993 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:17:07 [ http-8080-1:266993 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:21:03 [ main:502108 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:21:03 [ main:502110 ] - [ INFO ] Detected package provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:21:05 [ main:504211 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:21:05 [ main:504846 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:21:05 [ main:504936 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:21:05 [ main:504937 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:21:05 [ main:504938 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:21:05 [ main:504939 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:21:05 [ main:504939 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:21:05 [ main:504939 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:21:05 [ main:504941 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:21:05 [ main:504942 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:21:05 [ main:504942 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:21:05 [ main:504944 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:21:05 [ main:504944 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:21:05 [ main:504944 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:21:05 [ main:504945 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:21:05 [ main:504945 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:21:05 [ main:504945 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:21:05 [ main:504946 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:21:05 [ main:504947 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:21:05 [ main:504947 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:21:05 [ main:504947 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:21:05 [ main:504948 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:21:05 [ main:504955 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:21:05 [ main:504958 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:21:05 [ main:504959 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:21:07 [ main:506285 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Fri Sep 19 02:12:41 CST 2014]; root of context hierarchy
+2014-09-19 02:21:07 [ main:506286 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2f8116: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:21:07 [ main:506313 ] - [ INFO ] Closing Hibernate SessionFactory
+2014-09-19 02:21:07 [ main:506314 ] - [ INFO ] closing
+2014-09-19 02:21:07 [ main:506315 ] - [ INFO ] cleaning up connection pool: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:21:16 [ main:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2014-09-19 02:21:16 [ main:223 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Fri Sep 19 02:21:16 CST 2014]; root of context hierarchy
+2014-09-19 02:21:16 [ main:623 ] - [ INFO ] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2014-09-19 02:21:18 [ main:2272 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@467991: defining beans [sessionFactory,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,allManagerMethod,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,adminDAO,attachmentDAO,newsInfoDAO,newsTypeDAO,usersDAO,adminService,attachmentService,newsInfoService,newsTypeService,userService,adminAction,adminLogin,downloadAttachmentAction,newsInfoAction,newsTypeAction,softwareAction,userLoginAction,userRegisterAction,userAction,validateNameAction,newsInterfaceAction]; root of factory hierarchy
+2014-09-19 02:21:19 [ main:3910 ] - [ INFO ] Hibernate Annotations 3.4.0.GA
+2014-09-19 02:21:19 [ main:3951 ] - [ INFO ] Hibernate 3.3.2.GA
+2014-09-19 02:21:19 [ main:3956 ] - [ INFO ] hibernate.properties not found
+2014-09-19 02:21:20 [ main:3989 ] - [ INFO ] Bytecode provider name : javassist
+2014-09-19 02:21:20 [ main:4007 ] - [ INFO ] using JDK 1.4 java.sql.Timestamp handling
+2014-09-19 02:21:20 [ main:4428 ] - [ INFO ] Hibernate Commons Annotations 3.1.0.GA
+2014-09-19 02:21:20 [ main:4449 ] - [ INFO ] configuring from url: file:/E:/file/GitHub/Test/.metadata/.me_tcat/webapps/Stock/WEB-INF/classes/hibernate.cfg.xml
+2014-09-19 02:21:20 [ main:4776 ] - [ INFO ] Configured SessionFactory: null
+2014-09-19 02:21:21 [ main:4982 ] - [ INFO ] Binding entity from annotated class: org.news.model.Admin
+2014-09-19 02:21:21 [ main:5107 ] - [ INFO ] Bind entity org.news.model.Admin on table admin
+2014-09-19 02:21:21 [ main:5304 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsAttachment
+2014-09-19 02:21:21 [ main:5305 ] - [ INFO ] Bind entity org.news.model.NewsAttachment on table news_attachment
+2014-09-19 02:21:21 [ main:5315 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsInfo
+2014-09-19 02:21:21 [ main:5316 ] - [ INFO ] Bind entity org.news.model.NewsInfo on table newsinfo
+2014-09-19 02:21:21 [ main:5322 ] - [ INFO ] Binding entity from annotated class: org.news.model.NewsType
+2014-09-19 02:21:21 [ main:5323 ] - [ INFO ] Bind entity org.news.model.NewsType on table newstype
+2014-09-19 02:21:21 [ main:5329 ] - [ INFO ] Binding entity from annotated class: org.news.model.LeaveMessage
+2014-09-19 02:21:21 [ main:5330 ] - [ INFO ] Bind entity org.news.model.LeaveMessage on table LeaveMessage
+2014-09-19 02:21:21 [ main:5333 ] - [ INFO ] Binding entity from annotated class: org.news.model.Users
+2014-09-19 02:21:21 [ main:5334 ] - [ INFO ] Bind entity org.news.model.Users on table users
+2014-09-19 02:21:21 [ main:5359 ] - [ INFO ] Hibernate Validator 3.1.0.GA
+2014-09-19 02:21:21 [ main:5388 ] - [ INFO ] Building new Hibernate SessionFactory
+2014-09-19 02:21:21 [ main:5399 ] - [ INFO ] Unable to find org.hibernate.search.event.FullTextIndexEventListener on the classpath. Hibernate Search is not enabled.
+2014-09-19 02:21:21 [ main:5745 ] - [ INFO ] Using Hibernate built-in connection pool (not for production use!)
+2014-09-19 02:21:21 [ main:5748 ] - [ INFO ] Hibernate connection pool size: 20
+2014-09-19 02:21:21 [ main:5749 ] - [ INFO ] autocommit mode: false
+2014-09-19 02:21:21 [ main:5805 ] - [ INFO ] using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost:3306/news_all?useUnicode=true&characterEncoding=UTF-8
+2014-09-19 02:21:21 [ main:5806 ] - [ INFO ] connection properties: {user=root, password=qxw}
+2014-09-19 02:21:22 [ main:6499 ] - [ INFO ] RDBMS: MySQL, version: 5.1.30-community
+2014-09-19 02:21:22 [ main:6503 ] - [ INFO ] JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.0.8 ( Revision: ${svn.Revision} )
+2014-09-19 02:21:22 [ main:6663 ] - [ INFO ] Using dialect: org.hibernate.dialect.MySQLInnoDBDialect
+2014-09-19 02:21:22 [ main:6680 ] - [ INFO ] Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2014-09-19 02:21:22 [ main:6690 ] - [ INFO ] No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2014-09-19 02:21:22 [ main:6691 ] - [ INFO ] Automatic flush during beforeCompletion(): disabled
+2014-09-19 02:21:22 [ main:6691 ] - [ INFO ] Automatic session close at end of transaction: disabled
+2014-09-19 02:21:22 [ main:6692 ] - [ INFO ] JDBC batch size: 15
+2014-09-19 02:21:22 [ main:6692 ] - [ INFO ] JDBC batch updates for versioned data: disabled
+2014-09-19 02:21:22 [ main:6696 ] - [ INFO ] Scrollable result sets: enabled
+2014-09-19 02:21:22 [ main:6698 ] - [ INFO ] JDBC3 getGeneratedKeys(): enabled
+2014-09-19 02:21:22 [ main:6698 ] - [ INFO ] Connection release mode: auto
+2014-09-19 02:21:22 [ main:6701 ] - [ INFO ] Maximum outer join fetch depth: 2
+2014-09-19 02:21:22 [ main:6701 ] - [ INFO ] Default batch fetch size: 1
+2014-09-19 02:21:22 [ main:6702 ] - [ INFO ] Generate SQL with comments: disabled
+2014-09-19 02:21:22 [ main:6702 ] - [ INFO ] Order SQL updates by primary key: disabled
+2014-09-19 02:21:22 [ main:6703 ] - [ INFO ] Order SQL inserts for batching: disabled
+2014-09-19 02:21:22 [ main:6703 ] - [ INFO ] Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2014-09-19 02:21:22 [ main:6729 ] - [ INFO ] Using ASTQueryTranslatorFactory
+2014-09-19 02:21:22 [ main:6729 ] - [ INFO ] Query language substitutions: {}
+2014-09-19 02:21:22 [ main:6730 ] - [ INFO ] JPA-QL strict compliance: disabled
+2014-09-19 02:21:22 [ main:6731 ] - [ INFO ] Second-level cache: enabled
+2014-09-19 02:21:22 [ main:6731 ] - [ INFO ] Query cache: disabled
+2014-09-19 02:21:22 [ main:6731 ] - [ INFO ] Cache region factory : org.hibernate.cache.impl.NoCachingRegionFactory
+2014-09-19 02:21:22 [ main:6732 ] - [ INFO ] Optimize cache for minimal puts: disabled
+2014-09-19 02:21:22 [ main:6732 ] - [ INFO ] Structured second-level cache entries: disabled
+2014-09-19 02:21:22 [ main:6751 ] - [ INFO ] Echoing all SQL to stdout
+2014-09-19 02:21:22 [ main:6754 ] - [ INFO ] Statistics: disabled
+2014-09-19 02:21:22 [ main:6755 ] - [ INFO ] Deleted entity synthetic identifier rollback: disabled
+2014-09-19 02:21:22 [ main:6755 ] - [ INFO ] Default entity-mode: pojo
+2014-09-19 02:21:22 [ main:6755 ] - [ INFO ] Named query checking : enabled
+2014-09-19 02:21:23 [ main:7003 ] - [ INFO ] building session factory
+2014-09-19 02:21:23 [ main:7861 ] - [ INFO ] Not binding factory to JNDI, no JNDI name configured
+2014-09-19 02:21:25 [ main:9420 ] - [ INFO ] Root WebApplicationContext: initialization completed in 9414 ms
+2014-09-19 02:21:26 [ main:10139 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:21:27 [ main:11334 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:21:27 [ main:11432 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:21:27 [ main:11438 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:21:27 [ main:11439 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:21:27 [ main:11440 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:21:27 [ main:11440 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:21:27 [ main:11444 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:21:27 [ main:11445 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:21:27 [ main:11445 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:21:27 [ main:11446 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:21:27 [ main:11448 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:21:27 [ main:11448 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:21:27 [ main:11449 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:21:27 [ main:11449 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:21:27 [ main:11450 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:21:27 [ main:11450 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:21:27 [ main:11450 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:21:27 [ main:11451 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:21:27 [ main:11452 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:21:27 [ main:11453 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:21:27 [ main:11461 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:21:27 [ main:11687 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:21:27 [ main:11729 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:21:27 [ main:11730 ] - [ INFO ] ... initialized Struts-Spring integration successfully
+2014-09-19 02:23:16 [ http-8080-3:120202 ] - [ INFO ] Detected container provider Struts XML configuration provider (struts.xml) needs to be reloaded.  Reloading all providers.
+2014-09-19 02:23:16 [ http-8080-3:120229 ] - [ INFO ] Parsing configuration file [struts-default.xml]
+2014-09-19 02:23:16 [ http-8080-3:120894 ] - [ INFO ] Parsing configuration file [struts-plugin.xml]
+2014-09-19 02:23:16 [ http-8080-3:120913 ] - [ INFO ] Parsing configuration file [struts.xml]
+2014-09-19 02:23:16 [ http-8080-3:120914 ] - [ INFO ] Choosing bean (spring) for class com.opensymphony.xwork2.ObjectFactory
+2014-09-19 02:23:16 [ http-8080-3:120914 ] - [ INFO ] Choosing bean (struts) for class com.opensymphony.xwork2.conversion.impl.XWorkConverter
+2014-09-19 02:23:16 [ http-8080-3:120914 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.TextProvider
+2014-09-19 02:23:16 [ http-8080-3:120915 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.ActionProxyFactory
+2014-09-19 02:23:16 [ http-8080-3:120915 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.conversion.ObjectTypeDeterminer
+2014-09-19 02:23:16 [ http-8080-3:120915 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.mapper.ActionMapper
+2014-09-19 02:23:16 [ http-8080-3:120915 ] - [ INFO ] Choosing bean (jakarta) for interface org.apache.struts2.dispatcher.multipart.MultiPartRequest
+2014-09-19 02:23:16 [ http-8080-3:120918 ] - [ INFO ] Choosing bean (struts) for class org.apache.struts2.views.freemarker.FreemarkerManager
+2014-09-19 02:23:16 [ http-8080-3:120919 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.components.UrlRenderer
+2014-09-19 02:23:16 [ http-8080-3:120920 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.validator.ActionValidatorManager
+2014-09-19 02:23:16 [ http-8080-3:120920 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.ValueStackFactory
+2014-09-19 02:23:16 [ http-8080-3:120920 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionProvider
+2014-09-19 02:23:16 [ http-8080-3:120921 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.reflection.ReflectionContextFactory
+2014-09-19 02:23:16 [ http-8080-3:120921 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.util.PatternMatcher
+2014-09-19 02:23:16 [ http-8080-3:120921 ] - [ INFO ] Choosing bean (struts) for interface org.apache.struts2.dispatcher.StaticContentLoader
+2014-09-19 02:23:16 [ http-8080-3:120921 ] - [ INFO ] Choosing bean (struts) for interface com.opensymphony.xwork2.UnknownHandlerManager
+2014-09-19 02:23:16 [ http-8080-3:120922 ] - [ INFO ] Overriding property struts.i18n.reload - old value: false new value: true
+2014-09-19 02:23:16 [ http-8080-3:120922 ] - [ INFO ] Overriding property struts.configuration.xml.reload - old value: false new value: true
+2014-09-19 02:23:16 [ http-8080-3:120922 ] - [ INFO ] Loading global messages from mess
+2014-09-19 02:23:16 [ http-8080-3:120931 ] - [ INFO ] Initializing Struts-Spring integration...
+2014-09-19 02:23:16 [ http-8080-3:120931 ] - [ INFO ] Setting autowire strategy to name
+2014-09-19 02:23:16 [ http-8080-3:120932 ] - [ INFO ] ... initialized Struts-Spring integration successfully

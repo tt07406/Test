@@ -1,0 +1,142 @@
+/*
+ * 系统名称：新闻发布系统
+ * 
+ * 类名：PermissionAction
+ * 
+ * 创建日期：2014-09-23
+ */
+package org.news.action;
+
+import java.util.List;
+
+import org.news.model.Permission;
+import org.news.service.PermissionService;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+/**
+ * 用于权限操作的Action
+ * 
+ * @author tt
+ * @version 14.8.18
+ */
+public class PermissionAction extends ActionSupport {
+
+	private static final long serialVersionUID = -4995630341210552569L;
+	
+	private PermissionService permissionService;
+
+	/**
+	 * @param permissionService the permissionService to set
+	 */
+	public void setPermissionService(PermissionService permissionService) {
+		this.permissionService = permissionService;
+	}
+
+	List<Permission> all;//所有权限
+	String idNumber;//身份证ID
+	String authenticationId;//授权ID
+	String msg;//提示消息
+	int level;//授权等级
+	String url;//URL
+	int permissionid;//权限ID
+	Permission permission;//具体权限
+
+	/**
+	 * @return the all
+	 */
+	public List<Permission> getAll() {
+		return all;
+	}
+	/**
+	 * @param all the all to set
+	 */
+	public void setAll(List<Permission> all) {
+		this.all = all;
+	}
+	/**
+	 * @return the idNumber
+	 */
+	public String getIdNumber() {
+		return idNumber;
+	}
+	/**
+	 * @param idNumber the idNumber to set
+	 */
+	public void setIdNumber(String idNumber) {
+		this.idNumber = idNumber;
+	}
+	/**
+	 * @return the authenticationId
+	 */
+	public String getAuthenticationId() {
+		return authenticationId;
+	}
+	/**
+	 * @param authenticationId the authenticationId to set
+	 */
+	public void setAuthenticationId(String authenticationId) {
+		this.authenticationId = authenticationId;
+	}
+	/**
+	 * @return the msg
+	 */
+	public String getMsg() {
+		return msg;
+	}
+	/**
+	 * @param msg the msg to set
+	 */
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	/**
+	 * @return the level
+	 */
+	public int getLevel() {
+		return level;
+	}
+	/**
+	 * @param level the level to set
+	 */
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	/**
+	 * @return the url
+	 */
+	public String getUrl() {
+		return url;
+	}
+	/**
+	 * @param url the url to set
+	 */
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	/**
+	 * @return the permissionid
+	 */
+	public int getPermissionid() {
+		return permissionid;
+	}
+	/**
+	 * @param permissionid the permissionid to set
+	 */
+	public void setPermissionid(int permissionid) {
+		this.permissionid = permissionid;
+	}
+	/**
+	 * @return the permission
+	 */
+	public Permission getPermission() {
+		return permission;
+	}
+	/**
+	 * @param permission the permission to set
+	 */
+	public void setPermission(Permission permission) {
+		this.permission = permission;
+	}
+	
+}

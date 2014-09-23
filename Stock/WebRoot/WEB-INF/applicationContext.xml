@@ -114,5 +114,6 @@
 		<property name="typeService" ref="newsTypeService"></property>
 		<property name="attiService" ref="attachmentService"></property>
 	</bean>
-
+	<bean id="permissionAction" class="org.news.action.PermissionAction">
+		<property name="permissionService" ref="permissionService"></property></bean>
 </beans>
