@@ -3,6 +3,8 @@ function validateID(num)
 	  if(num == ""){
 			document.getElementById("id_msg").innerHTML = "<img src=\""+url+"/images/wrong.gif\">" + "<font color=\"red\">身份证号不能为空！</font>" ;
 			return false ;
+	  }else{
+		    document.getElementById("id_msg").innerHTML = "<font color=\"red\">*</font>" ;
 	  }
 	  
        num = num.toUpperCase(); 

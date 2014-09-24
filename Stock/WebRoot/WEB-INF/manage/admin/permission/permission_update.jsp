@@ -43,7 +43,7 @@
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">权限等级：</font></td>
 		<td><s:set name="selList" value="#{1:'普通会员',2:'钻石会员',3:'白金会员'}"></s:set>
-<s:select list="#selList" listKey="key" listValue="value" name="level" headerKey="${permission.permissionLevel}" headerValue="--请选择--"></s:select></td>
+<s:select list="#selList" listKey="key" listValue="value" name="level" headerKey="0" headerValue="--请选择--"></s:select></td>
 		<td><span id="level_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">

@@ -180,7 +180,7 @@ public class PermissionAction extends ActionSupport {
 				setMsg(MessageUtil
 						.get("permission.insert.false"));
 			}
-			setUrl("Permission_insert.action");
+			setUrl("permission_insert.action");
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -195,7 +195,7 @@ public class PermissionAction extends ActionSupport {
 	public String update(){
 
 		try {//更新数据库
-			if (permissionService.updatePermissions(new Permission(0,idNumber,authenticationId,level,cmt))) {
+			if (permissionService.updatePermissions(new Permission(permissionid,idNumber,authenticationId,level,cmt))) {
 				setMsg(MessageUtil
 						.get("permission.update.true"));
 			} else {
@@ -217,6 +217,7 @@ public class PermissionAction extends ActionSupport {
 	public String updatepre(){
 		try {//找了ID对应的频道信息
 			permission = permissionService.findPermissionById(permissionid);
+			level = permission.getPermissionLevel();
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
