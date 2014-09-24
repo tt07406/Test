@@ -43,7 +43,7 @@ public class Users {
 	
 	
 	
-	protected Users() {
+	public Users() {
 	}
 
 	/**

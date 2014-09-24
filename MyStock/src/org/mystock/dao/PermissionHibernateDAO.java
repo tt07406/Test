@@ -32,7 +32,8 @@ public class PermissionHibernateDAO extends HibernateDaoSupport {
 	public List<Permission> getAllPermissions(String idNumber, String authenticationId){
     	 try {
   			String queryString = "from permission where idNumber = ? and authenticationId = ? order by permissionId";
-  			return (List<Permission>)getHibernateTemplate().find(queryString, idNumber, authenticationId);
+  			List<Permission> result =(List<Permission>)getHibernateTemplate().find(queryString, idNumber.trim(), authenticationId.trim());
+  			return result;
   		} catch (RuntimeException re) {
   			log.error("find all failed", re);
   			throw re;

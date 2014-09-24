@@ -73,4 +73,9 @@
 		<property name="userDAO" ref="usersDAO"></property></bean>
 	<bean id="permissionService" class="org.mystock.service.impl.PermissionServiceImpl">
 		<property name="permissionDao" ref="permissionDAO"></property></bean>
+		
+	<bean id="adminLogin" class="org.mystock.action.AdminLogin">
+		<property name="userService" ref="userService"></property>
+		<property name="permissionService" ref="permissionService"></property>
+	</bean>
 </beans>
