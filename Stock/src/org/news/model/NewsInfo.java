@@ -36,7 +36,7 @@ public class NewsInfo {
 	private String newsType;				//文章分类Id
 	private int newsInfoState;			//文章状态
 	
-	protected NewsInfo() {
+	public NewsInfo() {
 	}
 
 	/**

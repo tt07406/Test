@@ -1,11 +1,11 @@
 /*
- * 系统名称：新闻发布系统
+ * 系统名称：斯多克个人网站自助系统
  * 
  * 类名：NewsType
  * 
- * 创建日期：2014-06-18
+ * 创建日期：2014-09-24
  */
-package org.news.model;
+package org.mystock.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +16,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**
  * 文章频道PO类
  * @author tt
- * @version 14.6.18
+ * @version 14.9.16
  */
 @Entity(name="newstype")
 public class NewsType {

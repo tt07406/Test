@@ -18,4 +18,59 @@
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
 	</bean>
+	<!-- 配置sessionLoginFactory -->
+	<bean id="sessionLoginFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate_login.cfg.xml" />
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 配置事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" timeout="10"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 那些类的哪些方法参与事务 -->
+	<aop:config>
+		<aop:pointcut id="allManagerMethod"
+			expression="execution(* org.mystock.service.impl.*.*(..))" />
+		<aop:advisor pointcut-ref="allManagerMethod" advice-ref="txAdvice" />
+	</aop:config>
+	
+	<bean id="newsInfoDAO" class="org.mystock.dao.NewsInfoHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="newsTypeDAO" class="org.mystock.dao.NewsTypeHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="usersDAO" class="org.mystock.dao.UsersHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionLoginFactory"/>
+	</bean>
+	<bean id="permissionDAO" class="org.mystock.dao.PermissionHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionLoginFactory"/>
+	</bean>
+	
+	<bean id="newsInfoService" class="org.mystock.service.impl.NewsInfoServiceImpl">
+		<property name="newsInfoDAO" ref="newsInfoDAO"></property></bean>
+	<bean id="newsTypeService" class="org.mystock.service.impl.NewsTypeServiceImpl">
+		<property name="newsTypeDAO" ref="newsTypeDAO"></property>
+		<property name="infoService" ref="newsInfoService"></property></bean>
+	<bean id="userService" class="org.mystock.service.impl.UserServiceImpl">
+		<property name="userDAO" ref="usersDAO"></property></bean>
+	<bean id="permissionService" class="org.mystock.service.impl.PermissionServiceImpl">
+		<property name="permissionDao" ref="permissionDAO"></property></bean>
 </beans>

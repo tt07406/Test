@@ -1,19 +1,19 @@
 /*
- * 系统名称：新闻发布系统
+ * 系统名称：斯多克个人网站自助系统
  * 
  * 类名：NewsInfoHibernateDAO
  * 
- * 创建日期：2014-09-12
+ * 创建日期：2014-09-24
  */
-package org.news.dao;
+package org.mystock.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.news.model.NewsInfo;
-import org.news.utils.Common;
+import org.mystock.model.NewsInfo;
+import org.mystock.utils.Common;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate3.HibernateCallback;
@@ -22,7 +22,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 /**
  * 文章信息DAO
  * @author tt
- * @version 14.8.18
+ * @version 14.9.16
  */
 public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 
@@ -113,7 +113,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      }
      
      /**
-      * 模糊查询新闻，只要文章标题、描述、内容、时间和作者有一个匹配上即可
+      * 模糊查询新闻，只要文章标题、内容、时间和作者有一个匹配上即可
       * @param keyword
       * @return 新闻集合
       */
@@ -121,12 +121,11 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	public List<NewsInfo> getAllNewsInfo(String keyword){
     	 try {
 			String queryString = "from newsinfo where newsInfoTitle like  ?"
-					+ " or newsInfoDescribe like  ? "
 					+ " or newsInfoContent like  ?"
 					+ " or newsInfoTime like  ?"
 					+ " or newsType like  ?"
 					+ " or newsAuthor like  ? order by newsInfoId desc"; // 模糊匹配
-   			return (List<NewsInfo>)getHibernateTemplate().find(queryString, '%' + keyword + '%', '%' + keyword + '%', 
+   			return (List<NewsInfo>)getHibernateTemplate().find(queryString, '%' + keyword + '%',  
    					'%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%');
    		} catch (RuntimeException re) {
    			log.error("getAllNewsInfo failed", re);
@@ -135,7 +134,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      }
      
      /**
-      * 模糊查询新闻，只要文章标题、描述、内容、时间和作者有一个匹配上即可
+      * 模糊查询新闻，只要文章标题、内容、时间和作者有一个匹配上即可
       * @param keyword 关键字
       * @param currentPage 当前页
       * @param lineSize 每页大小
@@ -144,7 +143,6 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
      @SuppressWarnings("unchecked")
 	public List<NewsInfo> getAllNewsInfo(final String keyword, final int currentPage, final int lineSize){
 		final String hql = "from newsinfo where newsInfoTitle like ?"
-					+ " or newsInfoDescribe like ? "
 					+ " or newsInfoContent like ?"
 					+ " or newsInfoTime like ?"
 					+ " or newsType like ?"
@@ -159,10 +157,9 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 								// 为hql语句传入参数
 								.setParameter(0, '%' + keyword + '%')
 								.setParameter(1, '%' + keyword + '%')
-								.setParameter(2, '%' + keyword + '%')
-								.setDate(3, Common.getSwitchDate(keyword))
+								.setDate(2, Common.getSwitchDate(keyword))
+								.setParameter(3, '%' + keyword + '%')
 								.setParameter(4, '%' + keyword + '%')
-								.setParameter(5, '%' + keyword + '%')
 								.setFirstResult((currentPage - 1) * lineSize)
 								.setMaxResults(lineSize).list();
 						return result;
@@ -194,12 +191,11 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
        public long getAllCount(String keyword){
     	   return (Long)getHibernateTemplate().find("select count(newsInfoId) from newsinfo" +
     	   		 " where newsInfoTitle like ?" +
-	 		     " or newsInfoDescribe like ? " +
 	 		     " or newsInfoContent like ?" +
 	 		     " or newsInfoTime like ?" +
 	 		     " or newsType like ?" +
 	 		     " or newsAuthor like ? order by newsInfoId desc",'%' + keyword + '%', 
-	 		    '%' + keyword + '%', '%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%').get(0);
+	 		    '%' + keyword + '%',Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%').get(0);
        }
        
        
