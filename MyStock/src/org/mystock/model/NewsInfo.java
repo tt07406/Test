@@ -32,10 +32,13 @@ public class NewsInfo {
 	private Date newsInfoTime;		//创建时间
 	private String newsAuthor;			//文章作者
 	private String newsType;				//文章分类Id
+	private String adminName;			//创建者
 	
 	public NewsInfo() {
 	}
 	
+	
+
 	/**
 	 * 初始化函数
 	 * @param newsInfoId
@@ -44,10 +47,11 @@ public class NewsInfo {
 	 * @param newsInfoTime
 	 * @param newsAuthor
 	 * @param newsType
+	 * @param adminName
 	 */
 	public NewsInfo(int newsInfoId, String newsInfoTitle,
 			String newsInfoContent, Date newsInfoTime, String newsAuthor,
-			String newsType) {
+			String newsType, String adminName) {
 		super();
 		this.newsInfoId = newsInfoId;
 		this.newsInfoTitle = newsInfoTitle;
@@ -55,7 +59,10 @@ public class NewsInfo {
 		this.newsInfoTime = newsInfoTime;
 		this.newsAuthor = newsAuthor;
 		this.newsType = newsType;
+		this.adminName = adminName;
 	}
+
+
 
 	public int getNewsInfoId() {
 		return newsInfoId;
@@ -103,6 +110,14 @@ public class NewsInfo {
 
 	public void setNewsType(String newsType) {
 		this.newsType = newsType;
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 	
 	

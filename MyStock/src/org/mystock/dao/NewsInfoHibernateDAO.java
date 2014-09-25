@@ -124,9 +124,11 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 					+ " or newsInfoContent like  ?"
 					+ " or newsInfoTime like  ?"
 					+ " or newsType like  ?"
+					+ " or adminName like  ?"
 					+ " or newsAuthor like  ? order by newsInfoId desc"; // Ä£ºýÆ¥Åä
    			return (List<NewsInfo>)getHibernateTemplate().find(queryString, '%' + keyword + '%',  
-   					'%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%');
+   					'%' + keyword + '%', Common.getSwitchDate(keyword), '%' + keyword + '%', 
+   					'%' + keyword + '%', '%' + keyword + '%');
    		} catch (RuntimeException re) {
    			log.error("getAllNewsInfo failed", re);
    			throw re;
@@ -146,6 +148,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 					+ " or newsInfoContent like ?"
 					+ " or newsInfoTime like ?"
 					+ " or newsType like ?"
+					+ " or adminName like  ?"
 					+ " or newsAuthor like ?  order by newsInfoId desc"; // Ä£ºýÆ¥Åä
 		List<NewsInfo> list = getHibernateTemplate().executeFind(
 				new HibernateCallback() {
@@ -160,6 +163,7 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 								.setDate(2, Common.getSwitchDate(keyword))
 								.setParameter(3, '%' + keyword + '%')
 								.setParameter(4, '%' + keyword + '%')
+								.setParameter(5, '%' + keyword + '%')
 								.setFirstResult((currentPage - 1) * lineSize)
 								.setMaxResults(lineSize).list();
 						return result;
@@ -194,8 +198,10 @@ public class NewsInfoHibernateDAO extends HibernateDaoSupport {
 	 		     " or newsInfoContent like ?" +
 	 		     " or newsInfoTime like ?" +
 	 		     " or newsType like ?" +
+	 		     " or adminName like  ?" +
 	 		     " or newsAuthor like ? order by newsInfoId desc",'%' + keyword + '%', 
-	 		    '%' + keyword + '%',Common.getSwitchDate(keyword), '%' + keyword + '%', '%' + keyword + '%').get(0);
+	 		    '%' + keyword + '%',Common.getSwitchDate(keyword), '%' + keyword + '%', 
+	 		    '%' + keyword + '%', '%' + keyword + '%').get(0);
        }
        
        

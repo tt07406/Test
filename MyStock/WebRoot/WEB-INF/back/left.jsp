@@ -154,11 +154,11 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="/Stock/manage/admin/newsinfo/NewsInfo_insertpre.action" target="main">增加新闻</a></li>
-		  <li><a href="/Stock/manage/admin/newsinfo/NewsInfo_list.action" target="main">新闻列表</a></li>
+		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_insertpre.action" target="main">增加新闻</a></li>
+		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_list.action" target="main">新闻列表</a></li>
 		  <s:if test="#session.admin.adminLevel>2" >
-		  <li><a href="/Stock/manage/admin/newstype/newstype_insert.action" target="main">增加新闻类别</a></li>
-		  <li><a href="/Stock/manage/admin/newstype/NewsType_list.action" target="main">新闻类别列表</a></li>
+		  <li><a href="/MyStock/back/admin/newstype/newstype_insert.action" target="main">增加新闻类别</a></li>
+		  <li><a href="/MyStock/back/admin/newstype/NewsType_list.action" target="main">新闻类别列表</a></li>
 		  </s:if>
         </ul>
       </div>
@@ -170,9 +170,9 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="/Stock/manage/Software_list.action" target="main">上传表格列表</a></li>
+		  <li><a href="/MyStock/back/Software_list.action" target="main">上传表格列表</a></li>
 		  <s:if test="#session.admin.adminLevel>1">
-		  <li><a href="/Stock/manage/SoftwareUpload.action" target="main">增加表格</a></li>
+		  <li><a href="/MyStock/back/SoftwareUpload.action" target="main">增加表格</a></li>
 		  </s:if>
         </ul>
       </div>

@@ -22,6 +22,7 @@ public class NewsVO {
 	private Date newsInfoTime;		//创建时间
 	private String newsAuthor;			//文章作者
 	private String newsType;				//文章分类
+	private String adminName;			//创建者
 	
 	/**
 	 * 获取文章Id
@@ -101,5 +102,13 @@ public class NewsVO {
 	 */
 	public void setNewsType(String newsType) {
 		this.newsType = newsType;
+	}
+	
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
 	}
 }

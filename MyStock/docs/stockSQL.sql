@@ -26,6 +26,7 @@ newsInfoTitle varchar(100),
 newsInfoContent longtext,
 newsInfoTime datetime,
 newsAuthor varchar(40),
+adminName varchar(20),
 newsType text,
 primary key(newsInfoId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

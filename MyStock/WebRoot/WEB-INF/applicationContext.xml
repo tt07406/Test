@@ -78,4 +78,11 @@
 		<property name="userService" ref="userService"></property>
 		<property name="permissionService" ref="permissionService"></property>
 	</bean>
+	<bean id="newsInfoAction" class="org.mystock.action.NewsInfoAction">
+		<property name="service" ref="newsInfoService"></property>
+		<property name="typeService" ref="newsTypeService"></property></bean>
+	<bean id="newsTypeAction" class="org.mystock.action.NewsTypeAction">
+		<property name="newstypeService" ref="newsTypeService"></property></bean>
+	<bean id="validateNameAction" class="org.mystock.action.ValidateNameAction">
+		<property name="newstypeService" ref="newsTypeService"></property></bean>
 </beans>

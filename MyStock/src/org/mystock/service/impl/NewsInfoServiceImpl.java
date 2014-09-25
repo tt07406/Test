@@ -169,6 +169,7 @@ public class NewsInfoServiceImpl implements NewsInfoService{
     		   newsVO.setNewsInfoTime(newsInfo.getNewsInfoTime());
     		   newsVO.setNewsInfoTitle(newsInfo.getNewsInfoTitle());
     		   newsVO.setNewsType(newsInfo.getNewsType());
+    		   newsVO.setAdminName(newsInfo.getAdminName());
     	   }
     	   return newsVO;    	   
        }

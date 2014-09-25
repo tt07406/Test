@@ -6,6 +6,7 @@ CREATE DATABASE news_personal CHARACTER SET utf8 COLLATE utf8_general_ci;
 grant all privileges on news_personal.* to person@localhost identified by 'stock';
 grant select,insert,update,delete on news_personal.* to person@'%' identified by 'smart12306';
 grant select on news_all.* to person@'%' identified by 'smart12306';
+grant select on news_all.* to person@localhost identified by 'stock';
 flush privileges;
 
 USE news_personal;
