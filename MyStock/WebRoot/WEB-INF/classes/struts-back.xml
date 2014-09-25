@@ -29,6 +29,36 @@
 		<action name="adminLogout" class="org.mystock.action.AdminLogout">
 			<result name="success">/WEB-INF/back/login.jsp</result>
 		</action>
+		<action name="Table_list" method="list"
+			class="org.mystock.action.TableAction">
+			<result name="success">
+				/WEB-INF/back/TableList.jsp
+			</result>
+		</action>
+		<action name="Table_delete" method="delete"
+			class="org.mystock.action.TableAction">
+			<result name="success">
+				/WEB-INF/back/tables_operate_do.jsp
+			</result>
+		</action>
+		<action name="Table_upload" method="upload"
+			class="org.mystock.action.TableAction">
+			<!-- 不超过1G -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />			
+		</action>
+		<action name="Table_download"
+			class="org.mystock.action.TableAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/plain;charset=utf-8</param>
+				<param name="inputName">targetFile</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
 		<action name="validateName"
 			class="validateNameAction">
 			<result name="success" type="stream">

@@ -170,9 +170,9 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="/MyStock/back/Software_list.action" target="main">上传表格列表</a></li>
+		  <li><a href="/MyStock/back/Table_list.action" target="main">上传表格列表</a></li>
 		  <s:if test="#session.admin.adminLevel>1">
-		  <li><a href="/MyStock/back/SoftwareUpload.action" target="main">增加表格</a></li>
+		  <li><a href="/MyStock/back/TableUpload.action" target="main">增加表格</a></li>
 		  </s:if>
         </ul>
       </div>

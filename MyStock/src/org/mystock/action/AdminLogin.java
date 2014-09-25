@@ -123,7 +123,7 @@ public class AdminLogin extends ActionSupport {
 				Users result = userService.findLogin(user);
 				if (result != null){//用户列表中找得到该用户，则查找权限表获取权限
 					admin.setAdminLevel(permissionService.getPermissionLevel(result.getUserIdNum(), result.getUsersInfo()));
-					System.out.println(admin.getAdminLevel());
+
 					if (admin.getAdminLevel()>0){//有权限
 						ctx.getSession().put("admin", admin);// 现在保存对象
 						return SUCCESS;
