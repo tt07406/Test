@@ -31,6 +31,9 @@
 		</action>
 		<action name="Table_list" method="list"
 			class="org.mystock.action.TableAction">
+			<interceptor-ref name="params">  
+                  <param name="excludeParams">dojo\..*,^struts\..*,pager\.offset</param>  
+            </interceptor-ref>  
 			<result name="success">
 				/WEB-INF/back/TableList.jsp
 			</result>

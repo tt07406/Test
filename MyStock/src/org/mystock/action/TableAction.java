@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.mystock.model.PagerModel;
+import org.mystock.utils.SystemContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -44,7 +46,52 @@ public class TableAction extends ActionSupport {
     private File file;    
     private String fileFileName;   
     private String fileContentType;   
+    
+    String keyword;
+    int pagesize;
+    PagerModel pm;
     	
+    
+	public int getPagesize() {
+		return pagesize;
+	}
+
+
+
+	public void setPagesize(int pagesize) {
+		this.pagesize = pagesize;
+	}
+
+
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+
+
+	public void setKeyword(String keyword) {
+		try {
+			this.keyword = new String(keyword.getBytes("ISO8859-1"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+	public PagerModel getPm() {
+		return pm;
+	}
+
+
+
+	public void setPm(PagerModel pm) {
+		this.pm = pm;
+	}
+
+
+
 	public File getFile() {
 		return file;
 	}
@@ -186,6 +233,13 @@ public class TableAction extends ActionSupport {
 	 */
 	@SuppressWarnings("unchecked")
 	public String list(){
+		if (keyword == null){
+			keyword = new String("");
+		}
+
+		if (pm == null){
+			pm = new PagerModel();
+		}
 		String filepath = ServletActionContext.getServletContext().getRealPath("/") + "tables"; //文件保存路径
 		        
 		//获取所有java文件 
@@ -193,8 +247,16 @@ public class TableAction extends ActionSupport {
 		tables.clear();  
 		for (File xlsFileColFile : xlsFileCol) { 
 		      String filename = xlsFileColFile.getName();
-		      tables.add(filename);
+		      if (filename.contains(keyword)){
+		    	  tables.add(filename);
+		      }
 		}
+		int end = tables.size();
+		end = SystemContext.getPageSize() + SystemContext.getOffset() > end ? end : SystemContext.getPageSize() + SystemContext.getOffset();
+		pm.setDatas(tables.subList(SystemContext.getOffset(), end));
+		pm.setTotal(tables.size());
+		pagesize = SystemContext.getPageSize();
+		ServletActionContext.getRequest().setAttribute("keyword",keyword);
 		
 		return SUCCESS;
 	}
