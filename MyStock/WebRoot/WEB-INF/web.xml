@@ -13,7 +13,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>pager-taglib</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/back/Table_list.action</url-pattern>
 	</filter-mapping>
 	<filter>
      <filter-name>XssSqlFilter</filter-name>

@@ -166,6 +166,7 @@ public class NewsTypeAction extends ActionSupport {
 	 */
 	public String insert(){
 		try {
+
 			if (newstypeService.addNewsType(name, note)) {
 				setMsg(MessageUtil
 						.get("newstype.insert.true"));

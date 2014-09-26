@@ -85,4 +85,8 @@
 		<property name="newstypeService" ref="newsTypeService"></property></bean>
 	<bean id="validateNameAction" class="org.mystock.action.ValidateNameAction">
 		<property name="newstypeService" ref="newsTypeService"></property></bean>
+	<bean id="newsInterfaceAction" class="org.mystock.action.NewsInterfaceAction">
+		<property name="service" ref="newsInfoService"></property>
+		<property name="typeService" ref="newsTypeService"></property>
+	</bean>
 </beans>
