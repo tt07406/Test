@@ -21,7 +21,8 @@ try{
 <script type="text/javascript">
 	function changeItem(pagesize) {
 		var i = document.getElementById("pagesize").value;
-		window.location.href ="Table_list.action?keyword="+ '<s:property value="keyword"/>' +"&pagesize="+ i;
+		var k = document.getElementById("keyword").value;
+		window.location.href ="Table_list.action?keyword="+ k +"&pagesize="+ i;
 	}
 </script>
 	<script language="javascript">
@@ -66,7 +67,8 @@ try{
 				<TBODY>
 					<TR>
 						<TD><form name="spform" action="Table_list.action" method="post">关键字：
-						<input type="text" name="keyword" value="${keyword}">
+						<input type="text" id="keyword" name="keyword" value="${keyword}">
+
 						<input type="submit" value="查询"></form></TD>
 						<TD height=28 align=center vAlign=center noWrap>
 							<!-- 可以在这里插入分页导航条 -->
