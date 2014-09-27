@@ -2,33 +2,21 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head><title>增加新的频道</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/back/edit/themes/default/default.css">
-<style type="text/css" rel="stylesheet">
-    .source {
-    width: 700px;
-    font-size: 12px;
-    font-family:Courier New;
-    border: 1px solid #AAAAAA;
-    background-color: #F0F0EE;
-    padding: 5px;
-    }
-    .source pre {
-    margin: 0;
-    }
-    form {
-    margin: 0;
-    }
-    .editor {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    }
-  </style></head>
+<style type="text/css">
+<!--
+.STYLE6 {font-size: 12px}
+.STYLE10 {font-size: 14px; font-weight: bold; }
+-->
+</style></head>
 <body>
 <script type="text/javascript" src="<%=request.getContextPath()%>/back/js/jquery-1.11.1.min.js">
 </script>
 	<script language="javascript">
 		function changeColor(obj,color){
 			obj.bgColor = color ;
+		}
+		function show(thisurl){
+			window.open(thisurl,"新闻发布系统","widht=500,height=200,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
 	<script language="javascript">
@@ -39,11 +27,11 @@
 <script type="text/javascript">
 	function validateAccount(value){
 		validateName(value);
-		$("#result").load("<%=request.getContextPath()%>/back/validateName.action",{userName:value,type:2});
+		$("#result").load("<%=request.getContextPath()%>/manage/validateName.action",{userName:value,type:2});
 	}
 </script>
 <center> 
-<form action="NewsType_insert" method="post" onSubmit="return validate(this)" enctype="multipart/form-data">
+<form action="NewsType_insert" method="post" onSubmit="return validate(this)">
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
