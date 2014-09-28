@@ -33,6 +33,7 @@
 	<property name="hibernate.format_sql">true</property>
 	<mapping class="org.mystock.model.NewsInfo" />
 	<mapping class="org.mystock.model.NewsType" />
+	<mapping class="org.mystock.model.Admin" />
 </session-factory>
 
 </hibernate-configuration>

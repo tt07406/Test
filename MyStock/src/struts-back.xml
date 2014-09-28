@@ -20,6 +20,42 @@
 			<result name="input">/WEB-INF/pages/errors.jsp</result>
 		</global-results>		
 	</package>
+	<package name="admin" namespace="/back/admin/admin" extends="global">
+	<action name="Admin_list" class="adminAction" method="list">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_list.jsp
+		</result>
+	</action>
+	<action name="Admin_insert" class="adminAction" method="insert">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_updatepre" class="adminAction" method="updatepre">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_update.jsp
+		</result>
+	</action>
+	<action name="Admin_update" class="adminAction" method="update">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="Admin_show" class="adminAction" method="show">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_show.jsp
+		</result>
+	</action>
+	<action name="Admin_delete" class="adminAction" method="delete">
+		<result name="success">
+			/WEB-INF/back/admin/admin/admin_operate_do.jsp
+		</result>
+	</action>
+	<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/admin/{1}.jsp</result>
+		</action>
+	</package>	
 	<package name="back" namespace="/back"
 		extends="global">
 		<action name="adminLogin" class="adminLogin">

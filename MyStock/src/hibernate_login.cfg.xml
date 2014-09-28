@@ -31,8 +31,7 @@
 	<property name="hibernate.c3p0.validate">true</property>
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
-	<mapping class="org.mystock.model.Permission" />
-	<mapping class="org.mystock.model.Users" />
+
 </session-factory>
 
 </hibernate-configuration>

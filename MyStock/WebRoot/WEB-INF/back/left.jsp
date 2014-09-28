@@ -156,10 +156,20 @@ H1 a {
         <ul class="MM">
 		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_insertpre.action" target="main">增加新闻</a></li>
 		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_list.action" target="main">新闻列表</a></li>
-		  <s:if test="#session.admin.adminLevel>2" >
 		  <li><a href="/MyStock/back/admin/newstype/newstype_insert.action" target="main">增加新闻类别</a></li>
 		  <li><a href="/MyStock/back/admin/newstype/NewsType_list.action" target="main">新闻类别列表</a></li>
-		  </s:if>
+        </ul>
+      </div>
+      <h1 class="type"><a href="javascript:void(0)">权限管理</a></h1>
+      <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
+          </tr>
+        </table>
+        <ul class="MM">
+		  <li><a href="/MyStock/back/admin/admin/Admin_list.action" target="main">管理员列表</a></li>
+		  <li><a href="/MyStock/back/admin/admin/admin_insert.action" target="main">增加管理员</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">上传文件管理</a></h1>
@@ -171,9 +181,7 @@ H1 a {
         </table>
         <ul class="MM">
 		  <li><a href="/MyStock/back/Table_list.action" target="main">上传表格列表</a></li>
-		  <s:if test="#session.admin.adminLevel>1">
 		  <li><a href="/MyStock/back/TableUpload.action" target="main">增加表格</a></li>
-		  </s:if>
         </ul>
       </div>
         <script type="text/javascript">

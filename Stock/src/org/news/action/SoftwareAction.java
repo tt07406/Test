@@ -258,7 +258,7 @@ public class SoftwareAction extends ActionSupport{
 		try {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(file);
-			String root = ServletActionContext.getServletContext().getRealPath("/softwares");//保存软件的目录
+			String root = ServletActionContext.getServletContext().getRealPath("/WEB-INF/softwares");//保存软件的目录
 			File deskFile = new File(root,this.getFileFileName());
 
 			//输出到外存中
@@ -335,7 +335,7 @@ public class SoftwareAction extends ActionSupport{
 	 */
 	@Transactional(propagation=Propagation.REQUIRED)
 	public String delete(){		
-		String filepath = ServletActionContext.getServletContext().getRealPath("/") + "softwares" + java.io.File.separator; //文件保存路径
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/softwares") + java.io.File.separator; //文件保存路径
 		String name = service.findNewsAttachmentById(softwareid).getAttachmentName();
 		if (service.deleteAttachment(softwareid)&&service.deleteFile(filepath+name)){//同时删除数据库和文件夹里的数据					
 			msg = "删除成功";
@@ -355,7 +355,7 @@ public class SoftwareAction extends ActionSupport{
 		//String filepath = ServletActionContext.getServletContext().getRealPath("/")+"softwares"+File.separator; //文件保存路径
 	    filename = attachment.getAttachmentName();
 
-		return ServletActionContext.getServletContext().getResourceAsStream("softwares/"+filename);
+		return ServletActionContext.getServletContext().getResourceAsStream("WEB-INF/softwares/"+filename);
 	}
 
 }

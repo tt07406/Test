@@ -15,6 +15,7 @@ import java.util.Random;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.mystock.model.Admin;
+import org.mystock.utils.MessageUtil;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -31,14 +32,11 @@ public class UploadAction extends BaseAction {
 	private File imgFile;
 	
 	public void upload(){
-		try {
-			ActionContext ctx = ActionContext.getContext();
-			Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
-			
+		try {			
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd_HHmmss");
 			Random r=new Random();
 			String path=ServletActionContext.getServletContext().getRealPath("/");
-			String imgName=admin.getAdminName()+sdf.format(new Date())+r.nextInt(100)+".jpg";//图片名＝管理员名称+时间+随机数
+			String imgName=MessageUtil.getID("config.id")+sdf.format(new Date())+r.nextInt(100)+".jpg";//图片名＝身份证+时间+随机数
 		
 			FileUtils.copyFile(imgFile,new File(path+"upload/"+imgName));
 			

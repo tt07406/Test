@@ -151,7 +151,7 @@ public class TableAction extends ActionSupport {
 		try {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(file);
-			String root = ServletActionContext.getServletContext().getRealPath("/tables");//保存软件的目录
+			String root = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables");//保存软件的目录
 			File deskFile = new File(root,this.getFileFileName());
 
 			//输出到外存中
@@ -186,8 +186,8 @@ public class TableAction extends ActionSupport {
 	 */
 	@SuppressWarnings("unchecked")
 	public String list(){
-		String filepath = ServletActionContext.getServletContext().getRealPath("/") + "tables"; //文件保存路径
-		        
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables"); //文件保存路径
+		
 		//获取所有java文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
 		tables.clear();  
@@ -204,7 +204,7 @@ public class TableAction extends ActionSupport {
 	 * @return
 	 */
 	public String delete(){		
-		String filepath = ServletActionContext.getServletContext().getRealPath("/") + "tables" + java.io.File.separator; //文件保存路径
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables") + java.io.File.separator; //文件保存路径
 		try{
 			FileUtils.forceDelete(new File(filepath+filename));
 			msg = "删除成功";
@@ -220,6 +220,6 @@ public class TableAction extends ActionSupport {
 	 * @return
 	 */
 	public InputStream getTargetFile(){
-		return ServletActionContext.getServletContext().getResourceAsStream("tables/"+filename);
+		return ServletActionContext.getServletContext().getResourceAsStream("WEB-INF/tables/"+filename);
 	}
 }

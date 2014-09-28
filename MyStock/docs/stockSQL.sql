@@ -4,9 +4,9 @@ flush privileges;
 
 CREATE DATABASE news_personal CHARACTER SET utf8 COLLATE utf8_general_ci;
 grant all privileges on news_personal.* to person@localhost identified by 'stock';
-grant select,insert,update,delete on news_personal.* to person@'%' identified by 'smart12306';
-grant select on news_all.* to person@'%' identified by 'smart12306';
-grant select on news_all.* to person@localhost identified by 'stock';
+grant all privileges on news_personal.* to person@'%' identified by 'smart12306';
+grant select,insert,update,delete,create,drop on news_collect.* to person@'%' identified by 'stock';
+grant select,insert,update,delete,create,drop on news_collect.* to person@localhost identified by 'stock';
 flush privileges;
 
 USE news_personal;
@@ -30,3 +30,14 @@ adminName varchar(20),
 newsType text,
 primary key(newsInfoId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE admin
+(
+adminId int NOT NULL,
+adminName varchar(40) NOT NULL,
+adminPass varchar(32),
+adminInfo text,
+primary key(adminId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into admin(adminId,adminName,adminPass,adminInfo) values(1,"330719196804253671","21232F297A57A5A743894A0E4A801FC3","init");

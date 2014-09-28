@@ -15,6 +15,7 @@ import org.mystock.service.NewsTypeService;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.mystock.utils.Constant.Type;
+import org.mystock.service.AdminService;
 
 /**
  * 验证重复性输入的Action
@@ -27,6 +28,7 @@ public class ValidateNameAction extends ActionSupport {
 	private static final long serialVersionUID = 7238313406542433777L;
 
 	private NewsTypeService newstypeService;
+	private AdminService adminService;
 	
 	/**
 	 * @param newstypeService the newstypeService to set
@@ -34,6 +36,14 @@ public class ValidateNameAction extends ActionSupport {
 	public void setNewstypeService(NewsTypeService newstypeService) {
 		this.newstypeService = newstypeService;
 	}
+	/**
+	 * @param adminService the adminService to set
+	 */
+	public void setAdminService(AdminService adminService) {
+		this.adminService = adminService;
+	}
+
+	
 	private String userName;//注册的用户账号
 	private String tip;//返回的提示
 	private int type = 0;//0为会员，1为管理员，3为新闻类别，4为新闻标题
@@ -75,6 +85,13 @@ public class ValidateNameAction extends ActionSupport {
 		switch (style){
 			case NEWSTYPE:
 				if (newstypeService.findNewsTypeName(userName)){
+					tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
+				}else{
+					tip = "";
+				}
+				break;
+			case ADMIN:
+				if (adminService.findAdminName(userName)){
 					tip = "<span style='color:red'>" + userName + "已存在，请重新输入</span>";
 				}else{
 					tip = "";

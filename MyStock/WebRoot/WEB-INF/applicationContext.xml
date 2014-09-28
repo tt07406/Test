@@ -55,13 +55,9 @@
 		<!-- 注入持久化操作所需的SessionFactory -->
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-	<bean id="usersDAO" class="org.mystock.dao.UsersHibernateDAO">
+	<bean id="adminDAO" class="org.mystock.dao.AdminHibernateDAO">
 		<!-- 注入持久化操作所需的SessionFactory -->
-		<property name="sessionFactory" ref="sessionLoginFactory"/>
-	</bean>
-	<bean id="permissionDAO" class="org.mystock.dao.PermissionHibernateDAO">
-		<!-- 注入持久化操作所需的SessionFactory -->
-		<property name="sessionFactory" ref="sessionLoginFactory"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
 	<bean id="newsInfoService" class="org.mystock.service.impl.NewsInfoServiceImpl">
@@ -69,20 +65,21 @@
 	<bean id="newsTypeService" class="org.mystock.service.impl.NewsTypeServiceImpl">
 		<property name="newsTypeDAO" ref="newsTypeDAO"></property>
 		<property name="infoService" ref="newsInfoService"></property></bean>
-	<bean id="userService" class="org.mystock.service.impl.UserServiceImpl">
-		<property name="userDAO" ref="usersDAO"></property></bean>
-	<bean id="permissionService" class="org.mystock.service.impl.PermissionServiceImpl">
-		<property name="permissionDao" ref="permissionDAO"></property></bean>
+	<bean id="adminService" class="org.mystock.service.impl.AdminServiceImpl">
+		<property name="adminDAO" ref="adminDAO"></property></bean>
 		
 	<bean id="adminLogin" class="org.mystock.action.AdminLogin">
-		<property name="userService" ref="userService"></property>
-		<property name="permissionService" ref="permissionService"></property>
+		<property name="adminService" ref="adminService"></property>
 	</bean>
+	<bean id="adminAction" class="org.mystock.action.AdminAction">
+		<property name="adminService" ref="adminService"></property></bean>
 	<bean id="newsInfoAction" class="org.mystock.action.NewsInfoAction">
 		<property name="service" ref="newsInfoService"></property>
 		<property name="typeService" ref="newsTypeService"></property></bean>
 	<bean id="newsTypeAction" class="org.mystock.action.NewsTypeAction">
 		<property name="newstypeService" ref="newsTypeService"></property></bean>
 	<bean id="validateNameAction" class="org.mystock.action.ValidateNameAction">
-		<property name="newstypeService" ref="newsTypeService"></property></bean>
+		<property name="newstypeService" ref="newsTypeService"></property>
+		<property name="adminService" ref="adminService"></property>
+	</bean>
 </beans>

@@ -25,4 +25,14 @@ public class MessageUtil {
 		ResourceBundle rb = ResourceBundle.getBundle("org.mystock.utils.Message") ; 
 		return rb.getString(key) ;
 	}
+	
+	/**
+	 * 由关键字获取相关身份信息
+	 * @param key
+	 * @return 消息
+	 */
+	public static String getID(String key){
+		ResourceBundle rb = ResourceBundle.getBundle("org.mystock.utils.identity") ; 
+		return rb.getString(key) ;
+	}
 }

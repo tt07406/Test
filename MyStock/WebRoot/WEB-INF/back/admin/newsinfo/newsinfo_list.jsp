@@ -50,10 +50,8 @@
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsAuthor}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.newsType}</span></td>
 		<td align="center" valign="middle"><span class="STYLE6">${newsvo.adminName}</span></td>
-		<c:if test="${session.admin.adminName eq newsvo.adminName}">
 		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfo_updatepre?pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}">修改</a></span></td>
 		<td align="center" valign="middle"><span class="STYLE6"><a href="NewsInfo_delete?pid=${newsvo.newsInfoId}&cp=${page}&ls=${size}&pg=${url}" onclick="return doDelete()">删除</a></span></td>
-		</c:if>
 	</TR>
 	</c:forEach>
 </table>
