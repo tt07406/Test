@@ -65,29 +65,59 @@
 		<action name="adminLogout" class="org.mystock.action.AdminLogout">
 			<result name="success">/WEB-INF/back/login.jsp</result>
 		</action>
-		<action name="Table_list" method="list"
-			class="org.mystock.action.TableAction">
+		<action name="Table_list" method="tablelist"
+			class="org.mystock.action.FileUploadAction">
 			<result name="success">
 				/WEB-INF/back/TableList.jsp
 			</result>
 		</action>
 		<action name="Table_delete" method="delete"
-			class="org.mystock.action.TableAction">
+			class="org.mystock.action.FileUploadAction">
 			<result name="success">
 				/WEB-INF/back/tables_operate_do.jsp
 			</result>
 		</action>
-		<action name="Table_upload" method="upload"
-			class="org.mystock.action.TableAction">
+		<action name="Document_list" method="documentlist"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/DocumentList.jsp
+			</result>
+		</action>
+		<action name="Document_delete" method="delete"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/documents_operate_do.jsp
+			</result>
+		</action>
+		<action name="Image_list" method="imagelist"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/ImageList.jsp
+			</result>
+		</action>
+		<action name="Image_delete" method="delete"
+			class="org.mystock.action.FileUploadAction">
+			<result name="success">
+				/WEB-INF/back/images_operate_do.jsp
+			</result>
+		</action>
+		<action name="File_upload" method="upload"
+			class="org.mystock.action.FileUploadAction">
 			<!-- 不超过1G -->
 			<interceptor-ref name="fileUpload">
 				<param name="maximumSize">1073741824</param>
-				<param name="allowedTypes">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream</param>
+				<param name="allowedTypes">
+					application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/octet-stream,
+					image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+					application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+					application/pdf,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+					text/plain,application/rtf,text/xml,application/xml
+				</param>
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack" />			
 		</action>
-		<action name="Table_download"
-			class="org.mystock.action.TableAction">
+		<action name="File_download"
+			class="org.mystock.action.FileUploadAction">
 			<result name="success" type="stream">
 				<param name="contentType">text/plain;charset=utf-8</param>
 				<param name="inputName">targetFile</param>

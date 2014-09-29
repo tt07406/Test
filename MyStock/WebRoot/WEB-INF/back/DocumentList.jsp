@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head><title>所有表格</title>
+<head><title>所有文档</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -27,16 +27,16 @@
 	</script>
 <body>
 <center>
-	<h1>表格列表</h1>
+	<h1>文档列表</h1>
 <TABLE BORDER="1" cellpadding="5" cellspacing="0" bgcolor="F2F2F2" width="100%">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td align="center" valign="middle"><span class="STYLE10">表格名</span></td>
+		<td align="center" valign="middle"><span class="STYLE10">文档名</span></td>
 		<td align="center" valign="middle" colspan="2"><span class="STYLE10">操作</span></td>
 	</TR>
-	<c:forEach items="${tables}" var="table">
+	<c:forEach items="${documents}" var="item">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td align="center" valign="middle"><span class="STYLE6"><a href="File_download.action?filename=${table}">${table}</a></span></td>
-		<td align="center" valign="middle"><span class="STYLE6"><a href="Table_delete.action?filename=${table}" onclick="return doDelete()">删除</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="File_download.action?filename=${item}">${item}</a></span></td>
+		<td align="center" valign="middle"><span class="STYLE6"><a href="Document_delete.action?filename=${item}" onclick="return doDelete()">删除</a></span></td>
 	</TR>
 	</c:forEach>
 </table>

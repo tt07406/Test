@@ -4,17 +4,18 @@
     double perMaxSize = 1024;//单个文件允许的max大小
     String sizeUnit = "MB";//perMaxSize数据对应的单位
     //String ext = "*.jpg;*.jpeg;*.gif";//允许上传的文件类型
-    String ext = "*.xls;*.xlsx";//允许上传的文件类型
+    String ext = "*.xls;*.xlsx;*.bmp;*.png;*.gif;*.jpeg;*.jpg;*.pjpeg;*.x-png;*.jpe;"+
+    "*.ppt;*.pptx;*.doc;*.docx;*.chm;*.pdf;*.txt;*.rtf;*.pps;*.xml;*.rdf;*.wsdl;*.xpdl;*.xsl";//允许上传的文件类型
     //文件上传提交的目标页面
 	StringBuffer uploadUrl = new StringBuffer("http://");
 	uploadUrl.append(request.getHeader("Host"));
 	uploadUrl.append(request.getContextPath());
-	uploadUrl.append("/back/Table_upload.action");
+	uploadUrl.append("/back/File_upload.action");
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>批量表格上传</title>
+<title>文件上传</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="<%=request.getContextPath()%>/back/css/default.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/back/js/swfupload.js"></script>
@@ -85,22 +86,22 @@ SWFUpload.onload = function () {
 	<table width="100%" cellspacing="4" cellpadding="4" border="0" bgcolor="#FCFCFC">
 	<tr>
 	<td class="DH2">
-	<STRONG>批量上传表格 （支持的类型：<%=ext%>；单个表格最大不能超过：<%=perMaxSize%> <%=sizeUnit%>）</STRONG> 
+	<STRONG>批量上传文件 （支持的类型：<%=ext%>；单个文件最大不能超过：<%=perMaxSize%> <%=sizeUnit%>）</STRONG> 
 	</td><td class="DH2" align="right"></td>
 	</tr>
 	</table>
 <div id="content">
-	<form id="form1" action="Table_upload" method="post" enctype="multipart/form-data">
+	<form id="form1" action="File_upload" method="post" enctype="multipart/form-data">
 		<table width="90%" cellspacing="0" cellpadding="0" border="0"><tr><td>
 		<span id="spanButtonPlaceholder"></span>
-		<input id="btnUpload" type="button" value="上传表格" class="btn" />
+		<input id="btnUpload" type="button" value="上传文件" class="btn" />
 		<input id="btnCancel" type="button" value="取消全部上传" disabled="disabled" class="btn" /></td>
 		</tr></table>
 		<table id="idFileList" class="uploadFileList"><tr class="uploadTitle"><td><B>文件名</B></td><td><B>文件大小</B></td><td width=100px><B>状态</B></td><td width=35px>${msg}</td></tr></table>
 		等待上传 <span id="idFileListCount">0</span> 个 ，成功上传 <span id="idFileListSuccessUploadCount">0</span> 个
 		<div id="divSWFUploadUI" style="visibility: hidden;"></div>
 		<noscript style="display: block; margin: 10px 25px; padding: 10px 15px;">
-			很抱歉，表格上传界面无法载入，请将浏览器设置成支持JavaScript。
+			很抱歉，上传界面无法载入，请将浏览器设置成支持JavaScript。
 		</noscript>
 		<div id="divLoadingContent" class="content" style="background-color: #FFFF66; border-top: solid 4px #FF9966; border-bottom: solid 4px #FF9966; margin: 10px 25px; padding: 10px 15px; display: none;">
 			上传界面正在载入，请稍后...

@@ -5,7 +5,7 @@ USE news_all;
 CREATE TABLE admin
 (
 adminId int NOT NULL,
-adminName varchar(20) NOT NULL,
+adminName varchar(40) NOT NULL,
 adminPass varchar(32),
 adminInfo text,
 primary key(adminId)

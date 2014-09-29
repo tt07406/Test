@@ -180,8 +180,10 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
+		  <li><a href="/MyStock/back/FileUpload.action" target="main">上传文件</a></li>
 		  <li><a href="/MyStock/back/Table_list.action" target="main">上传表格列表</a></li>
-		  <li><a href="/MyStock/back/TableUpload.action" target="main">增加表格</a></li>
+		  <li><a href="/MyStock/back/Document_list.action" target="main">上传文档列表</a></li>
+		  <li><a href="/MyStock/back/Image_list.action" target="main">上传图片列表</a></li>
         </ul>
       </div>
         <script type="text/javascript">

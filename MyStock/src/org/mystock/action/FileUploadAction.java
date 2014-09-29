@@ -28,17 +28,19 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 用于表格上传操作的Action
+ * 用于上传操作的Action
  * 
  * @author tt
  * @version 14.9.16
  */
-public class TableAction extends ActionSupport {
+public class FileUploadAction extends ActionSupport {
 
 	private static final long serialVersionUID = -5244341070259281864L;
 
 	String msg = null ;//提示信息
 	List<String> tables = new ArrayList<String>();//所有的表格
+	List<String> documents = new ArrayList<String>();//所有文档
+	List<String> images = new ArrayList<String>();//所有图片
 
     String filename;//下载文件名
     private File file;    
@@ -137,6 +139,42 @@ public class TableAction extends ActionSupport {
 
 
 	/**
+	 * @return the documents
+	 */
+	public List<String> getDocuments() {
+		return documents;
+	}
+
+
+
+	/**
+	 * @param documents the documents to set
+	 */
+	public void setDocuments(List<String> documents) {
+		this.documents = documents;
+	}
+
+
+
+	/**
+	 * @return the images
+	 */
+	public List<String> getImages() {
+		return images;
+	}
+
+
+
+	/**
+	 * @param images the images to set
+	 */
+	public void setImages(List<String> images) {
+		this.images = images;
+	}
+
+
+
+	/**
 	 * 默认上传
 	 * @return
 	 * @throws IOException 
@@ -151,8 +189,14 @@ public class TableAction extends ActionSupport {
 		try {
 			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
 			is = new FileInputStream(file);
-			String root = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables");//保存软件的目录
-			File deskFile = new File(root,this.getFileFileName());
+			String root = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files");//保存文件的目录
+			
+			//将后缀名改成小写
+			String name =this.getFileFileName();
+			int pos = name.lastIndexOf(".");
+			String suffix = name.substring(pos);
+			
+			File deskFile = new File(root,name.substring(0,pos)+suffix.toLowerCase());
 
 			//输出到外存中
 			OutputStream os = new FileOutputStream(deskFile);
@@ -185,10 +229,10 @@ public class TableAction extends ActionSupport {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public String list(){
-		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables"); //文件保存路径
+	public String tablelist(){
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files"); //文件保存路径
 		
-		//获取所有java文件 
+		//获取所有表格文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
 		tables.clear();  
 		for (File xlsFileColFile : xlsFileCol) { 
@@ -200,11 +244,49 @@ public class TableAction extends ActionSupport {
 	}
 	
 	/**
-	 * 删除表格
+	 * 文档列表
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public String documentlist(){
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files"); //文件保存路径
+		
+		//获取所有文档文件 
+		Collection<File> docFileCol = FileUtils.listFiles(new File(filepath), new String[]{"ppt","pptx","doc","docx","chm","pdf","txt","rtf","pps","xml","rdf","wsdl","xpdl","xsl"}, true); 
+		documents.clear();  
+		for (File docFileColFile : docFileCol) { 
+		      String filename = docFileColFile.getName();
+		      documents.add(filename);
+		}
+		
+		return SUCCESS;
+	}
+	
+	/**
+	 * 图片列表
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public String imagelist(){
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files"); //文件保存路径
+		
+		//获取所有文档文件 
+		Collection<File> imageFileCol = FileUtils.listFiles(new File(filepath), new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+		images.clear();  
+		for (File imagesFileColFile : imageFileCol) { 
+		      String filename = imagesFileColFile.getName();
+		      images.add(filename);
+		}
+		
+		return SUCCESS;
+	}
+	
+	/**
+	 * 删除文件
 	 * @return
 	 */
 	public String delete(){		
-		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/tables") + java.io.File.separator; //文件保存路径
+		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files") + java.io.File.separator; //文件保存路径
 		try{
 			FileUtils.forceDelete(new File(filepath+filename));
 			msg = "删除成功";
@@ -216,10 +298,10 @@ public class TableAction extends ActionSupport {
 	}
 	
 	/**
-	 * 下载软件
+	 * 下载文件
 	 * @return
 	 */
 	public InputStream getTargetFile(){
-		return ServletActionContext.getServletContext().getResourceAsStream("WEB-INF/tables/"+filename);
+		return ServletActionContext.getServletContext().getResourceAsStream("WEB-INF/files/"+filename);
 	}
 }
