@@ -10,6 +10,7 @@ package org.mystock.action;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -19,6 +20,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsType;
@@ -28,6 +30,7 @@ import org.mystock.service.NewsTypeService;
 import org.mystock.utils.FtpUtil;
 import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
+import org.mystock.utils.TimerManager;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -64,11 +67,28 @@ public class NewsInterfaceAction extends ActionSupport {
 	List<String> filenames = new ArrayList<String>();//所有上传的文件
 	List<String> uploadfiles = new ArrayList<String>();//所有新闻图片
 	
+	List<FileVO> filelist;//文件信息列表
+	
 	String ip;//FTP地址
 	String username;//FTP用户名
 	String password;//FTP密码
 	boolean valid;//是否自动上传
 		
+	
+	/**
+	 * @return the filelist
+	 */
+	public List<FileVO> getFilelist() {
+		return filelist;
+	}
+
+	/**
+	 * @param filelist the filelist to set
+	 */
+	public void setFilelist(List<FileVO> filelist) {
+		this.filelist = filelist;
+	}
+
 	public void setValid(boolean valid) {
 		this.valid = valid;
 	}
@@ -512,8 +532,22 @@ public class NewsInterfaceAction extends ActionSupport {
 		filenames.clear();  
 		for (File allFileColFile : allFileCol) { 
 		      String filename = allFileColFile.getName();
+		      filelist.add(new FileVO(filename,allFileColFile.length(), new Date(allFileColFile.lastModified())));
 		      filenames.add(filename);
 		}
+		int currentPage = 1 ;	// 为当前所在的页，默认在第1页
+		int lineSize = 10;		// 每次显示的记录数
+		try{
+			currentPage = Integer.parseInt(cp) ;
+		} catch(Exception e) {}
+		try{
+			lineSize = Integer.parseInt(ls) ;
+		} catch(Exception e) {}
+		
+		int end = filenames.size();
+		int offset = (currentPage - 1) * lineSize;
+		end = lineSize + offset > end ? end : lineSize + offset;
+		setFilelist(filelist.subList(offset, end));
 		
 		return SUCCESS;
 	}
@@ -603,11 +637,19 @@ public class NewsInterfaceAction extends ActionSupport {
 	}
 	
 	/**
-	 * 设置是否自动上传到FTP
+	 * 设置是否自动备份
 	 * @return
 	 */
 	public String changeValid(){
 			FtpUtil.setValid(valid);
+			TimerManager.isValid=valid;
+			if (url!=null&&username!=null&&password!=null){//修改备份配置文件
+				if(!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.url",url)||
+						!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.username",username)||
+						!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.password",password)){
+					return ERROR;
+				}
+			}
 		return SUCCESS;
 	}
 	
@@ -616,8 +658,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * @return
 	 */
 	public String backupDatabase(){
-		List<NewsInfo> data = service.getAllNewsInfo();//获取源数据
-		List<NewsType> types = typeService.getAllNewsType();
 		
 		if (url!=null&&username!=null&&password!=null){//修改备份配置文件
 			if(!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.url",url)||
@@ -628,50 +668,74 @@ public class NewsInterfaceAction extends ActionSupport {
 		}
 		
 		System.out.println("start backup..");
-		Session session = null;
-		Configuration cfg = new AnnotationConfiguration();
-		SessionFactory sf = cfg.configure("hibernate_backup.cfg.xml").buildSessionFactory();
-		try{			
-			session = sf.openSession();
-			//开始事务
-			Transaction t=session.beginTransaction();
-			
-			//备份新闻详情
-			for (int i = 0; i< data.size(); ++i){
-				session.save(data.get(i));
-				// 批插入的对象立即写入数据库并释放内存
-				if (i % 10 == 0) {
-					session.flush();
-					session.clear();
-				}
-			}
-			
-			//备份新闻类型
-			for (int i = 0; i< types.size(); ++i){
-				session.save(types.get(i));
-				// 批插入的对象立即写入数据库并释放内存
-				if (i % 10 == 0) {
-					session.flush();
-					session.clear();
-				}
-			}
-			
-			//提交事务
-			t.commit();
-			System.out.println("end backup..");
-		}catch (Exception e) {
-			e.printStackTrace(); // 打印错误信息
-			session.getTransaction().rollback(); // 出错将回滚事物
-		} finally {
-			if (session != null) {
-				if (session.isOpen()) {
-					session.close(); // 关闭Session
-				}
-			}
-			if (sf != null){
-				sf.close();
+		service.backup();
+		typeService.backup();
+		System.out.println("end backup..");
+		
+		return SUCCESS;
+	}
+	
+	/**
+	 * 查询图片列表
+	 * @return 图片地址列表filenames
+	 */
+	@SuppressWarnings("unchecked")
+	public String acquireImagelist(){
+		String filepath = ServletActionContext.getServletContext().getRealPath("/images"); //文件保存路径
+		
+		//获取所有图片文件 
+		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
+				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+		filenames.clear();  
+		for (File allFileColFile : allFileCol) { 
+		      String path = allFileColFile.getPath();	     
+		      filenames.add(path);
+		}
+		int currentPage = 1 ;	// 为当前所在的页，默认在第1页
+		int lineSize = 10;		// 每次显示的记录数
+		try{
+			currentPage = Integer.parseInt(cp) ;
+		} catch(Exception e) {}
+		try{
+			lineSize = Integer.parseInt(ls) ;
+		} catch(Exception e) {}
+		
+		int end = filenames.size();
+		int offset = (currentPage - 1) * lineSize;
+		end = lineSize + offset > end ? end : lineSize + offset;
+		setFilenames(filenames.subList(offset, end));
+		
+		return SUCCESS;
+	}
+	
+	/**
+	 * 上传图片到FTP
+	 * @return JSON格式的列表
+	 */
+	@SuppressWarnings("unchecked")
+	public String uploadImage(){
+		String filepath = ServletActionContext.getServletContext().getRealPath("/images"); //文件保存路径
+		
+		//获取所有图片
+		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
+				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+		uploadfiles.clear();  
+		for (File allFileColFile : allFileCol) { 
+		      String filename = allFileColFile.getName();
+		      uploadfiles.add(filename);
+		    //备份文件到FTP
+			if (FtpUtil.backupFile(ip, username, password, filepath
+					+ File.separatorChar + filename, "images/"
+					+ MessageUtil.getID("config.id") + File.separatorChar
+					+ filename)) {
+				System.out.println("image:" + filename + " backup success");
+			} else {
+				System.out.println("image:" + filename + " backup fail");
 			}
 		}
+		ip = null;
+		username = null;
+		password = null;
 		
 		return SUCCESS;
 	}

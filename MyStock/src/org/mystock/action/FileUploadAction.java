@@ -236,6 +236,65 @@ public class FileUploadAction extends ActionSupport {
 	}
 
 	/**
+	 * 图片上传
+	 * @return
+	 * @throws IOException 
+	 */
+	public void uploadImage() throws IOException {
+		InputStream is;
+
+		HttpServletResponse response = ServletActionContext.getResponse(); 
+		PrintWriter writer = response.getWriter(); 
+		String pageErrorInfo = null;
+		msg = "successed";
+		try {
+			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
+			is = new FileInputStream(file);
+			String root = ServletActionContext.getServletContext().getRealPath("/images");//保存图片的目录
+			
+			//将后缀名改成小写
+			String name =this.getFileFileName();
+			int pos = name.lastIndexOf(".");
+			String suffix = name.substring(pos);
+			String newName = name.substring(0,pos)+suffix.toLowerCase();
+			
+			File deskFile = new File(root,newName);
+
+			//输出到外存中
+			OutputStream os = new FileOutputStream(deskFile);
+			byte [] bytefer = new byte[400];
+			int length = 0 ; 
+			while((length = is.read(bytefer) )>0)
+			{
+				os.write(bytefer,0,length);
+			}
+			os.close();
+			is.close();		
+			
+
+			//备份文件到FTP
+			if(FtpUtil.backupFile(root+File.separatorChar+newName, "images/"+MessageUtil.getID("config.id")+File.separatorChar+newName)){
+				System.out.println("image:"+newName+" backup success");
+			}else{
+				System.out.println("image:"+newName+" backup fail");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			pageErrorInfo = e.getMessage();
+			msg = "failed"+pageErrorInfo;
+		} catch (IOException e) {
+			e.printStackTrace();
+			msg = "failed"+pageErrorInfo;
+		}finally{
+			writer.print(msg);
+			writer.flush();  
+			writer.close();		
+		}
+
+
+	}
+	
+	/**
 	 * 表格列表
 	 * @return
 	 */

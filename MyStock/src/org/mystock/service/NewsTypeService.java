@@ -59,4 +59,9 @@ public interface NewsTypeService {
 	 * @return
 	 */
 	public boolean findNewsTypeName(String name);
+	
+	/**
+     * 备份到数据库
+     */
+    public void backup();
 }

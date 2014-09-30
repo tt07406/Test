@@ -27,15 +27,15 @@ http://localhost:8080/MyStock/interface/acquireTablelist.action
 输出：JSON格式的软件列表tables
 例子：http://localhost:8080/MyStock/interface/acquireTablelist.action
 
-5.获取获取上传文件列表
+5.查询文件列表
 功能：获取所有获取上传文件列表，ajax 异步请求
 URL：<%=request.getContextPat()%>/interface/acquireFilelist.action或
 http://localhost:8080/MyStock/interface/acquireFilelist.action
-参数：无
-输出：JSON格式的文件列表filenames
-例子：http://localhost:8080/MyStock/interface/acquireFilelist.action
+参数：cp，值为为当前所在的页，默认在第1页;ls，值为每次显示的记录数，默认为10;
+输出：JSON格式的文件列表filelist
+例子：http://localhost:8080/MyStock/interface/acquireFilelist.action?cp=1&ls=5
 
-6.获取获取新闻图片列表
+6.获取新闻图片列表
 功能：获取所有获取新闻图片列表，ajax 异步请求
 URL：<%=request.getContextPat()%>/interface/acquireNewsPhotolist.action或
 http://localhost:8080/MyStock/interface/acquireNewsPhotolist.action
@@ -59,8 +59,8 @@ http://localhost:8080/MyStock/interface/uploadNewsPhoto.action
 输出：JSON格式的新闻图片列表uploadfiles
 例子：http://localhost:8080/MyStock/interface/uploadNewsPhoto.action?ip=192.168.2.3&username=admin&password=admin
 
-9.设置是否自动上传
-功能：设置是否自动上传到FTP
+9.设置是否自动备份
+功能：设置是否自动备份
 URL：<%=request.getContextPat()%>/interface/changeValid.action或
 http://localhost:8080/MyStock/interface/changeValid.action
 参数：valid，是否有效
@@ -74,3 +74,19 @@ http://localhost:8080/MyStock/interface/backupDatabase.action
 参数：url,数据库连接URL；username，用户名；password，密码(可以不写三个参数）
 输出：无
 例子：http://localhost:8080/MyStock/interface/backupDatabase.action?url=jdbc:mysql://localhost:3306/news_collect?useUnicode=true&amp;characterEncoding=UTF-8&username=admin&password=admin
+
+11.查询图片列表
+功能：获取所有获取上传图片，ajax 异步请求
+URL：<%=request.getContextPat()%>/interface/acquireImagelist.action或
+http://localhost:8080/MyStock/interface/acquireImagelist.action
+参数：cp，值为为当前所在的页，默认在第1页;ls，值为每次显示的记录数，默认为10;
+输出：JSON格式的图片地址列表filenames
+例子：http://localhost:8080/MyStock/interface/acquireImagelist.action?cp=1&ls=5
+
+12.上传图片到FTP
+功能：上传图片到FTP，ajax 异步请求
+URL：<%=request.getContextPat()%>/interface/uploadImage.action或
+http://localhost:8080/MyStock/interface/uploadImage.action
+参数：ip,FTP地址；username，FTP用户名；password，FTP密码
+输出：JSON格式的图片列表uploadfiles
+例子：http://localhost:8080/MyStock/interface/uploadImage.action?ip=192.168.2.3&username=admin&password=admin

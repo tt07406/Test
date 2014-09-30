@@ -11,6 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.mystock.dao.NewsInfoHibernateDAO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
@@ -188,5 +193,45 @@ public class NewsInfoServiceImpl implements NewsInfoService{
     		   newsVO.setNewsInfoTitle(newsInfo.getNewsInfoTitle());
     	   }
     	   return newsVO;    	   
+       }
+       
+       /**
+        * 备份到数据库
+        */
+       public void backup(){
+    	   List<NewsInfo> data = getAllNewsInfo();//获取源数据
+    	   Session session = null;
+	   		Configuration cfg = new AnnotationConfiguration();
+	   		SessionFactory sf = cfg.configure("hibernate_backup.cfg.xml").buildSessionFactory();
+	   		try{			
+	   			session = sf.openSession();
+	   			//开始事务
+	   			Transaction t=session.beginTransaction();
+	   			
+	   			//备份新闻详情
+	   			for (int i = 0; i< data.size(); ++i){
+	   				session.save(data.get(i));
+	   				// 批插入的对象立即写入数据库并释放内存
+	   				if (i % 10 == 0) {
+	   					session.flush();
+	   					session.clear();
+	   				}
+	   			}
+	   			//提交事务
+	   			t.commit();
+	   			System.out.println("end backup..");
+	   		}catch (Exception e) {
+	   			e.printStackTrace(); // 打印错误信息
+	   			session.getTransaction().rollback(); // 出错将回滚事物
+	   		} finally {
+	   			if (session != null) {
+	   				if (session.isOpen()) {
+	   					session.close(); // 关闭Session
+	   				}
+	   			}
+	   			if (sf != null){
+	   				sf.close();
+	   			}
+	   		}
        }
 }

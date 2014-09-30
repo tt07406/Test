@@ -69,6 +69,13 @@
 				<param name="contentType">text/html</param>
 			</result>
 		</action>
+		<action name="acquireImagelist" 
+			class="newsInterfaceAction" method="acquireImagelist">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
 		<action name="acquireNewsPhotolist" 
 			class="newsInterfaceAction" method="acquireNewsPhotolist">
 			<result type="json">
@@ -96,6 +103,10 @@
 				<param name="noCache">true</param>
 				<param name="contentType">text/html</param>
 			</result>
+			<result type="plainText" name="error">
+                <param name="location">/WEB-INF/front/error.ftl</param>
+                <param name="charSet">UTF-8</param>
+            </result>
 		</action>
 		<action name="backupDatabase"
 		      class="newsInterfaceAction" method="backupDatabase">

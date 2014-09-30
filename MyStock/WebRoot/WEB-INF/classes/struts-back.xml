@@ -116,6 +116,17 @@
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack" />			
 		</action>
+		<action name="Image_upload" method="uploadImage"
+			class="org.mystock.action.FileUploadAction">
+			<!-- 不超过1G -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1073741824</param>
+				<param name="allowedTypes">
+					application/octet-stream,image/x-ms-bmp,image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,image/gif,image/x-png,
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />			
+		</action>
 		<action name="File_download"
 			class="org.mystock.action.FileUploadAction">
 			<result name="success" type="stream">

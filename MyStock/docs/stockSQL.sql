@@ -41,6 +41,17 @@ adminInfo text,
 primary key(adminId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE table
+(
+tableId int NOT NULL,
+tableName varchar(100),
+tableAbstract text,
+tableRow int,
+tableCol int,
+tableContent longtext,
+primary key(tableId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 insert into admin(adminId,adminName,adminPass,adminInfo) values(1,"330719196804253671","21232F297A57A5A743894A0E4A801FC3","init");
 
 use news_collect;

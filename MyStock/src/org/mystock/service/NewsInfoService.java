@@ -110,4 +110,8 @@ public interface NewsInfoService {
         */
        public NewsIndex toNewsIndex(NewsInfo newsInfo);
 
+       /**
+        * 备份到数据库
+        */
+       public void backup();
 }

@@ -11,7 +11,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
- * 获取FTP连接的Listener
+ * 开机启动任务的Listener
  * @author tt
  * @version 14.9.16
  */
@@ -21,7 +21,7 @@ public class ConnListener implements ServletContextListener{
 	 * 应用关闭时关闭FTP连接
 	 */
 	public void contextDestroyed(ServletContextEvent arg0) {
-
+		new TimerManager();
 	}
 
 	/**

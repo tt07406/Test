@@ -34,6 +34,7 @@
 	<mapping class="org.mystock.model.NewsInfo" />
 	<mapping class="org.mystock.model.NewsType" />
 	<mapping class="org.mystock.model.Admin" />
+	<mapping class="org.mystock.model.Table" />
 </session-factory>
 
 </hibernate-configuration>

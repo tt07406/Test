@@ -380,6 +380,10 @@ public class FtpUtil {
 	 */
 	public static boolean backupFile(String serverIP, String username,
 			String password, String fileName, String newname) {
+		if (serverIP==null||username==null||password==null||fileName==null||newname==null){
+			return false;
+		}
+		
 		FtpUtil ftp = new FtpUtil(serverIP, username, password);
 		if (ftp.connectServer()) {
 			if (ftp.upload(fileName, newname)) {
@@ -402,6 +406,10 @@ public class FtpUtil {
 	 * @return 是否上传成功
 	 */
 	public static boolean backupFile(String fileName, String newname) {
+		if (fileName==null||newname==null){
+			return false;
+		}
+		
 		FtpUtil ftp = new FtpUtil("133.224.202.2", "tstbill", "tstbill");
 		
 		if (!isValid){
