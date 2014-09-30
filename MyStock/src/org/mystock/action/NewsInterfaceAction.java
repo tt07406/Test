@@ -14,12 +14,19 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
+import org.mystock.model.NewsType;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
 import org.mystock.utils.FtpUtil;
+import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -556,6 +563,9 @@ public class NewsInterfaceAction extends ActionSupport {
 				System.out.println("uploadfiles:" + filename + " backup fail");
 			}
 		}
+		ip = null;
+		username = null;
+		password = null;
 		
 		return SUCCESS;
 	}
@@ -585,12 +595,84 @@ public class NewsInterfaceAction extends ActionSupport {
 				System.out.println("uploadPhoto:" + filename + " backup fail");
 			}
 		}
+		ip = null;
+		username = null;
+		password = null;
 		
 		return SUCCESS;
 	}
 	
+	/**
+	 * 设置是否自动上传到FTP
+	 * @return
+	 */
 	public String changeValid(){
 			FtpUtil.setValid(valid);
+		return SUCCESS;
+	}
+	
+	/**
+	 * 备份数据库
+	 * @return
+	 */
+	public String backupDatabase(){
+		List<NewsInfo> data = service.getAllNewsInfo();//获取源数据
+		List<NewsType> types = typeService.getAllNewsType();
+		
+		if (url!=null&&username!=null&&password!=null){//修改备份配置文件
+			if(!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.url",url)||
+					!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.username",username)||
+					!HibernateMappingManager.updateHibernateConfig("hibernate_backup.cfg.xml", "connection.password",password)){
+				return ERROR;
+			}
+		}
+		
+		System.out.println("start backup..");
+		Session session = null;
+		Configuration cfg = new AnnotationConfiguration();
+		SessionFactory sf = cfg.configure("hibernate_backup.cfg.xml").buildSessionFactory();
+		try{			
+			session = sf.openSession();
+			//开始事务
+			Transaction t=session.beginTransaction();
+			
+			//备份新闻详情
+			for (int i = 0; i< data.size(); ++i){
+				session.save(data.get(i));
+				// 批插入的对象立即写入数据库并释放内存
+				if (i % 10 == 0) {
+					session.flush();
+					session.clear();
+				}
+			}
+			
+			//备份新闻类型
+			for (int i = 0; i< types.size(); ++i){
+				session.save(types.get(i));
+				// 批插入的对象立即写入数据库并释放内存
+				if (i % 10 == 0) {
+					session.flush();
+					session.clear();
+				}
+			}
+			
+			//提交事务
+			t.commit();
+			System.out.println("end backup..");
+		}catch (Exception e) {
+			e.printStackTrace(); // 打印错误信息
+			session.getTransaction().rollback(); // 出错将回滚事物
+		} finally {
+			if (session != null) {
+				if (session.isOpen()) {
+					session.close(); // 关闭Session
+				}
+			}
+			if (sf != null){
+				sf.close();
+			}
+		}
+		
 		return SUCCESS;
 	}
 }

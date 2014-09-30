@@ -66,3 +66,11 @@ http://localhost:8080/MyStock/interface/changeValid.action
 参数：valid，是否有效
 输出：JSON格式的新闻图片列表uploadfiles
 例子：http://localhost:8080/MyStock/interface/changeValid.action?valid=true
+
+10.备份数据库
+功能：备份数据库到本地，ajax 异步请求
+URL：<%=request.getContextPat()%>/interface/backupDatabase.action或
+http://localhost:8080/MyStock/interface/backupDatabase.action
+参数：url,数据库连接URL；username，用户名；password，密码(可以不写三个参数）
+输出：无
+例子：http://localhost:8080/MyStock/interface/backupDatabase.action?url=jdbc:mysql://localhost:3306/news_collect?useUnicode=true&amp;characterEncoding=UTF-8&username=admin&password=admin

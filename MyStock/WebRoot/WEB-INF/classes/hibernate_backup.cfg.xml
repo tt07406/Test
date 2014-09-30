@@ -11,7 +11,7 @@
 		org.hibernate.dialect.MySQLDialect
 	</property>
 	<property name="connection.url">
-		jdbc:mysql://localhost:3306/news_all?useUnicode=true&amp;characterEncoding=UTF-8
+		jdbc:mysql://localhost:3306/news_collect?useUnicode=true&amp;characterEncoding=UTF-8
 	</property>
 	<property name="connection.username">person</property>
 	<property name="connection.driver_class">
@@ -31,6 +31,9 @@
 	<property name="hibernate.c3p0.validate">true</property>
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.format_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	<mapping class="org.mystock.model.NewsInfo" />
+	<mapping class="org.mystock.model.NewsType" />
 
 </session-factory>
 

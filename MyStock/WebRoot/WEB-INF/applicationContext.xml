@@ -18,11 +18,6 @@
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
 	</bean>
-	<!-- 配置sessionLoginFactory -->
-	<bean id="sessionLoginFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<property name="configLocation" value="classpath:hibernate_login.cfg.xml" />
-	</bean>
 	
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager"
