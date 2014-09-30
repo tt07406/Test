@@ -16,7 +16,7 @@
 			obj.bgColor = color ;
 		}
 		function show(thisurl){
-			window.open(thisurl,"新闻发布系统","widht=500,height=200,scrollbars=yes,resizeable=no") ;
+			window.open(thisurl,"斯多克个人网站自助系统","widht=500,height=200,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
 	<script language="javascript">
@@ -27,7 +27,7 @@
 <script type="text/javascript">
 	function validateAccount(value){
 		validateName(value);
-		$("#result").load("<%=request.getContextPath()%>/manage/validateName.action",{userName:value,type:2});
+		$("#result").load("<%=request.getContextPath()%>/back/validateName.action",{userName:value,type:2});
 	}
 </script>
 <center> 

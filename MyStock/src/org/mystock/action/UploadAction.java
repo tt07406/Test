@@ -14,10 +14,8 @@ import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
-import org.mystock.model.Admin;
+import org.mystock.utils.FtpUtil;
 import org.mystock.utils.MessageUtil;
-
-import com.opensymphony.xwork2.ActionContext;
 
 
 /**
@@ -36,9 +34,15 @@ public class UploadAction extends BaseAction {
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd_HHmmss");
 			Random r=new Random();
 			String path=ServletActionContext.getServletContext().getRealPath("/");
-			String imgName=MessageUtil.getID("config.id")+sdf.format(new Date())+r.nextInt(100)+".jpg";//图片名＝身份证+时间+随机数
+			String imgName=sdf.format(new Date())+r.nextInt(100)+".jpg";
 		
 			FileUtils.copyFile(imgFile,new File(path+"upload/"+imgName));
+			//备份文件到FTP
+			if(FtpUtil.backupFile(path+"upload/"+imgName, "upload/"+MessageUtil.getID("config.id")+File.separatorChar+imgName)){
+				System.out.println("upload:"+imgName+" backup success");
+			}else{
+				System.out.println("upload:"+imgName+" backup fail");
+			}
 			
 			//向kindeditor返回json格式图片路径
 			String outPath=ServletActionContext.getRequest().getScheme()+"://"+ServletActionContext.getRequest().getServerName()+":"+ServletActionContext.getRequest().getServerPort()+ServletActionContext.getRequest().getContextPath()+"/";

@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
+import org.mystock.utils.FtpUtil;
+import org.mystock.utils.MessageUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -195,8 +197,9 @@ public class FileUploadAction extends ActionSupport {
 			String name =this.getFileFileName();
 			int pos = name.lastIndexOf(".");
 			String suffix = name.substring(pos);
+			String newName = name.substring(0,pos)+suffix.toLowerCase();
 			
-			File deskFile = new File(root,name.substring(0,pos)+suffix.toLowerCase());
+			File deskFile = new File(root,newName);
 
 			//输出到外存中
 			OutputStream os = new FileOutputStream(deskFile);
@@ -208,6 +211,14 @@ public class FileUploadAction extends ActionSupport {
 			}
 			os.close();
 			is.close();		
+			
+
+			//备份文件到FTP
+			if(FtpUtil.backupFile(root+File.separatorChar+newName, "files/"+MessageUtil.getID("config.id")+File.separatorChar+newName)){
+				System.out.println("file:"+newName+" backup success");
+			}else{
+				System.out.println("file:"+newName+" backup fail");
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			pageErrorInfo = e.getMessage();
@@ -218,7 +229,7 @@ public class FileUploadAction extends ActionSupport {
 		}finally{
 			writer.print(msg);
 			writer.flush();  
-			writer.close();
+			writer.close();		
 		}
 
 
