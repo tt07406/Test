@@ -54,6 +54,10 @@
 		<!-- 注入持久化操作所需的SessionFactory -->
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="tableDAO" class="org.mystock.dao.TableHibernateDAO">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	
 	<bean id="newsInfoService" class="org.mystock.service.impl.NewsInfoServiceImpl">
 		<property name="newsInfoDAO" ref="newsInfoDAO"></property></bean>
@@ -62,6 +66,8 @@
 		<property name="infoService" ref="newsInfoService"></property></bean>
 	<bean id="adminService" class="org.mystock.service.impl.AdminServiceImpl">
 		<property name="adminDAO" ref="adminDAO"></property></bean>
+	<bean id="tableService" class="org.mystock.service.impl.TableServiceImpl">
+		<property name="tableDAO" ref="tableDAO"></property></bean>
 		
 	<bean id="adminLogin" class="org.mystock.action.AdminLogin">
 		<property name="adminService" ref="adminService"></property>
@@ -80,5 +86,8 @@
 	<bean id="newsInterfaceAction" class="org.mystock.action.NewsInterfaceAction">
 		<property name="service" ref="newsInfoService"></property>
 		<property name="typeService" ref="newsTypeService"></property>
+		<property name="tableService" ref="tableService"></property>
 	</bean>
+	<bean id="tableAction" class="org.mystock.action.TableAction">
+		<property name="tableService" ref="tableService"></property></bean>
 </beans>

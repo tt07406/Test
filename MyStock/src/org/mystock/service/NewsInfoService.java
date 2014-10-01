@@ -10,6 +10,7 @@ package org.mystock.service;
 import java.io.IOException;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsVO;
@@ -113,5 +114,5 @@ public interface NewsInfoService {
        /**
         * 备份到数据库
         */
-       public void backup();
+       public void backup(SessionFactory sf);
 }

@@ -9,6 +9,7 @@ package org.mystock.service;
 
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import org.mystock.model.NewsType;
 
 /**
@@ -63,5 +64,5 @@ public interface NewsTypeService {
 	/**
      * 备份到数据库
      */
-    public void backup();
+    public void backup(SessionFactory sf);
 }

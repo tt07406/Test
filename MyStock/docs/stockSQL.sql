@@ -41,7 +41,7 @@ adminInfo text,
 primary key(adminId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE table
+CREATE TABLE tables
 (
 tableId int NOT NULL,
 tableName varchar(100),
@@ -74,4 +74,15 @@ newsAuthor varchar(40),
 adminName varchar(20),
 newsType text,
 primary key(newsInfoId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tables
+(
+tableId int NOT NULL,
+tableName varchar(100),
+tableAbstract text,
+tableRow int,
+tableCol int,
+tableContent longtext,
+primary key(tableId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

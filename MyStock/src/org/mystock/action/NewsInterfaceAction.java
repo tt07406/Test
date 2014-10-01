@@ -15,18 +15,16 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
-import org.mystock.model.NewsType;
 import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
+import org.mystock.service.TableService;
 import org.mystock.utils.FtpUtil;
 import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
@@ -47,6 +45,7 @@ public class NewsInterfaceAction extends ActionSupport {
 
 	private NewsInfoService service;
 	private NewsTypeService typeService;
+	private TableService tableService;
 	
 	int type; //新闻类别编号
 	List<NewsIndex> allVO; //新闻目录列表
@@ -421,6 +420,14 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.typeService = typeService;
 	}
 
+	
+	/**
+	 * @param tableService the tableService to set
+	 */
+	public void setTableService(TableService tableService) {
+		this.tableService = tableService;
+	}
+
 	/**
 	 * 取某一类型的新闻目录
 	 * @return JSON格式的新闻目录
@@ -668,8 +675,14 @@ public class NewsInterfaceAction extends ActionSupport {
 		}
 		
 		System.out.println("start backup..");
-		service.backup();
-		typeService.backup();
+		Configuration cfg = new AnnotationConfiguration();
+   		SessionFactory sf = cfg.configure("hibernate_backup.cfg.xml").buildSessionFactory();
+		service.backup(sf);
+		typeService.backup(sf);
+		tableService.backup(sf);
+		if (sf != null){
+				sf.close();
+			}
 		System.out.println("end backup..");
 		
 		return SUCCESS;

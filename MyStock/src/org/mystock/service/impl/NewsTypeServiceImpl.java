@@ -13,8 +13,6 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.AnnotationConfiguration;
-import org.hibernate.cfg.Configuration;
 import org.mystock.dao.NewsTypeHibernateDAO;
 import org.mystock.model.NewsInfo;
 import org.mystock.model.NewsType;
@@ -146,11 +144,28 @@ public class NewsTypeServiceImpl implements NewsTypeService {
 	/**
      * 备份到数据库
      */
-    public void backup(){
+    public void backup(SessionFactory sf){
     	List<NewsType> types = getAllNewsType();
     	Session session = null;
-		Configuration cfg = new AnnotationConfiguration();
-		SessionFactory sf = cfg.configure("hibernate_backup.cfg.xml").buildSessionFactory();
+    	Transaction tx = null;
+   		
+   		//先回收空间
+   		try {
+   			session = sf.openSession();
+			tx = session.beginTransaction();
+			session.createSQLQuery("truncate table newstype").executeUpdate();
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+			e.printStackTrace();
+		} finally {
+			if (session != null) {
+   				if (session.isOpen()) {
+   					session.close(); // 关闭Session
+   				}
+   			}
+		}
+
 		try{			
 			session = sf.openSession();
 			//开始事务
@@ -177,9 +192,6 @@ public class NewsTypeServiceImpl implements NewsTypeService {
 				if (session.isOpen()) {
 					session.close(); // 关闭Session
 				}
-			}
-			if (sf != null){
-				sf.close();
 			}
 		}
 	}

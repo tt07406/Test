@@ -19,7 +19,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author tt
  * @version 14.9.16
  */
-@Entity(name="table")
+@Entity(name="tables")
 public class Table {
 	
 	@Id

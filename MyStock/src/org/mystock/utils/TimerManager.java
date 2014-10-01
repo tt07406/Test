@@ -13,8 +13,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.mystock.service.impl.NewsInfoServiceImpl;
 import org.mystock.service.impl.NewsTypeServiceImpl;
+import org.mystock.service.impl.TableServiceImpl;
 
 /**
  * 定时工具类
@@ -62,6 +66,7 @@ public class TimerManager {
 	 public class NFDFlightDataTimerTask extends TimerTask {
 		 NewsTypeServiceImpl typeService = new NewsTypeServiceImpl();
 		 NewsInfoServiceImpl service = new NewsInfoServiceImpl();
+		 TableServiceImpl tableService = new TableServiceImpl();
 
 		 private final Logger log = Logger.getLogger(NFDFlightDataTimerTask.class);
 
@@ -69,8 +74,15 @@ public class TimerManager {
 		 public void run() {
 		  try {
 		      if (TimerManager.isValid){
-		    	  typeService.backup();
-		    	  service.backup();
+					Configuration cfg = new AnnotationConfiguration();
+					SessionFactory sf = cfg.configure(
+							"hibernate_backup.cfg.xml").buildSessionFactory();
+					service.backup(sf);
+					typeService.backup(sf);
+					tableService.backup(sf);
+					if (sf != null) {
+						sf.close();
+					}
 		      }
 		   
 		  } catch (Exception e) {

@@ -34,6 +34,7 @@
 	<property name="hbm2ddl.auto">update</property>
 	<mapping class="org.mystock.model.NewsInfo" />
 	<mapping class="org.mystock.model.NewsType" />
+	<mapping class="org.mystock.model.Table" />
 
 </session-factory>
 
