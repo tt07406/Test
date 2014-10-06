@@ -1,7 +1,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><title>修改新闻</title>
+<head><title>修改文章</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/back/edit/themes/default/default.css">
 <style type="text/css" rel="stylesheet">
     .source {
@@ -65,7 +65,7 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2" id="myTB">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="4">
-			<h1>修改新闻</h1>		</td>
+			<h1>修改文章</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">标题：</font></td>

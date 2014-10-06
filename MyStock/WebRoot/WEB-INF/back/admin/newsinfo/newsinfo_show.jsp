@@ -1,7 +1,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head><title>查看新闻详情</title></head>
+<head><title>查看文章详情</title></head>
 <body>
 	<script language="javascript">
 		function changeColor(obj,color){
@@ -12,7 +12,7 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>查看新闻详情</h1>		</td>
+			<h1>查看文章详情</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">标题：</font></td>

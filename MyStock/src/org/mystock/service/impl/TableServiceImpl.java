@@ -13,7 +13,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.mystock.dao.TableHibernateDAO;
+import org.mystock.model.NewsIndex;
+import org.mystock.model.NewsVO;
 import org.mystock.model.Table;
+import org.mystock.model.TableVO;
 import org.mystock.service.TableService;
 
 /**
@@ -136,6 +139,17 @@ public class TableServiceImpl implements TableService {
 		}else{
 			return true;
 		}
+	}
+
+	@Override
+	public TableVO toTableVO(Table table) {
+		TableVO tableVO = new TableVO();
+  	   if (table != null){
+  		   tableVO.setTableId(table.getTableId());
+  		   tableVO.setTableName(table.getTableName());
+  		   tableVO.setTableAbstract(table.getTableAbstract());
+  	   }
+  	   return tableVO;    	   
 	}
 
 }

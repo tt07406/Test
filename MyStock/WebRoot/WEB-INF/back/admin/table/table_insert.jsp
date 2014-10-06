@@ -1,7 +1,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head><title>更新类别信息</title>
+<head><title>增加新的表格</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -17,34 +17,42 @@
 			window.open(thisurl,"斯多克个人网站自助系统","widht=500,height=200,scrollbars=yes,resizeable=no") ;
 		}
 	</script>
-	<script language="javascript">
-		var url = "<%=request.getContextPath()%>/back" ;
-	</script>
-	<script language="javascript" charset="gb2312" src="<%=request.getContextPath()%>/back/js/newstype_validate.js">
-	</script>
-
 <center> 
-<form action="NewsType_update" method="post" onSubmit="return validate(this)">
+<form action="Table_insert" method="post">
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>更新类别信息</h1>		</td>
+			<h1>增加新的表格</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">名称：</font></td>
-		<td><input readonly="true" type="text" name="name" onBlur="validateName(this.value)" value="${type.newsTypeName}"></td>
+		<td><input type="text" name="tables.tableName"></td>
 		<td><span id="name_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
-		<td><font size="2">描述：</font></td>
-		<td><input type="text" name="note" onBlur="validateNote(this.value)" value="${type.newsTypeDescripe}"></td>
+		<td><font size="2">摘要：</font></td>
+		<td><input type="text" name="tables.tableAbstract"></td>
 		<td><span id="note_msg"><font color="RED">*</font></span></td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
+		<td><font size="2">行数：</font></td>
+		<td><input type="text" name="tables.tableRow"></td>
+		<td><span id="row_msg"><font color="RED">*</font></span></td>
+	</tr>
+	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
+		<td><font size="2">列数：</font></td>
+		<td><input type="text" name="tables.tableCol"></td>
+		<td><span id="col_msg"><font color="RED">*</font></span></td>
+	</tr>
+	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
+		<td><font size="2">内容：</font></td>
+		<td><textarea name="tables.tableContent"></textarea></td>
+		<td><span id="content_msg"><font color="RED">*</font></span></td>
+	</tr>
+	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="4">
-			<input type="hidden" name="typeid" value="${type.newsTypeId}">
-			<input type="submit" value="修改">
-			<input type="reset" value="重置">		</td>
+			<input type="submit" value="添加" />
+			<input type="reset" value="重置" />		</td>
 	</tr>
 </table>
 </form>

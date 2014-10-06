@@ -1,7 +1,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head><title>增加新的频道</title>
+<head><title>增加新的类别</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -35,7 +35,7 @@
 <table border="1" width="100%" cellpadding="5" cellspacing="0" bgcolor="F2F2F2">
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td colspan="3">
-			<h1>增加新的频道</h1>		</td>
+			<h1>增加新的类别</h1>		</td>
 	</tr>
 	<tr onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td><font size="2">名称：</font></td>

@@ -11,7 +11,10 @@ import java.io.IOException;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.mystock.model.NewsInfo;
+import org.mystock.model.NewsVO;
 import org.mystock.model.Table;
+import org.mystock.model.TableVO;
 
 /**
  * 表格服务类接口
@@ -79,6 +82,13 @@ public interface TableService {
 	 * @return
 	 */
 	public long getAllCount(String keyword);
+	
+	/**
+     * 将表格的PO转化成VO供显示
+     * @param table
+     * @return
+     */
+    public TableVO toTableVO(Table table);
 
 
        /**

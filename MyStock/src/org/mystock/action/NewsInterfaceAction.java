@@ -48,13 +48,13 @@ public class NewsInterfaceAction extends ActionSupport {
 	private TableService tableService;
 	
 	int type; //新闻类别编号
-	List<NewsIndex> allVO; //新闻目录列表
+	List<NewsIndex> index; //新闻目录列表
 	String pg;  //URL
 	String cp; //为当前所在的页
 	String ls; //每次显示的记录数
 	int pid; //新闻ID
-	NewsInfo newsinfo; //单个新闻信息
-	List<NewsVO> newsInfos;//新闻简表
+	NewsInfo articleInfo; //单个文章信息
+	List<NewsVO> articles;//文章简表
 	long recorders; //查询到的全部记录数
 	String url;
 	int page;
@@ -210,22 +210,20 @@ public class NewsInterfaceAction extends ActionSupport {
 
 
 
-	/**
-	 * @return the allVO
-	 */
-	public List<NewsIndex> getAllVO() {
-		return allVO;
-	}
-
-
 
 	/**
-	 * @param allVO the allVO to set
+	 * @return the index
 	 */
-	public void setAllVO(List<NewsIndex> allVO) {
-		this.allVO = allVO;
+	public List<NewsIndex> getIndex() {
+		return index;
 	}
 
+	/**
+	 * @param index the index to set
+	 */
+	public void setIndex(List<NewsIndex> index) {
+		this.index = index;
+	}
 
 	/**
 	 * @return the pg
@@ -297,43 +295,33 @@ public class NewsInterfaceAction extends ActionSupport {
 		this.pid = pid;
 	}
 
-
-
 	/**
-	 * @return the newsinfo
+	 * @return the articleInfo
 	 */
-	public NewsInfo getNewsinfo() {
-		return newsinfo;
+	public NewsInfo getArticleInfo() {
+		return articleInfo;
 	}
 
-
-
 	/**
-	 * @param newsinfo the newsinfo to set
+	 * @param articleInfo the articleInfo to set
 	 */
-	public void setNewsinfo(NewsInfo newsinfo) {
-		this.newsinfo = newsinfo;
+	public void setArticleInfo(NewsInfo articleInfo) {
+		this.articleInfo = articleInfo;
 	}
 
-
-
 	/**
-	 * @return the newsInfos
+	 * @return the articles
 	 */
-	public List<NewsVO> getNewsInfos() {
-		return newsInfos;
+	public List<NewsVO> getArticles() {
+		return articles;
 	}
 
-
-
 	/**
-	 * @param newsInfos the newsInfos to set
+	 * @param articles the articles to set
 	 */
-	public void setNewsInfos(List<NewsVO> newsInfos) {
-		this.newsInfos = newsInfos;
+	public void setArticles(List<NewsVO> articles) {
+		this.articles = articles;
 	}
-
-
 
 	/**
 	 * @return the recorders
@@ -429,24 +417,25 @@ public class NewsInterfaceAction extends ActionSupport {
 	}
 
 	/**
-	 * 取某一类型的新闻目录
-	 * @return JSON格式的新闻目录
+	 * 取某一类型的文章目录
+	 * @return JSON格式的文章目录
 	 */
 	@Transactional(readOnly=true)
 	public String acquireMenu(){
 		String newsType = typeService.getNewsTypeById(type).getNewsTypeName();//获取对应的类别名
 		List<NewsInfo> all = service.getAllNewsInfoByType(newsType);//获取某类型所有新闻
-		allVO = new ArrayList<NewsIndex>();
+		index = new ArrayList<NewsIndex>();
 		for (int i = 0; i<all.size(); ++i){
-			allVO.add(service.toNewsIndex(all.get(i)));
+			index.add(service.toNewsIndex(all.get(i)));
 		}
 
 		return SUCCESS;
 	}
 	
 	/**
-	 * 获取某一类型的新闻列表，不包含新闻内容，可以指定结果集的页号和每页大小，用于翻页显示
-	 * @return 属性newsInfos，表示新闻列表；属性recorders，表示所有该类型新闻的个数；属性url，表示查询所用的URL，为常量；属性page，表示当前所在的页；属性size，表示每次显示的记录数。
+	 * 获取某一类型的文章列表，不包含文章内容，可以指定结果集的页号和每页大小，用于翻页显示
+	 * @return 属性articles，表示文章列表；属性recorders，表示所有该类型文章的个数；属性url，
+	 * 表示查询所用的URL，为常量；属性page，表示当前所在的页；属性size，表示每次显示的记录数。
 	 */
 	public String acquireNewsList(){
 		String URL = "/interface/acquireNewsList.action" ;
@@ -472,7 +461,7 @@ public class NewsInterfaceAction extends ActionSupport {
 			}
 			
 			allRecorders = service.getAllNewsInfoByType(newsType).size() ;
-			setNewsInfos(allVO);
+			setArticles(allVO);
 			setRecorders(allRecorders);
 			setUrl(URL);
 			setPage(currentPage);
@@ -483,25 +472,25 @@ public class NewsInterfaceAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		
-		setMsg("获取某一类型的新闻列表错误");
+		setMsg("获取某一类型的文章列表");
 		return ERROR;
 	}
 
 	/**
-	 * 获取某一条新闻的详细内容
-	 * @return 属性newsinfo，表示新闻信息详情；属性attachments，表示该新闻所带的所有附件列表
+	 * 获取某一篇文章的详细内容
+	 * @return 属性articleInfo，表示文章详情
 	 */
 	public String acquireNewsInfo(){
-		try {//获取当前会员VO，传给下个页面
+		try {
 			NewsInfo pro = service.searchNewsInfo(pid);
 			if(pro != null) {
-				setNewsinfo(pro);
+				setArticleInfo(pro);
 			}
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		setMsg("获取某一条新闻的详细内容错误");
+		setMsg("获取某一篇文章的详细内容错误");
 		return ERROR;
 	}
 	

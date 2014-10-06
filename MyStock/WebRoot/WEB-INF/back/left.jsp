@@ -146,7 +146,7 @@ H1 a {
 <table width="100%" height="280" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF2FB">
   <tr>
     <td width="182" valign="top">   
-       <h1 class="type"><a href="javascript:void(0)">新闻管理</a></h1>
+       <h1 class="type"><a href="javascript:void(0)">我的文章</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -154,13 +154,13 @@ H1 a {
           </tr>
         </table>
         <ul class="MM">
-		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_insertpre.action" target="main">增加新闻</a></li>
-		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_list.action" target="main">新闻列表</a></li>
-		  <li><a href="/MyStock/back/admin/newstype/newstype_insert.action" target="main">增加新闻类别</a></li>
-		  <li><a href="/MyStock/back/admin/newstype/NewsType_list.action" target="main">新闻类别列表</a></li>
+		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_insertpre.action" target="main">增加文章</a></li>
+		  <li><a href="/MyStock/back/admin/newsinfo/NewsInfo_list.action" target="main">文章列表</a></li>
+		  <li><a href="/MyStock/back/admin/newstype/newstype_insert.action" target="main">增加文章类别</a></li>
+		  <li><a href="/MyStock/back/admin/newstype/NewsType_list.action" target="main">文章类别列表</a></li>
         </ul>
       </div>
-      <h1 class="type"><a href="javascript:void(0)">权限管理</a></h1>
+      <h1 class="type"><a href="javascript:void(0)">我的账户</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -172,7 +172,19 @@ H1 a {
 		  <li><a href="/MyStock/back/admin/admin/admin_insert.action" target="main">增加管理员</a></li>
         </ul>
       </div>
-      <h1 class="type"><a href="javascript:void(0)">上传文件管理</a></h1>
+      <h1 class="type"><a href="javascript:void(0)">我的表格</a></h1>
+      <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
+          </tr>
+        </table>
+        <ul class="MM">
+		  <li><a href="/MyStock/back/admin/table/Table_list.action" target="main">表格列表</a></li>
+		  <li><a href="/MyStock/back/admin/table/table_insert.action" target="main">增加表格</a></li>
+        </ul>
+      </div>
+      <h1 class="type"><a href="javascript:void(0)">我的文件</a></h1>
       <div class="content">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
@@ -186,6 +198,17 @@ H1 a {
 		  <li><a href="/MyStock/back/Image_list.action" target="main">上传图片列表</a></li>
         </ul>
       </div>
+      <h1 class="type"><a href="javascript:void(0)">我的图片</a></h1>
+      <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="<%=request.getContextPath()%>/back/backImages/menu_topline.gif" width="182" height="5" /></td>
+          </tr>
+        </table>
+        <ul class="MM">
+		  <li><a href="/MyStock/back/PhotoUpload.action" target="main">上传图片</a></li>
+		</ul>
+	  </div>
         <script type="text/javascript">
 		var contents = document.getElementsByClassName('content');
 		var toggles = document.getElementsByClassName('type');

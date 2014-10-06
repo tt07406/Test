@@ -226,4 +226,35 @@
 			<result>/WEB-INF/back/admin/newstype/{1}.jsp</result>
 		</action>
 	</package>
+	<package name="table" namespace="/back/admin/table"
+		extends="global">
+		<action name="Table_insert" method="insert"
+			class="tableAction">			
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_update" method="update"
+			class="tableAction">		
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_show" method="show"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_show.jsp</result>
+		</action>
+		<action name="Table_updatepre" method="updatepre"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_update.jsp</result>
+		</action>
+		<action name="Table_delete" method="delete"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_operate_do.jsp</result>
+		</action>
+		<action name="Table_list" method="list"
+			class="tableAction">
+			<result name="success">/WEB-INF/back/admin/table/table_list.jsp</result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/back/admin/table/{1}.jsp</result>
+		</action>
+	</package>
 </struts>

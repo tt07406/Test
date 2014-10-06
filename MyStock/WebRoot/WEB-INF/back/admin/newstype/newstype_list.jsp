@@ -1,7 +1,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head><title>新闻频道列表</title>
+<head><title>文章类别列表</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -32,7 +32,7 @@
 <body>
 
 <center>
-	<h1>新闻频道列表</h1>
+	<h1>文章类别列表</h1>
 <TABLE BORDER="1" cellpadding="5" cellspacing="0" bgcolor="F2F2F2" width="100%">
 	<TR onMouseOver="changeColor(this,'white')" onMouseOut="changeColor(this,'F2F2F2')">
 		<td align="center" valign="middle"><span class="STYLE10">编号</span></td>

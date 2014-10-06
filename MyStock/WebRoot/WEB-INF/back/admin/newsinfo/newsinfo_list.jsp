@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
-<head><title>新闻列表</title>
+<head><title>文章列表</title>
 <style type="text/css">
 <!--
 .STYLE6 {font-size: 12px}
@@ -27,7 +27,7 @@
 	</script>
 <body>
 <center>
-	<h1>新闻列表</h1>
+	<h1>文章列表</h1>
 <jsp:include page="split_page_plugin.jsp">
 	<jsp:param name="allRecorders" value="${recorders}"/>
 	<jsp:param name="url" value="${url}"/>
