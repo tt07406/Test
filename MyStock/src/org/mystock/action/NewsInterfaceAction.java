@@ -422,6 +422,9 @@ public class NewsInterfaceAction extends ActionSupport {
 	 */
 	@Transactional(readOnly=true)
 	public String acquireMenu(){
+		if (typeService.getNewsTypeById(type)== null){
+			return ERROR;
+		}
 		String newsType = typeService.getNewsTypeById(type).getNewsTypeName();//获取对应的类别名
 		List<NewsInfo> all = service.getAllNewsInfoByType(newsType);//获取某类型所有新闻
 		index = new ArrayList<NewsIndex>();
@@ -576,23 +579,29 @@ public class NewsInterfaceAction extends ActionSupport {
 	public String uploadFiles(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files"); //文件保存路径
 		
-		//获取所有文件 
-		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
-				new String[]{"xls","xlsx","ppt","pptx","doc","docx","chm","pdf","txt","rtf","pps","xml","rdf","wsdl","xpdl","xsl","bmp",
-							"png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
-		filenames.clear();  
-		for (File allFileColFile : allFileCol) { 
-		      String filename = allFileColFile.getName();
-		      filenames.add(filename);
-		    //备份文件到FTP
-			if (FtpUtil.backupFile(ip,username,password,filepath + File.separatorChar + filename,
-					"files/" + MessageUtil.getID("config.id")
-							+ File.separatorChar + filename)) {
-				System.out.println("upladfiles:" + filename + " backup success");
-			} else {
-				System.out.println("uploadfiles:" + filename + " backup fail");
-			}
+		if (FtpUtil.backupFile(ip, username, password, filepath,"files/"+MessageUtil.getID("config.id"))){
+			System.out.println("upladfiles: backup success");
+		}else{
+			System.out.println("upladfiles: backup fail");
 		}
+		
+		//获取所有文件 
+//		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
+//				new String[]{"xls","xlsx","ppt","pptx","doc","docx","chm","pdf","txt","rtf","pps","xml","rdf","wsdl","xpdl","xsl","bmp",
+//							"png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+//		filenames.clear();  
+//		for (File allFileColFile : allFileCol) { 
+//		      String filename = allFileColFile.getName();
+//		      filenames.add(filename);
+//		    //备份文件到FTP
+//			if (FtpUtil.backupFile(ip,username,password,filepath + File.separatorChar + filename,
+//					"files/" + MessageUtil.getID("config.id")
+//							+ File.separatorChar + filename)) {
+//				System.out.println("upladfiles:" + filename + " backup success");
+//			} else {
+//				System.out.println("uploadfiles:" + filename + " backup fail");
+//			}
+//		}
 		ip = null;
 		username = null;
 		password = null;
@@ -608,23 +617,29 @@ public class NewsInterfaceAction extends ActionSupport {
 	public String uploadNewsPhoto(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/upload"); //文件保存路径
 		
-		//获取所有新闻图片
-		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
-				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
-		uploadfiles.clear();  
-		for (File allFileColFile : allFileCol) { 
-		      String filename = allFileColFile.getName();
-		      uploadfiles.add(filename);
-		    //备份文件到FTP
-			if (FtpUtil.backupFile(ip, username, password, filepath
-					+ File.separatorChar + filename, "upload/"
-					+ MessageUtil.getID("config.id") + File.separatorChar
-					+ filename)) {
-				System.out.println("uploadPhoto:" + filename + " backup success");
-			} else {
-				System.out.println("uploadPhoto:" + filename + " backup fail");
-			}
+		if (FtpUtil.backupFile(ip, username, password, filepath,"upload/"+MessageUtil.getID("config.id"))){
+			System.out.println("uploadPhoto: backup success");
+		}else{
+			System.out.println("uploadPhoto: backup fail");
 		}
+		
+		//获取所有新闻图片
+//		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
+//				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+//		uploadfiles.clear();  
+//		for (File allFileColFile : allFileCol) { 
+//		      String filename = allFileColFile.getName();
+//		      uploadfiles.add(filename);
+//		    //备份文件到FTP
+//			if (FtpUtil.backupFile(ip, username, password, filepath
+//					+ File.separatorChar + filename, "upload/"
+//					+ MessageUtil.getID("config.id") + File.separatorChar
+//					+ filename)) {
+//				System.out.println("uploadPhoto:" + filename + " backup success");
+//			} else {
+//				System.out.println("uploadPhoto:" + filename + " backup fail");
+//			}
+//		}
 		ip = null;
 		username = null;
 		password = null;
@@ -718,23 +733,29 @@ public class NewsInterfaceAction extends ActionSupport {
 	public String uploadImage(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/images"); //文件保存路径
 		
-		//获取所有图片
-		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
-				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
-		uploadfiles.clear();  
-		for (File allFileColFile : allFileCol) { 
-		      String filename = allFileColFile.getName();
-		      uploadfiles.add(filename);
-		    //备份文件到FTP
-			if (FtpUtil.backupFile(ip, username, password, filepath
-					+ File.separatorChar + filename, "images/"
-					+ MessageUtil.getID("config.id") + File.separatorChar
-					+ filename)) {
-				System.out.println("image:" + filename + " backup success");
-			} else {
-				System.out.println("image:" + filename + " backup fail");
-			}
+		if (FtpUtil.backupFile(ip, username, password, filepath,"images/"+MessageUtil.getID("config.id"))){
+			System.out.println("image: backup success");
+		}else{
+			System.out.println("image: backup fail");
 		}
+		
+		//获取所有图片
+//		Collection<File> allFileCol = FileUtils.listFiles(new File(filepath), 
+//				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
+//		uploadfiles.clear();  
+//		for (File allFileColFile : allFileCol) { 
+//		      String filename = allFileColFile.getName();
+//		      uploadfiles.add(filename);
+//		    //备份文件到FTP
+//			if (FtpUtil.backupFile(ip, username, password, filepath
+//					+ File.separatorChar + filename, "images/"
+//					+ MessageUtil.getID("config.id") + File.separatorChar
+//					+ filename)) {
+//				System.out.println("image:" + filename + " backup success");
+//			} else {
+//				System.out.println("image:" + filename + " backup fail");
+//			}
+//		}
 		ip = null;
 		username = null;
 		password = null;

@@ -212,13 +212,15 @@ public class FileUploadAction extends ActionSupport {
 			os.close();
 			is.close();		
 			
-
-			//备份文件到FTP
-			if(FtpUtil.backupFile(root+File.separatorChar+newName, "files/"+MessageUtil.getID("config.id")+File.separatorChar+newName)){
-				System.out.println("file:"+newName+" backup success");
-			}else{
-				System.out.println("file:"+newName+" backup fail");
+			if (FtpUtil.isValid()){
+				//备份文件到FTP
+				if(FtpUtil.backupFile(root+File.separatorChar+newName, newName, "files/"+MessageUtil.getID("config.id"))){
+					System.out.println("file:"+newName+" backup success");
+				}else{
+					System.out.println("file:"+newName+" backup fail");
+				}
 			}
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			pageErrorInfo = e.getMessage();
@@ -271,13 +273,15 @@ public class FileUploadAction extends ActionSupport {
 			os.close();
 			is.close();		
 			
-
-			//备份文件到FTP
-			if(FtpUtil.backupFile(root+File.separatorChar+newName, "images/"+MessageUtil.getID("config.id")+File.separatorChar+newName)){
-				System.out.println("image:"+newName+" backup success");
-			}else{
-				System.out.println("image:"+newName+" backup fail");
+			if (FtpUtil.isValid()){
+				//备份文件到FTP
+				if(FtpUtil.backupFile(root+File.separatorChar+newName, newName, "images/"+MessageUtil.getID("config.id"))){
+					System.out.println("image:"+newName+" backup success");
+				}else{
+					System.out.println("image:"+newName+" backup fail");
+				}
 			}
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			pageErrorInfo = e.getMessage();

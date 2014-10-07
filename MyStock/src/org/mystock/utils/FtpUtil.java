@@ -187,8 +187,7 @@ public class FtpUtil {
 	 */
 	public boolean upload(String fileName, String newName) {
 		try {
-			String savefilename = new String(fileName.getBytes("ISO-8859-1"),
-					"GBK");
+			String savefilename =fileName;
 
 			File file_in = new File(savefilename);// 打开本地待长传的文件
 			if (!file_in.exists()) {
@@ -235,7 +234,7 @@ public class FtpUtil {
 	 */
 	private void upload(String fileName, String newName, String path)
 			throws Exception {
-		String savefilename = new String(fileName.getBytes("ISO-8859-1"), "GBK");
+		String savefilename = fileName;
 		File file_in = new File(savefilename);// 打开本地待长传的文件
 		if (!file_in.exists()) {
 			throw new Exception("此文件或文件夹[" + file_in.getName() + "]有误或不存在!");
@@ -405,19 +404,18 @@ public class FtpUtil {
 	 *            上传后的新文件名
 	 * @return 是否上传成功
 	 */
-	public static boolean backupFile(String fileName, String newname) {
+	public static boolean backupFile(String fileName, String newname,String dir) {
 		if (fileName==null||newname==null){
 			return false;
 		}
 		
-		FtpUtil ftp = new FtpUtil("133.224.202.2", "tstbill", "tstbill");
-		
-		if (!isValid){
-			return false;
-		}
+		FtpUtil ftp = new FtpUtil("192.168.1.107", "team1", "qxw");
 		
 		if (ftp.connectServer()) {
-			if (ftp.upload(fileName, newname)) {
+			if (!ftp.isDirExist(dir)){
+				ftp.createDir(dir);
+			}
+			if (ftp.upload(fileName, dir + "/" +newname)) {
 				return true;
 			}
 			System.out.println("ftp upload fail");

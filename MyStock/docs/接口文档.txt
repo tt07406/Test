@@ -49,7 +49,7 @@ URL：<%=request.getContextPat()%>/interface/uploadFiles.action或
 http://localhost:8080/MyStock/interface/uploadFiles.action
 参数: ip,FTP地址；username，FTP用户名；password，FTP密码
 输出：JSON格式的文件列表filenames
-例子：http://localhost:8080/MyStock/interface/uploadFiles.action?ip=192.168.2.3&username=admin&password=admin
+例子：http://localhost:8080/MyStock/interface/uploadFiles.action?ip=192.168.1.107&username=team1&password=qxw
 
 8.备份新闻图片
 功能：备份新闻图片到FTP，ajax 异步请求
@@ -57,7 +57,7 @@ URL：<%=request.getContextPat()%>/interface/uploadNewsPhoto.action或
 http://localhost:8080/MyStock/interface/uploadNewsPhoto.action
 参数：ip,FTP地址；username，FTP用户名；password，FTP密码
 输出：JSON格式的新闻图片列表uploadfiles
-例子：http://localhost:8080/MyStock/interface/uploadNewsPhoto.action?ip=192.168.2.3&username=admin&password=admin
+例子：http://localhost:8080/MyStock/interface/uploadNewsPhoto.action?ip=192.168.1.107&username=team1&password=qxw
 
 9.设置是否自动备份
 功能：设置是否自动备份
@@ -89,4 +89,4 @@ URL：<%=request.getContextPat()%>/interface/uploadImage.action或
 http://localhost:8080/MyStock/interface/uploadImage.action
 参数：ip,FTP地址；username，FTP用户名；password，FTP密码
 输出：JSON格式的图片列表uploadfiles
-例子：http://localhost:8080/MyStock/interface/uploadImage.action?ip=192.168.2.3&username=admin&password=admin
+例子：http://localhost:8080/MyStock/interface/uploadImage.action?ip=192.168.1.107&username=team1&password=qxw

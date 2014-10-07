@@ -28,10 +28,14 @@
 		extends="json-default">
 		<action name="acquireMenu" 
 			class="newsInterfaceAction" method="acquireMenu">
-		<result type="json">
+			<result type="json">
 				<param name="noCache">true</param>
 				<param name="contentType">text/html</param>
 			</result>
+			<result type="plainText" name="error">
+                <param name="location">/WEB-INF/front/error.ftl</param>
+                <param name="charSet">UTF-8</param>
+            </result>
 		</action>
 		<action name="acquireNewsList" 
 			class="newsInterfaceAction" method="acquireNewsList">
@@ -118,6 +122,13 @@
                 <param name="location">/WEB-INF/front/error.ftl</param>
                 <param name="charSet">UTF-8</param>
             </result>
+		</action>
+		<action name="uploadImage" 
+			class="newsInterfaceAction" method="uploadImage">
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
 		</action>
 	</package>
 </struts>    

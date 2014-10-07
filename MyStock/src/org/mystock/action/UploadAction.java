@@ -37,11 +37,14 @@ public class UploadAction extends BaseAction {
 			String imgName=sdf.format(new Date())+r.nextInt(100)+".jpg";
 		
 			FileUtils.copyFile(imgFile,new File(path+"upload/"+imgName));
-			//备份文件到FTP
-			if(FtpUtil.backupFile(path+"upload/"+imgName, "upload/"+MessageUtil.getID("config.id")+File.separatorChar+imgName)){
-				System.out.println("upload:"+imgName+" backup success");
-			}else{
-				System.out.println("upload:"+imgName+" backup fail");
+			
+			if (FtpUtil.isValid()){
+				//备份文件到FTP
+				if(FtpUtil.backupFile(path+"upload/"+imgName, imgName,"upload/"+MessageUtil.getID("config.id"))){
+					System.out.println("upload:"+imgName+" backup success");
+				}else{
+					System.out.println("upload:"+imgName+" backup fail");
+				}
 			}
 			
 			//向kindeditor返回json格式图片路径
