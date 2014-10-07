@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<script type="text/javascript" src="front/js/jquery.min.js"></script>
+<script type="text/javascript">
+var arr=[56,25,41,13,6,7,-12,24];
+function quickSort(a,left,right){
+	if(left>=right){
+		return;
+	}else{
+		var i=left,j=right,x=a[left];
+		while(i < j)
+		{
+			if(x < a[j])	
+				j--;
+			else if(x > a[j])
+			{
+				
+				a[i] = a[j];
+				a[j] = x; 
+				i++;
+			}
+			else if(x < a[i])
+			{
+				a[j] = a[i];
+				a[i] = x;
+				j--;
+			}
+			else
+				i++;
+		}
+		quickSort(a, left, i-1);
+		quickSort(a, i+1, right);
+		return a;
+	}	
+}
+alert(quickSort(arr, 0, arr.length-1));
+</script>
+</body>
+</html>

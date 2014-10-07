@@ -1,0 +1,3 @@
+{"index":[{"newsAuthor":"s","newsInfoId":1,"newsInfoTime":"2014-09-27 15:03:29.0","newsInfoTitle":"gwegw1"},
+		  {"newsAuthor":"s","newsInfoId":2,"newsInfoTime":"2014-09-27 15:03:29.0","newsInfoTitle":"gwegw2"},
+		  {"newsAuthor":"s","newsInfoId":3,"newsInfoTime":"2014-09-27 15:03:29.0","newsInfoTitle":"gwegw3"}]}

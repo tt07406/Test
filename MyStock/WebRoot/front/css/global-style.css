@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+/* GLOBAL STYLES
+-------------------------------------------------- */
+body{
+	font-family:'微软雅黑';
+}
+
+body h1, h2, h3, p{
+	font-family:'微软雅黑';
+}
+
+header {
+	height: 50px;
+	font-size:18px !important;
+}
+
+.container-content {
+	min-width: 960px;
+}
+
+/* Styles for headers */
+.navbar-logo {
+	font-size: 26px;
+	line-height: 39px;
+	font-size: 2.6rem;
+	line-height: 3.9000000000000004rem;
+	font-weight: 400;
+	text-indent: -999em;
+	margin: 0;
+	padding: 0;
+	width: 98px;
+	height: 50px;
+	background: transparent url("../img/logo_white_small.png") no-repeat;
+}
+/* End of styles for headers */
+
+/*------- 通用footer样式 ---------*/
+.footer {
+	color: #AAAAAA;
+	font-size: 16px;
+	text-align: center;
+	padding: 30px 0;
+	background-color: #333333
+}
+
+.footer-item {
+	line-height: 2.0em;
+}
+
+.footer-item > li > h3 {
+	font-size: 16px;
+	color: #AAAAAA;
+	font-family:"Microsoft YaHei", "微软雅黑";
+}
+
+.footer-item > li > a {
+	font-size: 14px;
+	color: #CCCCCC;
+}
+/*------- End of 通用footer样式 ---------*/
+
+
