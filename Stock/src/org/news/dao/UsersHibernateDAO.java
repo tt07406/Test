@@ -28,7 +28,7 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(UsersHibernateDAO.class);
 	
 	/**
-	 * 用户登录验证
+	 * 用户登录验证,用户名或邮箱登录
 	 * @param user
 	 * @return 验证的操作结果
 	 */
@@ -42,7 +42,12 @@ public class UsersHibernateDAO extends HibernateDaoSupport {
 		if (result > 0){
 			return true;
 		}else{
-			return false;
+			result = (Long)getHibernateTemplate().find("select count(usersId) from users where usersEmail = ? and usersPass = ?", userName,userPass).get(0);
+			if (result > 0){
+				return true;
+			}else{
+				return false;
+			}
 		}
 	}
 	

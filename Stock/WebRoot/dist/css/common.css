@@ -1,0 +1,179 @@
+@CHARSET "UTF-8";
+/*
+	TODO better to describe here about how a style can be called 'common' and put here
+*/
+body{
+	/*font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",
+		STXihei, "华文细黑", serif;*/
+	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
+	font-size: 18px;
+	background: #FAFAFA;
+}
+h1,h2,h3,h4,h5,span,a,p,div,figure,figcaption,li{
+	font-family:'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Tahoma, Arial, STHeiti, sans-serif !important;
+}
+/* Styles for the nav bar */
+nav {
+	font-size: 18px;
+	height: 50px;
+}
+
+nav .nav-logo {
+	font-size: 26px;
+	line-height: 39px;
+	font-size: 2.6rem;
+	line-height: 3.9000000000000004rem;
+	font-weight: 400;
+	text-indent: -999em;
+	width: 98px;
+	height: 50px;
+	background: transparent url("../img/logo_white_small.png") no-repeat;
+}
+nav #account-bar{
+	font-size: 14px;
+}
+/* End of styles for nav bar */
+
+/* Styles for header elements */
+header {
+	font-size: 16px;
+	color: white;
+}
+
+header li {
+	color: white;
+}
+
+header li a {
+	color: white;
+	padding-right: 20px;
+}
+
+header li a:hover {
+	text-decoration: none;
+	color: #F56C0F;
+}
+/* End of Styles for header elements */
+
+/* Styles for footer elements */
+footer {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+	background-color: #333333;
+	line-height: 1.8em;
+	color: #ddd;
+	letter-spacing:1px;
+}
+footer li h3 {
+	font-size: 20px;
+	font-family: "Microsoft YaHei", "微软雅黑";
+}
+footer li a {
+	color: #ddd;
+	font-size: 14px;
+}
+footer li a:hover {
+	text-decoration: none;
+	color: #F56C0F;
+}
+footer div.text-center{
+	font-size: 14px;
+	color: #ddd;
+}
+/* End of styles for footer elements */
+
+/* Styles for top bar upon the nav-bar elements */
+#top {
+	width: 100%;
+	color: white;
+}
+
+#top ul {
+	margin: 0;
+	padding: 0;
+	padding-right: 20%;
+	font-size: 14px;
+}
+
+#top ul li {
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+
+#top a {
+	color: white;
+	padding: 0 15px;
+}
+
+#top a:hover {
+	color: #368ED3;
+	text-decoration: none;
+}
+/* End of styles for top bar */
+
+/* Styles for the backToTop button */
+#backToTop {
+	position: fixed;
+	bottom: 150px;
+	width: 51px;
+	height: 51px;
+	right: 60px;
+	background-image: url(../img/backtotop.gif);
+	background-position: 0 -51px;
+	overflow: hidden;
+	transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+
+#backToTop:hover {
+	background-position: 0 0;
+}
+/* End of styles for backToTop button */
+
+/* Styles for dropdown menu */
+.dropdown-menu {
+	text-decoration: none;
+	display: none;
+	padding: 0 20px;
+}
+
+.dropdown-menu>li {
+	margin: 15px;
+}
+
+.dropdown-menu>li>a {
+	color: white;
+	font-size: 18px;
+	padding: 3px 0;
+	letter-spacing: 2px;
+}
+
+.dropdown-menu>li>a:hover {
+	color: red;
+	background: #222;
+}
+
+.dropdown-menu>li>ul {
+	margin-top: 15px;
+}
+
+.dropdown-menu>li>ul>li>a {
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	padding-left: 0;
+}
+
+.dropdown-menu>li>ul>li>a:hover {
+	text-decoration: none;
+	color: red;
+}
+/* End of styles for dropdown menu */
+
+.clear {
+	clear: both;
+}

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.maxbg {
+	width: 100%;
+	height: 100%;
+	background-size:cover;
+	background: transparent url("../img/account_bg.jpg") no-repeat;
+	moz-background-size: 100% 100%; 
+	-o-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+	-moz-border-image: url(../img/account_bg.jpg) 0;
+	background-repeat: no-repeat\9;
+	background-image: none\9;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/account_bg.jpg', sizingMethod='scale')\9; 
+}
+
+.maxbg > div {
+	padding-top: 120px;
+}

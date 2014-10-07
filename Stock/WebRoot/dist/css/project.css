@@ -1,0 +1,334 @@
+header{
+  background: -webkit-gradient(linear, left top, right top, from(#17674d), to(#79debf));
+  background: -moz-linear-gradient(#17674d, #79debf);
+  background: -ms-linear-gradient(left,#17674d 0%,#79debf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#17674d', endColorstr='#79debf', GradientType='1');
+  opacity: 1;-o-opacity: 1;-moz-opacity: 1;
+  -webkit-opacity: 1 !important;
+}
+#set .line-part {
+  float: left;
+}
+/*--响应式设计--*/
+/*--额外设备--*/
+@media screen and (max-width: 767px) {
+  #show {
+    box-sizing: content-box !important;
+    -o-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+    width: 828px;
+    /*border-widthx2避免飘动*/
+    margin: 0 auto;
+    padding-bottom: 220px;
+  }
+  #show #line-total {
+    width: 828px;
+    /*1208=180*4+2*4  border=2px  line宽度的两倍加上border，最后乘以4*/
+    height: 100px;
+    padding-top: 98px;
+    padding-bottom: 98px;
+    /*>图的高度+border=96px*/
+    padding-left: 75px;
+    /*>图的宽度的一半=150/2=72px*/
+  }
+  #show #line-total .line-part {
+    float: left;
+    /*.line{ #set > .line(90px,50px);}*/
+  }
+  #show #line-total .line-part .left-top {
+    border-left: 2px solid #1a6b50;
+    border-bottom: 2px solid #1a6b50;
+    width: 180px;
+    height: 50px;
+    /*padding-right:@line-width;*/
+    /*img{ #set > .img-left-top(150px,94px)}*/
+  }
+  #show #line-total .line-part .left-top div {
+    width: 150px;
+    height: 94px;
+    position: relative;
+    top: -94px;
+    /*图片的高度*/
+    left: -75px;
+    /*图片宽度的一半*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .right-bottom {
+    width: 90px;
+    height: 50px;
+    border-right: 2px solid #1a6b50;
+  }
+  #show #line-total .line-part .right-bottom div {
+    width: 150px;
+    height: 94px;
+    position: relative;
+    top: 50px;
+    /*line的高度*/
+    left: 15px;
+    /*20=(90*2-150)/2   line的宽度乘以2再减去图片的宽度，用差除以2*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .last {
+    width: 90px;
+  }
+}
+/*--小型设备--*/
+@media screen and (min-width: 768px) {
+  #show {
+    box-sizing: content-box !important;
+    -o-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+    width: 1098px;
+    /*border-widthx2避免飘动*/
+    margin: 0 auto;
+    padding-bottom: 220px;
+  }
+  #show #line-total {
+    width: 1098px;
+    /*1208=180*4+2*4  border=2px  line宽度的两倍加上border，最后乘以4*/
+    height: 160px;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    /*>图的高度+border=96px*/
+    padding-left: 100px;
+    /*>图的宽度的一半=150/2=72px*/
+  }
+  #show #line-total .line-part {
+    float: left;
+    /*.line{ #set > .line(120px,80px);}*/
+  }
+  #show #line-total .line-part .left-top {
+    border-left: 2px solid #1a6b50;
+    border-bottom: 2px solid #1a6b50;
+    width: 240px;
+    height: 80px;
+    /*padding-right:@line-width;*/
+  }
+  #show #line-total .line-part .left-top div {
+    width: 200px;
+    height: 126px;
+    position: relative;
+    top: -126px;
+    /*图片的高度*/
+    left: -100px;
+    /*图片宽度的一半*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .right-bottom {
+    width: 120px;
+    height: 80px;
+    border-right: 2px solid #1a6b50;
+    /*img{ #set > .img-bottom-right(120px,80px,200px,126px);}*/
+  }
+  #show #line-total .line-part .right-bottom div {
+    width: 200px;
+    height: 126px;
+    position: relative;
+    top: 80px;
+    /*line的高度*/
+    left: 20px;
+    /*20=(90*2-150)/2   line的宽度乘以2再减去图片的宽度，用差除以2*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .last {
+    width: 120px;
+  }
+}
+/*--中型设备--*/
+@media screen and (min-width: 992px) {
+  #show {
+    box-sizing: content-box !important;
+    -o-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+    width: 1368px;
+    /*border-widthx2避免飘动*/
+    margin: 0 auto;
+    padding-bottom: 220px;
+  }
+  #show #line-total {
+    width: 1368px;
+    /*1208=180*4+2*4  border=2px  line宽度的两倍加上border，最后乘以4*/
+    height: 260px;
+    padding-top: 162px;
+    padding-bottom: 162px;
+    /*>图的高度+border=96px*/
+    padding-left: 125px;
+    /*>图的宽度的一半=150/2=72px*/
+  }
+  #show #line-total .line-part {
+    float: left;
+    /*.line{ #set > .line(150px,130px);}*/
+  }
+  #show #line-total .line-part .left-top {
+    border-left: 2px solid #1a6b50;
+    border-bottom: 2px solid #1a6b50;
+    width: 300px;
+    height: 130px;
+    /*padding-right:@line-width;*/
+  }
+  #show #line-total .line-part .left-top div {
+    width: 250px;
+    height: 158px;
+    position: relative;
+    top: -158px;
+    /*图片的高度*/
+    left: -125px;
+    /*图片宽度的一半*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .right-bottom {
+    width: 150px;
+    height: 130px;
+    border-right: 2px solid #1a6b50;
+  }
+  #show #line-total .line-part .right-bottom div {
+    width: 250px;
+    height: 158px;
+    position: relative;
+    top: 130px;
+    /*line的高度*/
+    left: 25px;
+    /*20=(90*2-150)/2   line的宽度乘以2再减去图片的宽度，用差除以2*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .last {
+    width: 150px;
+  }
+}
+/*--大型设备--*/
+@media screen and (min-width: 1200px) {
+  #show {
+    width: 1818px;
+    /*border-widthx2避免飘动*/
+    margin: 0 auto;
+    padding-bottom: 220px;
+  }
+  #show .clear {
+    clear: both;
+  }
+  #show #line-total {
+    width: 1818px;
+    /*1208=180*4+2*4  border=2px  line宽度的两倍加上border，最后乘以4*/
+    height: 260px;
+    padding-top: 224px;
+    padding-bottom: 224px;
+    /*>图的高度+border=96px*/
+    padding-left: 175px;
+    /*>图的宽度的一半=150/2=72px*/
+  }
+  #show #line-total .line-part {
+    float: left;
+    /*.line{ #set > .line(200px,130px);}*/
+  }
+  #show #line-total .line-part .left-top {
+    border-left: 2px solid #1a6b50;
+    border-bottom: 2px solid #1a6b50;
+    width: 400px;
+    height: 130px;
+    /*padding-right:@line-width;*/
+    /*img{ #set > .img-left-top(350px,220px); .img-border(20px,2px,solid,#1A6B50); .img-cover(1)}*/
+  }
+  #show #line-total .line-part .left-top div {
+    width: 350px;
+    height: 220px;
+    position: relative;
+    top: -220px;
+    /*图片的高度*/
+    left: -175px;
+    /*图片宽度的一半*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .right-bottom {
+    width: 200px;
+    height: 130px;
+    border-right: 2px solid #1a6b50;
+  }
+  #show #line-total .line-part .right-bottom div {
+    width: 350px;
+    height: 220px;
+    position: relative;
+    top: 130px;
+    /*line的高度*/
+    left: 25px;
+    /*20=(90*2-150)/2   line的宽度乘以2再减去图片的宽度，用差除以2*/
+    border-radius: 20px;
+    -o-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 2px solid #1a6b50;
+    behavior: url('dist/ie-css3.htc');
+    opacity: 1;
+    -o-opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+  }
+  #show #line-total .line-part .last {
+    width: 200px;
+  }
+}

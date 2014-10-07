@@ -7,7 +7,7 @@
 	<br>
 	<%
 		session.invalidate() ;	// 让session失效
-		response.sendRedirect("login.action") ;
+		response.sendRedirect("account.action") ;
 	%>
 </center>
 </body>

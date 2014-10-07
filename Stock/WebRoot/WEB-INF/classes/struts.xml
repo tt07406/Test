@@ -12,17 +12,17 @@
 			class="userRegisterAction">
 			<result name="success">
 				<param name="location">/WEB-INF/pages/regist_do.jsp</param>
-				<param name="refresh">2;URL=/WEB-INF/pages/login.jsp</param>
+				<param name="refresh">2;URL=/WEB-INF/pages/account.jsp</param>
 			</result>
 			<result name="error">
 				/WEB-INF/pages/regist_do.jsp
 			</result>
-			<result name="input">/WEB-INF/pages/regist.jsp</result>
+			<result name="input">/WEB-INF/pages/signup.jsp</result>
 		</action>
 		<action name="userLogin"
 			class="userLoginAction">
 			<result name="success">/WEB-INF/pages/welcome.jsp</result>
-			<result name="login">/WEB-INF/pages/login.jsp</result>
+			<result name="login">/WEB-INF/pages/account.jsp</result>
 		</action>
 	    <action name="uploadAction"
 			class="org.news.action.UploadAction" method="upload">
@@ -31,7 +31,14 @@
 			class="downloadAttachmentAction">
 		</action>
 	</package>
-	
+	<package name="download" namespace="/download" extends="struts-default">
+		<!-- 通用的Action，*表示可以处理任意的请求 -->
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/WEB-INF/pages/download/{1}.jsp</result>
+		</action>
+	</package>
+
 	<!-- 全局国际化 -->
 	<constant name="struts.multipart.maxSize" value="1073741824"/>
 	<constant name="struts.custom.i18n.resources" value="mess"></constant>

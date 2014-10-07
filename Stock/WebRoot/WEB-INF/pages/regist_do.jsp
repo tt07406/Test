@@ -8,7 +8,7 @@
 	if(result == 1){	// 注册成功
 %>
 		<h3>恭喜<%=user%>用户注册成功，两秒后将跳转到登陆页！</h3>
-		<h3>如果没有跳转，请按<a href="login.action">这里</a>！</h3>
+		<h3>如果没有跳转，请按<a href="account.action">这里</a>！</h3>
 <%
 	} else {
 %>
