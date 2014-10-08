@@ -8,10 +8,19 @@
 package org.mystock.action;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -73,6 +82,43 @@ public class NewsInterfaceAction extends ActionSupport {
 	String password;//FTP密码
 	boolean valid;//是否自动上传
 		
+	private File file;
+    private String fileFileName;
+    private String fileFileContentType;
+
+    private String message = "你已成功上传图片";
+    
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public String getFileFileName() {
+        return fileFileName;
+    }
+
+    public void setFileFileName(String fileFileName) {
+        this.fileFileName = fileFileName;
+    }
+
+    public String getFileFileContentType() {
+        return fileFileContentType;
+    }
+
+    public void setFileFileContentType(String fileFileContentType) {
+        this.fileFileContentType = fileFileContentType;
+    }
 	
 	/**
 	 * @return the filelist
@@ -575,7 +621,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * 备份文件
 	 * @return JSON格式的列表
 	 */
-	@SuppressWarnings("unchecked")
 	public String uploadFiles(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/WEB-INF/files"); //文件保存路径
 		
@@ -613,7 +658,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * 备份新闻图片
 	 * @return JSON格式的列表
 	 */
-	@SuppressWarnings("unchecked")
 	public String uploadNewsPhoto(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/upload"); //文件保存路径
 		
@@ -729,7 +773,6 @@ public class NewsInterfaceAction extends ActionSupport {
 	 * 上传图片到FTP
 	 * @return JSON格式的列表
 	 */
-	@SuppressWarnings("unchecked")
 	public String uploadImage(){
 		String filepath = ServletActionContext.getServletContext().getRealPath("/images"); //文件保存路径
 		
@@ -762,4 +805,62 @@ public class NewsInterfaceAction extends ActionSupport {
 		
 		return SUCCESS;
 	}
+	
+	/**
+	 * 上传图片到服务器
+	 * @return
+	 * @throws Exception
+	 */
+	public String uploadPhoto() throws Exception {
+        
+		InputStream is;
+
+		String pageErrorInfo = null;
+		message = "successed";
+		try {
+			ServletActionContext.getRequest().setCharacterEncoding("UTF-8");
+			is = new FileInputStream(file);
+			String root = ServletActionContext.getServletContext().getRealPath("/images");//保存图片的目录
+			
+			//将后缀名改成小写
+			String name =this.getFileFileName();
+			int pos = name.lastIndexOf(".");
+			String suffix = name.substring(pos);
+			String newName = name.substring(0,pos)+suffix.toLowerCase();
+			
+			File deskFile = new File(root,newName);
+
+			//输出到外存中
+			OutputStream os = new FileOutputStream(deskFile);
+			byte [] bytefer = new byte[400];
+			int length = 0 ; 
+			while((length = is.read(bytefer) )>0)
+			{
+				os.write(bytefer,0,length);
+			}
+			os.close();
+			is.close();		
+			
+			if (FtpUtil.isValid()){
+				//备份文件到FTP
+				if(FtpUtil.backupFile(root+File.separatorChar+newName, newName, "images/"+MessageUtil.getID("config.id"))){
+					System.out.println("image:"+newName+" backup success");
+				}else{
+					System.out.println("image:"+newName+" backup fail");
+				}
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			pageErrorInfo = e.getMessage();
+			message = "failed"+pageErrorInfo;
+			return ERROR;
+		} catch (IOException e) {
+			e.printStackTrace();
+			message = "failed"+pageErrorInfo;
+			return ERROR;
+		}
+        return SUCCESS;
+    }
+
 }

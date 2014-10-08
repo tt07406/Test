@@ -30,48 +30,47 @@ filter: alpha(opacity=0); /*for IE*/
 }
 
 </style>
-<script src="front/js/ajaxfileupload.js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="front/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+</head>
+<script type="text/javascript" src="front/js/jquery-1.2.1.js"></script>
+<script type="text/javascript">var jq = $.noConflict(true);</script>
+<script type="text/javascript" src="front/js/ajaxfileupload.js"></script>
+
 <script type="text/javascript">
+	
 	function imgUpload(){
-		$("#upfile").click();
+		jq("#upfile").click();
 	}
 	function startUpload(value){
 
-	   		$.ajaxFileUpload
-		   (
-			{
-			    url: 'back/Image_upload.action',
-			    secureuri: false,
-			    fileElementId: 'upfile',
-			    dataType: 'html',
-			    beforeSend: function() {
-			    	alert(value);
-			        $("#loading").show();
-			    },
-			    complete: function() {
-			        $("#loading").hide();
-			    },
-			    success: function(data, status) {
-			        if (typeof (data.error) != 'undefined') {
-			            if (data.error != '') {
-			                alert(data.error);
-			            } else {
-			                alert(data.msg);
-			            }
-			        }
-			    },
-			    error: function(data, status, e) {
-			        alert(e);
-			    }
-			}
-			)
-			return false;           
-		}
+	   	jq("#loading")
+        .ajaxStart(function(){
+            jq(this).show();
+        })//开始上传文件时显示一个图片
+        .ajaxComplete(function(){
+            jq(this).hide();
+        });//文件上传完成将图片隐藏起来
+
+        jq.ajaxFileUpload
+        (
+            {
+                url:'interface/Image_upload.action',//用于文件上传的服务器端请求地址
+                secureuri:false,//一般设置为false
+                fileElementId:'upfile',//文件上传空间的id属性  <input type="file" id="upfile" name="file" />
+                dataType: 'json',//返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {
+                    $('#waterfall').waterfall();
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(data.message);
+                }
+            }
+        )
+		return false;
+	}
 </script>
-</head>
 <body>
 <s:include value="header.jsp">  
 	<s:param name="index">myimages</s:param>  
@@ -84,8 +83,8 @@ filter: alpha(opacity=0); /*for IE*/
 </div>
 -->
 <div id="waterfall">
-    <div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">图片名称</a></p></div>
-    <div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
+    <div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
+    <!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/002.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/003.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/004.jpg" /></a><p><a href="#">图片名称</a></p></div>
@@ -105,10 +104,13 @@ filter: alpha(opacity=0); /*for IE*/
     <div class="cell"><a href="#"><img src="front/img/waterfall/018.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/019.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/020.jpg" /></a><p><a href="#">图片名称</a></p></div>
-</div>
-<input id="upfile" type="file" size="45" name="file" onchange="return startUpload(this.value);" class="fileUpload">  
+--></div>
+<img src="front/img/loading.gif" id="loading" style="display: none;">
+<input id="upfile" class="fileUpload" type="file" size="45" name="file" onchange="return startUpload(this.value);" >  
 <s:include value="footer.jsp"></s:include>
-
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="front/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="front/js/bootstrap.js"></script>
 <!-- waterfall flow -->
 <script type="text/javascript" src="front/js/jquery.waterfall.js"></script>
@@ -139,7 +141,10 @@ var opt={
   insert_type:1
 }
 //不可删除，里面的‘opt’参数可删除
+
 $('#waterfall').waterfall(opt);
+
+
 </script>
 <script>
 $(document).ready(function(){
@@ -151,13 +156,15 @@ $(document).ready(function(){
             complete :function(){$("#load").hide();},//AJAX请求完成时隐藏loading提示
             success: function(msg){//msg为返回的数据，在这里做数据绑定
                 var data = msg.filenames;
-                var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">图片名称</a></p></div>';
+                var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
                 $.each(data, function(i, n){
                     html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a><p>'+n+'</p></div>';
                     
                 });
                 $('#waterfall').html(html);
+
                 $('#waterfall').waterfall();
+
 			}
 		});
 
