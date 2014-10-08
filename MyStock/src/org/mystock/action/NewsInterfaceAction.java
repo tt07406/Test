@@ -705,8 +705,8 @@ public class NewsInterfaceAction extends ActionSupport {
 				new String[]{"bmp","png","gif","jpeg","jpg","pjpeg","x-png","jpe"}, true); 
 		filenames.clear();  
 		for (File allFileColFile : allFileCol) { 
-		      String path = allFileColFile.getPath();	     
-		      filenames.add(path);
+		      String filename = allFileColFile.getName();	     
+		      filenames.add(filename);
 		}
 		int currentPage = 1 ;	// 为当前所在的页，默认在第1页
 		int lineSize = 10;		// 每次显示的记录数

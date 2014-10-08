@@ -20,10 +20,59 @@
 	height: 233px;
 }
 
+.fileUpload
+{ 
+position: absolute;
+margin-left:-130px;
+top:8px;
+opacity: 0; /*For Firefox*/ 
+filter: alpha(opacity=0); /*for IE*/ 
+}
+
 </style>
+<script src="front/js/ajaxfileupload.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="front/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript">
+	function imgUpload(){
+		$("#upfile").click();
+	}
+	function startUpload(value){
+
+	   		$.ajaxFileUpload
+		   (
+			{
+			    url: 'back/Image_upload.action',
+			    secureuri: false,
+			    fileElementId: 'upfile',
+			    dataType: 'html',
+			    beforeSend: function() {
+			    	alert(value);
+			        $("#loading").show();
+			    },
+			    complete: function() {
+			        $("#loading").hide();
+			    },
+			    success: function(data, status) {
+			        if (typeof (data.error) != 'undefined') {
+			            if (data.error != '') {
+			                alert(data.error);
+			            } else {
+			                alert(data.msg);
+			            }
+			        }
+			    },
+			    error: function(data, status, e) {
+			        alert(e);
+			    }
+			}
+			)
+			return false;           
+		}
+</script>
 </head>
 <body>
-
 <s:include value="header.jsp">  
 	<s:param name="index">myimages</s:param>  
 	</s:include> 	
@@ -57,11 +106,9 @@
     <div class="cell"><a href="#"><img src="front/img/waterfall/019.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/020.jpg" /></a><p><a href="#">图片名称</a></p></div>
 </div>
+<input id="upfile" type="file" size="45" name="file" onchange="return startUpload(this.value);" class="fileUpload">  
 <s:include value="footer.jsp"></s:include>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="front/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="front/js/bootstrap.js"></script>
 <!-- waterfall flow -->
 <script type="text/javascript" src="front/js/jquery.waterfall.js"></script>
@@ -94,5 +141,28 @@ var opt={
 //不可删除，里面的‘opt’参数可删除
 $('#waterfall').waterfall(opt);
 </script>
+<script>
+$(document).ready(function(){
+  		$.ajax({
+  			type: "post",//使用get方法访问后台
+            dataType: "json",//返回json格式的数据
+            url: "interface/acquireImagelist.action",//要访问的后台地址
+            data: "cp=1&ls=20",//要发送的数据
+            complete :function(){$("#load").hide();},//AJAX请求完成时隐藏loading提示
+            success: function(msg){//msg为返回的数据，在这里做数据绑定
+                var data = msg.filenames;
+                var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">图片名称</a></p></div>';
+                $.each(data, function(i, n){
+                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a><p>'+n+'</p></div>';
+                    
+                });
+                $('#waterfall').html(html);
+                $('#waterfall').waterfall();
+			}
+		});
+
+});
+</script>
+
 </body>
 </html>
