@@ -15,7 +15,7 @@ URL：<%=request.getContextPath()%>/interface/acquireNewsList.action或http://loca
 3.获取文章详情
 功能：获取某一篇文章的详细内容
 URL：<%=request.getContextPath()%>/interface/acquireNewsInfo.action或http://localhost:8080/MyStock/interface/acquireNewsInfo.action
-参数：status，值为show;pid，值为文章编号
+参数：pid，值为文章编号
 输出：属性articleInfo，表示文章详情
 例子：http://localhost:8080/MyStock/interface/acquireNewsInfo.action?pid=4
 

@@ -26,7 +26,8 @@ div.title input{width: 50%;margin-bottom:0;}
 <s:include value="header.jsp"></s:include> 	
 <div id="add_bd">
 <p>发布文章</p>
-<div class="title"><label>标题</label><input type="text"></div>
+<div class="title"><label>标题</label><input type="text" id="title"></div>
+<div class="title"><label>作者</label><input type="text" id="author"></div>
 <!-- toolbar -->
 <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
       <div class="btn-group">
@@ -80,7 +81,7 @@ div.title input{width: 50%;margin-bottom:0;}
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
 </div><!-- ./ end toolbar -->
-<div id="editor" contenteditable="true">sdfdsf</div>
+<div id="editor" contenteditable="true"></div>
 <button onclick="creatArt()">发布文章</button>
 </div><!-- ./end eidt body -->
 
@@ -95,8 +96,23 @@ $(function() {
 });
 /* 发布文章 */
 function creatArt(){
+	var title = document.getElementById("title").value; 
+	var author = document.getElementById("author").value;
+	var content = document.getElementById("editor").innerHTML;
+	
+	$.ajax({
+  			type: "post",//使用get方法访问后台
+            dataType: "json",//返回json格式的数据
+            url: "interface/Article_add.action",//要访问的后台地址
+            data: "name="+title+"&author="+author+"&content="+content,//要发送的数据
+            success: function (data)  //服务器成功响应处理函数
+            {
+            		alert("success");
+                    alert(data.msg);
+             }
+		});
 	//alert("fgdgf");
-	window.open("http://localhost:8080/Stockii%20Personal%20Temp/myarticles.jsp");
+	window.location= "<%=request.getContextPath()%>/myarticles.action";
 	/*var href=window.location.href.split("/");
 	href=href.splice(4, 1, "demo");
 	href=href.join("/");*/

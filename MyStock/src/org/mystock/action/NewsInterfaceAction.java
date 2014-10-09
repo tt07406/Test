@@ -27,6 +27,7 @@ import org.apache.struts2.ServletActionContext;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+import org.mystock.model.Admin;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
 import org.mystock.model.NewsInfo;
@@ -40,6 +41,7 @@ import org.mystock.utils.MessageUtil;
 import org.mystock.utils.TimerManager;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -88,7 +90,53 @@ public class NewsInterfaceAction extends ActionSupport {
 
     private String message = "你已成功上传图片";
     
-    public String getMessage() {
+    private String name;//文章标题
+    private String content;//文章内容
+    private String author;//文章作者
+    
+    /**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the content
+	 */
+	public String getContent() {
+		return content;
+	}
+
+	/**
+	 * @param content the content to set
+	 */
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	/**
+	 * @return the author
+	 */
+	public String getAuthor() {
+		return author;
+	}
+
+	/**
+	 * @param author the author to set
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getMessage() {
         return message;
     }
 
@@ -863,4 +911,43 @@ public class NewsInterfaceAction extends ActionSupport {
         return SUCCESS;
     }
 
+	/**
+	 * 增加文章
+	 * @param smart
+	 * @return
+	 */
+	public String insertArticle(){
+		ActionContext ctx = ActionContext.getContext();
+		Admin admin = (Admin) ctx.getSession().get("admin") ;//登录的管理员
+
+		int newsInfoId = 0;//新闻ID
+		
+		if (admin == null){
+			setMsg(MessageUtil.get("adminlogin.msg"));
+			System.out.println("admin");
+			return ERROR;
+		}else {
+			NewsInfo news = null;
+			String type = typeService.getNewsTypeById(1).getNewsTypeName()+",";
+			setMsg(MessageUtil.get("newsinfo.insert.false"));
+			List<NewsInfo> infoList = service.getAllNewsInfo();
+			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
+			news = new NewsInfo(newsInfoId,name,content,
+					new Date(new java.util.Date().getTime()),author,type,admin.getAdminName());//创建时间为当前时间
+			System.out.println("insert");
+			try {//更新数据库
+				if(service.addNewsInfo(news)){
+					setMsg(MessageUtil.get("newsinfo.insert.true"));
+					System.out.println("success");
+				}
+				System.out.println("nv");
+				return SUCCESS;
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("excepiton");
+			}
+		}
+	
+		return ERROR;
+	}
 }

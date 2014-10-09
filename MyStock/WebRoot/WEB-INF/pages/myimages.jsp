@@ -153,7 +153,8 @@ $(document).ready(function(){
             dataType: "json",//返回json格式的数据
             url: "interface/acquireImagelist.action",//要访问的后台地址
             data: "cp=1&ls=20",//要发送的数据
-            complete :function(){$("#load").hide();},//AJAX请求完成时隐藏loading提示
+            beforeSend: function(){$("#loading").show();},
+            complete :function(){$("#loading").hide();},//AJAX请求完成时隐藏loading提示
             success: function(msg){//msg为返回的数据，在这里做数据绑定
                 var data = msg.filenames;
                 var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';

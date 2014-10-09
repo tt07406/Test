@@ -142,5 +142,13 @@
                 </param>
             </result>
         </action>
+        <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
+            <result type="json" name="success">
+            
+            </result>
+            <result type="json" name="error">
+                
+            </result>
+        </action>
 	</package>
 </struts>    

@@ -33,8 +33,8 @@
 	</div>
 	<div class="con">
 		<article>
-			<h2 class="con_title">测试测试测试</h2>
-			<p class="con_bd">答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。</p>
+			<h2 class="con_title" id="article_title">测试测试测试</h2>
+			<p class="con_bd" id="article_content">答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。</p>
 		</article>
 	</div>  
 </div>
@@ -48,5 +48,40 @@
 <script type="text/javascript" src="front/js/article.js"></script>
 <!-- ajax -->
 <script type="text/javascript" src="front/js/ajax.get.js"></script>
+<script>
+$(document).ready(function(){
+  		$.ajax({
+  			type: "post",//使用get方法访问后台
+            dataType: "json",//返回json格式的数据
+            url: "interface/acquireMenu.action",//要访问的后台地址
+            data: "type=1",//要发送的数据
+            success: function(msg){//msg为返回的数据，在这里做数据绑定
+                var data = msg.index;
+                var html='';
+                $.each(data, function(i, n){
+                    html+='<li class="lsit_item"><a href="javascript:void(0)" onclick="readArticle('+n.newsInfoId+')">'+n.newsInfoTitle+'</a></li>';
+                    
+                });
+                $('#article_list').html(html);
+			}
+		});
+
+});
+</script>
+<script type="text/javascript">
+		function readArticle(value){
+			$.ajax({
+  			type: "post",//使用get方法访问后台
+            dataType: "json",//返回json格式的数据
+            url: "interface/acquireNewsInfo.action",//要访问的后台地址
+            data: "pid="+value,//要发送的数据
+            success: function(msg){//msg为返回的数据，在这里做数据绑定
+                var data = msg.articleInfo;
+                $('#article_title').html(data.newsInfoTitle);
+                $('#article_content').html(data.newsInfoContent);
+			}
+		});
+		}
+</script>
 </body>
 </html>
