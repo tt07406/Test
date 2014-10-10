@@ -144,10 +144,14 @@
         </action>
         <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
             <result type="json" name="success">
-            
+                <param name="contentType">
+                    text/html
+                </param>
             </result>
             <result type="json" name="error">
-                
+                <param name="contentType">
+                    text/html
+                </param>
             </result>
         </action>
 	</package>

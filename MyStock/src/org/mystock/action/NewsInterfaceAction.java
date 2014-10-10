@@ -924,7 +924,6 @@ public class NewsInterfaceAction extends ActionSupport {
 		
 		if (admin == null){
 			setMsg(MessageUtil.get("adminlogin.msg"));
-			System.out.println("admin");
 			return ERROR;
 		}else {
 			NewsInfo news = null;
@@ -934,17 +933,15 @@ public class NewsInterfaceAction extends ActionSupport {
 			newsInfoId = ((infoList.size() == 0)? 1: (service.getAllNewsInfo().get(0).getNewsInfoId()+1));//新的ID等于最大的ID加1
 			news = new NewsInfo(newsInfoId,name,content,
 					new Date(new java.util.Date().getTime()),author,type,admin.getAdminName());//创建时间为当前时间
-			System.out.println("insert");
+
 			try {//更新数据库
 				if(service.addNewsInfo(news)){
 					setMsg(MessageUtil.get("newsinfo.insert.true"));
-					System.out.println("success");
 				}
-				System.out.println("nv");
+
 				return SUCCESS;
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("excepiton");
 			}
 		}
 	

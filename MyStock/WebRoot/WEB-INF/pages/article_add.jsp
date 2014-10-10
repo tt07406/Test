@@ -107,12 +107,16 @@ function creatArt(){
             data: "name="+title+"&author="+author+"&content="+content,//要发送的数据
             success: function (data)  //服务器成功响应处理函数
             {
-            		alert("success");
                     alert(data.msg);
-             }
+                    window.location= "<%=request.getContextPath()%>/myarticles.action";
+             },
+             error: function (data)//服务器响应失败处理函数
+                {
+                    alert(data.msg);
+                }
 		});
 	//alert("fgdgf");
-	window.location= "<%=request.getContextPath()%>/myarticles.action";
+	
 	/*var href=window.location.href.split("/");
 	href=href.splice(4, 1, "demo");
 	href=href.join("/");*/
