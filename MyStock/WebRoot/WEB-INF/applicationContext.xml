@@ -72,6 +72,9 @@
 	<bean id="adminLogin" class="org.mystock.action.AdminLogin">
 		<property name="adminService" ref="adminService"></property>
 	</bean>
+	<bean id="userLogin" class="org.mystock.action.UserLogin">
+		<property name="adminService" ref="adminService"></property>
+	</bean>
 	<bean id="adminAction" class="org.mystock.action.AdminAction">
 		<property name="adminService" ref="adminService"></property></bean>
 	<bean id="newsInfoAction" class="org.mystock.action.NewsInfoAction">

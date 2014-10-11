@@ -1,5 +1,16 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%> 
 <html>
+<head>
+<title></title>
+<script language="javascript">
+function logout(){
+	if (confirm("您确定要退出系统吗？"))
+		top.location = "userLogout";
+	return false;
+}
+</script>
+</head>
   <body>
 	<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -30,8 +41,14 @@
 						href="commit_center.action">信息维护</a></li>
 					<li class='${param.index=="news"?"active":"" }'><a
 						href="service-2.action">今日动态</a></li>
-					<li class='${param.index=="account"?"active":"" }'><a
+					
+					<s:if test="#session.admin != null">
+						<li><a href="#" target="_self" onClick="logout();"><img src="<%=request.getContextPath()%>/back/backImages/out.gif" alt="安全退出" width="46" height="20" border="0"></a></li>
+					</s:if>
+					<s:else>
+						<li class='${param.index=="account"?"active":"" }'><a
 						href="account.action">登陆</a></li>
+					</s:else>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

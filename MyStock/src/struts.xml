@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<!-- 全局国际化 -->
-	<constant name="struts.multipart.maxSize" value="1073741824"/>
-	<constant name="struts.custom.i18n.resources" value="mess"></constant>
-	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
-	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
-	<package name="default" namespace="/" extends="struts-default">
+
+	<!-- 所有的页面都要进行登录验证，未登录进入登录界面 -->
+	<package name="auth" extends="struts-default">
+		<interceptors>
+			<!-- 定义权限检查拦截器 -->
+			<interceptor name="authority" class="org.mystock.utils.AuthorityInterceptor">
+				<param name="allowAction">userLogin</param>
+			</interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>			
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+			<result name="error">/WEB-INF/pages/errors.jsp</result>
+			<result name="login">/WEB-INF/pages/account.jsp</result>
+			<result name="input">/WEB-INF/pages/errors.jsp</result>
+		</global-results>		
+	</package>
+	<package name="default" namespace="/" extends="auth">
+	   <action name="userLogin" class="userLogin">
+			<result name="success">/WEB-INF/pages/index.jsp</result>
+			<result name="error">/WEB-INF/pages/account.jsp</result>
+		</action>
+		<action name="userLogout" class="org.mystock.action.UserLogout">
+			<result name="success">/WEB-INF/pages/account.jsp</result>
+		</action>
 		<!-- 通用的Action，*表示可以处理任意的请求 -->
 		<action name="*">
 			<!-- 此处{1}表示前面第一个*代表的字符串 -->
 			<result>/WEB-INF/pages/{1}.jsp</result>
 		</action>
-
+		
 		<action name="uploadAction"
 			class="org.mystock.action.UploadAction" method="upload">
 		</action>
