@@ -18,7 +18,10 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,6 +30,9 @@ import org.apache.struts2.ServletActionContext;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.mystock.model.Admin;
 import org.mystock.model.FileVO;
 import org.mystock.model.NewsIndex;
@@ -946,5 +952,30 @@ public class NewsInterfaceAction extends ActionSupport {
 		}
 	
 		return ERROR;
+	}
+	
+	/**
+	 * 保存用户信息
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public String saveInfo(){
+		JSONParser parser=new JSONParser();  
+		JSONObject demoJson;
+		try {
+			System.out.println(content);
+			demoJson = (JSONObject) parser.parse(content);
+			Iterator iter = demoJson.entrySet().iterator();
+			while (iter.hasNext()) {
+			    Map.Entry entry = (Map.Entry) iter.next();
+			    System.out.println(entry.getKey()+":"+entry.getValue());
+			}
+			msg = "success";
+		} catch (ParseException e) {
+			e.printStackTrace();
+			msg = "paseException";
+			return ERROR;
+		}
+	return SUCCESS;
 	}
 }
