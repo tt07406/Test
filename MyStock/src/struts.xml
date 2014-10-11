@@ -154,14 +154,12 @@
 		</action>
 		<action name="Image_upload" class="newsInterfaceAction" method="uploadPhoto">
             <result type="json" name="success">
-                <param name="contentType">
-                    text/html
-                </param>
+            	<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
             </result>
             <result type="json" name="error">
-                <param name="contentType">
-                    text/html
-                </param>
+                <param name="noCache">true</param>
+				<param name="contentType">text/html</param>
             </result>
         </action>
         <action name="Article_add" class="newsInterfaceAction" method="insertArticle">
@@ -188,5 +186,19 @@
                 </param>
             </result>
         </action>
+	</package>
+	
+	<package name="servlet" namespace="/Servlet"
+		extends="struts-default">
+		<action name="data_test">
+			<result type="plainText">
+                <param name="location">/front/excel/data/local/data_test.txt</param>
+                <param name="charSet">UTF-8</param>
+            </result>
+		</action>
+		<action name="*">
+			<!-- 此处{1}表示前面第一个*代表的字符串 -->
+			<result>/front/excel/Servlet/{1}.jsp</result>
+		</action>
 	</package>
 </struts>    

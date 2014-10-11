@@ -18,6 +18,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +42,7 @@ import org.mystock.model.NewsVO;
 import org.mystock.service.NewsInfoService;
 import org.mystock.service.NewsTypeService;
 import org.mystock.service.TableService;
+import org.mystock.utils.Common;
 import org.mystock.utils.FtpUtil;
 import org.mystock.utils.HibernateMappingManager;
 import org.mystock.utils.MessageUtil;
@@ -963,12 +965,23 @@ public class NewsInterfaceAction extends ActionSupport {
 		JSONParser parser=new JSONParser();  
 		JSONObject demoJson;
 		try {
-			System.out.println(content);
 			demoJson = (JSONObject) parser.parse(content);
+			Map<String, String> jsonMap = new HashMap<String,String>();
 			Iterator iter = demoJson.entrySet().iterator();
 			while (iter.hasNext()) {
 			    Map.Entry entry = (Map.Entry) iter.next();
-			    System.out.println(entry.getKey()+":"+entry.getValue());
+			    jsonMap.put((String)entry.getKey(), (String)entry.getValue());
+			}
+
+			try {
+				if(!Common.writeProperties("/org/mystock/utils/identity.properties", jsonMap, true)){
+						msg = "write error";
+						return ERROR;
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				msg = "io error";
+				return ERROR;
 			}
 			msg = "success";
 		} catch (ParseException e) {
@@ -976,6 +989,6 @@ public class NewsInterfaceAction extends ActionSupport {
 			msg = "paseException";
 			return ERROR;
 		}
-	return SUCCESS;
+		return SUCCESS;
 	}
 }

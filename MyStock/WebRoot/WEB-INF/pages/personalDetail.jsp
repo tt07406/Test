@@ -277,7 +277,7 @@ $("div.btn").on({
 			}
 			
 			//浮动显示“保存成功”提示
-			var imgObj = $("<img alt='save success' src='./img/tip_save_success.png'>").css("position", "absolute")
+			var imgObj = $("<img alt='save success' src='front/img/tip_save_success.png'>").css("position", "absolute")
                 				.css("top", parseInt($(this).offset().top)+30+"px").css("left", parseInt($(this).offset().left)-30+"px"); 
 			$("body").append(imgObj);
 			setTimeout(function(){				
@@ -517,7 +517,7 @@ function concatinfo_edit(self,children){
 			case 3:/*地址*/		
 				$("#city").css("display","inline-block");
 				$("#city").citySelect({  
-				    url:"js/city.min.js",  
+				    url:"front/js/city.min.js",  
 				    prov:"北京", //省份 
 				    city:"东城区", //城市 
 				    //dist:"岳麓区", //区县 
@@ -599,7 +599,7 @@ function global_edit(){
 
 <script type="text/javascript">
 function sendinfo(id){	
-	alert(GLOBAL.baseinfo.toString());
+
 	if(id.match("baseinfo")){		
 		//send message
 		ajaxSend(GLOBAL.baseinfo);
@@ -616,14 +616,21 @@ function sendinfo(id){
 }
 
 function ajaxSend(info){
-	alert(info);
-	return;
+
+	if(GLOBAL.index_btn==1){
+		return;
+	}
+	var str = JSON.stringify(info);
+
 	$.ajax({
   			type: "post",//使用get方法访问后台
             dataType: "json",//返回json格式的数据
             url: "interface/saveInfo.action",//要访问的后台地址
-            data: "content="+info,//要发送的数据
+            data: "content="+str,//要发送的数据
             success: function(data){//msg为返回的数据，在这里做数据绑定
+                //alert(data.msg);
+			},
+			error: function(data){//msg为返回的数据，在这里做数据绑定
                 alert(data.msg);
 			}
 		});

@@ -1,9 +1,8 @@
-#Tue Oct 07 22:28:44 CST 2014
+#Sat Oct 11 21:05:09 CST 2014
 eclipse.preferences.version=1
-encoding//WebRoot/WEB-INF/pages/myforms.jsp=UTF-8
 encoding//WebRoot/WEB-INF/pages/temp/exportExcel.html=UTF-8
 encoding//WebRoot/WEB-INF/pages/upLoadFile.jsp=UTF-8
 encoding//WebRoot/back/edit/lang=UTF-8
-encoding//WebRoot/front/excel/js/6excel.js=UTF-8
+encoding//WebRoot/front/excel/jQuery.Excel/js/jQuery.excelFucntions.js=UTF-8
 encoding//WebRoot/front/js/city.min.js=UTF-8
 encoding//WebRoot/front/webExcel/js/6excel.js=UTF-8

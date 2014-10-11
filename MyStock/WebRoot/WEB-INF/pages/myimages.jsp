@@ -60,7 +60,8 @@ filter: alpha(opacity=0); /*for IE*/
                 dataType: 'json',//返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
-                    $('#waterfall').waterfall();
+
+                    loadImages();
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -147,12 +148,12 @@ $('#waterfall').waterfall(opt);
 
 </script>
 <script>
-$(document).ready(function(){
-  		$.ajax({
+	function loadImages(){
+		$.ajax({
   			type: "post",//使用get方法访问后台
             dataType: "json",//返回json格式的数据
             url: "interface/acquireImagelist.action",//要访问的后台地址
-            data: "cp=1&ls=20",//要发送的数据
+            data: "cp=1&ls=100",//要发送的数据
             beforeSend: function(){$("#loading").show();},
             complete :function(){$("#loading").hide();},//AJAX请求完成时隐藏loading提示
             success: function(msg){//msg为返回的数据，在这里做数据绑定
@@ -168,7 +169,10 @@ $(document).ready(function(){
 
 			}
 		});
-
+		
+	}
+$(document).ready(function(){
+  		loadImages();
 });
 </script>
 

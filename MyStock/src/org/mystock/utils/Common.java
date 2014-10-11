@@ -8,6 +8,7 @@
 package org.mystock.utils;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -57,19 +58,25 @@ public class Common {
 	  */
 	 public static boolean writeProperties(String filePath,
 	   Map<String, String> keyVal, boolean over) throws IOException {
+
+	  File f = new File(Common.class.getResource("/").getPath());
 	  boolean flag = false;
 	  Properties props = new Properties();
 	  InputStream ips = null;
-	  ips = new BufferedInputStream(new FileInputStream(filePath));
+	  ips = new BufferedInputStream(new FileInputStream(f.getPath()+filePath));
+	  
+	  if (ips == null){
+		  return flag;
+	  }
 	  props.load(ips);
-	 
+	  
 	  ips.close();
 	  
 	  OutputStream fos = null;
 	  if (over) {
 	   // 将新添加的内容覆盖原来的内容
-	   
-	   fos = new FileOutputStream(filePath);
+
+	   fos = new FileOutputStream(f.getPath()+filePath);
 	   // 将keys转换成数组
 	   // 将键值逐一添加到property中
 	   for (Object str : keyVal.keySet().toArray()) {
@@ -82,10 +89,9 @@ public class Common {
 	   fos.close();
 	   
 	  } else {
-	   
-	   fos = new FileOutputStream(filePath);
+
+	   fos = new FileOutputStream(f.getPath()+filePath);
 	   for (Object key : keyVal.keySet().toArray()) {
-	    System.out.println(keyVal.get(key).toString());
 	    props.setProperty(key.toString(), keyVal.get(key));
 	   }
 	   props.store(fos, "");
