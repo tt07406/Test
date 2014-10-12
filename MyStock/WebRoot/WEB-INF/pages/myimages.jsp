@@ -62,10 +62,12 @@ filter: alpha(opacity=0); /*for IE*/
                 {
 
                     loadImages();
+                    alert(data.message);
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
-                    alert(data.message);
+                	loadImages();
+                    //alert(data.message);
                 }
             }
         )
@@ -83,8 +85,10 @@ filter: alpha(opacity=0); /*for IE*/
 	</a>
 </div>
 -->
+<div class="container container-content">
 <div id="waterfall">
-    <div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
+    <div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="imgUpload()">上传图片</a></p></div>
+    <div class="cell"><a href="#"><img src="front/img/waterfall/人.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <!--<div class="cell"><a href="#"><img src="front/img/waterfall/001.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/002.jpg" /></a><p><a href="#">图片名称</a></p></div>
     <div class="cell"><a href="#"><img src="front/img/waterfall/003.jpg" /></a><p><a href="#">图片名称</a></p></div>
@@ -108,6 +112,7 @@ filter: alpha(opacity=0); /*for IE*/
 --></div>
 <img src="front/img/loading.gif" id="loading" style="display: none;">
 <input id="upfile" class="fileUpload" type="file" size="45" name="file" onchange="return startUpload(this.value);" >  
+</div>
 <s:include value="footer.jsp"></s:include>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="front/js/jquery.min.js"></script>
@@ -158,10 +163,9 @@ $('#waterfall').waterfall(opt);
             complete :function(){$("#loading").hide();},//AJAX请求完成时隐藏loading提示
             success: function(msg){//msg为返回的数据，在这里做数据绑定
                 var data = msg.filenames;
-                var html='<div class="cell"><a href="#"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
+                var html='<div class="cell"><a href="javascript:void(0)" onclick="imgUpload()"><img src="front/img/icon_plus.png" /></a><p><a href="javascript:void(0)" onclick="return imgUpload();">上传图片</a></p></div>';
                 $.each(data, function(i, n){
-                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a><p>'+n+'</p></div>';
-                    
+                    html+='<div class="cell"><a href="#"><img src="images/'+n+'" /></a></div>';
                 });
                 $('#waterfall').html(html);
 

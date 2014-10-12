@@ -14,7 +14,7 @@
 <s:include value="header.jsp">  
 	<s:param name="index">myfile</s:param>  
 	</s:include> 
-
+<div class="container container-content"></div>
 <s:include value="footer.jsp"></s:include>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

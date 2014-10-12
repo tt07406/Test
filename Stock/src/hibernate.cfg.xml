@@ -10,15 +10,13 @@
 	<property name="dialect">
 		org.hibernate.dialect.MySQLInnoDBDialect
 	</property>
-	<property name="connection.url">
-		jdbc:mysql://localhost:3306/news_all?useUnicode=true&amp;characterEncoding=UTF-8
-	</property>
-	<property name="connection.username">root</property>
+	<property name="connection.url">jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_stocktech?useUnicode=true&amp;characterEncoding=UTF-8</property>
+	<property name="connection.username">lyjxmwm422</property>
 	<property name="connection.driver_class">
 		com.mysql.jdbc.Driver
 	</property>
 	<property name="myeclipse.connection.profile">MySQLdriver</property>
-	<property name="connection.password">qxw</property>
+	<property name="connection.password">5xmmyxk4h5m1xwh2hy2313wz02jimj04myi3353x</property>
 	<!-- 指定连接池里最大连接数 -->
 	<property name="hibernate.c3p0.max_size">20</property>
 	<!-- 指定连接池里最小连接数 -->

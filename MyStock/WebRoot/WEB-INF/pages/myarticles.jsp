@@ -15,12 +15,12 @@
 <s:include value="header.jsp">  
 	<s:param name="index">myarticles</s:param>  
 	</s:include>
-
+<div class="container-fluid container-content">
 <div id="article_bd">
 	<div class="list">
 		<div class="list_blog">
-			<span class="list_blog_title">博文</span>
-			<span class="list_blog_fun"><a href="article_add.action">[发布文章]</a></span>
+			<h4><span class="list_blog_title">文摘列表</span><span class="list_blog_fun"><a href="article_add.action">[发布文章]</a></span></h4>
+			
 			<ul id="article_list">
 			<!-- 
 				<li class="lsit_item"><a href="javascript:void(0)" onclick="readArticle(0)">测试测试测试</a></li>				
@@ -34,9 +34,11 @@
 	<div class="con">
 		<article>
 			<h2 class="con_title" id="article_title">测试测试测试</h2>
+			<hr/>
 			<p class="con_bd" id="article_content">答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。答案是Profile。Maven的Profile用于在不同的环境下应用不同的配置。一套配置即称为一个Profile。这里的“环境”可以是操作系统版本，JDK版本或某些文件是否存在这样的物理环境，也可以是你自己定义的一套逻辑环境。比如上面的A中所说的Linux和Mac OS X便是一种物理环境，而B中讲的开发环境和部署环境则为逻辑环境。Maven提供了Activation机制来激活某个Profile，它既允许自动激活（即在某些条件满足时自动使某个Profile生效），也可以手动激活。</p>
 		</article>
 	</div>  
+</div>
 </div>
 <s:include value="footer.jsp"></s:include>
 

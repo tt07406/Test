@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -22,6 +23,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
@@ -102,7 +104,47 @@ public class NewsInterfaceAction extends ActionSupport {
     private String content;//文章内容
     private String author;//文章作者
     
-    /**
+    private String configId;//客户ID
+    private String configName;//客户姓名
+    private String configDoName;//客户域名
+    private String configSSID;//序列号
+    
+    
+    
+    
+    public String getConfigSSID() {
+		return configSSID;
+	}
+
+	public void setConfigSSID(String configSSID) {
+		this.configSSID = configSSID;
+	}
+
+	public String getConfigId() {
+		return configId;
+	}
+
+	public void setConfigId(String configId) {
+		this.configId = configId;
+	}
+
+	public String getConfigName() {
+		return configName;
+	}
+
+	public void setConfigName(String configName) {
+		this.configName = configName;
+	}
+
+	public String getConfigDoName() {
+		return configDoName;
+	}
+
+	public void setConfigDoName(String configDoName) {
+		this.configDoName = configDoName;
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
@@ -882,7 +924,10 @@ public class NewsInterfaceAction extends ActionSupport {
 			String name =this.getFileFileName();
 			int pos = name.lastIndexOf(".");
 			String suffix = name.substring(pos);
-			String newName = name.substring(0,pos)+suffix.toLowerCase();
+			
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMdd_HHmmss");
+			Random r=new Random();
+			String newName = r.nextInt(1000)+sdf.format(new Date())+suffix.toLowerCase();
 			
 			File deskFile = new File(root,newName);
 
@@ -991,4 +1036,17 @@ public class NewsInterfaceAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
+	
+	/**
+	 * 读取基本配置信息
+	 * @return
+	 */
+	public String readConfig(){
+		configId = MessageUtil.getID("config.id");
+		configName = MessageUtil.getID("config.name");
+		configDoName = MessageUtil.getID("config.doName");
+		configSSID = MessageUtil.getID("config.ssid");
+		return SUCCESS;
+	}
+	
 }

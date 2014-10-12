@@ -57,4 +57,10 @@
   	<dispatcher>FORWARD</dispatcher>
   	<dispatcher>REQUEST</dispatcher>
   </filter-mapping>
+    <!-- sae需要的监听器 -->
+  <listener>
+      <listener-class>
+          org.news.utils.SaeInitListener
+      </listener-class>
+  </listener>
  </web-app>

@@ -21,7 +21,7 @@ function logout(){
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand navbar-logo" href="/"></a>
+				<a class="navbar-brand navbar-logo" href=""></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -39,8 +39,6 @@ function logout(){
 						href="company_list.action">信息展示</a></li>
 					<li class='${param.index=="commit_center"?"active":"" }'><a
 						href="commit_center.action">信息维护</a></li>
-					<li class='${param.index=="news"?"active":"" }'><a
-						href="service-2.action">今日动态</a></li>
 					
 					<s:if test="#session.admin != null">
 						<li><a href="#" target="_self" onClick="logout();"><img src="<%=request.getContextPath()%>/back/backImages/out.gif" alt="安全退出" width="46" height="20" border="0"></a></li>

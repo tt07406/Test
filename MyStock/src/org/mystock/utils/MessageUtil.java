@@ -12,6 +12,12 @@ package org.mystock.utils;
  * @author tt
  * @version 14.9.16
  */
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class MessageUtil {
@@ -32,7 +38,25 @@ public class MessageUtil {
 	 * @return ÏûÏ¢
 	 */
 	public static String getID(String key){
-		ResourceBundle rb = ResourceBundle.getBundle("org.mystock.utils.identity") ; 
-		return rb.getString(key) ;
+		  File f = new File(Common.class.getResource("/").getPath());
+
+		  
+		  try {
+			Properties props = new Properties();
+			InputStream ips = null;
+			ips = new BufferedInputStream(new FileInputStream(f.getPath()+"/org/mystock/utils/identity.properties"));
+			  
+			if (ips == null){
+				  return null;
+			}
+			
+			props.load(ips);
+			
+			return props.getProperty(key)==null?"":props.getProperty(key);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 }

@@ -16,6 +16,7 @@ header {
 
 .container-content {
 	min-width: 960px;
+	min-height: 652px;
 }
 
 /* Styles for headers */

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
+<%@page import="org.mystock.utils.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,51 +27,51 @@
 	<div data-info="baseinfo">
 		<div class="pf_item">
 			<div class="lable">登录名</div>
-			<div class="con">huaj****nian@sina.cn</div>
+			<div class="con"><s:property value="#session.admin.adminName"/></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">昵称</div>
-			<div class="con">spell</div>
+			<div class="con"><%=MessageUtil.getID("nick_name") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">真实姓名</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>			
+			<div class="con"><%=MessageUtil.getID("real_name") %></div>			
 		</div>		
 		<div class="pf_item">
 			<div class="lable">性别</div>
-			<div class="con">女<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("sex") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">性取向</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("sex_dir") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">感情状况</div>
-			<div class="con">单身</div>
+			<div class="con"><%=MessageUtil.getID("emotion") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">生日</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("birthday") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">血型</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("blood") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">博客地址</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("blog_address") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">个性域名</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("domain") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">简介</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>
+			<div class="con"><%=MessageUtil.getID("profile") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">注册时间</div>
-			<div class="con">2014-10-06</div>
+			<div class="con">20140909</div>
 		</div>
 	</div>
 </div><!-- ./ 基本信息 -->
@@ -87,19 +88,19 @@
 	<div data-info="concatinfo">
 		<div class="pf_item">
 			<div class="lable">邮箱</div>
-			<div class="con">huaj****nian@sina.cn</div>
+			<div class="con"><%=MessageUtil.getID("email") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">QQ</div>
-			<div class="con">01234567</div>
+			<div class="con"><%=MessageUtil.getID("QQ") %></div>
 		</div>
 		<div class="pf_item">
 			<div class="lable">MSN</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>			
+			<div class="con"><%=MessageUtil.getID("MSN") %></div>			
 		</div>
 		<div class="pf_item">
 			<div class="lable">所在地</div>
-			<div class="con">尚未编辑<a href=""><span>马上填写</span></a></div>	
+			<div class="con"><%=MessageUtil.getID("address") %></div>	
 			<div id="city" style="display: none;position: relative;left:77px;top:-28px;"> 
 			    <select class="prov"></select>  
 			    <select class="city" disabled="disabled"></select> 
@@ -146,7 +147,7 @@
 	<div data-info="educationinfo">
 		<div class="pf_item">
 			<div class="lable">大学</div>
-			<div class="con">北京邮电大学</div>
+			<div class="con"><%=MessageUtil.getID("school") %></div>
 		</div>
 	</div>	
 </div><!-- ./ 教育 -->
@@ -465,7 +466,7 @@ function baseinfo_save(self,children){
 				break;
 			case 9:/*个性域名*/
 				var inputTxt=$(this).children(".con").children("input").val();
-				GLOBAL.baseinfo.blog_address=inputTxt;
+				GLOBAL.baseinfo.domain=inputTxt;
 				$(this).children(".con").html(inputTxt);
 				if(inputTxt==""){
 					$(this).children(".con").html("尚未编辑<a href='javascript:void(0)'><span>马上填写</span></a>");

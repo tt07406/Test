@@ -55,6 +55,7 @@ div.title input{width: 50%;margin-bottom:0;}
 				],
 				uploadJson : '<%=request.getContextPath()%>/uploadAction.action',
 				filterMode: true,
+				resizeMode: 0,
 				afterBlur: function(){this.sync();},
 				afterChange : function() {
 					$('#alreadyInput').html(this.count());
