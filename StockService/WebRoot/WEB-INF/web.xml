@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+  	<display-name>JAX-RS REST Servlet</display-name>
+  	<servlet-name>JAX-RS REST Servlet</servlet-name>
+  	<servlet-class>
+  		com.sun.jersey.spi.spring.container.servlet.SpringServlet
+  	</servlet-class>
+  	<init-param>  
+            <param-name>com.sun.jersey.config.property.packages</param-name>  
+            <!-- The package in which the Resource classes located-->  
+            <param-value>org.stockii.service</param-value>  
+    </init-param>  
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JAX-RS REST Servlet</servlet-name>
+  	<url-pattern>/services/*</url-pattern>	
+  </servlet-mapping>
+  <context-param>
+  		<param-name>webAppRootKey</param-name>  
+		<param-value>app.root</param-value>  
+	</context-param> 
+	<context-param>
+    	        <param-name>log4jConfigLocation</param-name>
+    	        <param-value>/WEB-INF/log4j.properties</param-value>
+  	</context-param> 
+  	<context-param>
+    	        <param-name>log4jRefreshInterval</param-name>
+    	        <param-value>6000</param-value>
+  	</context-param>
+	<listener>
+               <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  	</listener>
+     <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+    <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

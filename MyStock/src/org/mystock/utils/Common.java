@@ -32,8 +32,8 @@ public class Common {
 	 */
 	public static Date getSwitchDate(String startDate){
 		Date dt=null;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		if (startDate.endsWith("")){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		if (startDate.equals("")){
 			return new Date();
 		}
 		try{
