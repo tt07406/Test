@@ -4,6 +4,7 @@ package org.stockii.application;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -63,12 +64,15 @@ public class AvgPriceAL {
 			po.setStart_price(startMap.get(po.getStock_id()));//补充起始价
 			po.setEnd_price(endMap.get(po.getStock_id()));//补充终止价
 			po.setSection_num(Common.getSectionNum(po.getAvg_value(), po.getStart_price(), po.getEnd_price()));
-//			if ((i&1)==0){
-//				po.setSection_num(-i);
-//			}else{
-//				po.setSection_num(i);
-//			}
 		}
+		
+		for (Iterator<AvgPricePO> it = avgPriceList.iterator(); it.hasNext();){
+			AvgPricePO po = (AvgPricePO)it.next();
+			if (po.getStart_price() == null || po.getEnd_price() == null || po.getAvg_value() == null){
+				it.remove();
+			}
+		}
+		
 		log.info("avgPriceList length:"+avgPriceList.size());
 		
 		return calculateAndSaveABC(avgPriceList);//计算A\B\C并保存到数据表中

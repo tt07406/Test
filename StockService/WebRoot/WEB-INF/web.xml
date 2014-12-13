@@ -23,7 +23,7 @@
   </servlet-mapping>
   <context-param>
   		<param-name>webAppRootKey</param-name>  
-		<param-value>app.root</param-value>  
+		<param-value>serviceapp.root</param-value>  
 	</context-param> 
 	<context-param>
     	        <param-name>log4jConfigLocation</param-name>

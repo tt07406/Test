@@ -33,7 +33,7 @@ public class AvgPriceDAO extends HibernateDaoSupport {
 	@SuppressWarnings("unchecked")
 	public List<AvgPricePO> findAvgPriceByDate(final Date startDate,final Date endDate){
 		try {
-   			final String queryString = "select new org.stockii.domain.AvgPricePO(s.stock_id,avg(s.avg_price)) from stock_day_info as s " +
+   			final String queryString = "select new org.stockii.domain.AvgPricePO(s.stock_id,avg(s.ytd_end_price)) from stock_day_info as s " +
    					"where s.created between ? and ? group by s.stock_id";
    			List<AvgPricePO> list = getHibernateTemplate().executeFind(
    					new HibernateCallback() {
@@ -65,7 +65,7 @@ public class AvgPriceDAO extends HibernateDaoSupport {
 	@SuppressWarnings("unchecked")
 	public Map<String,BigDecimal> findAvgPriceByDate(final Date date){
 		try {
-   			final String queryString = "select new map(s.stock_id,s.avg_price) from stock_day_info as s where s.created between ? and ?";
+   			final String queryString = "select new map(s.stock_id,s.ytd_end_price) from stock_day_info as s where s.created between ? and ?";
    			Map<String,BigDecimal> result = new HashMap<String,BigDecimal>();
    			List<Map> list = getHibernateTemplate().executeFind(
    					new HibernateCallback() {

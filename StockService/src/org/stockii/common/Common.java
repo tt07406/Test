@@ -118,6 +118,7 @@ public class Common {
 	 public static int getSectionNum(BigDecimal avg_value,BigDecimal start_price,BigDecimal end_price){
 		 int start_section = 0;
 		 int end_section = 0;
+		 BigDecimal Zero = new BigDecimal("0");
 		 
 		 if (avg_value == null || start_price == null || end_price == null){
 			 return 0;
@@ -126,18 +127,27 @@ public class Common {
 		 double avgValue = avg_value.setScale(4, BigDecimal.ROUND_HALF_UP).doubleValue();//精度为小数点后四位
 		 
 		 double lgbase = Math.log(start_price.doubleValue())-Math.log(avgValue);
-		  if (start_price.compareTo(avg_value) > 0){
-			  start_section = (int) (lgbase / lgPositive);
-		  }else if (start_price.compareTo(avg_value) < 0){
-			  start_section = (int) (lgbase / lgNegetive)*(-1);
-		  }
-		  
-		lgbase = Math.log(end_price.doubleValue())-Math.log(avgValue);
-		if (end_price.compareTo(avg_value) > 0){
-			end_section = (int) (lgbase / lgPositive);
-		  }else if (end_price.compareTo(avg_value) < 0){
-			  end_section = (int) (lgbase / lgNegetive)*(-1);
-		  }
+		 
+		 if (start_price.compareTo(Zero)==0){
+			 start_section = 0;
+		 }else{
+			  if (start_price.compareTo(avg_value) > 0){
+				  start_section = (int) (lgbase / lgPositive);
+			  }else if (start_price.compareTo(avg_value) < 0){
+				  start_section = (int) (lgbase / lgNegetive)*(-1);
+			  }
+		 }
+		
+		 if (end_price.compareTo(Zero)==0){
+			 end_section = 0;
+		 }else{
+			lgbase = Math.log(end_price.doubleValue())-Math.log(avgValue);
+			if (end_price.compareTo(avg_value) > 0){
+				end_section = (int) (lgbase / lgPositive);
+			  }else if (end_price.compareTo(avg_value) < 0){
+				  end_section = (int) (lgbase / lgNegetive)*(-1);
+			  }
+		 }
 		 
 		return end_section - start_section;	 
 	 }
