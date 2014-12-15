@@ -1,7 +1,8 @@
 CREATE TABLE `liability_statement` (
 `seq_no`  int(11) NOT NULL AUTO_INCREMENT ,
+`stock_id`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `statement_date`  date NOT NULL ,
-`unit`  char(6) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL ,
+`unit`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `current_asset`  bigint(12) NULL DEFAULT NULL ,
 `monetary_fund`  bigint(12) NULL DEFAULT NULL ,
 `settlement_fund`  bigint(12) NULL DEFAULT NULL ,
@@ -126,8 +127,9 @@ DELAY_KEY_WRITE=0
 
 CREATE TABLE `liability_statement_bank` (
 `seq_no`  int(11) NOT NULL AUTO_INCREMENT ,
+`stock_id`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `statement_date`  date NOT NULL ,
-`unit`  char(6) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL ,
+`unit`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `asset`  bigint(12) NULL DEFAULT NULL ,
 `monetary_fund`  bigint(12) NULL DEFAULT NULL ,
 `among1`  bigint(12) NULL DEFAULT NULL ,
@@ -227,7 +229,7 @@ CREATE TABLE `liability_statement_bank` (
 PRIMARY KEY (`seq_no`)
 )
 ENGINE=MyISAM
-DEFAULT CHARACTER SET=latin1 COLLATE=latin1_swedish_ci
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 AUTO_INCREMENT=1
 CHECKSUM=0
 ROW_FORMAT=FIXED
