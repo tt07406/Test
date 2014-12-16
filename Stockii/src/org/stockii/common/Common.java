@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
@@ -25,6 +26,11 @@ import java.util.Properties;
  * @version 14.9.16
  */
 public class Common {
+	
+	public static ArrayList<String> bankList = new ArrayList<String>(){{
+		add("000001");add("601398");
+		}};
+	
   	/**
 	 * 将字符串转换成一个日期
 	 * @param startDate
@@ -32,8 +38,8 @@ public class Common {
 	 */
 	public static Date getSwitchDate(String startDate){
 		Date dt=null;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		if (startDate.endsWith("")){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		if (startDate.equals("")){
 			return new Date();
 		}
 		try{
