@@ -18,6 +18,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.MessageBox;
@@ -76,7 +77,7 @@ public class DataTransferWindow {
 		t.setEditable(false);
 		t.setBackground(new Color(display, 255, 255, 255));
 		Button btn = new Button(shell, SWT.NONE);
-		btn.setBounds(800, 15, 70, 20);
+		btn.setBounds(752, 15, 80, 27);
 		btn.setText("选择文件");
 		btn.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -173,6 +174,111 @@ public class DataTransferWindow {
 		
 		colNum = new Text(shell, SWT.BORDER);
 		colNum.setBounds(78, 86, 121, 23);
+		
+		Button button = new Button(shell, SWT.NONE);
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				//新建文件夹（目录）对话框
+		        DirectoryDialog folderdlg=new DirectoryDialog(shell);
+		        //设置文件对话框的标题
+		        folderdlg.setText("文件选择");
+
+		        //设置对话框提示文本信息
+		        folderdlg.setMessage("请选择相应的文件夹");
+		        //打开文件对话框，返回选中文件夹目录
+		        String selecteddir=folderdlg.open();
+		        if(selecteddir==null){
+		            return ;
+		        }
+		        else{
+		            t.setText(selecteddir);
+		            handleLiabilityBatch(selecteddir);
+		        } 
+			}
+		});
+		button.setBounds(640, 15, 80, 27);
+		button.setText("\u9009\u62E9\u6587\u4EF6\u5939");
+		
+		Button button_1 = new Button(shell, SWT.NONE);
+		button_1.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog fd = new FileDialog(shell, SWT.NONE);
+				fd.setText("打开文件");
+				fd.setFilterExtensions(new String[] { "*.xls" });
+				String path = fd.open();
+				t.setText(path == null ? "" : path);
+				if (!"".equals(t.getText().trim())) {
+					try {
+						rowNum.setText("");
+						colNum.setText("");
+						//getExcel(t.getText().trim());
+						result = read2003ExcelColumn(new File(t.getText().trim()));
+						if (result != null && result.size() > 0){
+							rowNum.setText(result.size()+"");
+							colNum.setText(result.get(0).size()+"");
+							LiabilityDAO dao = new LiabilityDAO();
+							long start = dao.getCountBank() + 1;
+							boolean success = dao.insertBatchBank(result, start);
+							if (!success){
+								t.setText("银行类批量插入失败");
+								return;
+							}
+						}
+						
+					} catch (FileNotFoundException e1) {
+
+						e1.printStackTrace();
+					} catch (IOException e1) {
+
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		button_1.setBounds(640, 56, 80, 27);
+		button_1.setText("\u94F6\u884C\u8D1F\u503A\u8868");
+		
+		Button button_2 = new Button(shell, SWT.NONE);
+		button_2.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog fd = new FileDialog(shell, SWT.NONE);
+				fd.setText("打开文件");
+				fd.setFilterExtensions(new String[] { "*.xls" });
+				String path = fd.open();
+				t.setText(path == null ? "" : path);
+				if (!"".equals(t.getText().trim())) {
+					try {
+						rowNum.setText("");
+						colNum.setText("");
+						//getExcel(t.getText().trim());
+						result = read2003ExcelColumn(new File(t.getText().trim()));
+						if (result != null && result.size() > 0){
+							rowNum.setText(result.size()+"");
+							colNum.setText(result.get(0).size()+"");
+							LiabilityDAO dao = new LiabilityDAO();
+							long start = dao.getCount() + 1;
+							boolean success = dao.insertBatch(result, start);
+							if (!success){
+								t.setText("批量插入失败");
+								return;
+							}
+						}
+						
+					} catch (FileNotFoundException e1) {
+
+						e1.printStackTrace();
+					} catch (IOException e1) {
+
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		button_2.setBounds(752, 56, 80, 27);
+		button_2.setText("\u975E\u94F6\u884C\u8D1F\u503A\u8868");
 	}
 
 	// 获取excel表格内容（无图）
@@ -275,10 +381,6 @@ public class DataTransferWindow {
 				try {
 					cell = row.getCell(i);
 
-					DecimalFormat df = new DecimalFormat("0");// 格式化 number String 字符
-					SimpleDateFormat sdf = new SimpleDateFormat(
-							"yyyy-MM-dd HH:mm:ss");// 格式化日期字符串
-					DecimalFormat nf = new DecimalFormat("0.00");// 格式化数字
 					switch (cell.getCellType()) {
 					case XSSFCell.CELL_TYPE_STRING:
 						System.out.println(i + "行" + j + " 列 is String type");
@@ -288,15 +390,7 @@ public class DataTransferWindow {
 						System.out.println(i + "行" + j
 								+ " 列 is Number type ; DateFormt:"
 								+ cell.getCellStyle().getDataFormatString());
-						if ("@".equals(cell.getCellStyle().getDataFormatString())) {
-							value = df.format(cell.getNumericCellValue());
-						} else if ("General".equals(cell.getCellStyle()
-								.getDataFormatString())) {
-							value = nf.format(cell.getNumericCellValue());
-						} else {
-							value = sdf.format(HSSFDateUtil.getJavaDate(cell
-									.getNumericCellValue()));
-						}
+						value = (int) (cell.getNumericCellValue()) + "";
 						break;
 					case XSSFCell.CELL_TYPE_BOOLEAN:
 						System.out.println(i + "行" + j + " 列 is Boolean type");
@@ -315,6 +409,7 @@ public class DataTransferWindow {
 					}
 				} catch (Exception e) {
 					System.out.println("错误信息：" + e.getMessage());
+					value = "";
 				}
 				col.add(value);
 			}
@@ -324,18 +419,41 @@ public class DataTransferWindow {
 		return list;
 	}
 	
+	/**
+	 * 批量处理负债表
+	 * @param filepath
+	 */
 	private void handleLiabilityBatch(String filepath){
 		LiabilityDAO dao = new LiabilityDAO();
+		boolean success = true;
 
 		//获取所有表格文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
 
 		for (File xlsFileColFile : xlsFileCol) { 
 		      String filename = xlsFileColFile.getName();
-		      if (!Common.bankList.contains(filename)){
-		    	  long start = dao.getCount() + 1;
-		    	  dao.insertBatch(result, start);
-		      }
+	    	  try {
+	    		  result = read2003ExcelColumn(new File(filename));
+			      	if (!Common.bankList.contains(filename)){//非银行类					
+						long start = dao.getCount() + 1;
+						success = dao.insertBatch(result, start);
+						if (!success){
+							t.setText("批量插入失败");
+							return;
+						}
+			      	}else{
+			      		long start = dao.getCountBank() + 1;
+						success = dao.insertBatchBank(result, start);
+						if (!success){
+							t.setText("银行类批量插入失败");
+							return;
+						}
+			      	}
+		      } catch (IOException e) {
+
+					e.printStackTrace();
+			 }
+	    	  
 		}
 	}
 }

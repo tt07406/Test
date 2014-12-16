@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.stockii.common.Common;
 import org.stockii.common.DB_UTILS;
+import org.stockii.common.LogUtil;
 
 
 /**
@@ -30,8 +31,7 @@ public class LiabilityDAO {
 	 * @return
 	 */
 	public boolean insertBatch(List<List<Object>> liabilityList ,long startNum){
-		boolean b = false;//操作成功与否
-		int size = liabilityList.size();
+
 		sql = "insert into liability_statement " +
 				"values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
 				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
@@ -40,8 +40,71 @@ public class LiabilityDAO {
 				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
 				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
 		
+		return insert(liabilityList,startNum,sql);
+	}
+	
+	/**
+	 * 获取表格大小
+	 * @return 记录数
+	 */
+	public long getCount(){
+		sql = "select max(seq_no) from liability_statement";
+		return getNum(sql);
+	}
+	
+	/**
+	 * 批量插入数据（银行）
+	 * @param liabilityList
+	 * @return
+	 */
+	public boolean insertBatchBank(List<List<Object>> liabilityList ,long startNum){
+
+		sql = "insert into liability_statement_bank " +
+				"values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
+				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
+				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
+				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?" +
+				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+		
+		return insert(liabilityList,startNum,sql);
+	}
+	
+	/**
+	 * 获取表格大小（银行）
+	 * @return 记录数
+	 */
+	public long getCountBank(){
+		sql = "select max(seq_no) from liability_statement_bank";
+		return getNum(sql);
+	}
+	
+	public long getNum(String sql){
+		long count = 0;
+		con = DB_UTILS.getConnection();
+
+		try {
+			pstmt = con.prepareStatement(sql); // 实例化查询对象
+
+			rs = pstmt.executeQuery(); // 取得查询结果
+
+			if (rs.next()) {
+				count = rs.getLong(1);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DB_UTILS.close(con, pstmt, rs);
+		}
+		return count;
+	}
+	
+	public boolean insert(List<List<Object>> liabilityList ,long startNum, String sql){
+		boolean b = false;//操作成功与否
+		int size = liabilityList.size();
 		con = DB_UTILS.getConnection();//获取连接
 		
+		LogUtil.getLogger().info(startNum+"");
 		try {
 			con.setAutoCommit(false);
 			pstmt = con.prepareStatement(sql,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY); //实例化操作
@@ -50,21 +113,31 @@ public class LiabilityDAO {
 				int mul = 1 ;
 				String unit = null;
 				ArrayList<Object> row = (ArrayList<Object>) liabilityList.get(x);
-				for (int y = 1; y <= row.size(); ++y){
+				//LogUtil.getLogger().info(row.size()+1);
+				for (int y = 1; y <= row.size()+1; ++y){
+					Object value = y>1?row.get(y-2):null;
+					//LogUtil.getLogger().info(value);
 					if (y == 1){
-						pstmt.setLong(y, startNum++);
+						pstmt.setInt(y, (int)startNum++);
 					}else if (y == 2){
-						pstmt.setString(y, (String)row.get(y-1));
+						pstmt.setString(y, (String)value);
 					}else if (y == 3){
-						pstmt.setDate(y, (java.sql.Date)Common.getSwitchDate((String)row.get(y-1)));
+						pstmt.setDate(y, new java.sql.Date(Common.getSwitchDate((String)value).getTime()));
 					}else if (y == 4){
-						unit = (String)row.get(y-1);
+						unit = (String)value;
 						if (unit.equals("千元")){
 							mul = 1000;
+						}else{
+							mul = 1;
 						}
 						pstmt.setString(y, unit);
 					}else {
-						pstmt.setLong(y, (Long)row.get(y-1)*mul);
+						if (value == null || "".equals(value)){
+							pstmt.setLong(y, 0);
+						}else{
+							Integer num = new Integer((String) value);
+							pstmt.setLong(y, num*mul);
+						}												
 					}
 				}
 				pstmt.addBatch();
@@ -84,29 +157,4 @@ public class LiabilityDAO {
 		return b;
 	}
 	
-	/**
-	 * 获取表格大小
-	 * @return 记录数
-	 */
-	public long getCount(){
-		long count = 0;
-		sql = "select max(seq_no) from liability_statement";
-		con = DB_UTILS.getConnection();
-
-		try {
-			pstmt = con.prepareStatement(sql); // 实例化查询对象
-
-			rs = pstmt.executeQuery(); // 取得查询结果
-
-			if (rs.next()) {
-				count = rs.getLong(1);
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			DB_UTILS.close(con, pstmt, rs);
-		}
-		return count;
-	}
 }
