@@ -1,0 +1,14 @@
+Sub 批量另存()
+p = "D:\file\document\work\表格\权益变动表\" '要转换的文件所在目录,根据实际修改.
+s = "D:\file\data\权益变动表\"
+Application.ScreenUpdating = False '关闭屏幕更新
+f = Dir(p & "*.xls") '读取第一个文件
+Do While f <> "" '如果文件存在则执行下面循环语句
+Set w = Workbooks.Open(p & f) '打开工作簿
+w.SaveAs s & f '另存为文本文件
+w.Close False '关闭该文件
+f = Dir '读取下一个文件名
+Loop '退出循环
+Application.ScreenUpdating = True
+MsgBox "干完收工!"
+End Sub
