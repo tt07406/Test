@@ -127,6 +127,7 @@ DELAY_KEY_WRITE=0
 
 CREATE TABLE `liability_statement_bank` (
 `seq_no`  int(11) NOT NULL AUTO_INCREMENT ,
+`stock_id`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `statement_date`  date NOT NULL ,
 `unit`  char(6) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
 `asset`  bigint(12) NULL DEFAULT NULL ,

@@ -27,8 +27,28 @@ import java.util.Properties;
  */
 public class Common {
 	
-	public static ArrayList<String> bankList = new ArrayList<String>(){{
-		add("000001");add("601398");
+	public static ArrayList<String> bankList = new ArrayList<String>(){/**
+		 * 
+		 */
+		private static final long serialVersionUID = 8528941393299880058L;
+
+	{//银行类股票代码
+			add("002142");
+			add("600016");
+			add("601998");
+			add("601009");
+			add("600015");
+			add("601818");
+			add("601166");
+			add("000001");
+			add("601169");
+			add("600036");
+			add("600000");
+			add("601328");
+			add("601939");
+			add("601398");
+			add("601288");
+			add("601988");
 		}};
 	
   	/**

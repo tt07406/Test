@@ -10,15 +10,15 @@ import java.util.List;
 
 import org.stockii.common.Common;
 import org.stockii.common.DB_UTILS;
-
+import org.stockii.common.LogUtil;
 
 /**
- * 负债表的DAO
+ * 利润表的DAO
  * 
  * @author tt
  * @version 14.12.16
  */
-public class LiabilityDAO {
+public class ProfitDAO {
 
 	private String sql;								//DAO中用到的SQL语句
 	private Connection con = null; 					//数据库的连接对象
@@ -27,20 +27,17 @@ public class LiabilityDAO {
 	
 	/**
 	 * 批量插入数据
-	 * @param liabilityList
+	 * @param profitList
 	 * @return
 	 */
-	public boolean insertBatch(List<List<Object>> liabilityList){
+	public boolean insertBatch(List<List<Object>> profitList){
 
-		sql = "insert into liability_statement " +
+		sql = "insert into profit_statement " +
 				"values(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
 				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+				"?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
 		
-		return insert(liabilityList,sql);
+		return insert(profitList,sql);
 	}
 	
 	/**
@@ -48,25 +45,23 @@ public class LiabilityDAO {
 	 * @return 记录数
 	 */
 	public long getCount(){
-		sql = "select max(seq_no) from liability_statement";
+		sql = "select max(seq_no) from profit_statement";
 		return getNum(sql);
 	}
 	
 	/**
 	 * 批量插入数据（银行）
-	 * @param liabilityList
+	 * @param profitList
 	 * @return
 	 */
-	public boolean insertBatchBank(List<List<Object>> liabilityList){
+	public boolean insertBatchBank(List<List<Object>> profitList){
 
-		sql = "insert into liability_statement_bank " +
+		sql = "insert into profit_statement_bank " +
 				"values(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
 				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-				"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+				"?,?,?,?,?,?,?,?,?)"; 
 		
-		return insert(liabilityList,sql);
+		return insert(profitList,sql);
 	}
 	
 	/**
@@ -74,7 +69,7 @@ public class LiabilityDAO {
 	 * @return 记录数
 	 */
 	public long getCountBank(){
-		sql = "select max(seq_no) from liability_statement_bank";
+		sql = "select max(seq_no) from profit_statement_bank";
 		return getNum(sql);
 	}
 	
@@ -99,9 +94,9 @@ public class LiabilityDAO {
 		return count;
 	}
 	
-	public boolean insert(List<List<Object>> liabilityList ,String sql){
+	public boolean insert(List<List<Object>> profitList ,String sql){
 		boolean b = false;//操作成功与否
-		int size = liabilityList.size();
+		int size = profitList.size();
 		con = DB_UTILS.getConnection();//获取连接
 		
 		try {
@@ -111,10 +106,10 @@ public class LiabilityDAO {
 			for (int x = 0; x < size; ++x){
 				int mul = 1 ;
 				String unit = null;
-				ArrayList<Object> row = (ArrayList<Object>) liabilityList.get(x);
-				//LogUtil.getLogger().info(row.size()+1);
+				ArrayList<Object> row = (ArrayList<Object>) profitList.get(x);
 				for (int y = 1; y <= row.size(); ++y){
 					Object value = row.get(y-1);
+					LogUtil.getLogger().info(value+";"+y);
 					if (y == 1){
 						pstmt.setString(y, (String)value);
 					}else if (y == 2){
@@ -130,6 +125,9 @@ public class LiabilityDAO {
 						}
 						pstmt.setString(y, unit);
 					}else {
+						if ( y == 47 || y == 48){
+							mul = 1;
+						}
 						if (value == null || "".equals(value)){
 							pstmt.setDouble(y, 0);
 						}else if (value instanceof String){
