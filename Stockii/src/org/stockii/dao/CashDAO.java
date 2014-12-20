@@ -126,6 +126,9 @@ public class CashDAO {
 						if (unit.equals("千元")){
 							mul = 1000;
 							unit = "元";
+						}else if (unit.equals("百万")){
+							mul = 1000000;
+							unit = "元";
 						}else{
 							mul = 1;
 						}

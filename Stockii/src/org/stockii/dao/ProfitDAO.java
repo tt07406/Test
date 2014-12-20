@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.stockii.common.Common;
 import org.stockii.common.DB_UTILS;
-import org.stockii.common.LogUtil;
 
 /**
  * 利润表的DAO
@@ -109,7 +108,7 @@ public class ProfitDAO {
 				ArrayList<Object> row = (ArrayList<Object>) profitList.get(x);
 				for (int y = 1; y <= row.size(); ++y){
 					Object value = row.get(y-1);
-					LogUtil.getLogger().info(value+";"+y);
+					//LogUtil.getLogger().info(value+";"+y);
 					if (y == 1){
 						pstmt.setString(y, (String)value);
 					}else if (y == 2){
@@ -119,6 +118,9 @@ public class ProfitDAO {
 						unit = (String)value;
 						if (unit.equals("千元")){
 							mul = 1000;
+							unit = "元";
+						}else if (unit.equals("百万")){
+							mul = 1000000;
 							unit = "元";
 						}else{
 							mul = 1;

@@ -771,6 +771,7 @@ public class DataTransferWindow {
 	private void handleLiabilityBatch(String filepath){
 		LiabilityDAO dao = new LiabilityDAO();
 		boolean success = true;
+		t.setText("开始批量处理负债表");
 
 		//获取所有表格文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
@@ -815,6 +816,7 @@ public class DataTransferWindow {
 	private void handleProfitBatch(String filepath){
 		ProfitDAO dao = new ProfitDAO();
 		boolean success = true;
+		t.setText("开始批量处理利润表");
 
 		//获取所有表格文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
@@ -859,6 +861,7 @@ public class DataTransferWindow {
 	private void handleChangeBatch(String filepath){
 		EquityChangeDAO dao = new EquityChangeDAO();
 		boolean success = true;
+		t.setText("开始批量处理权益变动表");
 
 		// 获取所有表格文件
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath),
@@ -897,6 +900,7 @@ public class DataTransferWindow {
 	private void handleCashBatch(String filepath){
 		CashDAO dao = new CashDAO();
 		boolean success = true;
+		t.setText("开始批量处理现金表");
 
 		//获取所有表格文件 
 		Collection<File> xlsFileCol = FileUtils.listFiles(new File(filepath), new String[]{"xls","xlsx"}, true); 
