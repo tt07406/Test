@@ -1,5 +1,6 @@
 package org.stockii.dao;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -110,7 +111,7 @@ public class CashDAO {
 			pstmt = con.prepareStatement(sql,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY); //实例化操作
 
 			for (int x = 0; x < size; ++x){
-				int mul = 1 ;
+				double mul = 1 ;
 				String unit = null;
 				ArrayList<Object> row = (ArrayList<Object>) cashList.get(x);
 				
@@ -124,23 +125,26 @@ public class CashDAO {
 					}else if (y == 3){
 						unit = (String)value;
 						if (unit.equals("千元")){
-							mul = 1000;
-							unit = "元";
+							mul = 0.00001;							
 						}else if (unit.equals("百万")){
-							mul = 1000000;
-							unit = "元";
+							mul = 0.01;
 						}else{
-							mul = 1;
+							mul = 0.00000001;
 						}
+						unit = "亿元";
 						pstmt.setString(y, unit);
 					}else {
 						if (value == null || "".equals(value)){
 							pstmt.setDouble(y, 0);
 						}else if (value instanceof String){
 							long num = Long.parseLong((String)value);
-							pstmt.setDouble(y, (double)num*mul);
+							BigDecimal big = new BigDecimal((double)num*mul);  
+							double result =   big.setScale(4,BigDecimal.ROUND_HALF_UP).doubleValue();  
+							pstmt.setDouble(y, result);
 						}else{
-							pstmt.setDouble(y, (Double)value*mul);
+							BigDecimal big = new BigDecimal((Double)value*mul);  
+							double result =   big.setScale(4,BigDecimal.ROUND_HALF_UP).doubleValue();  
+							pstmt.setDouble(y, result);
 						}						
 					}
 				}
